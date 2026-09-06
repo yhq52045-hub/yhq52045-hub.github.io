@@ -1,7 +1,3 @@
-Exit code: 0
-Wall time: 1.9 seconds
-Total output lines: 1121
-Output:
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -294,7 +290,510 @@ Output:
     .bar-head { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 7px; }
     .bar-head b { font: 700 12px Consolas, monospace; color: var(--mint); }
     .bar-track { height: 5px; background: #272e31; overflow: hidden; }
-    .bar-fill { height: 100%; width: 0; background: linea…8262 tokens truncated….classList.add('show');
+    .bar-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--hot), var(--amber)); transition: width .7s cubic-bezier(.2,.8,.2,1); }
+    .analysis-copy { color: #b3b8b7; line-height: 1.75; font-size: 13px; margin: 17px 0 0; }
+    .confidence { display: inline-flex; align-items: center; gap: 8px; padding: 7px 9px; background: rgba(169,245,208,.08); color: var(--mint); font-size: 10px; font-weight: 900; letter-spacing: .09em; margin-top: 16px; }
+    .confidence::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .apply-steps { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: apply; display: grid; gap: 14px; }
+    .apply-steps li { counter-increment: apply; display: grid; grid-template-columns: 28px 1fr; gap: 11px; align-items: start; color: #b5b9b8; font-size: 12px; line-height: 1.6; }
+    .apply-steps li::before { content: counter(apply, decimal-leading-zero); color: var(--hot); font: 700 11px Consolas, monospace; padding-top: 2px; }
+    .range-card { grid-column: 1 / -1; padding: 25px 30px; }
+    .range-line { margin-top: 22px; height: 9px; background: linear-gradient(90deg, #21282b, var(--mint) 40%, var(--hot) 60%, #21282b); position: relative; }
+    .range-marker { position: absolute; width: 2px; height: 27px; top: -9px; background: white; left: 50%; box-shadow: 0 0 9px white; }
+    .range-labels { display: flex; justify-content: space-between; margin-top: 11px; color: var(--muted); font: 700 11px Consolas, monospace; }
+
+    .toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 18px); background: var(--ink); color: #0c0f11; padding: 12px 16px; border-radius: 4px; font-size: 12px; font-weight: 900; opacity: 0; pointer-events: none; transition: .25s; z-index: 50; box-shadow: var(--shadow); }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    footer { margin-top: 46px; padding: 24px 34px 36px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: #686f72; font-size: 10px; line-height: 1.65; }
+
+    @media (max-width: 960px) {
+      .hero, .setup-grid, .results-layout { grid-template-columns: 1fr; }
+      .hero-aside { justify-self: start; }
+      .test-layout { grid-template-columns: 1fr; }
+      .test-list { position: static; grid-template-columns: repeat(3, 1fr); }
+      .test-note { grid-column: 1 / -1; }
+      .test-tab { grid-template-columns: 28px 1fr; }
+      .test-tab .check { display: none; }
+      .range-card { grid-column: auto; }
+    }
+    @media (max-width: 650px) {
+      .topbar, .hero, main, .progress-wrap { padding-left: 18px; padding-right: 18px; }
+      .top-meta span:last-child { display: none; }
+      .hero { padding-top: 44px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 11px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .card-pad, .result-hero { padding: 21px; }
+      .steps .step-name { display: none; }
+      .steps .step { grid-template-columns: 30px 1fr; }
+      .test-list { grid-template-columns: 1fr; }
+      .arena { min-height: 390px; height: 58vh; }
+      .arena-metrics { gap: 10px; }
+      .mini-metric:nth-child(2) { display: none; }
+      .support-metrics { grid-template-columns: 1fr; }
+      .finish-stats { grid-template-columns: 1fr 1fr; }
+      footer { display: block; padding-left: 18px; padding-right: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark" aria-hidden="true"></div><strong>VAL<span>/SENSE</span></strong></div>
+      <div class="top-meta"><i class="status-dot"></i><span>LOCAL ENGINE ONLINE</span><span>BUILD 26.09</span></div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Personal sensitivity protocol</div>
+        <h1>找到你的<br><em>肌肉记忆。</em></h1>
+        <p>不是抄职业选手的参数。通过个人设备、操作习惯与 6 项内嵌瞄准测试，生成适合你的 DPI 与可直接填入《无畏契约》PC 端的灵敏度组合。</p>
+      </div>
+      <aside class="hero-aside">
+        <div class="hero-stat"><b>06</b><span>急停、微调、追踪、反向切换、曲线走廊与稳枪；全部只需移动鼠标。</span></div>
+        <div class="hero-stat"><b>~4m</b><span>完整校准耗时。测试数据只在当前浏览器本地处理。</span></div>
+        <div class="hero-stat"><b>DPI</b><span>同时输出推荐 DPI、三位小数游戏灵敏度、eDPI 与 360° 转身距离。</span></div>
+      </aside>
+    </section>
+
+    <div class="progress-wrap">
+      <div class="steps" aria-label="生成步骤">
+        <div class="step active" data-step="0"><span class="step-index">01</span><span class="step-name">建立档案</span></div>
+        <div class="step" data-step="1"><span class="step-index">02</span><span class="step-name">完成测试</span></div>
+        <div class="step" data-step="2"><span class="step-index">03</span><span class="step-name">生成参数</span></div>
+      </div>
+    </div>
+
+    <main>
+      <section class="panel active" id="panel-setup">
+        <div class="section-head">
+          <div><div class="eyebrow">Step 01 — profile</div><h2>先描述你的操作方式</h2></div>
+          <p>DPI 决定灵敏度数字的含义。请填写鼠标当前真实 DPI；不知道时可先用鼠标软件确认。</p>
+        </div>
+        <div class="setup-grid">
+          <div class="card card-pad">
+            <div class="card-kicker">HARDWARE / HABIT</div>
+            <h3>设备与习惯</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label for="dpi">鼠标 DPI <span class="hint">必填</span></label>
+                <select id="dpi">
+                  <option value="400">400 DPI</option>
+                  <option value="800" selected>800 DPI</option>
+                  <option value="1600">1600 DPI</option>
+                  <option value="3200">3200 DPI</option>
+                  <option value="custom">自定义…</option>
+                </select>
+              </div>
+              <div class="field" id="custom-dpi-wrap" hidden>
+                <label for="custom-dpi">自定义 DPI</label>
+                <input id="custom-dpi" type="number" min="100" max="30000" step="50" value="1200" />
+              </div>
+              <div class="field">
+                <label for="current-sens">当前游戏灵敏度 <span class="hint">可选，0.010–10.000</span></label>
+                <input id="current-sens" type="number" min="0.01" max="10" step="0.001" placeholder="例如 0.350" />
+              </div>
+              <div class="field full">
+                <label>主要发力方式</label>
+                <div class="segmented">
+                  <input id="aim-arm" name="technique" type="radio" value="arm"><label for="aim-arm">手臂</label>
+                  <input id="aim-hybrid" name="technique" type="radio" value="hybrid" checked><label for="aim-hybrid">混合</label>
+                  <input id="aim-wrist" name="technique" type="radio" value="wrist"><label for="aim-wrist">手腕</label>
+                </div>
+              </div>
+              <div class="field">
+                <label for="grip">握法</label>
+                <select id="grip"><option value="palm">趴握</option><option value="claw" selected>抓握</option><option value="fingertip">指握</option></select>
+              </div>
+              <div class="field">
+                <label for="pad">可用鼠标垫宽度</label>
+                <select id="pad"><option value="small">小于 30 cm</option><option value="medium" selected>30–45 cm</option><option value="large">大于 45 cm</option></select>
+              </div>
+              <div class="field">
+                <label for="role">常用定位</label>
+                <select id="role"><option value="duelist">决斗</option><option value="initiator">先锋</option><option value="controller" selected>控场</option><option value="sentinel">哨卫</option><option value="flex">补位 / 全能</option></select>
+              </div>
+              <div class="field">
+                <label for="experience">FPS 经验</label>
+                <select id="experience"><option value="new">不到 6 个月</option><option value="regular" selected>6 个月–2 年</option><option value="veteran">2 年以上</option></select>
+              </div>
+              <div class="field full">
+                <label for="style">你的瞄准倾向 <span class="hint">1 稳定精确 / 5 快速转向</span></label>
+                <div class="range-row"><input id="style" type="range" min="1" max="5" step="1" value="3"><output class="range-value" id="style-value">3 / 5</output></div>
+              </div>
+            </div>
+          </div>
+          <aside class="card card-pad brief">
+            <div class="card-kicker">CALCULATION MODEL</div>
+            <h3>我们如何计算</h3>
+            <div class="formula">
+              <div class="formula-row"><span>设备基线</span><strong>DPI × 游戏灵敏度</strong></div>
+              <div class="formula-row"><span>行为权重</span><strong>操作方式 + 定位</strong></div>
+              <div class="formula-row"><span>表现修正</span><strong>6 项独立运动指标</strong></div>
+              <div class="formula-row"><span>组合输出</span><strong>DPI + 游戏灵敏度</strong></div>
+            </div>
+            <div class="privacy-note"><b>● 本地计算</b><br>没有登录、上传或后台请求。结果是训练起点，不是“自动变强”承诺；建议在游戏靶场复核 2–3 天。</div>
+          </aside>
+        </div>
+        <div class="btn-row"><button class="btn primary" id="to-tests">保存档案 · 开始测试 →</button></div>
+      </section>
+
+      <section class="panel" id="panel-tests">
+        <div class="section-head">
+          <div><div class="eyebrow">Step 02 — calibration</div><h2>六项鼠标校准</h2></div>
+          <p>将浏览器缩放保持 100%，关闭鼠标“提高指针精确度”。进入测试区后只移动鼠标；准星碰到目标会自动判定。</p>
+        </div>
+        <div class="test-layout">
+          <aside class="test-list">
+            <button class="test-tab active" data-test="flick"><span class="test-num">01</span><span><strong>触碰急停</strong><small>20 个目标 · 20 秒</small></span><i class="check">✓</i></button>
+            <button class="test-tab" data-test="precision"><span class="test-num">02</span><span><strong>微调精度</strong><small>16 个小目标 · 22 秒</small></span><i class="check">✓</i></button>
+            <button class="test-tab" data-test="tracking"><span class="test-num">03</span><span><strong>连续追踪</strong><small>移动目标 · 15 秒</small></span><i class="check">✓</i></button>
+            <button class="test-tab" data-test="switching"><span class="test-num">04</span><span><strong>反向切换</strong><small>18 个远距目标 · 20 秒</small></span><i class="check">✓</i></button>
+            <button class="test-tab" data-test="steering"><span class="test-num">05</span><span><strong>曲线走廊</strong><small>42 个路径点 · 18 秒</small></span><i class="check">✓</i></button>
+            <button class="test-tab" data-test="stability"><span class="test-num">06</span><span><strong>静态稳枪</strong><small>中心保持 · 12 秒</small></span><i class="check">✓</i></button>
+            <div class="test-note">准星已内置。全部测试不记录点击；刷新页面前，本次结果会自动保存在浏览器中。建议保持当前 DPI 完成整套测试。</div>
+          </aside>
+
+          <div class="card arena-card">
+            <div class="arena-toolbar">
+              <div class="arena-title"><div class="arena-icon" aria-hidden="true">⌖</div><div><h3 id="arena-name">触碰急停</h3><p id="arena-desc">移动至目标中心，碰到即触发</p></div></div>
+              <div class="arena-metrics"><div class="mini-metric"><span>TIME</span><b id="time-value">20.0</b></div><div class="mini-metric"><span>HITS</span><b id="hits-value">0 / 20</b></div></div>
+            </div>
+            <div class="arena" id="arena" aria-label="鼠标瞄准测试区域">
+              <div class="arena-idle" id="arena-idle"><div class="idle-copy"><div class="idle-symbol"></div><h4 id="idle-title">准备进行触碰急停</h4><p id="idle-text">测试目标切换速度与移动路径。无需点击，白色准星触碰红色目标即得分。</p><button class="btn primary" id="start-test">开始测试 <span class="kbd">SPACE</span></button></div></div>
+              <svg class="steering-guide" id="steering-guide" aria-hidden="true"><path class="rail" id="steering-rail"></path><path class="core" id="steering-core"></path><path class="progress" id="steering-progress"></path></svg>
+              <div class="target flick" id="target"><i class="target-pulse"></i></div>
+              <div class="crosshair" id="crosshair"><i></i></div>
+              <div class="countdown" id="countdown"><b id="countdown-value">3</b></div>
+              <div class="finish-overlay" id="finish-overlay"><div class="finish-box"><div class="score" id="finish-score">82</div><h4 id="finish-title">校准完成</h4><p id="finish-copy">表现已记录。你可以重测，或继续下一项。</p><div class="finish-stats"><div class="finish-stat"><span>完成</span><b id="finish-hit">20/20</b></div><div class="finish-stat"><span>平均用时</span><b id="finish-time">520 ms</b></div><div class="finish-stat"><span>路径效率</span><b id="finish-eff">82%</b></div></div><button class="btn primary" id="next-test">下一项 →</button> <button class="btn ghost" id="retry-test">重测</button></div></div>
+            </div>
+            <div class="test-footer"><p>只记录鼠标移动 · 不记录点击 · <span id="footer-mode">急停路径与获取时间</span></p><button class="btn" id="exit-tests">← 返回档案</button><button class="btn primary" id="generate" disabled>完成全部测试后生成</button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-results">
+        <div class="section-head">
+          <div><div class="eyebrow">Step 03 — result</div><h2>你的 DPI × 灵敏度组合</h2></div>
+          <p>请先在鼠标软件中设置推荐 DPI，再将醒目的三位小数填入游戏。网页不能读取硬件 DPI，因此推荐值是基于运动表现的分档结果。</p>
+        </div>
+        <div class="results-layout">
+          <div class="card result-hero">
+            <div class="sens-label">VALORANT · 瞄准灵敏度</div>
+            <div class="sens-value"><strong id="result-sens">0.000</strong><span>游戏内可输入</span></div>
+            <div class="sens-path">设置路径：<b>设置 → 通用 → 鼠标 → 灵敏度：瞄准</b></div>
+            <button class="btn primary copy-btn" id="copy-sens">复制数值</button>
+            <div class="support-metrics"><div class="support-box"><span>测试时 DPI</span><strong id="input-dpi">800</strong></div><div class="support-box"><span>推荐 DPI</span><strong id="result-dpi">—</strong></div><div class="support-box"><span>实际 eDPI</span><strong id="result-edpi">—</strong></div><div class="support-box"><span>约 cm / 360°</span><strong id="result-cm">—</strong></div></div>
+            <div class="dpi-callout" id="dpi-callout"><b>DPI 说明：</b>推荐 DPI 会改变游戏内灵敏度数字，但保持算法给出的实际转身距离。</div>
+          </div>
+          <div class="result-side">
+            <div class="card card-pad">
+              <div class="card-kicker">PERFORMANCE PROFILE</div><h3>测试表现</h3>
+              <div class="score-bars"><div><div class="bar-head"><span>目标获取</span><b id="score-flick">—</b></div><div class="bar-track"><div class="bar-fill" id="bar-flick"></div></div></div><div><div class="bar-head"><span>微调控制</span><b id="score-precision">—</b></div><div class="bar-track"><div class="bar-fill" id="bar-precision"></div></div></div><div><div class="bar-head"><span>连续追踪</span><b id="score-tracking">—</b></div><div class="bar-track"><div class="bar-fill" id="bar-tracking"></div></div></div><div><div class="bar-head"><span>反向切换</span><b id="score-switching">—</b></div><div class="bar-track"><div class="bar-fill" id="bar-switching"></div></div></div><div><div class="bar-head"><span>轨迹控制</span><b id="score-steering">—</b></div><div class="bar-track"><div class="bar-fill" id="bar-steering"></div></div></div><div><div class="bar-head"><span>静态稳定</span><b id="score-stability">—</b></div><div class="bar-track"><div class="bar-fill" id="bar-stability"></div></div></div></div>
+            </div>
+            <div class="card card-pad"><div class="card-kicker">WHY THIS NUMBER</div><h3>生成解读</h3><p class="analysis-copy" id="analysis-copy"></p><div class="confidence">基于完整 6 项测试</div></div>
+          </div>
+          <div class="card range-card">
+            <div class="card-kicker">SAFE TUNING WINDOW</div><h3>复核区间 <span class="hint">靶场中只在此范围微调</span></h3><div class="range-line"><i class="range-marker"></i></div><div class="range-labels"><span id="range-low">—</span><span>推荐值</span><span id="range-high">—</span></div>
+          </div>
+          <div class="card card-pad">
+            <div class="card-kicker">IN-GAME APPLY</div><h3>如何应用</h3>
+            <ol class="apply-steps"><li>在鼠标驱动软件中设置 <span id="apply-dpi">推荐 DPI</span>；Windows 指针速度建议保持 6/11，并关闭“提高指针精确度”。</li><li>进入游戏设置，在“灵敏度：瞄准”输入上方推荐数字；瞄准镜与开镜倍率先保持 1.000。</li><li>去靶场做 50 次静态机器人点射。总是甩过头就降至区间下沿，总是差一点才到就升至区间上沿。</li></ol>
+          </div>
+          <div class="card card-pad">
+            <div class="card-kicker">SAVE / RETEST</div><h3>把它变成肌肉记忆</h3><p class="analysis-copy">连续使用 2–3 天后再判断，不要每局都改。网页会在当前浏览器保存最近一次档案和结果，你也可以随时重测。</p><div class="btn-row" style="justify-content:flex-start"><button class="btn" id="retest">重新测试</button><button class="btn ghost" id="reset-all">清空数据</button></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><span>VAL/SENSE 是独立制作的本地训练工具，与 Riot Games、VALORANT 或 Aim Lab 无关联或背书关系。</span><span>算法输出仅作为稳定训练起点 · PC 鼠标版</span></footer>
+  </div>
+  <div class="toast" id="toast">已复制</div>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const $ = (q, root = document) => root.querySelector(q);
+      const $$ = (q, root = document) => [...root.querySelectorAll(q)];
+      const clamp = (n, min, max) => Math.min(max, Math.max(min, n));
+      const mean = arr => arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : 0;
+      const median = arr => {
+        if (!arr.length) return 0;
+        const s = [...arr].sort((a, b) => a - b), m = Math.floor(s.length / 2);
+        return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+      };
+
+      const configs = {
+        flick: { name: '触碰急停', desc: '移动至目标中心，碰到即触发', idle: '测试目标切换速度与移动路径。无需点击，白色准星触碰红色目标即得分。', duration: 20, goal: 20, size: 55, cls: 'flick', footer: '急停路径与获取时间' },
+        precision: { name: '微调精度', desc: '小目标同样只需准星触碰', idle: '目标更小、间距更短，重点是刹停与微调。保持自然速度，不要为了成绩改变握法。', duration: 22, goal: 16, size: 34, cls: 'precision', footer: '小目标控制与路径偏差' },
+        tracking: { name: '连续追踪', desc: '让准星尽量留在移动目标内', idle: '蓝色目标会连续变向。只需跟随，不需要点击；准星处于目标内的时间占比就是核心成绩。', duration: 15, goal: 15, size: 50, cls: 'tracking', footer: '目标内停留时间与平均误差' },
+        switching: { name: '反向切换', desc: '左右远距目标交替出现，碰到即切换', idle: '紫色目标会强制左右交替，测试大幅转向后的刹停和反向修正能力。准星碰到即得分。', duration: 20, goal: 18, size: 44, cls: 'switching', footer: '大幅反向移动与修正效率' },
+        steering: { name: '曲线走廊', desc: '沿虚线依次触碰绿色路径点', idle: '沿 S 形走廊逐点前进。偏离走廊会降低成绩；这项测试关注完整轨迹，而不只是终点。', duration: 18, goal: 42, size: 38, cls: 'steering', footer: '受限路径内的平滑控制' },
+        stability: { name: '静态稳枪', desc: '将准星保持在中心白点内', idle: '把准星移到中央白点并尽量保持不动。轻微手抖与漂移都会被记录，不需要点击。', duration: 12, goal: 12, size: 32, cls: 'stability', footer: '微小抖动、漂移与保持率' }
+      };
+      const testOrder = ['flick','precision','tracking','switching','steering','stability'];
+
+      const state = {
+        step: 0,
+        activeTest: 'flick',
+        phase: 'idle',
+        results: {},
+        profile: {},
+        raf: 0,
+        countdownRaf: 0,
+        testStart: 0,
+        endAt: 0,
+        target: { x: 0, y: 0, vx: 0, vy: 0 },
+        pointer: { x: 0, y: 0, inside: false },
+        hitCount: 0,
+        acquisitions: [],
+        efficiencies: [],
+        pathSinceSpawn: 0,
+        directSinceSpawn: 0,
+        lastPointer: null,
+        spawnedAt: 0,
+        trackingSamples: 0,
+        trackingInside: 0,
+        trackingDistance: [],
+        steeringPoints: [],
+        steeringIndex: 0,
+        steeringSamples: 0,
+        steeringInside: 0,
+        steeringErrors: [],
+        stabilitySamples: 0,
+        stabilityInside: 0,
+        stabilityDistances: [],
+        stabilitySpeeds: [],
+        lastStabilityPoint: null,
+        lastFrame: 0,
+        lastHitAt: 0
+      };
+
+      const els = {
+        panels: $$('.panel'), steps: $$('.step'), dpi: $('#dpi'), customDpi: $('#custom-dpi'), customWrap: $('#custom-dpi-wrap'), currentSens: $('#current-sens'), style: $('#style'), styleValue: $('#style-value'),
+        arena: $('#arena'), target: $('#target'), crosshair: $('#crosshair'), guide: $('#steering-guide'), guideRail: $('#steering-rail'), guideCore: $('#steering-core'), guideProgress: $('#steering-progress'), idle: $('#arena-idle'), idleTitle: $('#idle-title'), idleText: $('#idle-text'), start: $('#start-test'), countdown: $('#countdown'), countdownValue: $('#countdown-value'), finish: $('#finish-overlay'),
+        arenaName: $('#arena-name'), arenaDesc: $('#arena-desc'), time: $('#time-value'), hits: $('#hits-value'), footerMode: $('#footer-mode'), finishScore: $('#finish-score'), finishTitle: $('#finish-title'), finishCopy: $('#finish-copy'), finishHit: $('#finish-hit'), finishTime: $('#finish-time'), finishEff: $('#finish-eff'), generate: $('#generate'), toast: $('#toast')
+      };
+
+      function toast(message) {
+        els.toast.textContent = message;
+        els.toast.classList.add('show');
+        clearTimeout(toast.timer);
+        toast.timer = setTimeout(() => els.toast.classList.remove('show'), 1700);
+      }
+
+      function save() {
+        try { localStorage.setItem('valsense-v2', JSON.stringify({ profile: state.profile, results: state.results, generated: state.generated || null })); } catch (_) {}
+      }
+
+      function load() {
+        try {
+          const stored = JSON.parse(localStorage.getItem('valsense-v2'));
+          if (!stored) return;
+          state.profile = stored.profile || {};
+          state.results = stored.results || {};
+          state.generated = stored.generated || null;
+          applyProfileToForm(state.profile);
+          updateTestChecks();
+        } catch (_) {}
+      }
+
+      function getDpi() {
+        const value = els.dpi.value === 'custom' ? Number(els.customDpi.value) : Number(els.dpi.value);
+        return clamp(Number.isFinite(value) ? value : 800, 100, 30000);
+      }
+
+      function readProfile() {
+        return {
+          dpi: getDpi(),
+          currentSens: els.currentSens.value ? clamp(Number(els.currentSens.value), .01, 10) : null,
+          technique: $('input[name="technique"]:checked').value,
+          grip: $('#grip').value,
+          pad: $('#pad').value,
+          role: $('#role').value,
+          experience: $('#experience').value,
+          style: Number(els.style.value)
+        };
+      }
+
+      function applyProfileToForm(p) {
+        if (!p || !p.dpi) return;
+        const common = ['400','800','1600','3200'];
+        if (common.includes(String(p.dpi))) els.dpi.value = String(p.dpi);
+        else { els.dpi.value = 'custom'; els.customDpi.value = p.dpi; els.customWrap.hidden = false; }
+        els.currentSens.value = p.currentSens || '';
+        const technique = $(`input[name="technique"][value="${p.technique || 'hybrid'}"]`); if (technique) technique.checked = true;
+        ['grip','pad','role','experience'].forEach(id => { if (p[id]) $('#' + id).value = p[id]; });
+        els.style.value = p.style || 3;
+        els.styleValue.value = `${els.style.value} / 5`;
+      }
+
+      function showStep(index) {
+        if (state.phase === 'running' || state.phase === 'countdown') stopTest(false);
+        state.step = index;
+        els.panels.forEach((p, i) => p.classList.toggle('active', i === index));
+        els.steps.forEach((s, i) => {
+          s.classList.toggle('active', i === index);
+          s.classList.toggle('done', i < index);
+        });
+        window.scrollTo({ top: index === 0 ? 0 : $('.progress-wrap').offsetTop - 66, behavior: 'smooth' });
+      }
+
+      function updateTestChecks() {
+        $$('.test-tab').forEach(tab => tab.classList.toggle('complete', !!state.results[tab.dataset.test]));
+        els.generate.disabled = !testOrder.every(k => state.results[k]);
+      }
+
+      function selectTest(type) {
+        if (state.phase === 'running' || state.phase === 'countdown') stopTest(false);
+        state.activeTest = type;
+        const c = configs[type];
+        $$('.test-tab').forEach(t => t.classList.toggle('active', t.dataset.test === type));
+        els.arenaName.textContent = c.name;
+        els.arenaDesc.textContent = c.desc;
+        els.idleTitle.textContent = `准备进行${c.name}`;
+        els.idleText.textContent = c.idle;
+        els.footerMode.textContent = c.footer;
+        els.time.textContent = c.duration.toFixed(1);
+        els.hits.textContent = type === 'tracking' ? '0% LOCK' : type === 'steering' ? '0% PATH' : type === 'stability' ? '0% HOLD' : `0 / ${c.goal}`;
+        els.target.className = `target ${c.cls}`;
+        els.target.classList.remove('visible');
+        els.guide.classList.remove('show');
+        els.finish.classList.remove('show');
+        els.idle.classList.remove('hidden');
+        state.phase = 'idle';
+      }
+
+      function resetRun() {
+        state.hitCount = 0;
+        state.acquisitions = [];
+        state.efficiencies = [];
+        state.pathSinceSpawn = 0;
+        state.directSinceSpawn = 0;
+        state.lastPointer = null;
+        state.trackingSamples = 0;
+        state.trackingInside = 0;
+        state.trackingDistance = [];
+        state.steeringPoints = [];
+        state.steeringIndex = 0;
+        state.steeringSamples = 0;
+        state.steeringInside = 0;
+        state.steeringErrors = [];
+        state.stabilitySamples = 0;
+        state.stabilityInside = 0;
+        state.stabilityDistances = [];
+        state.stabilitySpeeds = [];
+        state.lastStabilityPoint = null;
+        state.lastHitAt = 0;
+        state.lastFrame = performance.now();
+      }
+
+      function beginCountdown() {
+        if (state.phase === 'countdown' || state.phase === 'running') return;
+        resetRun();
+        state.phase = 'countdown';
+        els.arena.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        els.idle.classList.add('hidden');
+        els.finish.classList.remove('show');
+        els.countdown.classList.add('show');
+        els.target.classList.remove('visible');
+        const started = performance.now();
+        const total = 3000;
+        const frame = now => {
+          if (state.phase !== 'countdown') return;
+          const left = Math.max(0, total - (now - started));
+          const n = Math.min(3, Math.max(1, Math.ceil(left / 1000)));
+          if (els.countdownValue.textContent !== String(n)) {
+            els.countdownValue.textContent = n;
+            els.countdownValue.style.animation = 'none';
+            void els.countdownValue.offsetWidth;
+            els.countdownValue.style.animation = '';
+          }
+          if (left <= 0) startRun(); else state.countdownRaf = requestAnimationFrame(frame);
+        };
+        state.countdownRaf = requestAnimationFrame(frame);
+      }
+
+      function startRun() {
+        const c = configs[state.activeTest];
+        state.phase = 'running';
+        els.countdown.classList.remove('show');
+        state.testStart = performance.now();
+        state.endAt = state.testStart + c.duration * 1000;
+        state.lastFrame = state.testStart;
+        if (state.activeTest === 'tracking') spawnTracking();
+        else if (state.activeTest === 'steering') spawnSteering();
+        else if (state.activeTest === 'stability') spawnStability();
+        else spawnStatic();
+        state.raf = requestAnimationFrame(tick);
+      }
+
+      function arenaBounds() { return els.arena.getBoundingClientRect(); }
+
+      function spawnStatic() {
+        const c = configs[state.activeTest], rect = arenaBounds();
+        const margin = Math.max(c.size / 2 + 30, 55);
+        let x, y, attempts = 0;
+        if (state.activeTest === 'switching') {
+          const leftSide = state.hitCount % 2 === 0;
+          const sideWidth = Math.max(20, rect.width * .12);
+          x = leftSide ? margin + Math.random() * sideWidth : rect.width - margin - Math.random() * sideWidth;
+          y = margin + Math.random() * Math.max(1, rect.height - margin * 2);
+        } else {
+          do {
+            x = margin + Math.random() * Math.max(1, rect.width - margin * 2);
+            y = margin + Math.random() * Math.max(1, rect.height - margin * 2);
+            attempts++;
+          } while (state.pointer.inside && Math.hypot(x - state.pointer.x, y - state.pointer.y) < Math.min(rect.width, rect.height) * .23 && attempts < 24);
+        }
+        state.target.x = x; state.target.y = y;
+        els.target.style.left = `${x}px`; els.target.style.top = `${y}px`;
+        els.target.classList.add('visible');
+        state.spawnedAt = performance.now();
+        state.pathSinceSpawn = 0;
+        state.directSinceSpawn = state.pointer.inside ? Math.hypot(x - state.pointer.x, y - state.pointer.y) : 0;
+        state.lastPointer = state.pointer.inside ? { x: state.pointer.x, y: state.pointer.y } : null;
+      }
+
+      function spawnTracking() {
+        const rect = arenaBounds();
+        state.target.x = rect.width * .26;
+        state.target.y = rect.height * .48;
+        const speed = clamp(rect.width * .16, 105, 190);
+        state.target.vx = speed;
+        state.target.vy = speed * .56;
+        els.target.style.left = `${state.target.x}px`; els.target.style.top = `${state.target.y}px`;
+        els.target.classList.add('visible');
+      }
+
+      function pathData(points, endIndex = points.length - 1) {
+        return points.slice(0, endIndex + 1).map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+      }
+
+      function placeTarget(x, y) {
+        state.target.x = x; state.target.y = y;
+        els.target.style.left = `${x}px`; els.target.style.top = `${y}px`;
+        els.target.classList.add('visible');
+      }
+
+      function spawnSteering() {
+        const rect = arenaBounds(), count = configs.steering.goal;
+        const margin = Math.max(65, rect.width * .07);
+        const amplitude = Math.min(118, rect.height * .24);
+        state.steeringPoints = Array.from({ length: count }, (_, i) => {
+          const t = i / (count - 1);
+          return { x: margin + t * (rect.width - margin * 2), y: rect.height / 2 + Math.sin(t * Math.PI * 2) * amplitude };
+        });
+        state.steeringIndex = 0;
+        els.guide.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
+        const fullPath = pathData(state.steeringPoints);
+        els.guideRail.setAttribute('d', fullPath);
+        els.guideCore.setAttribute('d', fullPath);
+        els.guideProgress.setAttribute('d', pathData(state.steeringPoints, 0));
+        els.guide.classList.add('show');
         placeTarget(state.steeringPoints[0].x, state.steeringPoints[0].y);
         els.hits.textContent = '0% PATH';
       }
@@ -619,4 +1118,3 @@ Output:
   </script>
 </body>
 </html>
-
