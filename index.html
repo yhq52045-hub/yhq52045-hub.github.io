@@ -1,0 +1,622 @@
+Exit code: 0
+Wall time: 1.9 seconds
+Total output lines: 1121
+Output:
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>VAL/SENSE｜无畏契约专属灵敏度生成器</title>
+  <style>
+    :root {
+      --ink: #f4f1e8;
+      --muted: #969b9d;
+      --night: #080b0d;
+      --panel: #101416;
+      --panel-2: #151a1d;
+      --line: #2a3033;
+      --hot: #ff4f5e;
+      --hot-2: #ff6b75;
+      --mint: #a9f5d0;
+      --amber: #ffce73;
+      --cyan: #79d9ff;
+      --radius: 10px;
+      --shadow: 0 24px 80px rgba(0,0,0,.34);
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+        radial-gradient(circle at 84% 8%, rgba(255,79,94,.12), transparent 30%),
+        var(--night);
+      background-size: 32px 32px, 32px 32px, auto, auto;
+      font-family: Inter, "Microsoft YaHei UI", "PingFang SC", system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      z-index: 20;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+    }
+
+    .shell { width: min(1440px, 100%); margin: 0 auto; }
+    .topbar {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 34px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8,11,13,.86);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 15;
+    }
+
+    .brand { display: flex; align-items: center; gap: 13px; letter-spacing: -.03em; }
+    .brand-mark {
+      width: 34px; height: 34px; background: var(--hot); position: relative;
+      clip-path: polygon(8% 8%, 44% 8%, 51% 36%, 61% 8%, 94% 8%, 78% 87%, 56% 87%, 49% 65%, 41% 87%, 22% 87%);
+    }
+    .brand strong { font-size: 19px; }
+    .brand span { color: var(--muted); font-weight: 700; }
+    .top-meta { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 12px var(--mint); }
+
+    .hero {
+      padding: 68px 34px 44px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: end;
+      gap: 50px;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "SENS";
+      position: absolute;
+      right: -22px;
+      bottom: -62px;
+      font-size: clamp(140px, 19vw, 270px);
+      font-weight: 900;
+      letter-spacing: -.09em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.055);
+      pointer-events: none;
+    }
+    .eyebrow { color: var(--hot-2); font-size: 12px; font-weight: 900; letter-spacing: .22em; text-transform: uppercase; }
+    h1 { margin: 14px 0 18px; font-size: clamp(44px, 6.4vw, 96px); line-height: .9; letter-spacing: -.065em; max-width: 900px; }
+    h1 em { color: var(--hot); font-style: normal; }
+    .hero p { margin: 0; color: #b6bab9; font-size: 16px; line-height: 1.8; max-width: 710px; }
+    .hero-aside { justify-self: end; width: min(100%, 420px); padding-bottom: 6px; position: relative; z-index: 1; }
+    .hero-stat { display: grid; grid-template-columns: 72px 1fr; gap: 16px; padding: 17px 0; border-top: 1px solid var(--line); }
+    .hero-stat:last-child { border-bottom: 1px solid var(--line); }
+    .hero-stat b { color: var(--hot-2); font-size: 22px; font-family: Consolas, monospace; }
+    .hero-stat span { color: var(--muted); font-size: 13px; line-height: 1.55; }
+
+    .progress-wrap { padding: 24px 34px; border-bottom: 1px solid var(--line); background: #0c1012; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .step { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: 10px; color: #6d7477; transition: color .25s; }
+    .step::after { content: ""; height: 2px; grid-column: 1 / -1; background: #252b2e; transition: background .25s; }
+    .step-index { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #343b3e; font: 700 12px Consolas, monospace; }
+    .step-name { font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+    .step.active, .step.done { color: var(--ink); }
+    .step.active .step-index { background: var(--hot); border-color: var(--hot); }
+    .step.done .step-index { color: var(--mint); border-color: var(--mint); }
+    .step.active::after { background: linear-gradient(90deg, var(--hot), #252b2e); }
+    .step.done::after { background: var(--mint); }
+
+    main { padding: 34px; }
+    .panel { display: none; animation: reveal .35s ease both; }
+    .panel.active { display: block; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(8px); } }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 25px; }
+    .section-head h2 { font-size: clamp(28px, 3.5vw, 49px); margin: 4px 0 0; letter-spacing: -.045em; }
+    .section-head p { color: var(--muted); max-width: 530px; margin: 0; line-height: 1.65; font-size: 14px; }
+
+    .setup-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 20px; }
+    .card { background: rgba(16,20,22,.92); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .card-pad { padding: 28px; }
+    .card-kicker { color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: .18em; margin-bottom: 8px; }
+    .card h3 { margin: 0; font-size: 20px; letter-spacing: -.02em; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; margin-top: 25px; }
+    .field { display: grid; gap: 9px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+    .hint { color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 0; }
+    input[type="number"], select {
+      width: 100%; height: 48px; border: 1px solid #353d40; color: var(--ink); background: #0b0f11;
+      border-radius: 5px; padding: 0 14px; outline: none; transition: .2s;
+    }
+    input:focus, select:focus { border-color: var(--hot); box-shadow: 0 0 0 3px rgba(255,79,94,.1); }
+    select { cursor: pointer; }
+    .segmented { display: grid; grid-template-columns: repeat(3, 1fr); padding: 4px; background: #0b0f11; border: 1px solid #353d40; border-radius: 6px; }
+    .segmented input { position: absolute; opacity: 0; pointer-events: none; }
+    .segmented label { display: grid; place-items: center; min-height: 38px; color: var(--muted); border-radius: 3px; cursor: pointer; transition: .18s; text-align: center; }
+    .segmented input:checked + label { background: #273034; color: var(--ink); box-shadow: inset 0 -2px var(--hot); }
+    .range-row { display: grid; grid-template-columns: 1fr 52px; gap: 14px; align-items: center; }
+    input[type="range"] { appearance: none; height: 4px; background: linear-gradient(90deg, var(--mint), var(--hot)); border-radius: 10px; outline: none; }
+    input[type="range"]::-webkit-slider-thumb { appearance: none; width: 17px; height: 17px; border-radius: 50%; background: var(--ink); border: 4px solid var(--hot); cursor: pointer; }
+    .range-value { height: 34px; display: grid; place-items: center; background: #0b0f11; border: 1px solid #353d40; font: 700 12px Consolas, monospace; }
+
+    .brief { display: flex; flex-direction: column; min-height: 100%; position: relative; overflow: hidden; }
+    .brief::before { content: ""; position: absolute; width: 260px; height: 260px; border: 1px solid rgba(255,79,94,.22); border-radius: 50%; right: -120px; top: 60px; box-shadow: 0 0 0 36px rgba(255,79,94,.025), 0 0 0 72px rgba(255,79,94,.018); }
+    .formula { margin-top: 35px; display: grid; gap: 14px; position: relative; }
+    .formula-row { display: flex; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .formula-row strong { color: var(--ink); font: 700 13px Consolas, monospace; }
+    .privacy-note { margin-top: auto; padding-top: 40px; color: var(--muted); font-size: 12px; line-height: 1.7; position: relative; }
+    .privacy-note b { color: var(--mint); }
+
+    .btn-row { display: flex; align-items: center; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+    .btn { min-height: 48px; border: 1px solid #3a4245; background: #171c1f; border-radius: 5px; padding: 0 20px; font-weight: 900; font-size: 12px; letter-spacing: .08em; cursor: pointer; transition: transform .15s, background .15s, border-color .15s; }
+    .btn:hover { transform: translateY(-2px); border-color: #697276; }
+    .btn.primary { background: var(--hot); border-color: var(--hot); color: white; padding-inline: 26px; }
+    .btn.primary:hover { background: #ff6875; }
+    .btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+    .btn.ghost { background: transparent; }
+
+    .test-layout { display: grid; grid-template-columns: 305px minmax(0, 1fr); gap: 20px; align-items: start; }
+    .test-list { display: grid; gap: 10px; position: sticky; top: 106px; }
+    .test-tab { padding: 17px; border: 1px solid var(--line); background: var(--panel); border-radius: 7px; display: grid; grid-template-columns: 38px 1fr auto; gap: 12px; align-items: center; cursor: pointer; text-align: left; transition: .2s; }
+    .test-tab:hover { border-color: #4a5458; transform: translateX(3px); }
+    .test-tab.active { border-color: var(--hot); background: #1a181a; }
+    .test-tab.complete { border-color: rgba(169,245,208,.38); }
+    .test-num { color: var(--hot); font: 800 18px Consolas, monospace; }
+    .test-tab strong { display: block; font-size: 13px; margin-bottom: 4px; }
+    .test-tab small { display: block; color: var(--muted); font-size: 10px; }
+    .check { width: 19px; height: 19px; border: 1px solid #3c4447; border-radius: 50%; display: grid; place-items: center; color: transparent; font-size: 11px; }
+    .complete .check { background: var(--mint); color: #07100c; border-color: var(--mint); }
+    .test-note { color: var(--muted); font-size: 11px; line-height: 1.7; padding: 12px 4px; }
+
+    .arena-card { overflow: hidden; }
+    .arena-toolbar { min-height: 66px; padding: 0 20px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .arena-title { display: flex; gap: 12px; align-items: center; }
+    .arena-icon { width: 34px; height: 34px; display: grid; place-items: center; background: rgba(255,79,94,.12); color: var(--hot); border: 1px solid rgba(255,79,94,.3); }
+    .arena-title h3 { font-size: 15px; }
+    .arena-title p { margin: 3px 0 0; color: var(--muted); font-size: 10px; }
+    .arena-metrics { display: flex; align-items: center; gap: 22px; }
+    .mini-metric { text-align: right; }
+    .mini-metric span { display: block; color: var(--muted); font-size: 9px; letter-spacing: .12em; }
+    .mini-metric b { font: 700 17px Consolas, monospace; }
+
+    .arena {
+      height: min(61vh, 590px);
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      cursor: none;
+      touch-action: none;
+      background:
+        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px),
+        radial-gradient(circle at center, #1b2225 0, #101517 63%, #0a0e10 100%);
+      background-size: 42px 42px, 42px 42px, auto;
+      user-select: none;
+    }
+    .arena::after { content: ""; position: absolute; inset: 22px; border: 1px solid rgba(255,255,255,.045); pointer-events: none; }
+    .arena-idle { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 30px; z-index: 3; }
+    .arena-idle.hidden { display: none; }
+    .idle-copy { max-width: 490px; }
+    .idle-symbol { width: 76px; height: 76px; margin: 0 auto 19px; border: 1px solid #3b4447; position: relative; transform: rotate(45deg); }
+    .idle-symbol::before, .idle-symbol::after { content: ""; position: absolute; background: var(--hot); }
+    .idle-symbol::before { width: 34px; height: 2px; top: 36px; left: 20px; }
+    .idle-symbol::after { height: 34px; width: 2px; left: 36px; top: 20px; }
+    .idle-copy h4 { margin: 0 0 10px; font-size: 23px; }
+    .idle-copy p { color: var(--muted); line-height: 1.7; font-size: 13px; margin: 0 0 23px; }
+    .kbd { padding: 3px 7px; border: 1px solid #424a4e; border-bottom-width: 2px; border-radius: 3px; color: #c5c9c8; font: 700 10px Consolas, monospace; }
+
+    .target { position: absolute; display: none; place-items: center; transform: translate(-50%, -50%); border-radius: 50%; z-index: 4; pointer-events: none; }
+    .target.visible { display: grid; animation: targetIn .14s ease-out both; }
+    .target::before { content: ""; position: absolute; inset: 18%; border: 2px solid rgba(8,11,13,.68); border-radius: 50%; }
+    .target::after { content: ""; width: 9px; height: 9px; border-radius: 50%; background: white; box-shadow: 0 0 0 3px rgba(8,11,13,.45); }
+    .target.flick { width: 55px; height: 55px; background: var(--hot); box-shadow: 0 0 26px rgba(255,79,94,.24); }
+    .target.precision { width: 34px; height: 34px; background: var(--amber); box-shadow: 0 0 26px rgba(255,206,115,.2); }
+    .target.tracking { width: 50px; height: 50px; background: var(--cyan); box-shadow: 0 0 28px rgba(121,217,255,.24); }
+    .target.switching { width: 44px; height: 44px; background: #c798ff; box-shadow: 0 0 28px rgba(199,152,255,.24); }
+    .target.steering { width: 38px; height: 38px; background: var(--mint); box-shadow: 0 0 28px rgba(169,245,208,.24); }
+    .target.stability { width: 32px; height: 32px; background: #fff; box-shadow: 0 0 0 12px rgba(255,255,255,.05), 0 0 30px rgba(255,255,255,.18); }
+    @keyframes targetIn { from { scale: .65; opacity: .2; } }
+    .target-pulse { position: absolute; border: 1px solid currentColor; border-radius: 50%; inset: -9px; animation: pulse 1s infinite; opacity: .35; }
+    @keyframes pulse { 50% { transform: scale(1.22); opacity: .1; } }
+
+    .steering-guide { position: absolute; inset: 0; width: 100%; height: 100%; display: none; z-index: 2; pointer-events: none; overflow: visible; }
+    .steering-guide.show { display: block; }
+    .steering-guide .rail { fill: none; stroke: rgba(169,245,208,.12); stroke-width: 54; stroke-linecap: round; stroke-linejoin: round; }
+    .steering-guide .core { fill: none; stroke: rgba(169,245,208,.7); stroke-width: 2; stroke-dasharray: 7 10; stroke-linecap: round; }
+    .steering-guide .progress { fill: none; stroke: var(--mint); stroke-width: 4; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(169,245,208,.7)); }
+
+    .crosshair { position: absolute; width: 28px; height: 28px; transform: translate(-50%, -50%); pointer-events: none; z-index: 8; opacity: 0; filter: drop-shadow(0 1px 1px #000); }
+    .crosshair.show { opacity: 1; }
+    .crosshair::before, .crosshair::after { content: ""; position: absolute; background: white; }
+    .crosshair::before { width: 28px; height: 2px; top: 13px; left: 0; box-shadow: 0 0 0 1px rgba(0,0,0,.55); }
+    .crosshair::after { height: 28px; width: 2px; left: 13px; top: 0; box-shadow: 0 0 0 1px rgba(0,0,0,.55); }
+    .crosshair i { position: absolute; width: 4px; height: 4px; left: 12px; top: 12px; background: var(--hot); border-radius: 50%; z-index: 2; }
+
+    .countdown { position: absolute; inset: 0; z-index: 10; display: none; place-items: center; background: rgba(8,11,13,.76); backdrop-filter: blur(5px); }
+    .countdown.show { display: grid; }
+    .countdown b { font: 900 clamp(84px, 14vw, 180px)/1 Consolas, monospace; color: var(--ink); text-shadow: 6px 6px 0 var(--hot); animation: countPop .25s ease both; }
+    @keyframes countPop { from { transform: scale(.68); opacity: 0; } }
+    .hit-flash { position: absolute; width: 38px; height: 38px; transform: translate(-50%,-50%); border: 2px solid var(--mint); border-radius: 50%; pointer-events: none; z-index: 7; animation: hit .32s ease-out both; }
+    @keyframes hit { to { width: 86px; height: 86px; opacity: 0; } }
+    .finish-overlay { position: absolute; inset: 0; z-index: 9; display: none; place-items: center; background: rgba(8,11,13,.89); backdrop-filter: blur(7px); padding: 24px; }
+    .finish-overlay.show { display: grid; }
+    .finish-box { width: min(540px, 100%); text-align: center; }
+    .finish-box .score { color: var(--mint); font: 900 clamp(66px, 11vw, 110px)/1 Consolas, monospace; letter-spacing: -.08em; }
+    .finish-box h4 { margin: 10px 0 6px; font-size: 22px; }
+    .finish-box p { color: var(--muted); line-height: 1.6; font-size: 13px; }
+    .finish-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 20px 0; }
+    .finish-stat { background: #111618; padding: 13px 6px; }
+    .finish-stat span { display: block; color: var(--muted); font-size: 9px; letter-spacing: .1em; margin-bottom: 5px; }
+    .finish-stat b { font: 700 15px Consolas, monospace; }
+
+    .test-footer { min-height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 12px 20px; border-top: 1px solid var(--line); }
+    .test-footer p { color: var(--muted); font-size: 11px; margin: 0; }
+
+    .results-layout { display: grid; grid-template-columns: 1.12fr .88fr; gap: 20px; }
+    .result-hero { padding: 31px; position: relative; overflow: hidden; }
+    .result-hero::after { content: ""; position: absolute; width: 310px; height: 310px; border-radius: 50%; background: var(--hot); filter: blur(130px); opacity: .12; right: -120px; top: -100px; }
+    .sens-label { color: var(--muted); font-size: 11px; font-weight: 900; letter-spacing: .18em; }
+    .sens-value { display: flex; align-items: baseline; gap: 14px; margin: 11px 0 8px; position: relative; z-index: 1; }
+    .sens-value strong { font: 900 clamp(76px, 10vw, 142px)/.9 Consolas, monospace; letter-spacing: -.09em; }
+    .sens-value span { color: var(--hot); font-size: 14px; font-weight: 900; }
+    .sens-path { color: var(--muted); font-size: 12px; }
+    .sens-path b { color: var(--ink); }
+    .copy-btn { margin-top: 27px; }
+    .support-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 28px; }
+    .support-box { padding: 15px; background: #0b0f11; border: 1px solid var(--line); }
+    .support-box span { color: var(--muted); font-size: 9px; letter-spacing: .1em; display: block; margin-bottom: 8px; }
+    .support-box strong { font: 700 20px Consolas, monospace; }
+    .dpi-callout { margin-top: 18px; padding: 13px 15px; border-left: 3px solid var(--mint); background: rgba(169,245,208,.055); color: #b7c4bd; font-size: 12px; line-height: 1.65; }
+    .dpi-callout b { color: var(--mint); }
+
+    .result-side { display: grid; gap: 20px; }
+    .score-bars { margin-top: 20px; display: grid; gap: 19px; }
+    .bar-head { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 7px; }
+    .bar-head b { font: 700 12px Consolas, monospace; color: var(--mint); }
+    .bar-track { height: 5px; background: #272e31; overflow: hidden; }
+    .bar-fill { height: 100%; width: 0; background: linea…8262 tokens truncated….classList.add('show');
+        placeTarget(state.steeringPoints[0].x, state.steeringPoints[0].y);
+        els.hits.textContent = '0% PATH';
+      }
+
+      function spawnStability() {
+        const rect = arenaBounds();
+        placeTarget(rect.width / 2, rect.height / 2);
+        els.hits.textContent = '0% HOLD';
+      }
+
+      function tick(now) {
+        if (state.phase !== 'running') return;
+        const c = configs[state.activeTest];
+        const remaining = Math.max(0, state.endAt - now);
+        els.time.textContent = (remaining / 1000).toFixed(1);
+        const dt = Math.min(.04, (now - state.lastFrame) / 1000);
+        state.lastFrame = now;
+        if (state.activeTest === 'tracking') updateTracking(dt, now);
+        if (state.activeTest === 'stability') updateStability();
+        if (remaining <= 0) finishTest(); else state.raf = requestAnimationFrame(tick);
+      }
+
+      function updateTracking(dt, now) {
+        const rect = arenaBounds(), radius = configs.tracking.size / 2, pad = radius + 28;
+        state.target.x += state.target.vx * dt;
+        state.target.y += state.target.vy * dt;
+        if (state.target.x < pad) { state.target.x = pad; state.target.vx = Math.abs(state.target.vx) * (0.92 + Math.random() * .16); }
+        if (state.target.x > rect.width - pad) { state.target.x = rect.width - pad; state.target.vx = -Math.abs(state.target.vx) * (0.92 + Math.random() * .16); }
+        if (state.target.y < pad) { state.target.y = pad; state.target.vy = Math.abs(state.target.vy); }
+        if (state.target.y > rect.height - pad) { state.target.y = rect.height - pad; state.target.vy = -Math.abs(state.target.vy); }
+        if (Math.random() < .009) state.target.vy = clamp(state.target.vy + (Math.random() - .5) * 90, -160, 160);
+        els.target.style.left = `${state.target.x}px`; els.target.style.top = `${state.target.y}px`;
+        if (state.pointer.inside) {
+          const d = Math.hypot(state.pointer.x - state.target.x, state.pointer.y - state.target.y);
+          state.trackingSamples++;
+          if (d <= radius) state.trackingInside++;
+          state.trackingDistance.push(d);
+          if (state.trackingDistance.length > 2200) state.trackingDistance.shift();
+          const lock = Math.round(state.trackingInside / state.trackingSamples * 100);
+          els.hits.textContent = `${lock}% LOCK`;
+        }
+      }
+
+      function updateStability() {
+        if (!state.pointer.inside) return;
+        const radius = configs.stability.size / 2;
+        const d = Math.hypot(state.pointer.x - state.target.x, state.pointer.y - state.target.y);
+        state.stabilitySamples++;
+        state.stabilityDistances.push(d);
+        if (d <= radius) state.stabilityInside++;
+        const hold = Math.round(state.stabilityInside / state.stabilitySamples * 100);
+        els.hits.textContent = `${hold}% HOLD`;
+      }
+
+      function updateSteeringPointer() {
+        const point = state.steeringPoints[state.steeringIndex];
+        if (!point) return;
+        const d = Math.hypot(state.pointer.x - point.x, state.pointer.y - point.y);
+        state.steeringSamples++;
+        state.steeringErrors.push(d);
+        if (d <= configs.steering.size * .72) state.steeringInside++;
+        if (d > configs.steering.size / 2 + 3) return;
+        const now = performance.now();
+        if (now - state.lastHitAt < 45) return;
+        state.lastHitAt = now;
+        state.hitCount++;
+        state.steeringIndex++;
+        flashAt(point.x, point.y);
+        els.hits.textContent = `${Math.round(state.hitCount / configs.steering.goal * 100)}% PATH`;
+        els.guideProgress.setAttribute('d', pathData(state.steeringPoints, Math.min(state.steeringIndex, state.steeringPoints.length - 1)));
+        if (state.hitCount >= configs.steering.goal) finishTest();
+        else {
+          const next = state.steeringPoints[state.steeringIndex];
+          placeTarget(next.x, next.y);
+        }
+      }
+
+      function pointerMove(e) {
+        const rect = arenaBounds();
+        const previous = state.pointer.inside ? { x: state.pointer.x, y: state.pointer.y } : null;
+        state.pointer.x = clamp(e.clientX - rect.left, 0, rect.width);
+        state.pointer.y = clamp(e.clientY - rect.top, 0, rect.height);
+        state.pointer.inside = true;
+        els.crosshair.style.left = `${state.pointer.x}px`;
+        els.crosshair.style.top = `${state.pointer.y}px`;
+        els.crosshair.classList.add('show');
+        if (state.phase !== 'running' || state.activeTest === 'tracking') return;
+        if (state.activeTest === 'stability') {
+          const now = performance.now();
+          if (previous && state.lastStabilityPoint) {
+            const dt = Math.max(1, now - state.lastStabilityPoint.time);
+            state.stabilitySpeeds.push(Math.hypot(state.pointer.x - previous.x, state.pointer.y - previous.y) / dt * 1000);
+          }
+          state.lastStabilityPoint = { x: state.pointer.x, y: state.pointer.y, time: now };
+          return;
+        }
+        if (state.activeTest === 'steering') {
+          updateSteeringPointer();
+          return;
+        }
+        if (state.lastPointer) state.pathSinceSpawn += Math.hypot(state.pointer.x - state.lastPointer.x, state.pointer.y - state.lastPointer.y);
+        state.lastPointer = { x: state.pointer.x, y: state.pointer.y };
+        const radius = configs[state.activeTest].size / 2;
+        if (Math.hypot(state.pointer.x - state.target.x, state.pointer.y - state.target.y) <= radius) registerHit();
+      }
+
+      function registerHit() {
+        const now = performance.now(), c = configs[state.activeTest];
+        if (now - state.lastHitAt < 90) return;
+        state.lastHitAt = now;
+        state.hitCount++;
+        state.acquisitions.push(now - state.spawnedAt);
+        const eff = state.pathSinceSpawn > 4 && state.directSinceSpawn > 0 ? clamp(state.directSinceSpawn / state.pathSinceSpawn, 0, 1) : .72;
+        state.efficiencies.push(eff);
+        els.hits.textContent = `${state.hitCount} / ${c.goal}`;
+        flashAt(state.target.x, state.target.y);
+        if (state.hitCount >= c.goal) finishTest(); else spawnStatic();
+      }
+
+      function flashAt(x, y) {
+        const ring = document.createElement('i');
+        ring.className = 'hit-flash'; ring.style.left = `${x}px`; ring.style.top = `${y}px`;
+        els.arena.appendChild(ring); setTimeout(() => ring.remove(), 350);
+      }
+
+      function scoreRun(type) {
+        const c = configs[type];
+        if (type === 'tracking') {
+          if (!state.trackingSamples) return { score: 0, lock: 0, avgDistance: 0, hits: '0%', avg: '—', efficiency: '0%' };
+          const lock = state.trackingSamples ? state.trackingInside / state.trackingSamples : 0;
+          const avgDist = mean(state.trackingDistance);
+          const control = clamp(100 - Math.max(0, avgDist - 10) * 1.45, 0, 100);
+          return { score: Math.round(clamp(lock * 82 + control * .18, 0, 100)), lock: lock * 100, avgDistance: avgDist, hits: `${Math.round(lock * 100)}%`, avg: `${avgDist.toFixed(1)} px`, efficiency: `${Math.round(control)}%` };
+        }
+        if (type === 'steering') {
+          if (!state.steeringSamples) return { score: 0, completed: 0, corridor: 0, avgDistance: 0, hits: '0%', avg: '—', efficiency: '0%' };
+          const completed = clamp(state.hitCount / c.goal, 0, 1);
+          const corridor = state.steeringSamples ? state.steeringInside / state.steeringSamples : 0;
+          const avgError = mean(state.steeringErrors);
+          const control = clamp(100 - Math.max(0, avgError - 8) * 2.2, 0, 100);
+          const score = Math.round(clamp(completed * 50 + corridor * 30 + control * .20, 0, 100));
+          return { score, completed: completed * 100, corridor: corridor * 100, avgDistance: avgError, hits: `${Math.round(completed * 100)}%`, avg: `${avgError.toFixed(1)} px`, efficiency: `${Math.round(corridor * 100)}%` };
+        }
+        if (type === 'stability') {
+          if (!state.stabilitySamples) return { score: 0, hold: 0, avgDistance: 0, medianSpeed: 0, hits: '0%', avg: '—', efficiency: '0%' };
+          const hold = state.stabilitySamples ? state.stabilityInside / state.stabilitySamples : 0;
+          const avgDist = mean(state.stabilityDistances);
+          const medianSpeed = median(state.stabilitySpeeds);
+          const centerControl = clamp(100 - Math.max(0, avgDist - 2) * 4.2, 0, 100);
+          const tremorControl = clamp(100 - medianSpeed * .42, 0, 100);
+          const score = Math.round(clamp(hold * 62 + centerControl * .23 + tremorControl * .15, 0, 100));
+          return { score, hold: hold * 100, avgDistance: avgDist, medianSpeed, hits: `${Math.round(hold * 100)}%`, avg: `${avgDist.toFixed(1)} px`, efficiency: `${Math.round(tremorControl)}%` };
+        }
+        const completed = state.hitCount / c.goal;
+        const med = median(state.acquisitions) || c.duration * 1000;
+        const eff = mean(state.efficiencies) || 0;
+        const speedRange = type === 'flick' ? [350, 1200] : type === 'switching' ? [480, 1450] : [520, 1600];
+        const speed = clamp(100 - (med - speedRange[0]) / (speedRange[1] - speedRange[0]) * 100, 0, 100);
+        const score = Math.round(clamp(completed * 45 + eff * 35 + speed * .20, 0, 100));
+        return { score, completed: completed * 100, median: med, pathEfficiency: eff * 100, hits: `${state.hitCount}/${c.goal}`, avg: `${Math.round(med)} ms`, efficiency: `${Math.round(eff * 100)}%` };
+      }
+
+      function finishTest() {
+        if (state.phase !== 'running') return;
+        cancelAnimationFrame(state.raf);
+        state.phase = 'finished';
+        els.target.classList.remove('visible');
+        els.guide.classList.remove('show');
+        els.time.textContent = '0.0';
+        const type = state.activeTest, r = scoreRun(type);
+        state.results[type] = r;
+        save(); updateTestChecks();
+        els.finishScore.textContent = r.score;
+        els.finishTitle.textContent = r.score >= 80 ? '校准完成 · 状态出色' : r.score >= 60 ? '校准完成 · 数据有效' : '校准完成 · 建议重测';
+        els.finishCopy.textContent = r.score < 45 ? '本轮有效数据偏少，可以重测一次获得更稳的推荐。' : '表现已写入你的本地档案，可继续下一项。';
+        els.finishHit.textContent = r.hits; els.finishTime.textContent = r.avg; els.finishEff.textContent = r.efficiency;
+        $('#next-test').textContent = type === 'stability' ? '查看并生成 →' : '下一项 →';
+        els.finish.classList.add('show');
+      }
+
+      function stopTest(showIdle = true) {
+        cancelAnimationFrame(state.raf); cancelAnimationFrame(state.countdownRaf);
+        state.phase = 'idle';
+        els.countdown.classList.remove('show'); els.finish.classList.remove('show'); els.target.classList.remove('visible'); els.guide.classList.remove('show');
+        if (showIdle) els.idle.classList.remove('hidden');
+      }
+
+      function nextIncomplete(afterCurrent = true) {
+        const order = testOrder;
+        const start = afterCurrent ? order.indexOf(state.activeTest) + 1 : 0;
+        for (let i = start; i < order.length; i++) if (!state.results[order[i]]) return order[i];
+        return order.find(k => !state.results[k]) || null;
+      }
+
+      function recommendDpi(p, r) {
+        let fit = ({ arm: -1.4, hybrid: .4, wrist: 1.6 })[p.technique];
+        fit += ({ palm: -.9, claw: .35, fingertip: 1 })[p.grip];
+        fit += ({ small: .8, medium: 0, large: -.7 })[p.pad];
+        fit += r.stability.score >= 82 ? 1 : r.stability.score < 52 ? -1.7 : r.stability.score < 65 ? -.7 : 0;
+        fit += r.steering.score >= 82 ? .55 : r.steering.score < 55 ? -.8 : 0;
+        fit += r.precision.score >= 82 ? .45 : r.precision.score < 52 ? -.7 : 0;
+        fit += r.switching.score >= 82 ? .4 : 0;
+        if (p.experience === 'new') fit -= .35;
+        if (fit >= 3.4) return 3200;
+        if (fit <= -3.8 && p.dpi <= 800) return 400;
+        if (fit <= -1.35) return 800;
+        return 1600;
+      }
+
+      function generateResult() {
+        if (!testOrder.every(k => state.results[k])) return toast('请先完成六项测试');
+        state.profile = readProfile();
+        const p = state.profile, r = state.results;
+        let targetEdpi = 270;
+        targetEdpi += ({1:-48,2:-24,3:0,4:25,5:50})[p.style];
+        targetEdpi += ({arm:-24,hybrid:0,wrist:24})[p.technique];
+        targetEdpi += ({palm:-10,claw:4,fingertip:14})[p.grip];
+        targetEdpi += ({small:24,medium:0,large:-18})[p.pad];
+        targetEdpi += ({duelist:18,initiator:8,controller:-8,sentinel:-14,flex:0})[p.role];
+        if (p.experience === 'new') targetEdpi -= 10;
+
+        const slowFlick = clamp((72 - r.flick.score) * .45, -12, 22);
+        const controlPenalty = clamp((68 - r.precision.score) * .72, -16, 34);
+        const trackPenalty = clamp((65 - r.tracking.score) * .54, -12, 28);
+        const switchingNeed = clamp((68 - r.switching.score) * .28, -8, 14);
+        const switchingControl = clamp((70 - (r.switching.pathEfficiency || 0)) * .28, -6, 15);
+        const steeringPenalty = clamp((68 - r.steering.score) * .46, -10, 24);
+        const stabilityPenalty = clamp((70 - r.stability.score) * .58, -10, 30);
+        targetEdpi += slowFlick - controlPenalty - trackPenalty + switchingNeed - switchingControl - steeringPenalty - stabilityPenalty;
+
+        if (p.currentSens) {
+          const currentEdpi = clamp(p.currentSens * p.dpi, 100, 700);
+          targetEdpi = targetEdpi * .84 + currentEdpi * .16;
+        }
+        targetEdpi = clamp(targetEdpi, 160, 480);
+        const recommendedDpi = recommendDpi(p, r);
+        let sens = clamp(targetEdpi / recommendedDpi, .01, 10);
+        sens = Math.round((sens + Number.EPSILON) * 1000) / 1000;
+        const actualEdpi = Math.round(sens * recommendedDpi);
+        const cm360 = 13062.86 / (sens * recommendedDpi);
+        const low = Math.max(.01, Math.round(sens * .94 * 1000) / 1000);
+        const high = Math.min(10, Math.round(sens * 1.06 * 1000) / 1000);
+
+        const dimensions = [['目标获取',r.flick.score],['微调控制',r.precision.score],['连续追踪',r.tracking.score],['反向切换',r.switching.score],['轨迹控制',r.steering.score],['静态稳定',r.stability.score]];
+        const ranked = [...dimensions].sort((a,b) => b[1]-a[1]);
+        const nearlyEven = ranked[0][1] - ranked[ranked.length - 1][1] < 4;
+        const strongest = nearlyEven ? '六项表现' : ranked[0][0];
+        const weakest = nearlyEven ? '整体稳定性' : ranked[ranked.length - 1][0];
+        const direction = p.style >= 4 || p.technique === 'wrist' ? '偏快速转向' : p.style <= 2 || p.technique === 'arm' ? '偏稳定控制' : '速度与控制均衡';
+        const dpiReason = recommendedDpi > p.dpi ? '提高采样分辨率，并用更低的游戏内数值保持相同转身距离' : recommendedDpi < p.dpi ? '降低细微手抖放大感，并用更高的游戏内数值补偿转身距离' : '保留你当前已经适应的硬件档位';
+        const analysis = `你的操作档案属于“${direction}”。六项测试中 ${strongest} 最稳定，${weakest} 是当前主要约束。推荐 ${recommendedDpi} DPI，用于${dpiReason}；游戏内灵敏度已经按该 DPI 重新换算。建议固定使用 2–3 天，只有在靶场中连续出现同一种偏差时，才在 ±6% 区间内微调。`;
+
+        state.generated = { sens, actualEdpi, cm360, low, high, analysis, dpi: recommendedDpi, inputDpi: p.dpi, dpiReason };
+        save(); renderResult(); showStep(2);
+      }
+
+      function renderResult() {
+        const g = state.generated; if (!g) return;
+        $('#result-sens').textContent = g.sens.toFixed(3);
+        $('#input-dpi').textContent = g.inputDpi || state.profile.dpi || g.dpi;
+        $('#result-dpi').textContent = g.dpi;
+        $('#result-edpi').textContent = g.actualEdpi;
+        $('#result-cm').textContent = g.cm360.toFixed(1);
+        $('#range-low').textContent = g.low.toFixed(3);
+        $('#range-high').textContent = g.high.toFixed(3);
+        $('#analysis-copy').textContent = g.analysis;
+        $('#apply-dpi').textContent = `${g.dpi} DPI`;
+        $('#dpi-callout').innerHTML = `<b>DPI 说明：</b>${g.dpiReason || '推荐 DPI 会改变游戏内灵敏度数字，但不会改变算法给出的实际转身距离。'} 网页无法自动修改鼠标 DPI，请在鼠标驱动中手动设置。`;
+        [['flick','目标获取'],['precision','微调控制'],['tracking','连续追踪'],['switching','反向切换'],['steering','轨迹控制'],['stability','静态稳定']].forEach(([key]) => {
+          const score = state.results[key]?.score || 0;
+          $(`#score-${key}`).textContent = `${score} / 100`;
+          requestAnimationFrame(() => $(`#bar-${key}`).style.width = `${score}%`);
+        });
+      }
+
+      els.dpi.addEventListener('change', () => els.customWrap.hidden = els.dpi.value !== 'custom');
+      els.style.addEventListener('input', () => els.styleValue.value = `${els.style.value} / 5`);
+      $('#to-tests').addEventListener('click', () => {
+        state.profile = readProfile();
+        if (!state.profile.dpi || state.profile.dpi < 100) return toast('请填写有效 DPI');
+        save(); showStep(1); selectTest(nextIncomplete(false) || 'flick');
+      });
+      $('#exit-tests').addEventListener('click', () => showStep(0));
+      $$('.test-tab').forEach(t => t.addEventListener('click', () => selectTest(t.dataset.test)));
+      els.start.addEventListener('click', beginCountdown);
+      els.arena.addEventListener('pointermove', pointerMove);
+      els.arena.addEventListener('pointerleave', () => { state.pointer.inside = false; state.lastPointer = null; state.lastStabilityPoint = null; els.crosshair.classList.remove('show'); });
+      els.arena.addEventListener('pointerenter', () => { state.pointer.inside = true; });
+      $('#retry-test').addEventListener('click', () => { stopTest(true); beginCountdown(); });
+      $('#next-test').addEventListener('click', () => {
+        const next = nextIncomplete(true);
+        if (next) selectTest(next); else { els.finish.classList.remove('show'); generateResult(); }
+      });
+      els.generate.addEventListener('click', generateResult);
+      $('#copy-sens').addEventListener('click', async () => {
+        const value = state.generated?.sens?.toFixed(3); if (!value) return;
+        try { await navigator.clipboard.writeText(value); toast(`已复制 ${value}`); }
+        catch (_) {
+          const ta = document.createElement('textarea'); ta.value = value; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast(`已复制 ${value}`);
+        }
+      });
+      $('#retest').addEventListener('click', () => { state.results = {}; state.generated = null; save(); updateTestChecks(); showStep(1); selectTest('flick'); });
+      $('#reset-all').addEventListener('click', () => {
+        if (!confirm('确定清空本地档案与全部测试结果？')) return;
+        localStorage.removeItem('valsense-v1'); localStorage.removeItem('valsense-v2'); location.reload();
+      });
+      document.addEventListener('keydown', e => {
+        if (e.code === 'Space' && state.step === 1 && state.phase === 'idle') { e.preventDefault(); beginCountdown(); }
+        if (e.code === 'Escape' && (state.phase === 'running' || state.phase === 'countdown')) { stopTest(true); toast('测试已暂停'); }
+      });
+      window.addEventListener('resize', () => {
+        if (state.phase === 'running') { stopTest(true); toast('窗口尺寸改变，请重新开始本项'); }
+      });
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && state.phase === 'running' && performance.now() >= state.endAt) finishTest();
+      });
+
+      load();
+      if (state.generated && testOrder.every(k => state.results[k])) renderResult();
+      selectTest('flick');
+    })();
+  </script>
+</body>
+</html>
+
