@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materials version="2008.03" xmlns:sldmaterials="http://www.solidworks.com/sldmaterials" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <curves id="curve0"/>
+ <classification name="T4 Workbook">
+  <material name="T4 Aluminum 2800 (density only)" matid="T4-Al-2800">
+   <description>Workbook density only; not a verified strength or FEA material.</description>
+   <source>User-supplied workbook pages 38, 51-53</source>
+   <physicalproperties><DENS displayname="Mass Density" value="2800"/></physicalproperties>
+  </material>
+ </classification>
+</materials>

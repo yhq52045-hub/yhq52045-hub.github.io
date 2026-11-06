@@ -1,0 +1,110 @@
+[
+  {
+    "title": "2026 草图工具栏 / Sketch Toolbar",
+    "titleZh": "草图工具栏",
+    "titleEn": "Sketch Toolbar",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/r_sketch_toolbar.htm?id=2.12.4.1.29",
+    "noteZh": "核对草图、镜向实体、动态镜向实体等中文工具名称。",
+    "noteEn": "Chinese names for sketch and mirror tools.",
+    "year": 2026
+  },
+  {
+    "title": "2026 镜向实体 / Mirror Entities",
+    "titleZh": "镜向实体",
+    "titleEn": "Mirror Entities",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/c_Mirror_Entities.htm?id=28.15.15",
+    "noteZh": "先画后镜向及动态镜向的区别；镜向会建立对称关系。",
+    "noteEn": "Sketch mirroring creates symmetric relations; explains mirror-before/after-sketch workflows.",
+    "year": 2026
+  },
+  {
+    "title": "2026 智能尺寸 / Dimensioning a 2D Sketch",
+    "titleZh": "标注2D草图尺寸",
+    "titleEn": "Dimensioning a 2D Sketch",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/t_Dimensioning_a_2D_Sketch.htm?id=28.19.1.0",
+    "noteZh": "核对智能尺寸及工具>尺寸>智能路径。",
+    "noteEn": "Smart Dimension command and menu path.",
+    "year": 2026
+  },
+  {
+    "title": "2026 圆弧/圆之间的尺寸 / Dimensions Between Arcs or Circles",
+    "titleZh": "圆弧或圆之间的尺寸",
+    "titleEn": "Dimensions Between Arcs or Circles",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/c_Dimensions_Between_Arcs_or_Circles.htm?id=28.19.1.15",
+    "noteZh": "圆心定位与圆周定位不同；16mm应是两圆弧中心距。",
+    "noteEn": "Distinguishes centre and circumference measurement; the slot 16 mm is arc-centre separation.",
+    "year": 2026
+  },
+  {
+    "title": "2026 特征工具栏 / Features Toolbar",
+    "titleZh": "特征工具栏",
+    "titleEn": "Features Toolbar",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/r_Features_Toolbar_features.htm?format=P&value=",
+    "noteZh": "核对拉伸凸台/基体、拉伸切除、压缩与解除压缩名称。",
+    "noteEn": "Chinese names for extrusion and suppression tools.",
+    "year": 2026
+  },
+  {
+    "title": "2026 圆角属性管理器 / Fillet PropertyManager",
+    "titleZh": "圆角属性管理器（英文官方页）",
+    "titleEn": "Fillet PropertyManager",
+    "url": "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_fillet_propertymanager.htm?id=23.6.22.2",
+    "noteZh": "核对Manual、Constant Size Fillets及编辑已有圆角行为。",
+    "noteEn": "Manual mode, constant-size fillets, and editing existing fillets.",
+    "year": 2026
+  },
+  {
+    "title": "2026 质量属性 / Mass Properties",
+    "titleZh": "质量属性对话框",
+    "titleEn": "Mass Properties Dialog Box",
+    "url": "https://help.solidworks.com/2026/Chinese-simplified/SolidWorks/sldworks/HIDD_MASSPROPERTY_TEXT_DLG.htm",
+    "noteZh": "当前路径为工具>评估>质量属性；选项可改变输出单位。",
+    "noteEn": "Current path Tools > Evaluate > Mass Properties; options can change report units.",
+    "year": 2026
+  },
+  {
+    "title": "2026 显示质量属性 / Displaying Mass Properties",
+    "titleZh": "显示质量属性（英文官方页）",
+    "titleEn": "Displaying Mass Properties",
+    "url": "https://help.solidworks.com/2026/English/SolidWorks/sldworks/t_displaying_mass_properites.htm",
+    "noteZh": "计算质量、重新计算和报告设置的英文名称。",
+    "noteEn": "English commands for calculated mass, recalculation, and report options.",
+    "year": 2026
+  },
+  {
+    "title": "2026 退回控制棒 / Rollback Bar",
+    "titleZh": "退回控制棒",
+    "titleEn": "Rollback Bar",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/Sldworks/c_rollback_bar.htm",
+    "noteZh": "上下移动控制棒，逐步查看重建过程并编辑特征。",
+    "noteEn": "Move the bar to inspect regeneration stages and edit features.",
+    "year": 2026
+  },
+  {
+    "title": "2026 从属关系编辑 / Dependency Editing",
+    "titleZh": "从属关系编辑",
+    "titleEn": "Dependency Editing",
+    "url": "https://help.solidworks.com/2026/Chinese-simplified/SolidWorks/sldworks/c_Dependency_Editing.htm?id=25d64f35c80c45a1910e5cb3c6da6f0c",
+    "noteZh": "压缩与解除压缩及父子依赖。",
+    "noteEn": "Suppression and parent/child dependencies.",
+    "year": 2026
+  },
+  {
+    "title": "拉伸属性管理器（2025补充参考） / Extrude PropertyManager (2025 supplementary)",
+    "titleZh": "拉伸属性管理器（2025补充）",
+    "titleEn": "Extrude PropertyManager (2025 supplementary)",
+    "url": "https://help.solidworks.com/2025/chinese-simplified/SolidWorks/sldworks/r_extrude_propertymanager.htm",
+    "noteZh": "核对给定深度、完全贯穿、反向及合并结果名称；此页为2025补充，未冒称2026界面实测。",
+    "noteEn": "Supplementary names for Blind, Through All, Reverse Direction and Merge result. This is a 2025 reference, not a tested 2026 UI capture.",
+    "year": 2025
+  },
+  {
+    "title": "2026 材料属性与数据库 / Material Properties and Databases",
+    "titleZh": "材料对话框 - 属性标签",
+    "titleEn": "Material Dialog Box - Properties Tab",
+    "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/HIDD_DLG_MATEDITTAB_PROPERTY.htm?id=8481ba7bf4e74d22a5edf89c30e40502",
+    "noteZh": "核对自定义材料数据库位置、材料单位及密度属性。",
+    "noteEn": "Custom material database locations, material units, and density properties.",
+    "year": 2026
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "status": "static checks passed; SOLIDWORKS runtime verification pending",
+  "not_run_in_solidworks": true,
+  "native_files_provided": false,
+  "target_native_filename": "Binding_Anchor_FINAL.SLDPRT",
+  "single_final_part_only": true,
+  "checks": [
+    "Matching procedure definitions/endings",
+    "No duplicate procedure names",
+    "Balanced VB string delimiters",
+    "VB line length limit",
+    "Mirror selection marks 1 and 2",
+    "Two native sketch mirrors",
+    "FeatureExtrusion2:23 arguments",
+    "FeatureCut4:27 arguments; OptimizeGeometry=False",
+    "FeatureFillet3:14 arguments",
+    "XML material syntax parsed",
+    "All lengths in SI meters; display in mm",
+    "Exactly one final SaveAs; no intermediate part files; no per-feature modal pauses",
+    "Fully defined sketches and single-body count enforced",
+    "Every-stage volume check +/-0.1 mm^3 against independently validated geometry",
+    "Final volume check against 19765.727 +/-0.1 mm^3",
+    "Bottom extrusion direction correction and thickness check6.5mm",
+    "Material density verified or manual-fallback warning"
+  ],
+  "required_runtime": "Windows, licensed SOLIDWORKS 2026, configured empty part template",
+  "geometry_mass_target_g": 55.3440369638634
+}

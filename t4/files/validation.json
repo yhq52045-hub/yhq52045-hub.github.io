@@ -1,0 +1,101 @@
+{
+  "units": "mm",
+  "density_g_per_mm3": 0.0028,
+  "source_volume_mm3": 19765.727,
+  "source_mass_g": 55.344,
+  "calculated_final_volume_mm3": 19765.72748730161,
+  "volume_difference_mm3": 0.00048730161142884754,
+  "volume_difference_percent": 2.465386739203268e-06,
+  "stages": [
+    {
+      "name": "01_Base_D82_H3p5",
+      "volume_mm3": 18483.560377395548,
+      "mass_g": 51.75396905670753,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        3.5
+      ]
+    },
+    {
+      "name": "02_Bottom_D75_H3",
+      "volume_mm3": 31737.154384727488,
+      "mass_g": 88.86403227723696,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        6.5
+      ]
+    },
+    {
+      "name": "03_Recess_D63_Depth3",
+      "volume_mm3": 22385.418453154074,
+      "mass_g": 62.67917166883141,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        6.5
+      ]
+    },
+    {
+      "name": "04_Four_Through_Slots",
+      "volume_mm3": 19889.701698749966,
+      "mass_g": 55.69116475649991,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        6.5
+      ]
+    },
+    {
+      "name": "05_Outer_Top_R1p5",
+      "volume_mm3": 19766.329858412486,
+      "mass_g": 55.34572360355496,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        6.5
+      ]
+    },
+    {
+      "name": "06_Inner_Bottom_R1",
+      "volume_mm3": 19808.50274071606,
+      "mass_g": 55.46380767400497,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        6.5
+      ]
+    },
+    {
+      "name": "07_Final_Binding_Anchor",
+      "volume_mm3": 19765.72748730161,
+      "mass_g": 55.344036964444506,
+      "valid": true,
+      "solids": 1,
+      "bbox_mm": [
+        82.0,
+        82.0,
+        6.5
+      ]
+    }
+  ],
+  "notes": [
+    "STEP preserves exact BREP geometry but does not preserve editable SOLIDWORKS feature history.",
+    "STL files are for visual previews; use STEP for CAD.",
+    "Coordinate convention: Z is thickness normal; base 0 to 3.5, bottom boss -3 to 0, recess floor Z=0.5.",
+    "Four obround slots: radius4, width8, straight segment16, overall length24, axes X=+-12, arc centers Y=(6,22) and (-6,-22)."
+  ]
+}

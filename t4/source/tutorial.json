@@ -1,0 +1,1078 @@
+[
+  {
+    "id": 1,
+    "titleZh": "打开软件，建立零件",
+    "titleEn": "Open SOLIDWORKS and create a part",
+    "phase": "准备 / Setup",
+    "page": 25,
+    "stage": 0,
+    "actionZh": "打开 SOLIDWORKS 2026，点击“文件/File > 新建/New”，选择“零件/Part”，点击“确定/OK”。",
+    "actionEn": "Open SOLIDWORKS 2026. Click File > New, select Part, and click OK.",
+    "details": [
+      {
+        "zh": "教材任务1使用“培训模板/Training Templates > Part_MM”；若你的2026没有这个选项卡，使用普通“零件/Part”模板即可。",
+        "en": "Workbook Task 1 uses Training Templates > Part_MM. If that tab is absent in your installation, use the standard Part template."
+      },
+      {
+        "zh": "此练习的对象是固定器锚板/Binding Anchor，对应教材第24–54页的任务1–18；这里的T4沿用你的作业名称，并非教材中单独的Task 4。",
+        "en": "The part is the Binding Anchor, covered by Tasks 1–18 on workbook pages 24–54. T4 follows your assignment name; it does not mean only workbook Task 4."
+      },
+      {
+        "zh": "本文说明手动重建过程；网页里的模型是几何预览，不是SOLIDWORKS运行窗口或实测截图。",
+        "en": "These instructions describe manual construction. The website model is a geometry preview, not a running SOLIDWORKS window or a tested SOLIDWORKS screenshot."
+      }
+    ],
+    "checkZh": "出现空白零件窗口，左侧有三个基准面和原点。",
+    "checkEn": "A blank part opens with three reference planes and an origin in the left tree.",
+    "editZh": "先不要导入STEP；本教程从草图开始建立特征。",
+    "editEn": "Begin with sketches to create an editable feature history."
+  },
+  {
+    "id": 2,
+    "titleZh": "设置毫米、克、秒",
+    "titleEn": "Set millimetres, grams, seconds",
+    "phase": "准备 / Setup",
+    "page": 25,
+    "stage": 0,
+    "actionZh": "点击右下角单位菜单，选择“MMGS（毫米、克、秒）/MMGS (millimeter, gram, second)”。",
+    "actionEn": "Open the units menu at the bottom right and choose MMGS (millimeter, gram, second).",
+    "details": [
+      {
+        "zh": "也可点击“工具/Tools > 选项/Options > 文档属性/Document Properties > 单位/Units”，选择MMGS，点击“确定/OK”。",
+        "en": "Alternatively, use Tools > Options > Document Properties > Units, select MMGS, and click OK."
+      },
+      {
+        "zh": "以下所有几何尺寸均为mm。圆的Ø数值是直径；圆角和槽端的R数值是半径。",
+        "en": "All geometric dimensions below are in mm. Ø denotes diameter; R denotes fillet or arc radius."
+      }
+    ],
+    "checkZh": "右下角显示MMGS。",
+    "checkEn": "MMGS appears at the bottom right.",
+    "editZh": "改变文档单位不会代替给草图标注尺寸。",
+    "editEn": "Document units do not replace driving sketch dimensions."
+  },
+  {
+    "id": 3,
+    "titleZh": "选择上视基准面",
+    "titleEn": "Select the Top Plane",
+    "phase": "基体 / Base",
+    "page": 26,
+    "stage": 0,
+    "actionZh": "在左侧“FeatureManager设计树/FeatureManager design tree”中，单击“上视基准面/Top Plane”；点击“草图/Sketch > 草图/Sketch”。",
+    "actionEn": "In the FeatureManager design tree, select Top Plane. Click Sketch > Sketch.",
+    "details": [
+      {
+        "zh": "必要时按Ctrl+8，执行“正视于/Normal To”，让视线垂直草图面。",
+        "en": "If needed, press Ctrl+8 for Normal To, viewing the sketch perpendicular to its plane."
+      },
+      {
+        "zh": "本教程用上视草图的屏幕横向、纵向描述槽位置；这些是草图坐标，不要与整个零件的全局XYZ混淆。",
+        "en": "Slot positions use the screen horizontal and vertical axes in this Top sketch. These are sketch coordinates, not necessarily the global XYZ axes."
+      }
+    ],
+    "checkZh": "状态栏显示“编辑草图/Editing Sketch”，原点可见。",
+    "checkEn": "The status bar shows Editing Sketch and the origin is visible.",
+    "editZh": "选错基准面时退出草图，重新选择上视基准面。",
+    "editEn": "If you selected the wrong plane, exit the sketch and start again on Top Plane."
+  },
+  {
+    "id": 4,
+    "titleZh": "在原点画圆",
+    "titleEn": "Draw a circle at the origin",
+    "phase": "基体 / Base",
+    "page": 29,
+    "stage": 0,
+    "actionZh": "点击“圆/Circle”，单击原点确定圆心，再向外单击放置圆。按Esc退出圆工具。",
+    "actionEn": "Click Circle, click the origin for the centre, and click outward to place the circle. Press Esc to leave the tool.",
+    "details": [
+      {
+        "zh": "先画近似大小即可，下一步用尺寸得到准确直径。圆心应与原点有“重合/Coincident”关系。",
+        "en": "An approximate size is sufficient; the next step sets its exact diameter. The centre should have a Coincident relation to the origin."
+      },
+      {
+        "zh": "如果没有重合关系，按住Ctrl选择圆心和原点，在“添加几何关系/Add Relations”中选“重合/Coincident”。",
+        "en": "If that relation is absent, Ctrl-select the circle centre and the origin, then choose Coincident under Add Relations."
+      }
+    ],
+    "checkZh": "只有一个圆，圆心锁定在原点。",
+    "checkEn": "There is one circle centred at the origin.",
+    "editZh": "以后修改圆的大小应修改直径尺寸。",
+    "editEn": "Later size changes should use the diameter dimension."
+  },
+  {
+    "id": 5,
+    "titleZh": "标注首圆Ø82",
+    "titleEn": "Dimension the first circle Ø82",
+    "phase": "基体 / Base",
+    "page": 29,
+    "stage": 0,
+    "actionZh": "点击“智能尺寸/Smart Dimension”，选择圆，单击放置尺寸；输入82，点击绿色对勾“确定/OK”。",
+    "actionEn": "Click Smart Dimension, select the circle, and click to place the dimension. Enter 82 and accept with the green OK check.",
+    "details": [
+      {
+        "zh": "教材第28页写首圆柱直径75，与第29页输入82、第24页工程图和第38页计算矛盾。本模型以三处一致的Ø82为准；Ø75用于第二凸台。",
+        "en": "Page 28 says 75 for the first cylinder, contradicting the 82 entered on page 29, the page 24 drawing, and the page 38 calculation. This model uses Ø82; Ø75 belongs to the second boss."
+      },
+      {
+        "zh": "圆应变为黑色，状态为“完全定义/Fully Defined”。",
+        "en": "The circle should become black and the sketch status should be Fully Defined."
+      }
+    ],
+    "checkZh": "显示Ø82，草图完全定义。",
+    "checkEn": "The dimension reads Ø82 and the sketch is fully defined.",
+    "editZh": "双击82即可重新输入直径。",
+    "editEn": "Double-click 82 to change the diameter."
+  },
+  {
+    "id": 6,
+    "titleZh": "首次拉伸3.5",
+    "titleEn": "Extrude the base 3.5",
+    "phase": "基体 / Base",
+    "page": 31,
+    "stage": 1,
+    "actionZh": "点击“特征/Features > 拉伸凸台/基体/Extruded Boss/Base”。“方向1/Direction 1”的终止条件选“给定深度/Blind”，深度输入3.5mm，点击“确定/OK”。",
+    "actionEn": "Click Features > Extruded Boss/Base. Under Direction 1 select Blind, set Depth to 3.5 mm, and click OK.",
+    "details": [
+      {
+        "zh": "保持普通实体拉伸，关闭“薄壁特征/Thin Feature”；不要使用“两侧对称/Mid Plane”。",
+        "en": "Use a normal solid extrusion with Thin Feature off. Do not select Mid Plane."
+      },
+      {
+        "zh": "这是第一实体特征：一个Ø82、厚3.5的圆盘。",
+        "en": "This first solid feature is a Ø82 disk, 3.5 thick."
+      }
+    ],
+    "checkZh": "得到第一圆盘，设计树出现“凸台-拉伸1/Boss-Extrude1”。",
+    "checkEn": "The disk appears and Boss-Extrude1 is added to the tree.",
+    "editZh": "右键该特征 >“编辑特征/Edit Feature”可改3.5；展开后编辑草图可改82。",
+    "editEn": "Right-click > Edit Feature to change 3.5; expand it and edit its sketch to change 82."
+  },
+  {
+    "id": 7,
+    "titleZh": "保存并练习视图",
+    "titleEn": "Save and change views",
+    "phase": "基体 / Base",
+    "page": 32,
+    "stage": 1,
+    "actionZh": "按Ctrl+S，保存为“Binding Anchor.SLDPRT”。按空格打开“视图方向/View Orientation”，选择“等轴测/Isometric”。",
+    "actionEn": "Press Ctrl+S and save as Binding Anchor.SLDPRT. Press Spacebar for View Orientation and select Isometric.",
+    "details": [
+      {
+        "zh": "用抬头视图工具栏的“显示样式/Display Style > 带边线上色/Shaded With Edges”观察实体。",
+        "en": "Use Display Style > Shaded With Edges on the Heads-up View toolbar to inspect the solid."
+      },
+      {
+        "zh": "教材也演示“显示隐藏线/Hidden Lines Visible”，便于选择背面边线；选面前请确认没有误选隐藏的边。",
+        "en": "The workbook also demonstrates Hidden Lines Visible for selecting rear edges. Confirm the intended face before sketching."
+      },
+      {
+        "zh": "使用你自己的作业文件夹即可；不需要教材旧版课程文件夹结构。",
+        "en": "Use your own assignment folder; the old curriculum folder structure is not required."
+      }
+    ],
+    "checkZh": "标题栏文件扩展名是SLDPRT，已保存。",
+    "checkEn": "The document is saved as SLDPRT.",
+    "editZh": "视图和显示样式不改变几何体。",
+    "editEn": "View orientation and display style do not change geometry."
+  },
+  {
+    "id": 8,
+    "titleZh": "在底面开始第二草图",
+    "titleEn": "Start a sketch on the bottom face",
+    "phase": "下凸台 / Lower boss",
+    "page": 35,
+    "stage": 1,
+    "actionZh": "按空格，选择“底视/Bottom”；单击Ø82圆盘的平整底面，再点击“草图/Sketch”。",
+    "actionEn": "Press Spacebar and select Bottom. Select the flat bottom face of the Ø82 disk and click Sketch.",
+    "details": [
+      {
+        "zh": "这是任务4。选的是底部平面，不是圆柱侧面，也不是设计树中的上视基准面。",
+        "en": "This is Task 4. Select the planar bottom face, not the cylindrical side or the original Top Plane."
+      },
+      {
+        "zh": "按Ctrl+8执行“正视于/Normal To”。",
+        "en": "Press Ctrl+8 for Normal To."
+      }
+    ],
+    "checkZh": "新草图附着于圆盘底面。",
+    "checkEn": "The new sketch is attached to the disk bottom.",
+    "editZh": "面选错会让第二凸台方向或位置错误；创建前先检查。",
+    "editEn": "Check the support face before creating the boss."
+  },
+  {
+    "id": 9,
+    "titleZh": "画第二圆并设同心",
+    "titleEn": "Draw and constrain the second circle",
+    "phase": "下凸台 / Lower boss",
+    "page": 35,
+    "stage": 1,
+    "actionZh": "用“圆/Circle”画一个略小于外圆的圆。按Ctrl选择新圆及圆盘外圆边；点击“添加几何关系/Add Relations > 同心/Concentric”。",
+    "actionEn": "Use Circle to draw a smaller circle. Ctrl-select the new circle and the disk circular edge, then choose Add Relations > Concentric.",
+    "details": [
+      {
+        "zh": "可在“显示/删除几何关系/Display/Delete Relations”下拉菜单中找到“添加几何关系/Add Relations”。",
+        "en": "Add Relations is available from the Display/Delete Relations dropdown."
+      },
+      {
+        "zh": "如果作图时圆心已经与原点重合，位置已被定义，不再重复添加等效的同心关系，以免过定义。",
+        "en": "If the centre was already made coincident with the origin, its position is defined; avoid adding a redundant concentric relation."
+      }
+    ],
+    "checkZh": "新圆与Ø82圆盘同心，大小仍可变。",
+    "checkEn": "The new circle is concentric with the disk and its size remains free.",
+    "editZh": "“同心/Concentric”固定圆心关系，直径另用尺寸控制。",
+    "editEn": "Concentric controls centre position; a dimension controls diameter."
+  },
+  {
+    "id": 10,
+    "titleZh": "标注第二圆Ø75",
+    "titleEn": "Dimension the second circle Ø75",
+    "phase": "下凸台 / Lower boss",
+    "page": 36,
+    "stage": 1,
+    "actionZh": "点击“智能尺寸/Smart Dimension”，选择新圆，放置直径尺寸并输入75。",
+    "actionEn": "Click Smart Dimension, select the new circle, place a diameter dimension, and enter 75.",
+    "details": [
+      {
+        "zh": "确认是Ø75，而不是R75。按Esc结束标注。",
+        "en": "Confirm that the dimension is Ø75, not R75. Press Esc to finish dimensioning."
+      }
+    ],
+    "checkZh": "第二草图完全定义。",
+    "checkEn": "The second sketch is fully defined.",
+    "editZh": "双击Ø75可修改底部定位凸台直径。",
+    "editEn": "Double-click Ø75 to change the lower locating boss diameter."
+  },
+  {
+    "id": 11,
+    "titleZh": "向底部拉伸3",
+    "titleEn": "Extrude downward 3",
+    "phase": "下凸台 / Lower boss",
+    "page": 37,
+    "stage": 2,
+    "actionZh": "点击“特征/Features > 拉伸凸台/基体/Extruded Boss/Base”，选择“给定深度/Blind”，输入3mm。检查预览向原圆盘底部外侧加料，再确认。",
+    "actionEn": "Click Features > Extruded Boss/Base, choose Blind, and enter 3 mm. Check that the preview adds material outward from the bottom face, then accept.",
+    "details": [
+      {
+        "zh": "如预览进入原圆盘，点击“反向/Reverse Direction”。保持“合并结果/Merge result”勾选。",
+        "en": "If the preview points into the original disk, click Reverse Direction. Keep Merge result enabled."
+      },
+      {
+        "zh": "成品此阶段总厚6.5mm，包含3.5mm大圆盘及3mm小圆柱。",
+        "en": "At this stage the total thickness is 6.5 mm: the 3.5 mm disk plus the 3 mm lower cylinder."
+      }
+    ],
+    "checkZh": "得到一个实体，底部为Ø75台阶。",
+    "checkEn": "One solid remains with a Ø75 bottom step.",
+    "editZh": "编辑第二凸台的深度尺寸可改变底部高度。",
+    "editEn": "Edit the second boss depth to change the lower height."
+  },
+  {
+    "id": 12,
+    "titleZh": "在顶面开始凹槽草图",
+    "titleEn": "Start the top recess sketch",
+    "phase": "凹槽 / Recess",
+    "page": 37,
+    "stage": 2,
+    "actionZh": "按空格选择“上视/Top”，单击Ø82圆盘最上方的平整面，再点击“草图/Sketch”。",
+    "actionEn": "Press Spacebar and select Top. Select the uppermost flat face of the Ø82 disk and click Sketch.",
+    "details": [
+      {
+        "zh": "这里的顶面是首次拉伸的远端面，不是底部Ø75圆柱端面。",
+        "en": "This top face is the end face of the first extrusion, not the Ø75 lower boss end face."
+      }
+    ],
+    "checkZh": "第三草图位于大圆盘顶面。",
+    "checkEn": "The third sketch lies on the large disk top face.",
+    "editZh": "确认草图支撑面后再画圆。",
+    "editEn": "Confirm the support face before drawing."
+  },
+  {
+    "id": 13,
+    "titleZh": "画同心Ø63凹槽圆",
+    "titleEn": "Draw the concentric Ø63 recess",
+    "phase": "凹槽 / Recess",
+    "page": 37,
+    "stage": 2,
+    "actionZh": "点击“圆/Circle”，圆心选原点；点击“智能尺寸/Smart Dimension”，标注直径63mm。",
+    "actionEn": "Click Circle and place its centre at the origin. Use Smart Dimension to set its diameter to 63 mm.",
+    "details": [
+      {
+        "zh": "保持圆心与原点“重合/Coincident”；草图应完全定义。",
+        "en": "Keep the centre Coincident with the origin; the sketch should be fully defined."
+      }
+    ],
+    "checkZh": "顶面上显示同心Ø63圆。",
+    "checkEn": "A concentric Ø63 circle appears on the top face.",
+    "editZh": "编辑此直径会改变凹槽和环形边框的宽度。",
+    "editEn": "Editing this diameter changes the recess and rim width."
+  },
+  {
+    "id": 14,
+    "titleZh": "向下切除3",
+    "titleEn": "Cut the recess down 3",
+    "phase": "凹槽 / Recess",
+    "page": 37,
+    "stage": 3,
+    "actionZh": "点击“特征/Features > 拉伸切除/Extruded Cut”。终止条件选“给定深度/Blind”，深度输入3mm，预览应进入实体；点击“确定/OK”。",
+    "actionEn": "Click Features > Extruded Cut. Select Blind, enter a depth of 3 mm, ensure the preview cuts into the part, and click OK.",
+    "details": [
+      {
+        "zh": "此处不是完全贯穿。顶层厚3.5mm、凹槽深3mm，凹槽底面高于原上视基准面0.5mm。",
+        "en": "This cut is not Through All. The top layer is 3.5 mm thick and the recess is 3 mm deep, leaving its floor 0.5 mm above the original Top Plane."
+      },
+      {
+        "zh": "凹槽底面到零件底部仍有3.5mm材料：0.5+3。",
+        "en": "The floor has 3.5 mm of material beneath it: 0.5 + 3."
+      }
+    ],
+    "checkZh": "得到Ø63、深3的凹槽，未贯穿底部。",
+    "checkEn": "The Ø63 recess is 3 deep and does not break through the bottom.",
+    "editZh": "编辑凹槽切除的3mm深度可改凹槽深浅。",
+    "editEn": "Edit the 3 mm cut depth to change the recess depth."
+  },
+  {
+    "id": 15,
+    "titleZh": "检查早期体积和质量",
+    "titleEn": "Check the intermediate volume and mass",
+    "phase": "凹槽 / Recess",
+    "page": 38,
+    "stage": 3,
+    "actionZh": "此时按教材公式复核：V=π×82²/4×3.5+π×75²/4×3−π×63²/4×3。",
+    "actionEn": "Check the intermediate volume using V=π×82²/4×3.5+π×75²/4×3−π×63²/4×3.",
+    "details": [
+      {
+        "zh": "教材把π写成3.14，但其22,385.42mm³实际与使用精确π得到的22,385.418mm³吻合；质量约62.68g。正常CAD使用更精确的几何计算，不必把π改成3.14。",
+        "en": "The workbook writes π as 3.14, but its 22,385.42 mm³ agrees with the more precise calculation, 22,385.418 mm³. Mass is about 62.68 g. CAD uses precise geometry; do not force π to 3.14."
+      },
+      {
+        "zh": "密度为0.0028g/mm³时，质量=体积×密度；这是质量，不是力学意义上以牛顿计的重量。",
+        "en": "At 0.0028 g/mm³, mass equals volume times density. This is mass, not mechanical weight in newtons."
+      }
+    ],
+    "checkZh": "此时尚未切四槽，也尚未圆角。",
+    "checkEn": "The slots and fillets have not yet been created.",
+    "editZh": "最终质量必须在四槽和圆角完成后重新计算。",
+    "editEn": "Recalculate mass after the slots and fillets are complete."
+  },
+  {
+    "id": 16,
+    "titleZh": "凹槽底面开草图并画竖中心线",
+    "titleEn": "Sketch on the recess floor and add a vertical centreline",
+    "phase": "四槽 / Four slots",
+    "page": 39,
+    "stage": 3,
+    "actionZh": "单击凹槽内的平整底面，点击“草图/Sketch”，按Ctrl+8“正视于/Normal To”。点击“中心线/Centerline”，从原点向上画竖线。",
+    "actionEn": "Select the flat floor inside the recess, click Sketch, and press Ctrl+8 for Normal To. Use Centerline to draw a vertical line upward from the origin.",
+    "details": [
+      {
+        "zh": "确认中心线有“竖直/Vertical”关系，并属于“作为构造线/For construction”。",
+        "en": "Confirm a Vertical relation and that the line is For construction."
+      },
+      {
+        "zh": "辅助线长度不决定零件几何。为使整张草图也能显示完全定义，本教程建议用“智能尺寸/Smart Dimension”把这条辅助线长度设为35mm；这是教学辅助尺寸，不是教材零件尺寸。",
+        "en": "The construction-line length does not affect the part. To fully define the whole sketch, this tutorial suggests dimensioning this helper to 35 mm. This is an auxiliary tutorial value, not a workbook part dimension."
+      }
+    ],
+    "checkZh": "凹槽底面有一条从原点出发的竖直构造中心线。",
+    "checkEn": "A vertical construction centreline extends upward from the origin on the recess floor.",
+    "editZh": "改辅助线长度不会改变槽的尺寸。",
+    "editEn": "Changing the helper-line length does not change slot size."
+  },
+  {
+    "id": 17,
+    "titleZh": "开启动态镜向",
+    "titleEn": "Enable Dynamic Mirror Entities",
+    "phase": "四槽 / Four slots",
+    "page": 40,
+    "stage": 3,
+    "actionZh": "选中竖直中心线，点击“动态镜向实体/Dynamic Mirror Entities”。若按钮未显示，使用右上角“搜索命令/Search Commands”查找该命令。",
+    "actionEn": "Select the vertical centreline and click Dynamic Mirror Entities. If its button is hidden, use Search Commands at the upper right.",
+    "details": [
+      {
+        "zh": "中心线端点出现镜向标记，随后绘制的右侧实体会自动生成左侧对称副本。",
+        "en": "Mirror marks appear at the centreline ends. Subsequent right-side entities will produce symmetric counterparts on the left."
+      },
+      {
+        "zh": "此步使用草图镜向，不是“特征/Features”选项卡中的实体或特征镜向。",
+        "en": "Use sketch mirroring here, rather than a solid-body or feature mirror."
+      }
+    ],
+    "checkZh": "动态镜向处于开启状态。",
+    "checkEn": "Dynamic Mirror Entities is active.",
+    "editZh": "镜向关系让左右槽随同一尺寸一起修改。",
+    "editEn": "Mirror relations make the left and right slots change together."
+  },
+  {
+    "id": 18,
+    "titleZh": "画右上槽内侧直线",
+    "titleEn": "Draw the inner side of the upper-right slot",
+    "phase": "四槽 / Four slots",
+    "page": 40,
+    "stage": 3,
+    "actionZh": "点击“直线/Line”，在原点右上方画一条由下向上的竖线，近似从(8,6)到(8,22)。按Esc退出直线工具。",
+    "actionEn": "Click Line and draw an upward vertical line in the upper-right quadrant, approximately from (8,6) to (8,22). Press Esc to leave Line.",
+    "details": [
+      {
+        "zh": "这些近似坐标只是便于放置图形；后面的R4、16、12、6尺寸才是最终控制。",
+        "en": "These approximate coordinates help place the geometry; later R4, 16, 12, and 6 dimensions drive its exact size and position."
+      },
+      {
+        "zh": "出现“竖直/Vertical”关系后再放置端点。左侧应自动出现对称直线。",
+        "en": "Place the endpoints with a Vertical relation. A symmetric line should appear on the left."
+      }
+    ],
+    "checkZh": "上下端均在原点上方，左右各一条竖线。",
+    "checkEn": "Both endpoints lie above the origin, with one line on each side.",
+    "editZh": "不要把普通槽边线设置为构造线。",
+    "editEn": "Keep slot boundary lines as normal geometry, not construction geometry."
+  },
+  {
+    "id": 19,
+    "titleZh": "画顶部180°相切圆弧",
+    "titleEn": "Draw the 180° upper tangent arc",
+    "phase": "四槽 / Four slots",
+    "page": 41,
+    "stage": 3,
+    "actionZh": "点击“相切圆弧/Tangent Arc”，从右侧竖线的上端点出发，向上并向右画180°半圆弧，结束在近似(16,22)。",
+    "actionEn": "Click Tangent Arc. Start at the upper endpoint of the right-side line and sweep upward and right through 180°, ending approximately at (16,22).",
+    "details": [
+      {
+        "zh": "检查角度反馈A=180、水平推理线及相切反馈。上弧向上鼓出，不能画成270°圆弧或向内凹的弧。",
+        "en": "Check A=180 feedback, the horizontal inference line, and tangency feedback. The arc bulges upward; do not create a 270° or inward arc."
+      },
+      {
+        "zh": "左侧应同步出现镜向圆弧。",
+        "en": "A mirrored arc should appear on the left."
+      }
+    ],
+    "checkZh": "右槽顶部圆弧连接内侧和未来外侧竖线的位置。",
+    "checkEn": "The upper arc connects the inner side to the future outer side.",
+    "editZh": "圆弧半径稍后用R4控制。",
+    "editEn": "The arc radius will be controlled by R4 later."
+  },
+  {
+    "id": 20,
+    "titleZh": "画外侧竖线",
+    "titleEn": "Draw the outer vertical side",
+    "phase": "四槽 / Four slots",
+    "page": 41,
+    "stage": 3,
+    "actionZh": "点击“直线/Line”，从上圆弧的自由端竖直向下画到近似(16,6)，与第一条竖线的下端点水平对齐。",
+    "actionEn": "Click Line. Draw vertically downward from the free end of the upper arc to approximately (16,6), horizontally aligned with the first line lower endpoint.",
+    "details": [
+      {
+        "zh": "利用蓝色水平推理线对齐端点，确认“竖直/Vertical”；圆弧端点与新线端点须“重合/Coincident”。",
+        "en": "Use the horizontal inference line to align endpoints and confirm Vertical. The new line must be Coincident with the arc endpoint."
+      }
+    ],
+    "checkZh": "右侧形成两条竖线和一个上半圆。",
+    "checkEn": "The right slot has two vertical lines and an upper semicircle.",
+    "editZh": "缺少重合关系会留下开口轮廓，无法正常切除。",
+    "editEn": "Missing coincidence can leave an open contour that cannot be cut correctly."
+  },
+  {
+    "id": 21,
+    "titleZh": "下圆弧闭合槽并关闭动态镜向",
+    "titleEn": "Close the slot and leave dynamic mirroring",
+    "phase": "四槽 / Four slots",
+    "page": 42,
+    "stage": 3,
+    "actionZh": "用“相切圆弧/Tangent Arc”从外侧线下端点向下、向左绕180°，连接第一竖线下端点；再次点击“动态镜向实体/Dynamic Mirror Entities”关闭镜向模式。",
+    "actionEn": "Use Tangent Arc to sweep 180° downward and left from the outer line lower endpoint to the first line lower endpoint. Click Dynamic Mirror Entities again to turn it off.",
+    "details": [
+      {
+        "zh": "右上槽由两直线和两半圆闭合，左上槽同步闭合。不要用额外直线封口。",
+        "en": "The upper-right slot closes with two lines and two semicircles, as does its left counterpart. Do not add a straight closing edge."
+      }
+    ],
+    "checkZh": "画面中只有上排两个完整长圆槽轮廓。",
+    "checkEn": "There are two complete upper obround slot contours.",
+    "editZh": "“撤销/Undo”可重做单个错误圆弧，但不要删除镜向关系。",
+    "editEn": "Use Undo to redraw an incorrect arc while preserving mirror relations."
+  },
+  {
+    "id": 22,
+    "titleZh": "核对相切和对称关系",
+    "titleEn": "Verify tangent and symmetric relations",
+    "phase": "四槽 / Four slots",
+    "page": 42,
+    "stage": 3,
+    "actionZh": "使用“显示/删除几何关系/Display/Delete Relations”检查：线与相接圆弧具有“相切/Tangent”，左右对应图形具有“对称/Symmetric”关系。",
+    "actionEn": "Use Display/Delete Relations to check Tangent relations at line/arc joins and Symmetric relations between matching left/right geometry.",
+    "details": [
+      {
+        "zh": "缺少相切时，按Ctrl选择一条直线及相接圆弧，再选择“添加几何关系/Add Relations > 相切/Tangent”；已有关系无需重复。",
+        "en": "If tangency is missing, Ctrl-select the line and adjoining arc and choose Add Relations > Tangent. Do not duplicate existing relations."
+      },
+      {
+        "zh": "用“视图/View > 隐藏/显示/Hide/Show > 草图几何关系/Sketch Relations”切换关系图标；版本菜单布局若不同，使用“搜索命令/Search Commands”查找“草图几何关系/Sketch Relations”。",
+        "en": "Toggle relation symbols through View > Hide/Show > Sketch Relations, or use Search Commands if your menu layout differs."
+      }
+    ],
+    "checkZh": "两槽闭合、直线竖直、端部相切。",
+    "checkEn": "Both slots are closed with vertical sides and tangent ends.",
+    "editZh": "这一步检查设计关系，不能用“固定/Fix”把整槽锁死来替代。",
+    "editEn": "Verify design relations rather than fixing all slot geometry."
+  },
+  {
+    "id": 23,
+    "titleZh": "画水平构造中心线",
+    "titleEn": "Add the horizontal construction centreline",
+    "phase": "四槽 / Four slots",
+    "page": 43,
+    "stage": 3,
+    "actionZh": "点击“中心线/Centerline”，从原点向右画水平线；确认“水平/Horizontal”。按Esc退出。",
+    "actionEn": "Click Centerline and draw a horizontal line rightward from the origin. Confirm Horizontal, then press Esc.",
+    "details": [
+      {
+        "zh": "辅助线建议标35mm，与竖中心线一样只是为了定义构造端点。",
+        "en": "A suggested helper length of 35 mm defines its free endpoint, as for the vertical centreline."
+      },
+      {
+        "zh": "确认动态镜向已关闭，否则本步可能产生不需要的镜向中心线。",
+        "en": "Ensure dynamic mirroring is off to avoid an unwanted mirrored construction line."
+      }
+    ],
+    "checkZh": "原点处有水平、竖直两条构造中心线。",
+    "checkEn": "Horizontal and vertical construction centrelines meet at the origin.",
+    "editZh": "构造线不应形成切除区域。",
+    "editEn": "Construction lines should not create cut regions."
+  },
+  {
+    "id": 24,
+    "titleZh": "镜向上排两槽得到四槽",
+    "titleEn": "Mirror the upper pair to create four slots",
+    "phase": "四槽 / Four slots",
+    "page": 43,
+    "stage": 3,
+    "actionZh": "点击“镜向实体/Mirror Entities”。“要镜向的实体/Entities to mirror”选择上排的4条直线和4条圆弧；“镜向于/Mirror about”选择水平中心线；保留“复制/Copy”，点击“确定/OK”。",
+    "actionEn": "Click Mirror Entities. Under Entities to mirror select the four lines and four arcs of the upper pair. Under Mirror about select the horizontal centreline. Keep Copy enabled and click OK.",
+    "details": [
+      {
+        "zh": "不要把竖中心线放入“要镜向的实体/Entities to mirror”。可先选齐槽边线，再点击镜向命令。",
+        "en": "Do not include the vertical centreline under Entities to mirror. You may preselect the slot boundaries before opening the command."
+      },
+      {
+        "zh": "下排两槽应是上排两槽的镜像。",
+        "en": "The lower pair should mirror the upper pair."
+      }
+    ],
+    "checkZh": "原点四象限各一个槽，所有槽来自对称关系。",
+    "checkEn": "There is one slot in each quadrant with symmetry relations.",
+    "editZh": "改变一个驱动尺寸会同时更新四槽。",
+    "editEn": "Changing a driving dimension updates all four slots."
+  },
+  {
+    "id": 25,
+    "titleZh": "标注槽端R4",
+    "titleEn": "Dimension the slot end R4",
+    "phase": "四槽 / Four slots",
+    "page": 45,
+    "stage": 3,
+    "actionZh": "点击“智能尺寸/Smart Dimension”，单击右上槽的一条半圆弧，放置半径尺寸并输入4mm。",
+    "actionEn": "Click Smart Dimension, select one upper-right semicircular arc, place its radius dimension, and enter 4 mm.",
+    "details": [
+      {
+        "zh": "显示必须是R4；槽宽=2R=8mm。若出现直径显示，可在尺寸显示选项中改为半径，或确认直径值为8而非4。",
+        "en": "The intended radius is R4, giving a slot width of 8 mm. If a diameter is displayed, switch to radius display or use diameter 8, not 4."
+      }
+    ],
+    "checkZh": "四槽等宽8mm，圆端半径4mm。",
+    "checkEn": "All four slots are 8 mm wide with 4 mm radius ends.",
+    "editZh": "通过这一个R4驱动尺寸调整四槽宽度。",
+    "editEn": "Use this one R4 driving dimension to alter all slot widths."
+  },
+  {
+    "id": 26,
+    "titleZh": "标注两圆弧中心距16",
+    "titleEn": "Dimension the arc-centre distance 16",
+    "phase": "四槽 / Four slots",
+    "page": 45,
+    "stage": 3,
+    "actionZh": "继续用“智能尺寸/Smart Dimension”，依次选右上槽的上、下两条圆弧，把尺寸放在侧面；设置中心到中心的竖向距离16mm。",
+    "actionEn": "With Smart Dimension select the upper and lower arcs of the upper-right slot, place the dimension to the side, and set a vertical centre-to-centre distance of 16 mm.",
+    "details": [
+      {
+        "zh": "选择圆弧本身，使用中心定位；不要按Shift选圆弧最远点。若已产生极限距离，改“圆弧条件/Arc Condition”为“中心/Center”，或直接选两个圆弧中心点。",
+        "en": "Select the arcs for centre positioning, without Shift-selecting their extremities. If an extreme distance appears, set Arc Condition to Center or select the two arc centre points."
+      },
+      {
+        "zh": "16是圆心距，也是两侧直线段长度；槽总长=16+2×4=24mm，不是16mm。",
+        "en": "16 is the arc-centre separation and the straight-side length. Overall slot length is 16+2×4=24 mm, not 16 mm."
+      }
+    ],
+    "checkZh": "右上槽总长24、宽8。",
+    "checkEn": "The upper-right slot is 24 long overall and 8 wide.",
+    "editZh": "修改16会同步改变四槽长度。",
+    "editEn": "Editing 16 changes all four slot lengths."
+  },
+  {
+    "id": 27,
+    "titleZh": "标注槽的位置：12和6",
+    "titleEn": "Position the slot with 12 and 6",
+    "phase": "四槽 / Four slots",
+    "page": 45,
+    "stage": 3,
+    "actionZh": "用“智能尺寸/Smart Dimension”，把左上槽下圆弧的圆心到竖中心线的水平距离标为12mm，到横中心线的竖向距离标为6mm。",
+    "actionEn": "Use Smart Dimension to set the upper-left slot lower arc centre 12 mm horizontally from the vertical centreline and 6 mm vertically above the horizontal centreline.",
+    "details": [
+      {
+        "zh": "选择圆弧中心点及对应中心线；或选圆弧与中心线后确认尺寸从圆心测量。不要标成槽边到中心线的距离。",
+        "en": "Select the arc centre point and the relevant centreline, or select the arc and line with centre measurement. Do not dimension from the slot edge."
+      },
+      {
+        "zh": "选择圆弧中心和中心线后，将12mm尺寸放在竖中心线左侧，和所选圆心同侧；将6mm尺寸放在横中心线上方，和所选圆心同侧。跨到中心线另一侧可能生成双倍距离：请核对显示12与6，而不是24与12。",
+        "en": "Place the 12 mm dimension on the left of the vertical centreline, on the same side as the selected arc centre. Place the 6 mm dimension above the horizontal centreline, also on the same side as that centre. Moving across a centreline can create a doubled dimension; verify 12 and 6, not 24 and 12."
+      },
+      {
+        "zh": "准确位置：上排圆心为x=±12，y=6和22；下排为x=±12，y=−6和−22。这里的x、y是草图屏幕坐标。",
+        "en": "Exact locations in sketch screen coordinates: upper arc centres at x=±12 with y=6 and 22; lower arc centres at x=±12 with y=−6 and −22."
+      }
+    ],
+    "checkZh": "槽轴线相距24；上下靠近原点的槽端距横中心线2mm。",
+    "checkEn": "Slot axes are 24 apart. The nearest slot extremities are 2 mm from the horizontal axis.",
+    "editZh": "修改12改左右间距，修改6改上下间距。",
+    "editEn": "Edit 12 for horizontal spacing and 6 for vertical spacing."
+  },
+  {
+    "id": 28,
+    "titleZh": "确认草图完全定义",
+    "titleEn": "Confirm a fully defined sketch",
+    "phase": "四槽 / Four slots",
+    "page": 45,
+    "stage": 3,
+    "actionZh": "按Esc离开标注工具，检查槽轮廓变为黑色，状态栏显示“完全定义/Fully Defined”。",
+    "actionEn": "Press Esc to leave dimensioning. Check that slot contours are black and the status bar reads Fully Defined.",
+    "details": [
+      {
+        "zh": "若槽仍蓝色，检查端点重合、线竖直、线弧相切、左右和上下对称、R4/16/12/6是否齐全。",
+        "en": "If slot geometry remains blue, check endpoint coincidence, vertical sides, tangency, both mirror symmetries, and the R4/16/12/6 dimensions."
+      },
+      {
+        "zh": "若只有中心线远端蓝色，请给两条构造线添加长度；不要给已由镜向控制的每个槽重复尺寸。",
+        "en": "If only construction-line endpoints are blue, add helper-line lengths. Do not duplicate dimensions on mirrored slots."
+      },
+      {
+        "zh": "红色表示过定义，使用“显示/删除几何关系/Display/Delete Relations”删除重复约束；不要删除必要的对称关系。",
+        "en": "Red indicates over definition. Use Display/Delete Relations to remove redundant constraints while preserving necessary symmetry."
+      }
+    ],
+    "checkZh": "所有实际槽边线为黑色，无红色错误。",
+    "checkEn": "All slot boundaries are black with no red errors.",
+    "editZh": "想测试联动时暂时修改一个尺寸，再恢复原值；完全定义后不能任意拖动端点。",
+    "editEn": "Test linkage by changing one driving dimension and restoring it; fully defined endpoints cannot be freely dragged."
+  },
+  {
+    "id": 29,
+    "titleZh": "四槽完全贯穿切除",
+    "titleEn": "Cut the four slots Through All",
+    "phase": "四槽 / Four slots",
+    "page": 45,
+    "stage": 4,
+    "actionZh": "退出草图后点击“特征/Features > 拉伸切除/Extruded Cut”；终止条件选“完全贯穿/Through All”，预览朝向零件底部，点击“确定/OK”。",
+    "actionEn": "Exit the sketch and click Features > Extruded Cut. Choose Through All, check that the preview points toward the bottom of the part, and click OK.",
+    "details": [
+      {
+        "zh": "菜单路径也可用“插入/Insert > 切除/Cut > 拉伸/Extrude”。",
+        "en": "You can also use Insert > Cut > Extrude."
+      },
+      {
+        "zh": "保留四个闭合槽区域，不要启用“反侧切除/Flip side to cut”。若切除方向向空气，点击“反向/Reverse Direction”。",
+        "en": "Use the four enclosed slot regions without Flip side to cut. If the cut points into empty space, click Reverse Direction."
+      },
+      {
+        "zh": "完全贯穿使以后改变底部厚度时，槽仍自动贯穿，不需要另改深度。",
+        "en": "Through All keeps the slots open through the part after later thickness changes."
+      }
+    ],
+    "checkZh": "四个槽都贯穿到底面；环形边框仍完整。",
+    "checkEn": "All four slots pass through the bottom and the annular rim remains intact.",
+    "editZh": "右键切除特征 >“编辑特征/Edit Feature”核对Through All。",
+    "editEn": "Right-click the cut > Edit Feature to verify Through All."
+  },
+  {
+    "id": 30,
+    "titleZh": "重命名槽特征",
+    "titleEn": "Rename the slot-cut feature",
+    "phase": "四槽 / Four slots",
+    "page": 46,
+    "stage": 4,
+    "actionZh": "在设计树选择第二个切除特征“切除-拉伸2/Cut-Extrude2”，按F2，改名“圆头槽 Rounded Slots”。",
+    "actionEn": "Select the second cut feature, Cut-Extrude2, in the tree. Press F2 and rename it Rounded Slots.",
+    "details": [
+      {
+        "zh": "仅重命名不改变几何体，也不会改变切除类型图标。",
+        "en": "Renaming does not change the geometry or the cut-feature icon."
+      },
+      {
+        "zh": "按Ctrl+S保存。",
+        "en": "Press Ctrl+S to save."
+      }
+    ],
+    "checkZh": "设计树可以直接辨认四槽切除。",
+    "checkEn": "The four-slot cut is easy to identify in the tree.",
+    "editZh": "展开“圆头槽 Rounded Slots”即可找到驱动草图。",
+    "editEn": "Expand Rounded Slots to find its driving sketch."
+  },
+  {
+    "id": 31,
+    "titleZh": "选择顶端外圆边",
+    "titleEn": "Select the upper outside circular edge",
+    "phase": "圆角 / Fillets",
+    "page": 47,
+    "stage": 4,
+    "actionZh": "切换“等轴测/Isometric”，点击“特征/Features > 圆角/Fillet”；选择Ø82圆盘最上方的外圆边。",
+    "actionEn": "Switch to Isometric and click Features > Fillet. Select the upper outside circular edge of the Ø82 disk.",
+    "details": [
+      {
+        "zh": "选最大直径圆盘的顶部外缘，不选底部Ø75边，也不选凹槽内圆边。",
+        "en": "Select the top outer rim of the largest disk, not the lower Ø75 edge or a recess edge."
+      },
+      {
+        "zh": "可参考教材第48页第一张圆角预览图的黄色圆周。",
+        "en": "Compare with the yellow circular preview in the first page 48 fillet illustration."
+      }
+    ],
+    "checkZh": "选择框中只有顶端外圆边。",
+    "checkEn": "The selection contains only the top outside edge.",
+    "editZh": "放大检查所选边，避免误把整个面加入选择。",
+    "editEn": "Zoom in to confirm the selected edge rather than a whole face."
+  },
+  {
+    "id": 32,
+    "titleZh": "外圆边圆角R1.5",
+    "titleEn": "Round the outside edge R1.5",
+    "phase": "圆角 / Fillets",
+    "page": 48,
+    "stage": 5,
+    "actionZh": "在“圆角/Fillet”属性管理器中使用“手动/Manual”及恒定大小圆角“Constant Size Fillet”，半径输入1.5mm；勾选“切线延伸/Tangent propagation”和“完整预览/Full preview”，点击“确定/OK”。",
+    "actionEn": "In the Fillet PropertyManager use Manual and Constant Size Fillet, set Radius to 1.5 mm, enable Tangent propagation and Full preview, and click OK.",
+    "details": [
+      {
+        "zh": "旧教材英文写“Constant radius”；2026界面通常按恒定大小圆角类型分组，关键是所有选定边使用同一1.5mm半径。",
+        "en": "The old workbook says Constant radius; current interfaces group this as Constant Size Fillet. The intended result is a uniform 1.5 mm radius."
+      },
+      {
+        "zh": "此步去除顶端外缘锐角，不是对四槽口加R1.5。",
+        "en": "This rounds the upper outside rim, not the slot openings."
+      }
+    ],
+    "checkZh": "出现“圆角1/Fillet1”，外缘圆滑。",
+    "checkEn": "Fillet1 appears and the outside rim becomes rounded.",
+    "editZh": "编辑Fillet1可改1.5mm半径或所选边。",
+    "editEn": "Edit Fillet1 to change the 1.5 mm radius or selected edge."
+  },
+  {
+    "id": 33,
+    "titleZh": "凹槽底部内角R1",
+    "titleEn": "Fillet the recess floor edge R1",
+    "phase": "圆角 / Fillets",
+    "page": 48,
+    "stage": 6,
+    "actionZh": "再次点击“圆角/Fillet”，选择Ø63凹槽侧壁与凹槽底面相交的整圈内凹边；输入半径1mm并确认。",
+    "actionEn": "Click Fillet again. Select the concave circular edge where the Ø63 recess wall meets its floor. Enter a radius of 1 mm and accept.",
+    "details": [
+      {
+        "zh": "这是凹槽底部的内角；圆角会在内角增加少量材料，不能误选上口。",
+        "en": "This is the lower inside corner of the recess. The fillet adds a small amount of material in the corner; do not select the upper lip yet."
+      },
+      {
+        "zh": "四个槽边保持原状，教材本段没有要求槽口圆角。",
+        "en": "Leave the slot edges unchanged; this workbook section does not specify slot-mouth fillets."
+      }
+    ],
+    "checkZh": "得到“圆角2/Fillet2”，凹槽侧壁与底面之间出现R1过渡。",
+    "checkEn": "Fillet2 creates an R1 transition between the recess wall and floor.",
+    "editZh": "Fillet2应与R1.5外缘的Fillet1分开保留。",
+    "editEn": "Keep Fillet2 separate from the R1.5 outside Fillet1."
+  },
+  {
+    "id": 34,
+    "titleZh": "编辑第二个圆角",
+    "titleEn": "Edit the second fillet",
+    "phase": "圆角 / Fillets",
+    "page": 49,
+    "stage": 6,
+    "actionZh": "在设计树右键“圆角2/Fillet2”，选择“编辑特征/Edit Feature”。",
+    "actionEn": "Right-click Fillet2 in the design tree and select Edit Feature.",
+    "details": [
+      {
+        "zh": "属性管理器应保留半径1mm及原来的凹槽底部边线。",
+        "en": "The PropertyManager should retain the 1 mm radius and the existing lower recess edge."
+      },
+      {
+        "zh": "本步演示修改已有特征；不要另开一个新的第三圆角来代替这项任务。",
+        "en": "This step demonstrates editing an existing feature. Use that edit rather than a new third fillet."
+      }
+    ],
+    "checkZh": "原Fillet2处于编辑状态。",
+    "checkEn": "The existing Fillet2 is being edited.",
+    "editZh": "取消“取消/Cancel”会返回编辑前状态；“确定/OK”才保存修改。",
+    "editEn": "Cancel returns to the prior state; OK commits the edit."
+  },
+  {
+    "id": 35,
+    "titleZh": "给Fillet2增选凹槽上口",
+    "titleEn": "Add the upper recess lip to Fillet2",
+    "phase": "圆角 / Fillets",
+    "page": 50,
+    "stage": 7,
+    "actionZh": "在“要圆角的项目/Items To Fillet”中保留原边，再选择凹槽侧壁与顶部环形面交界的上口圆边；半径仍为1mm，检查完整预览后点击“确定/OK”。",
+    "actionEn": "Keep the existing edge under Items To Fillet and add the upper circular edge where the recess wall meets the top annular face. Keep Radius at 1 mm, inspect Full preview, and click OK.",
+    "details": [
+      {
+        "zh": "此时同一个Fillet2包含凹槽下内角和上口圆边：前者填内角，后者圆化外凸边。",
+        "en": "Fillet2 now includes the lower concave corner and the upper lip: one fills an inside corner and the other rounds a convex edge."
+      },
+      {
+        "zh": "最后应只有两个圆角特征：Fillet1为R1.5外缘；Fillet2为两条R1凹槽圆边。按Ctrl+S。",
+        "en": "There should be two fillet features: Fillet1 for the R1.5 outside rim and Fillet2 for the two R1 recess edges. Press Ctrl+S."
+      }
+    ],
+    "checkZh": "凹槽上下边都圆滑，四槽仍贯穿。",
+    "checkEn": "Both recess edges are smooth and all four slots remain open.",
+    "editZh": "重新“编辑特征/Edit Feature”可增删边或修改共同半径1。",
+    "editEn": "Use Edit Feature again to add/remove edges or change the shared radius 1."
+  },
+  {
+    "id": 36,
+    "titleZh": "核对教材材料矛盾",
+    "titleEn": "Resolve the workbook material discrepancy",
+    "phase": "材料与验证 / Material & checks",
+    "page": 51,
+    "stage": 7,
+    "actionZh": "右键设计树中的“材质 <未指定>/Material <not specified>”，选择“编辑材料/Edit Material”。",
+    "actionEn": "Right-click Material <not specified> in the design tree and select Edit Material.",
+    "details": [
+      {
+        "zh": "教材第51页正文写2015 Aluminum / 2015 Alloy，而第52页截图显示2014 Alloy。请在作业中明确记录这一教材差异，不把不同牌号默认为完全相同。",
+        "en": "Page 51 prose says 2015 Aluminum / 2015 Alloy, but the page 52 screenshot shows 2014 Alloy. Record this discrepancy instead of treating the grades as interchangeable."
+      },
+      {
+        "zh": "本练习几何与质量复核采用教材给出的密度0.0028g/mm³，即2.8g/cm³或2800kg/m³。材料强度、热处理状态不能仅由该密度推定。",
+        "en": "Geometry/mass checks use the workbook density of 0.0028 g/mm³, equivalent to 2.8 g/cm³ or 2800 kg/m³. Density alone does not establish strength or temper."
+      }
+    ],
+    "checkZh": "材料编辑器已打开，尚未随意替换材料牌号。",
+    "checkEn": "The material editor is open without an unrecorded grade substitution.",
+    "editZh": "牌号以课程教师要求为最终依据，质量复核同时检查密度。",
+    "editEn": "Use the course-required grade and independently verify its density."
+  },
+  {
+    "id": 37,
+    "titleZh": "应用材料或安装教材密度材料库",
+    "titleEn": "Apply a grade or install the workbook-density library",
+    "phase": "材料与验证 / Material & checks",
+    "page": 52,
+    "stage": 7,
+    "actionZh": "展开“铝合金/Aluminum Alloys”。若有课程要求的2015 Alloy且密度为2800kg/m³，点击“应用/Apply > 关闭/Close”。若没有，点击“关闭/Close”，按下列步骤安装随附的教学密度材料库。",
+    "actionEn": "Expand Aluminum Alloys. If the required 2015 Alloy is available with density 2800 kg/m³, click Apply > Close. Otherwise click Close and install the supplied teaching-density library as follows.",
+    "details": [
+      {
+        "zh": "1. 在Windows资源管理器/File Explorer中新建一个稳定的本地文件夹，例如C:\\T4_Materials；把下载包T4_CAD内的“T4_Aluminum_2800.sldmat”复制进去。不要把它留在临时解压目录。",
+        "en": "1. In Windows File Explorer create a permanent local folder, for example C:\\T4_Materials. Copy T4_Aluminum_2800.sldmat from the package T4_CAD folder into it rather than leaving it in a temporary extraction folder."
+      },
+      {
+        "zh": "2. 回到SOLIDWORKS，点击“工具/Tools > 选项/Options > 系统选项/System Options > 文件位置/File Locations”。",
+        "en": "2. In SOLIDWORKS click Tools > Options > System Options > File Locations."
+      },
+      {
+        "zh": "3. 在“显示下项的文件夹/Show folders for”下拉框选择“材料数据库/Material Databases”，点击“添加/Add”，选择刚才的C:\\T4_Materials文件夹，点击“选择文件夹/Select Folder”，再点击“确定/OK”。此处选择文件夹，不是单个sldmat文件。",
+        "en": "3. Under Show folders for choose Material Databases. Click Add, select the C:\\T4_Materials folder, click Select Folder, and click OK. Select the folder here, not the individual sldmat file."
+      },
+      {
+        "zh": "4. 右键设计树中的“材质/Material > 编辑材料/Edit Material”。展开“T4_Aluminum_2800”材料库，再展开“T4 Workbook”分类，选择“T4 Aluminum 2800 (density only)”。",
+        "en": "4. Right-click Material in the feature tree > Edit Material. Expand the T4_Aluminum_2800 database and its T4 Workbook category, then select T4 Aluminum 2800 (density only)."
+      },
+      {
+        "zh": "5. 在“属性/Properties”标签核对“密度/Density”为2800kg/m³（若单位不同，等价于0.0028g/mm³）；点击“应用/Apply”，再点击“关闭/Close”。若库未立即出现，关闭材料编辑器后重新打开。",
+        "en": "5. On Properties verify Density is 2800 kg/m³, equivalent to 0.0028 g/mm³ in other units. Click Apply, then Close. If the library does not immediately appear, close and reopen the material editor."
+      },
+      {
+        "zh": "此自定义材料仅含用于教学质量演算的密度，不代表2014或2015铝合金的强度、热处理或安全认证。模型应记录实际使用的材料名称。",
+        "en": "This custom material supplies density for the teaching mass calculation only. It does not establish the strength, temper, or certification of aluminium 2014 or 2015. Record the material name actually used."
+      }
+    ],
+    "checkZh": "设计树显示实际材料名称；密度换算等于0.0028g/mm³。",
+    "checkEn": "The tree shows the material actually used, with density equivalent to 0.0028 g/mm³.",
+    "editZh": "材料变更会影响质量；不要用“覆盖质量属性/Override Mass Properties”强行填入目标质量。",
+    "editEn": "Material changes affect mass. Do not force the target by overriding mass properties."
+  },
+  {
+    "id": 38,
+    "titleZh": "计算最终质量属性",
+    "titleEn": "Calculate final mass properties",
+    "phase": "材料与验证 / Material & checks",
+    "page": 53,
+    "stage": 7,
+    "actionZh": "点击“工具/Tools > 评估/Evaluate > 质量属性/Mass Properties”，或点击“评估/Evaluate”选项卡中的“质量属性/Mass Properties”。",
+    "actionEn": "Click Tools > Evaluate > Mass Properties, or Mass Properties on the Evaluate tab.",
+    "details": [
+      {
+        "zh": "教材参考：体积19,765.727mm³，密度0.0028g/mm³，质量55.344g。最终应以当前几何和真实密度计算值为准，比较文件中给出的几何核对结果。",
+        "en": "Workbook reference: volume 19,765.727 mm³, density 0.0028 g/mm³, and mass 55.344 g. Use computed current geometry and density and compare with the supplied geometry validation results."
+      },
+      {
+        "zh": "差异明显时先查：Ø82/75/63、3.5/3/3、槽R4/16/12/6、四槽完全贯穿、R1.5外缘和两条R1凹槽边。不要改密度掩盖几何错误。",
+        "en": "For a significant mismatch check Ø82/75/63, depths 3.5/3/3, slot R4/16/12/6, Through All, the R1.5 outside edge, and both R1 recess edges. Do not change density to conceal a geometry error."
+      },
+      {
+        "zh": "质心/Center of Mass的位置取决于采用的坐标系；零件左右、前后对称，平面内的质心坐标应接近零。",
+        "en": "The Center of Mass coordinates depend on the coordinate system. In-plane coordinates should be near zero for this symmetric part."
+      }
+    ],
+    "checkZh": "得到计算体积、密度、质量和质心。",
+    "checkEn": "Computed volume, density, mass, and centre of mass are displayed.",
+    "editZh": "关闭对话框后修改模型，再打开或“重算/Recalculate”复核。",
+    "editEn": "After editing the model reopen or recalculate mass properties."
+  },
+  {
+    "id": 39,
+    "titleZh": "仅将报告换成英寸和磅",
+    "titleEn": "Change report units to inches and pounds",
+    "phase": "材料与验证 / Material & checks",
+    "page": 54,
+    "stage": 7,
+    "actionZh": "在“质量属性/Mass Properties”中点击“选项/Options”，选择“使用自定义设置/Use custom settings”；长度/Length选“英寸/Inches”，质量/Mass选“磅/Pounds”，每单位体积/Per unit volume选“英寸³/inches³”。",
+    "actionEn": "In Mass Properties click Options, select Use custom settings, and set Length to Inches, Mass to Pounds, and Per unit volume to inches³.",
+    "details": [
+      {
+        "zh": "点击“确定/OK”，再“关闭/Close”。这里改变的是质量属性报告的输出单位，模型尺寸仍为mm。",
+        "en": "Click OK, then Close. This changes the mass-properties report units; the model dimensions remain in mm."
+      },
+      {
+        "zh": "若以后需再看mm和g，回到此选项选择文档单位或恢复自定义毫米、克。",
+        "en": "To view mm and g again, return to these options and use document units or custom millimetres and grams."
+      }
+    ],
+    "checkZh": "报告显示英制，右下角模型单位仍为MMGS。",
+    "checkEn": "The report uses imperial units while the model remains MMGS.",
+    "editZh": "不要为了报告单位改变草图的数值或缩放几何体。",
+    "editEn": "Do not change sketch values or scale the geometry to alter report units."
+  },
+  {
+    "id": 40,
+    "titleZh": "保存可编辑原生零件",
+    "titleEn": "Save the editable native part",
+    "phase": "修改与回放 / Edit & replay",
+    "page": 54,
+    "stage": 7,
+    "actionZh": "按Ctrl+S保存“Binding Anchor.SLDPRT”。关闭后用“文件/File > 打开/Open”重新打开这个SLDPRT。",
+    "actionEn": "Press Ctrl+S to save Binding Anchor.SLDPRT. Reopen that SLDPRT using File > Open.",
+    "details": [
+      {
+        "zh": "设计树应保留两个凸台、凹槽切除、圆头槽切除、两个圆角及其草图。草图通常被对应特征吸收，展开特征左侧箭头即可看到。",
+        "en": "The tree should retain two bosses, the recess cut, the rounded-slot cut, two fillets, and their sketches. Sketches are usually absorbed; expand each feature arrow to reveal them."
+      },
+      {
+        "zh": "本网站的STEP文件可用SOLIDWORKS打开检查几何，但STEP本身不保留这些原生草图和特征历史。要得到此树需按本教程重建，或在自己的SOLIDWORKS中运行所附构建源文件并保存。",
+        "en": "The supplied STEP files open in SOLIDWORKS for geometry inspection, but STEP does not preserve this native sketch/feature history. Obtain that history by following this tutorial or running the supplied construction source in your own SOLIDWORKS and saving the result."
+      }
+    ],
+    "checkZh": "重新打开后仍能展开、编辑每一个草图及特征。",
+    "checkEn": "After reopening, sketches and features remain individually editable.",
+    "editZh": "保存原生SLDPRT是保留设计意图的关键。",
+    "editEn": "Keep the native SLDPRT to preserve design intent."
+  },
+  {
+    "id": 41,
+    "titleZh": "用退回控制棒逐步回看",
+    "titleEn": "Replay with the rollback bar",
+    "phase": "修改与回放 / Edit & replay",
+    "page": 49,
+    "stage": 7,
+    "actionZh": "在设计树底部找到“退回控制棒/Rollback Bar”，向上拖到要查看特征的下方；模型显示截至该特征的状态。",
+    "actionEn": "Find the Rollback Bar at the bottom of the tree and drag it upward below the last feature you want to inspect. The model shows that stage.",
+    "details": [
+      {
+        "zh": "例如拖到第一个凸台之后，只显示Ø82×3.5圆盘；拖到四槽切除之后，会显示未加圆角的四槽零件。",
+        "en": "Below the first boss you see only the Ø82×3.5 disk. Below the slot cut you see the slotted part before fillets."
+      },
+      {
+        "zh": "查看结束把控制棒拖回树的最底部；下游特征会重新参与重建。网页的阶段切换用于直观对照，真正修改仍在原生零件中进行。",
+        "en": "When finished, drag it back to the bottom to restore downstream features. Website stage controls provide visual comparison; actual feature edits take place in the native part."
+      }
+    ],
+    "checkZh": "能够从基体逐步看到完整零件的形成。",
+    "checkEn": "You can inspect the part from the first boss to the final result.",
+    "editZh": "回退状态下编辑特征后，恢复底部并重建检查。",
+    "editEn": "After editing while rolled back, restore the bar and rebuild."
+  },
+  {
+    "id": 42,
+    "titleZh": "编辑草图尺寸并联动四槽",
+    "titleEn": "Edit driving dimensions and update four slots",
+    "phase": "修改与回放 / Edit & replay",
+    "page": 49,
+    "stage": 7,
+    "actionZh": "先“文件/File > 另存为/Save As”保存练习副本；展开“圆头槽 Rounded Slots”，右键其草图 >“编辑草图/Edit Sketch”，双击R4、16、12或6中的一个尺寸修改。",
+    "actionEn": "First use File > Save As to make a practice copy. Expand Rounded Slots, right-click its sketch > Edit Sketch, and double-click one driving dimension: R4, 16, 12, or 6.",
+    "details": [
+      {
+        "zh": "例如临时把圆心距16改为17；左右、上下四槽应一起变长。点击“退出草图/Exit Sketch”，按Ctrl+B“重建/Rebuild”查看。",
+        "en": "For example, temporarily change the centre separation from 16 to 17. All four slots should lengthen. Click Exit Sketch and press Ctrl+B for Rebuild."
+      },
+      {
+        "zh": "实验后恢复16并保存正确作业版。尺寸增大过多可能使槽碰到凹槽壁，需要按设计限制调整。",
+        "en": "Restore 16 after the experiment and retain the correct assignment version. Excessive sizes may cause slot-wall interference."
+      }
+    ],
+    "checkZh": "一个驱动尺寸能同时控制四槽；无断开镜向。",
+    "checkEn": "One driving dimension controls all four slots without broken mirror relations.",
+    "editZh": "首圆Ø82、第二圆Ø75、凹槽Ø63也分别在各自草图中编辑。",
+    "editEn": "Edit Ø82, Ø75, and Ø63 in their respective sketches."
+  },
+  {
+    "id": 43,
+    "titleZh": "编辑深度并检查贯穿性",
+    "titleEn": "Edit a depth and verify Through All",
+    "phase": "修改与回放 / Edit & replay",
+    "page": 49,
+    "stage": 7,
+    "actionZh": "在练习副本中右键第二凸台 >“编辑特征/Edit Feature”，把深度3临时改为4mm，点击“确定/OK”，按Ctrl+B“重建/Rebuild”。",
+    "actionEn": "In the practice copy right-click the second boss > Edit Feature, temporarily change its depth from 3 to 4 mm, click OK, and press Ctrl+B for Rebuild.",
+    "details": [
+      {
+        "zh": "因为槽用“完全贯穿/Through All”，四槽应继续贯穿新的底部。之后把深度恢复3。",
+        "en": "Because the slots use Through All, they should still pass through the new bottom. Restore the depth to 3 afterward."
+      },
+      {
+        "zh": "圆角半径修改：右键Fillet1或Fillet2 >“编辑特征/Edit Feature”；修改半径或选择列表，再确认并重建。",
+        "en": "For fillet changes right-click Fillet1 or Fillet2 > Edit Feature, change the radius or selection list, accept, and rebuild."
+      },
+      {
+        "zh": "发生重建错误时查看最早出错的特征；先修复上游草图或面选择，再处理下游圆角。",
+        "en": "For rebuild errors, inspect the earliest failed feature. Fix upstream sketches or face selections before downstream fillets."
+      }
+    ],
+    "checkZh": "能够修改深度且保留槽贯穿设计意图。",
+    "checkEn": "Depth can change while slot-through behavior is preserved.",
+    "editZh": "完成实验后恢复所有教材尺寸，Ctrl+S保存提交版本。",
+    "editEn": "Restore all workbook dimensions and save the submission version with Ctrl+S."
+  },
+  {
+    "id": 44,
+    "titleZh": "按特征抑制比较修改前后",
+    "titleEn": "Compare states by suppressing features",
+    "phase": "修改与回放 / Edit & replay",
+    "page": 49,
+    "stage": 7,
+    "actionZh": "在练习副本中右键Fillet2，选择“压缩/Suppress”观察两条R1圆角取消后的形状；再右键同一特征选择“解除压缩/Unsuppress”恢复。",
+    "actionEn": "In the practice copy right-click Fillet2 and choose Suppress to inspect the shape without its R1 fillets. Right-click it again and choose Unsuppress to restore.",
+    "details": [
+      {
+        "zh": "压缩是暂时关闭特征，不是删除。下游依赖于该特征的项目也可能受到影响。",
+        "en": "Suppression temporarily disables a feature rather than deleting it. Downstream dependent features may also be affected."
+      },
+      {
+        "zh": "最终提交前确认所有需要的特征均已解除压缩，退回控制棒在底部，模型重建正常，并保存原生SLDPRT。",
+        "en": "Before submission, ensure all required features are unsuppressed, the rollback bar is at the bottom, rebuilding succeeds, and the native SLDPRT is saved."
+      }
+    ],
+    "checkZh": "可以逐特征比较前后，同时恢复完整模型。",
+    "checkEn": "You can compare feature states and restore the complete model.",
+    "editZh": "结合退回控制棒、编辑草图、编辑特征即可逐步查看和修改全过程。",
+    "editEn": "Use the rollback bar, Edit Sketch, and Edit Feature to inspect and modify the full construction."
+  }
+]
