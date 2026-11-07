@@ -8,6 +8,7 @@ const PUBLIC_BASE='https://yhq52045-hub.github.io/lab4/';
 const asset=path=>document.body.dataset.offline==='true'?new URL(path,PUBLIC_BASE).href:path;
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const bi=(zh,en)=>`<span class="bilingual"><span lang="zh-CN">${esc(zh)}</span>${en&&en!==zh?`<span class="bi-en" lang="en">${esc(en)}</span>`:''}</span>`;
 const steps=COURSE.steps, chapters=COURSE.chapters;
 const storageKey='lab4-manual-tutorial-v1';
 let current=0, completed=new Set(), activePanel='learn', viewerStage=-1, previousQ='', viewName='iso';
@@ -21,7 +22,7 @@ const chapterNow=()=>chapters.find(c=>c.id===qNow());
 function saveProgress(){try{localStorage.setItem(storageKey,JSON.stringify({current:steps[current].id,completed:[...completed]}));}catch{}}
 function updateProgress(){
   const count=steps.filter(s=>completed.has(s.id)).length,pct=Math.round(100*count/steps.length);
-  $('progressFill').style.width=pct+'%';$('progressNumber').textContent=`${count} / ${steps.length} 步骤完成`;
+  $('progressFill').style.width=pct+'%';$('progressNumber').textContent=`${count} / ${steps.length} 步骤完成 · completed`;
   document.querySelector('[role=progressbar]').setAttribute('aria-valuenow',pct);
 }
 function renderNav(){
@@ -29,37 +30,46 @@ function renderNav(){
   steps.forEach((s,i)=>{
     if(query?!JSON.stringify(s).toLowerCase().includes(query):s.q!==qNow())return;
     found++;const phase=s.q+' / '+s.phase;
-    if(phase!==lastPhase){html+=`<div class="nav-phase">${esc(query?s.q+' · '+s.phase:s.phase)}</div>`;lastPhase=phase;}
+    if(phase!==lastPhase){html+=`<div class="nav-phase">${bi(query?s.q+' · '+s.phase:s.phase,s.en.phase)}</div>`;lastPhase=phase;}
     const n=steps.filter((p,j)=>j<=i&&p.q===s.q).length;
-    html+=`<button class="step-link ${i===current?'active ':''}${completed.has(s.id)?'done':''}" data-step="${i}" ${i===current?'aria-current="step"':''}><span class="nav-number">${completed.has(s.id)?'✓':String(n).padStart(2,'0')}</span><span>${esc(s.title)}</span></button>`;
+    html+=`<button class="step-link ${i===current?'active ':''}${completed.has(s.id)?'done':''}" data-step="${i}" ${i===current?'aria-current="step"':''}><span class="nav-number">${completed.has(s.id)?'✓':String(n).padStart(2,'0')}</span>${bi(s.title,s.en.title)}</button>`;
   });
-  $('stepNav').innerHTML=html||(found?'':'<p class="empty-search">没有匹配步骤，试试“圆”“拉伸”或题号。</p>');
+  $('stepNav').innerHTML=html||(found?'':'<p class="empty-search">没有匹配步骤 / No matching steps.</p>');
   $('stepNav').querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>selectStep(+b.dataset.step));
 }
 function renderChapterNav(){
-  $('chapterNav').innerHTML=chapters.map(c=>`<button data-chapter="${c.id}" class="${c.id===qNow()?'active':''}" aria-pressed="${c.id===qNow()}">${c.id==='start'?'操作基础':c.id}<small>${steps.filter(s=>s.q===c.id).length} 步</small></button>`).join('');
+  $('chapterNav').innerHTML=chapters.map(c=>`<button data-chapter="${c.id}" class="${c.id===qNow()?'active':''}" aria-pressed="${c.id===qNow()}">${c.id==='start'?'操作基础 / Basics':c.id}<small>${steps.filter(s=>s.q===c.id).length} 步 / steps</small></button>`).join('');
   $('chapterNav').querySelectorAll('button').forEach(b=>b.onclick=()=>{
     $('stepSearch').value='';selectStep(steps.findIndex(s=>s.q===b.dataset.chapter));
   });
 }
-function dimensionsTable(rows){return `<table class="dimensions-table"><tbody>${rows.map(([a,b])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</tbody></table>`;}
+function dimensionsTable(rows,enRows=[]){return `<table class="dimensions-table"><tbody>${rows.map(([a,b],i)=>`<tr><td>${bi(a,enRows[i]?.[0])}</td><td>${bi(b,enRows[i]?.[1])}</td></tr>`).join('')}</tbody></table>`;}
 function stepMarkup(s){
-  return `<div class="step-kicker"><span>${esc(s.q==='start'?'GETTING STARTED':s.q)} / ${esc(s.phase)}</span><span>${s.q==='Q5'?'全部尺寸为教学近似值':s.q==='Q4'?'本题单位：in':'单位：mm（基础页除外）'}</span></div><h2>${esc(s.title)}</h2><div class="command-path">${esc(s.command)}</div><ol class="actions">${s.actions.map(a=>`<li>${esc(a)}</li>`).join('')}</ol>${s.dimensions.length?`<div class="parameter-label">本步输入与定位 / VALUES</div>${dimensionsTable(s.dimensions)}`:''}<div class="check-box"><b>✓ 做完后应该看到</b><p>${esc(s.check)}</p></div><div class="fix-box"><b>容易做错的地方</b><p>${esc(s.fix)}</p></div>`;
+  const e=s.en;
+  return `<div class="step-kicker"><span>${esc(s.q==='start'?'GETTING STARTED':s.q)} / ${bi(s.phase,e.phase)}</span><span>${s.q==='Q5'?'教学近似值 / Approximate':s.q==='Q4'?'单位 / Units: in':s.q==='start'?'单位见本步 / See step':'单位 / Units: mm'}</span></div><h2 lang="zh-CN">${esc(s.title)}</h2><p class="step-title-en" lang="en">${esc(e.title)}</p><div class="command-path">${bi(s.command,e.command)}</div><ol class="actions">${s.actions.map((a,i)=>`<li>${bi(a,e.actions[i])}</li>`).join('')}</ol>${s.dimensions.length?`<div class="parameter-label">本步输入与定位 / VALUES & LOCATION</div>${dimensionsTable(s.dimensions,e.dimensions)}`:''}<div class="check-box"><b>✓ 做完后应该看到 / CHECK</b><p>${bi(s.check,e.check)}</p></div><div class="fix-box"><b>容易做错的地方 / COMMON PITFALL</b><p>${bi(s.fix,e.fix)}</p></div>`;
+}
+function diagramLegend(svg){
+  const holder=document.createElement('div');holder.innerHTML=svg;
+  const labels=[...new Set([...holder.querySelectorAll('text')].map(n=>n.textContent).filter(t=>/[\u3400-\u9fff]/.test(t)))];
+  return labels.length?`<details class="diagram-legend" open><summary>图内标注中英对照 / Bilingual diagram labels</summary><dl>${labels.map(t=>`<div><dt lang="zh-CN">${esc(t)}</dt><dd lang="en">${esc(COURSE.diagramEnglish[t]||'')}</dd></div>`).join('')}</dl></details>`:'';
 }
 function renderStep(){
   const s=steps[current],c=chapterNow(),q=s.q,qChanged=previousQ!==q;
-  $('chapterEnglish').textContent=c.en.toUpperCase();$('chapterTitle').textContent=c.title;$('chapterSubtitle').textContent=c.subtitle;
-  $('chapterUnit').textContent=q==='start'?'从这里开始':`${c.unit==='in'?'IPS · 英寸':'MMGS · 毫米'}${q==='Q5'?' · 近似值':''}`;
+  $('chapterEnglish').textContent=c.en.toUpperCase();$('chapterTitle').textContent=c.title;$('chapterSubtitle').innerHTML=bi(c.subtitle,c.subtitleEn);
+  $('chapterUnit').textContent=q==='start'?'开始 / Start':`${c.unit==='in'?'IPS · in':'MMGS · mm'}${q==='Q5'?' · Approx.':''}`;
   $('instruction').innerHTML=stepMarkup(s);
   $('stepComplete').checked=completed.has(s.id);
   const local=steps.filter(p=>p.q===q),at=local.findIndex(p=>p.id===s.id)+1;
   $('stepPosition').textContent=`${at} / ${local.length}`;
   $('prevStep').disabled=current===0;$('nextStep').disabled=current===steps.length-1;
-  $('nextStep').textContent=current===steps.length-1?'已到最后一步':(steps[current+1].q!==q?`进入 ${steps[current+1].q} →`:'下一步 →');
-  $('sketchDiagram').innerHTML=diagramSVG(s.diagram);
+  $('nextStep').textContent=current===steps.length-1?'最后一步 / Last step':(steps[current+1].q!==q?`${steps[current+1].q} / Next →`:'下一步 / Next →');
+  const svg=diagramSVG(s.diagram);$('sketchDiagram').innerHTML=svg+diagramLegend(svg);
+  const diagram=$('sketchDiagram').querySelector('svg'),zhTitle=diagram.getAttribute('aria-label');
+  if(COURSE.diagramEnglish[zhTitle]){const title=zhTitle+' / '+COURSE.diagramEnglish[zhTitle];diagram.setAttribute('aria-label',title);diagram.querySelector('title').textContent=title;}
   const notice=q==='Q4'?'单位核对：原文写 mm，但参考体积为 in³；本教程按英寸重建。原点按原图位于上表面，厚度向下 0.3in。':q==='Q5'?'近似建模：全部数值沿用原网站的教学设定；原题没有精确尺寸。实体特征只使用拉伸凸台与拉伸切除。':'';
-  $('questionNotice').hidden=!notice;$('questionNotice').textContent=notice;
-  $('stageSelect').innerHTML='<option value="-1">空白零件 / 尚未生成实体</option>'+(MODELS[q]||[]).map((m,i)=>`<option value="${i}">${String(i+1).padStart(2,'0')} · ${esc(m.title)}</option>`).join('');
+  const noticeEn=q==='Q4'?'Unit check: the source states mm but gives its reference volume in in³. This tutorial uses inches. The origin is on the top surface; the thickness extends 0.3in downward.':q==='Q5'?'Approximate modelling: all numbers are chosen teaching values retained from the original site. The exercise gives no exact dimensions. Use only Extruded Boss/Base and Extruded Cut features.':'';
+  $('questionNotice').hidden=!notice;$('questionNotice').innerHTML=bi(notice,noticeEn);
+  $('stageSelect').innerHTML='<option value="-1">空白零件 / Blank part</option>'+(MODELS[q]||[]).map((m,i)=>`<option value="${i}">${String(i+1).padStart(2,'0')} · ${esc(m.title)}</option>`).join('');
   $('stageSelect').disabled=q==='start';
   viewerStage=s.stage; $('stageSelect').value=String(viewerStage);$('syncStage').hidden=true;
   if(qChanged){setView('iso',false);previousQ=q;}
@@ -79,11 +89,11 @@ function setPanel(name){
 }
 function updateStageCaption(){
   const seq=MODELS[qNow()]||[],s=seq[viewerStage],manual=viewerStage!==steps[current].stage;
-  $('stageNumber').textContent=s?`${String(viewerStage+1).padStart(2,'0')} / ${String(seq.length).padStart(2,'0')}`:'尚无实体';
+  $('stageNumber').textContent=s?`${String(viewerStage+1).padStart(2,'0')} / ${String(seq.length).padStart(2,'0')}`:'无实体 / No solid';
   $('emptyState').hidden=!!s;
   $('canvasTag').textContent=qNow()==='start'?'NEW PART':qNow()+(qNow()==='Q5'?' · APPROXIMATE':'')+' · GEOMETRY PREVIEW';
-  $('modelStageTitle').textContent=s?s.title:'本步尚未创建实体';
-  $('modelHint').textContent=manual?'正在手动查看其他实体阶段。点击“返回本步”恢复对应状态。':s?'显示截至本步已完成的实体；正在编辑的草图请看下方尺寸示意。':'先按操作建立草图，再执行拉伸；下方示意帮助定位。';
+  $('modelStageTitle').textContent=s?s.title:'尚未创建实体 / No solid created yet';
+  $('modelHint').innerHTML=manual?bi('正在手动查看其他实体阶段。点击“返回本步”恢复对应状态。','You are viewing another stage. Click “Return to step” to restore this step’s model.'):s?bi('显示截至本步已完成的实体；正在编辑的草图请看下方尺寸示意。','Shows the solid completed up to this step. Use the dimension diagram below for the sketch being edited.'):bi('先按操作建立草图，再执行拉伸；下方示意帮助定位。','Create the sketch first, then extrude it. Use the diagram below to locate the sketch.');
   $('syncStage').hidden=!manual;
   const unit=qNow()==='Q4'?'in³':'mm³',vol=s?s.volume/(qNow()==='Q4'?25.4**3:1):null;
   $('stageVolume').textContent=vol===null?'—':`${vol.toLocaleString('en-US',{minimumFractionDigits:3,maximumFractionDigits:qNow()==='Q4'?6:3})} ${unit}`;
@@ -92,7 +102,10 @@ function renderDimensions(){
   const selected=qNow()==='start'?chapters.filter(c=>c.id!=='start'):[chapterNow()];
   $('dimensionContent').innerHTML=selected.map(c=>{
     const rows=DIMENSIONS[c.id]||[],v=VALIDATION.checks.find(x=>x.question===c.id);
-    return `<article class="card dimension-summary"><h3>${esc(c.title)}</h3><p class="small muted">${c.id==='Q5'?'下列所有数值均为教学近似设定。':`本题长度单位：${c.unit}`}</p><table class="summary-table"><thead><tr><th scope="col">参数 / 位置</th><th scope="col">尺寸 / 数值</th><th scope="col">来源</th></tr></thead><tbody>${rows.map(([a,b,kind])=>`<tr><td>${esc(a)}</td><td>${esc(b)}</td><td><span class="source-kind ${kind==='教学设定'?'chosen':''}">${esc(kind)}</span></td></tr>`).join('')}</tbody></table><p class="small muted">${c.reference===null?'没有原题参考体积。':`参考体积 ${c.reference} ${c.unit}³ ±1%；CAD 几何核验偏差 ${v.percent_error>=0?'+':''}${v.percent_error.toFixed(4)}%。`}</p></article>`;
+    const enRows=COURSE.dimensionsEn[c.id];
+    const zhNote=c.reference===null?'没有原题参考体积。':`参考体积 ${c.reference} ${c.unit}³ ±1%；CAD 几何核验偏差 ${v.percent_error>=0?'+':''}${v.percent_error.toFixed(4)}%。`;
+    const enNote=c.reference===null?'The exercise gives no reference volume.':`Reference volume: ${c.reference} ${c.unit}³ ±1%; CAD geometry deviation: ${v.percent_error>=0?'+':''}${v.percent_error.toFixed(4)}%.`;
+    return `<article class="card dimension-summary"><h3>${bi(c.title,c.en)}</h3><p class="small muted">${c.id==='Q5'?bi('下列所有数值均为教学近似设定。','All values below are chosen approximate teaching dimensions.'):bi('本题长度单位：'+c.unit,'Length unit: '+c.unit)}</p><table class="summary-table"><thead><tr><th scope="col">参数 / Parameter</th><th scope="col">尺寸 / Value</th><th scope="col">来源 / Source</th></tr></thead><tbody>${rows.map(([a,b,kind],i)=>`<tr><td>${bi(a,enRows[i][0])}</td><td>${bi(b,enRows[i][1])}</td><td><span class="source-kind ${kind==='教学设定'?'chosen':''}">${bi(kind,enRows[i][2])}</span></td></tr>`).join('')}</tbody></table><p class="small muted">${bi(zhNote,enNote)}</p></article>`;
   }).join('');
 }
 function renderSource(){
@@ -177,7 +190,7 @@ $('syncStage').onclick=()=>{viewerStage=steps[current].stage;$('stageSelect').va
 
 $('totalSteps').textContent=steps.length;$('totalStages').textContent=Object.values(MODELS).reduce((n,a)=>n+a.length,0);
 $('modelLinks').innerHTML=['Q1','Q2','Q3','Q4','Q5'].map(q=>`<a href="${asset('./files/'+q+'.step')}" download>${q} STEP${q==='Q4'?' · 原点已修正':''}</a>`).join('');
-$('provenanceList').innerHTML=COURSE.provenance.map(t=>`<li>${esc(t)}</li>`).join('');
+$('provenanceList').innerHTML=COURSE.provenance.map((t,i)=>`<li>${bi(t,COURSE.provenanceEn[i])}</li>`).join('');
 $('officialLinks').innerHTML=COURSE.references.map(([label,url])=>`<a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)} ↗</a>`).join('');
 $('stepSearch').oninput=renderNav;
 $('prevStep').onclick=()=>selectStep(current-1);$('nextStep').onclick=()=>selectStep(current+1);
@@ -197,7 +210,7 @@ $('downloadOffline').onclick=()=>{
   const blob=new Blob(['<!doctype html>\n'+copy.outerHTML],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Lab4_Step_by_Step.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);
 };
 function buildPrint(){
-  $('printContent').innerHTML=`<h1 class="print-title">Lab 4 · SOLIDWORKS 逐步操作教程</h1><p class="print-notice">Q1—Q3 用 mm；Q4 按 in 解释，并保留原 PDF 单位矛盾；Q5 全部尺寸为教学近似设定。教学坐标 (u,v,h) 对应 SOLIDWORKS (X,Y,Z)=(u,h,−v)。教程为手动操作指导，未在本环境运行 SOLIDWORKS。</p>`+chapters.map(c=>`<section class="print-chapter"><h2>${esc(c.title)}</h2>${steps.filter(s=>s.q===c.id).map((s,i)=>`<article class="print-step"><h3>${i+1}. ${esc(s.title)}</h3><p class="command-path">${esc(s.command)}</p><ol>${s.actions.map(a=>`<li>${esc(a)}</li>`).join('')}</ol>${s.dimensions.length?dimensionsTable(s.dimensions):''}<p><b>检查：</b>${esc(s.check)}</p><p><b>易错点：</b>${esc(s.fix)}</p></article>`).join('')}</section>`).join('');
+  $('printContent').innerHTML=`<h1 class="print-title">Lab 4 · SOLIDWORKS 中英对照操作教程<span class="bi-en" lang="en">Lab 4 · Bilingual SOLIDWORKS step-by-step tutorial</span></h1><p class="print-notice">${bi('Q1—Q3 用 mm；Q4 按 in 解释，并保留原 PDF 单位矛盾；Q5 全部尺寸为教学近似设定。教学坐标 (u,v,h) 对应 SOLIDWORKS (X,Y,Z)=(u,h,−v)。教程为手动操作指导，未在本环境运行 SOLIDWORKS。','Q1–Q3 use mm; Q4 uses inches while retaining the source unit discrepancy; all Q5 dimensions are chosen approximations. Teaching coordinates (u,v,h) map to SOLIDWORKS (X,Y,Z)=(u,h,−v). These are manual instructions; SOLIDWORKS has not been run in this environment.')}</p>`+chapters.map(c=>`<section class="print-chapter"><h2>${bi(c.title,c.en)}</h2>${steps.filter(s=>s.q===c.id).map((s,i)=>`<article class="print-step"><p class="parameter-label">STEP ${i+1}</p>${stepMarkup(s)}</article>`).join('')}</section>`).join('');
 }
 $('printCourse').onclick=()=>{buildPrint();window.print();};window.addEventListener('beforeprint',buildPrint);
 window.addEventListener('resize',()=>{if(activePanel==='learn')fitView();});

@@ -1,0 +1,1976 @@
+{
+  "steps": {
+    "start-new": {
+      "title": "Create a blank part",
+      "phase": "Getting ready",
+      "command": "File → New → Part → OK",
+      "actions": [
+        "Open SOLIDWORKS and press Ctrl+N. In the New SOLIDWORKS Document dialog, select Part and click OK.",
+        "In the FeatureManager design tree on the left, locate Front Plane, Top Plane, Right Plane and Origin. If the tree is hidden, press F9.",
+        "Create a new part for each question. For its first save, press Ctrl+Shift+S and use the filenames Q1.sldprt through Q5.sldprt."
+      ],
+      "dimensions": [],
+      "check": "A blank part is open with no solid body, and the three reference planes can be selected in the tree.",
+      "fix": "If you created an assembly or drawing, choose New → Part again."
+    },
+    "start-units": {
+      "title": "Set the units before entering dimensions",
+      "phase": "Getting ready",
+      "command": "Units menu at the bottom right → MMGS / IPS",
+      "actions": [
+        "For Q1, Q2, Q3 and Q5, click the unit abbreviation at the bottom right and select MMGS (millimeter, gram, second). For Q4, select IPS (inch, pound, second).",
+        "If the shortcut menu is unavailable, go to Tools → Options → Document Properties → Units, select the required unit system and click OK.",
+        "The decimal dimensions in this tutorial's Q4 use in. Even in a millimetre document, you can enter 0.3in directly in a dimension box and let SOLIDWORKS convert it."
+      ],
+      "dimensions": [
+        [
+          "Q1 / Q2 / Q3 / Q5",
+          "mm"
+        ],
+        [
+          "Q4",
+          "in (1 in = 25.4 mm)"
+        ]
+      ],
+      "check": "The units shown at the bottom right match the current question.",
+      "fix": "Q4 states mm in the source text but gives a reference volume in in³. This tutorial interprets its lengths as inches based on the drawing and volume, while explicitly retaining that source inconsistency."
+    },
+    "start-axes": {
+      "title": "Identify the reference planes and tutorial coordinates",
+      "phase": "Reading the drawing and locating geometry",
+      "command": "View → Hide/Show → Origins",
+      "actions": [
+        "To remain consistent with the original website models, this tutorial uses (u,v,h) for length, transverse/depth position and height. These are teaching coordinates, not the SOLIDWORKS global XYZ coordinates.",
+        "The mapping is SOLIDWORKS (X,Y,Z)=(u,h,−v). Therefore, Top Plane is h=0, Front Plane is v=0 and Right Plane is u=0. A negative value in a table places the coordinate on the opposite side of the origin.",
+        "Q2–Q5 are symmetric across v=0 in the width direction. Q1 uses the indicated reference corner of the base as its origin; Q3 uses the midpoint of the front bottom edge of the base; Q4 uses the upper surface at the inner jaw apex.",
+        "The source uses first-angle projection, with the top view below the front view. Determine directions from the view names and dimension lines; the lower view on the page is not the bottom of the part."
+      ],
+      "dimensions": [
+        [
+          "Top Plane",
+          "h=0"
+        ],
+        [
+          "Front Plane",
+          "v=0"
+        ],
+        [
+          "Right Plane",
+          "u=0"
+        ]
+      ],
+      "check": "You can identify length, depth and height at the model origin, without entering the teaching coordinates as global XYZ values.",
+      "fix": "The X/Y fields in sketch parameters depend on the sketch orientation. In the following steps, use Smart Dimension relative to the origin or edges to locate geometry, rather than entering coordinates without checking their orientation."
+    },
+    "start-sketch": {
+      "title": "Enter a sketch, then leave the active drawing tool",
+      "phase": "Sketch basics",
+      "command": "Select a reference plane or planar face → Sketch tab → Sketch → Ctrl+8",
+      "actions": [
+        "Select a reference plane in the tree, or click the specified planar face on the solid. On the Sketch tab, click Sketch. Press Ctrl+8 for Normal To.",
+        "Use Rectangle, Line or Circle to draw an approximate shape, then apply exact dimensions. For a circle, the first click sets its centre and the second sets its size.",
+        "Press Esc after drawing to leave the active drawing tool. Click Exit Sketch to finish the entire sketch. These are separate actions."
+      ],
+      "dimensions": [],
+      "check": "While editing, the status bar shows Editing Sketch. After exiting, the sketch appears as a separate item in the tree.",
+      "fix": "A cylindrical face cannot serve as the plane for an ordinary planar sketch. Select a flat end face or the specified reference plane instead."
+    },
+    "start-dimension": {
+      "title": "Locate geometry precisely with Smart Dimension",
+      "phase": "Sketch basics",
+      "command": "Sketch → Smart Dimension",
+      "actions": [
+        "For a line length, select a line, move the pointer to place the dimension, enter its value and press Enter. For a circle, select its circumference to place a Ø dimension. For an arc, select the arc to place an R dimension.",
+        "For the horizontal or vertical distance from a point to the origin, select the point and then the origin. Move the pointer above or below to place a horizontal dimension, or left or right to place a vertical one. Enter the absolute distance; the side on which the point lies determines its positive or negative position.",
+        "To place a point on an axis, Ctrl-select the point and the origin, then choose Horizontal or Vertical under Add Relations. To place a circle centre at the origin, choose Coincident.",
+        "After entering each dimension, click the green check mark or press Enter. Finally, press Esc to leave the dimension tool."
+      ],
+      "dimensions": [
+        [
+          "Ø",
+          "Diameter"
+        ],
+        [
+          "R",
+          "Radius"
+        ],
+        [
+          "Redundant dimension",
+          "Make it Driven, for checking only"
+        ]
+      ],
+      "check": "Dimension values remain fixed, and dragging the sketch does not change dimensioned lengths.",
+      "fix": "Do not add dimensions that are already determined by other dimensions and relations. If the sketch becomes over defined, undo the redundant dimension you just added."
+    },
+    "start-defined": {
+      "title": "Confirm that the sketch is fully defined",
+      "phase": "Sketch basics",
+      "command": "Tools → Dimensions → Fully Define Sketch",
+      "actions": [
+        "First constrain the sketch using the tutorial dimensions and relations such as Coincident, Horizontal, Vertical, Tangent and Symmetric. Before exiting each sketch, check that the status bar reads Fully Defined.",
+        "With the default colours, fully constrained ordinary sketch entities are black, while entities with remaining degrees of freedom are blue. If the entire sketch can translate, it usually lacks a position relation to the origin or a known edge.",
+        "Restore any dimensions or relations lost during trimming. You can use Tools → Dimensions → Fully Define Sketch to check and add constraints, but first confirm that any automatically generated dimensions agree with the intended design.",
+        "Do not use Fix to lock an approximately drawn shape in place of applying accurate dimensions."
+      ],
+      "dimensions": [],
+      "check": "The status bar explicitly reads Fully Defined, with no red or yellow conflict indications.",
+      "fix": "Zoom in to check for separate endpoints. Ctrl-select the two endpoints and choose Coincident. A gap can prevent solid extrusion."
+    },
+    "start-features": {
+      "title": "Set extrusions, cuts and end conditions",
+      "phase": "Feature basics",
+      "command": "Features → Extruded Boss/Base / Extruded Cut",
+      "actions": [
+        "Finish and exit the sketch, select it, and click Features → Extruded Boss/Base or Extruded Cut.",
+        "For Blind, enter the length added or removed in this feature. For Mid Plane, enter the total thickness across both sides. Through All cuts through all solid material in the selected direction.",
+        "Inspect the yellow preview and direction arrow. Click Reverse Direction if it points the wrong way. To cut through both sides of the sketch plane, choose Through All - Both; some versions label this as a bidirectional through-all cut.",
+        "When a new boss touches the existing solid, keep Merge result selected and click the green check mark. Solid Bodies in the tree should contain only 1 body."
+      ],
+      "dimensions": [
+        [
+          "Mid Plane total thickness 48",
+          "24 on each side"
+        ],
+        [
+          "Through All",
+          "Also cuts through other solid material behind the hole"
+        ]
+      ],
+      "check": "The preview points in the correct direction, and the completed feature has no red error mark.",
+      "fix": "If rebuilding fails, first check whether the sketch is closed, whether the boss touches the main body and whether the cut direction intersects the solid."
+    },
+    "start-inspect": {
+      "title": "Check the volume and retain editable features",
+      "phase": "Checking and saving",
+      "command": "Evaluate → Mass Properties",
+      "actions": [
+        "After finishing each question, press Ctrl+Q to force a rebuild, then click Evaluate → Mass Properties. You can also access it through Tools → Evaluate.",
+        "Read Volume. Use mm³ for Q1–Q3 and in³ for Q4. If the report uses different units, click Options in the report to change the output units.",
+        "Press Ctrl+S to save as a SOLIDWORKS part (*.sldprt). To modify it, right-click a sketch and choose Edit Sketch, or right-click a feature and choose Edit Feature."
+      ],
+      "dimensions": [],
+      "check": "The file extension is .sldprt, and the design tree contains the sketches and features you created.",
+      "fix": "STEP supplies imported reference geometry without the original extrusion, cut or sketch history. This tutorial builds the part manually from a blank document."
+    },
+    "Q1-setup": {
+      "title": "Create Q1 and set millimetres",
+      "phase": "Preparation",
+      "command": "Ctrl+N → Part; units MMGS; Ctrl+Shift+S",
+      "actions": [
+        "Create a new part, select MMGS and save it as Q1.sldprt.",
+        "This question does not require Front Plane to be a symmetry plane. Use the base corner corresponding to the red point in the original drawing as the origin. The base extends from u=0 to 60, from v=0 to 28 and upward from h=0.",
+        "Use one simple rectangle for each boss and a separate circular sketch for the hole."
+      ],
+      "dimensions": [
+        [
+          "Overall length / depth / height",
+          "60 / 28 / 75 mm"
+        ]
+      ],
+      "check": "The blank part is saved and its length unit is mm.",
+      "fix": "Do not draw all the steps as one complex stepped profile."
+    },
+    "Q1-base-sketch": {
+      "title": "Sketch the base rectangle on Top Plane",
+      "phase": "Base · Boss-Extrude1",
+      "command": "Top Plane → Sketch → Corner Rectangle",
+      "actions": [
+        "Select Top Plane → Sketch → Ctrl+8. From the Rectangle drop-down menu, choose Corner Rectangle.",
+        "Click the origin for the first corner. Place the other corner in the positive length and depth directions of the part, then press Esc.",
+        "Use Smart Dimension to set the long side to 60 and the depth side to 28. Confirm a Coincident relation at the origin corner, Horizontal/Vertical relations on the four sides and a Fully Defined sketch."
+      ],
+      "dimensions": [
+        [
+          "u range",
+          "0…60"
+        ],
+        [
+          "v range",
+          "0…28"
+        ],
+        [
+          "Rectangle",
+          "60 × 28 mm"
+        ]
+      ],
+      "check": "There is one fully defined rectangle whose reference corner is coincident with the origin.",
+      "fix": "28 is the full base depth; the upper steps have a depth of 20."
+    },
+    "Q1-base-extrude": {
+      "title": "Extrude the base by 30 mm",
+      "phase": "Base · Boss-Extrude1",
+      "command": "Exit Sketch → Features → Extruded Boss/Base → Blind",
+      "actions": [
+        "Exit the sketch, select the rectangle sketch you just created and click Extruded Boss/Base.",
+        "Select Blind as the end condition and enter 30. The preview should extend upward from Top Plane to h=30.",
+        "Click the green check mark. You may rename the feature Base_60x28x30."
+      ],
+      "dimensions": [
+        [
+          "This extrusion",
+          "30 mm"
+        ],
+        [
+          "Top-face height",
+          "h=30"
+        ]
+      ],
+      "check": "The result is a 60 × 28 × 30 mm rectangular block.",
+      "fix": "Enter the base height of 30, not the overall part height of 75."
+    },
+    "Q1-step1-sketch": {
+      "title": "Sketch 48 × 20 on the top of the base",
+      "phase": "First step · Boss-Extrude2",
+      "command": "Select the top face at h=30 → Sketch → Corner Rectangle",
+      "actions": [
+        "Click the top face of the base → Sketch → Ctrl+8.",
+        "Place the first rectangle corner at the reference corner of the top face on the origin side, (u,v)=(0,0). Place the other corner toward (48,20).",
+        "Use Smart Dimension to set length 48 and depth 20. Make the first corner coincident with that vertex and confirm that the sketch is fully defined."
+      ],
+      "dimensions": [
+        [
+          "Rectangle",
+          "48 × 20 mm"
+        ],
+        [
+          "Derivation of 48",
+          "60−12"
+        ],
+        [
+          "Location",
+          "The same reference corner at u=0, v=0"
+        ]
+      ],
+      "check": "The step ends 12 short of the right end of the base, leaving 28−20=8 in the depth direction.",
+      "fix": "Start every layer at the same reference corner, u=0 and v=0."
+    },
+    "Q1-step1-extrude": {
+      "title": "Add an 8 mm extrusion",
+      "phase": "First step · Boss-Extrude2",
+      "command": "Extruded Boss/Base → Blind 8 → Merge result",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Enter depth 8 and extrude upward.",
+        "Keep Merge result selected and click the green check mark.",
+        "8 is derived from the difference between the two step-top levels: 20−12. The resulting top-face height is therefore 30+8=38."
+      ],
+      "dimensions": [
+        [
+          "This extrusion",
+          "8 mm"
+        ],
+        [
+          "Top-face height",
+          "h=38"
+        ]
+      ],
+      "check": "The top face reaches 38, and the tree still contains only one solid body.",
+      "fix": "The 20 shown in the drawing is the cumulative height from the top of the base to the top of the second step."
+    },
+    "Q1-step2-sketch": {
+      "title": "Sketch the second layer, 32 × 20",
+      "phase": "Second step · Boss-Extrude3",
+      "command": "Select the top face at h=38 → Sketch → Corner Rectangle",
+      "actions": [
+        "Select the newly created 48 × 20 top face → New Sketch → Ctrl+8.",
+        "Draw a rectangle from the same reference corner and use Smart Dimension to set length 32 and depth 20.",
+        "32=20+12. Make the first corner coincident with that vertex and confirm that the rectangle is fully defined."
+      ],
+      "dimensions": [
+        [
+          "Rectangle",
+          "32 × 20 mm"
+        ],
+        [
+          "Location",
+          "u=0…32, v=0…20"
+        ]
+      ],
+      "check": "A shorter rectangle of the same depth lies on the preceding top face.",
+      "fix": "The other exposed intermediate platform length is the derived value 48−32=16."
+    },
+    "Q1-step2-extrude": {
+      "title": "Add a 12 mm extrusion",
+      "phase": "Second step · Boss-Extrude3",
+      "command": "Extruded Boss/Base → Blind 12",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Set Blind depth 12, point upward and select Merge result.",
+        "Click the green check mark. This layer's top face should be at h=38+12=50."
+      ],
+      "dimensions": [
+        [
+          "This extrusion",
+          "12 mm"
+        ],
+        [
+          "Top-face height",
+          "h=50"
+        ]
+      ],
+      "check": "This top face is 20 mm above the top face of the base.",
+      "fix": "Do not enter the cumulative height of 20 as this extrusion's depth."
+    },
+    "Q1-tall-sketch": {
+      "title": "Sketch the highest layer, 20 × 20",
+      "phase": "Tall step · Boss-Extrude4",
+      "command": "Select the top face at h=50 → Sketch → Corner Rectangle",
+      "actions": [
+        "Select the 32 × 20 top face, enter a sketch and press Ctrl+8.",
+        "Draw a rectangle from the same reference corner (0,0), then use Smart Dimension to set 20 × 20.",
+        "Confirm the Coincident and Horizontal/Vertical relations and a Fully Defined sketch."
+      ],
+      "dimensions": [
+        [
+          "Rectangle",
+          "20 × 20 mm"
+        ]
+      ],
+      "check": "The tall step has length 20 along u and the same depth as the step below it.",
+      "fix": "The two dimensions of 20 are not both heights."
+    },
+    "Q1-tall-extrude": {
+      "title": "Extrude 25 to reach an overall height of 75",
+      "phase": "Tall step · Boss-Extrude4",
+      "command": "Extruded Boss/Base → Blind 25",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base and enter 25=75−50.",
+        "Extrude upward, select Merge result and click the green check mark."
+      ],
+      "dimensions": [
+        [
+          "This extrusion",
+          "25 mm"
+        ],
+        [
+          "Overall part height",
+          "75 mm"
+        ]
+      ],
+      "check": "The distance from the lowest bottom face to the highest top face is 75.",
+      "fix": "75 is the final overall height. On the face at h=50, do not add another 75."
+    },
+    "Q1-hole-sketch": {
+      "title": "Sketch the Ø12 hole on the vertical base face",
+      "phase": "Through hole · Cut-Extrude1",
+      "command": "Select a vertical base face parallel to Front Plane → Sketch → Circle",
+      "actions": [
+        "Select the large vertical face of the base, 60 × 30 and parallel to Front Plane. Do not select a step's top face. Enter a sketch and press Ctrl+8.",
+        "Draw a circle and press Esc. Select its circumference with Smart Dimension and enter diameter 12.",
+        "Select the circle centre and the right vertical edge of the base to set a horizontal distance of 16. Select the centre and the bottom edge to set a vertical distance of 16. The centre is therefore at u=44, h=16."
+      ],
+      "dimensions": [
+        [
+          "Hole diameter",
+          "Ø12 mm"
+        ],
+        [
+          "Distance from right edge / bottom face",
+          "16 / 16 mm"
+        ],
+        [
+          "Circle centre",
+          "u=60−16=44, h=16"
+        ]
+      ],
+      "check": "The circle is fully defined, with its centre near the right end of the base.",
+      "fix": "Dimension from the circle centre to the edge, not the shortest distance from the circumference to the edge."
+    },
+    "Q1-hole-cut": {
+      "title": "Cut through the full depth of the base",
+      "phase": "Through hole · Cut-Extrude1",
+      "command": "Exit Sketch → Extruded Cut → Through All",
+      "actions": [
+        "Exit Sketch → Extruded Cut, then select Through All as the end condition.",
+        "Check that the preview arrow points into the solid. If the circle was sketched on Front Plane, you may also choose Through All - Both.",
+        "Click the green check mark, rotate the model and confirm that the circular hole exits at both the front and back."
+      ],
+      "dimensions": [
+        [
+          "Depth crossed by the cut",
+          "28 mm (controlled by Through All)"
+        ]
+      ],
+      "check": "The hole passes through the whole base and has no blind-hole bottom face.",
+      "fix": "A cut depth of only 20 would leave 8 mm of material along the base depth."
+    },
+    "Q1-check": {
+      "title": "Rebuild, check the volume and save",
+      "phase": "Verification",
+      "command": "Ctrl+Q → Evaluate → Mass Properties → Ctrl+S",
+      "actions": [
+        "Check the 60 × 28 × 30 base, step-top heights h=38/50/75, Ø12 hole and both dimensions of 16.",
+        "Read the volume in Mass Properties. The target is 72593 mm³ ±1%; the tutorial geometry has a volume of 72593.2746 mm³.",
+        "The design tree should contain 4 boss extrusions and 1 extruded cut. Fully define every sketch and save Q1.sldprt."
+      ],
+      "dimensions": [
+        [
+          "Permitted range",
+          "71867.07…73318.93 mm³"
+        ]
+      ],
+      "check": "The overall height, hole position and volume all meet the requirements.",
+      "fix": "A close volume cannot replace checking positions. An incorrectly located origin or steps placed on the wrong side still need correction."
+    },
+    "Q2-setup": {
+      "title": "Create Q2 and establish the symmetry plane",
+      "phase": "Setup",
+      "command": "Ctrl+N → Part → MMGS → Save Q2.sldprt",
+      "actions": [
+        "Create a new part, set the units to MMGS, and save it as Q2.sldprt.",
+        "Use the red point on the bottom of the link plate, directly below the large-end center, as the origin. Top Plane is the plate bottom at h=0; both end centers lie in Front Plane (v=0)."
+      ],
+      "dimensions": [
+        [
+          "Large-end center",
+          "(u,v)=(0,0)"
+        ],
+        [
+          "Small-end center",
+          "(38,0)"
+        ]
+      ],
+      "check": "The two end centers will be 38 apart along u.",
+      "fix": "Front Plane is the longitudinal symmetry plane. Do not sketch the part's entire flat outline on Front Plane."
+    },
+    "Q2-circles": {
+      "title": "Locate the two outer circles on Top Plane",
+      "phase": "Link plate · Boss-Extrude1",
+      "command": "Top Plane → Sketch → Circle → Smart Dimension",
+      "actions": [
+        "Select Top Plane → Sketch → Ctrl+8. Draw the large circle at the origin and set its diameter to 32.",
+        "Draw the small circle to the right of the large one and set its diameter to 18 (R9). Ctrl-select the two centers and add a Horizontal relation.",
+        "Use Smart Dimension on the two centers to set the horizontal center distance to 38. Make the large center Coincident with the origin; both circles should be fully defined."
+      ],
+      "dimensions": [
+        [
+          "Large outer circle",
+          "Ø32 = Ø20 + 2×6"
+        ],
+        [
+          "Small outer circle",
+          "Ø18 = 2×R9"
+        ],
+        [
+          "Center distance",
+          "38 mm"
+        ]
+      ],
+      "check": "The centers are at the same level, with the large center at the origin and the small center in the positive length direction.",
+      "fix": "The radial dimension 6 is the large-end wall thickness. The large outer circle is not Ø26."
+    },
+    "Q2-tangents": {
+      "title": "Draw the upper and lower common external tangents",
+      "phase": "Link plate · Boss-Extrude1",
+      "command": "Line → Ctrl-select a line and circle → Add Relations → Tangent",
+      "actions": [
+        "Select Line. Draw one segment connecting the upper sides of the two circles and another connecting the lower sides, then press Esc. Each segment has one endpoint on each circle.",
+        "If tangency was not inferred automatically, Ctrl-select the upper line and the large circle → Tangent; then select the same line and the small circle → Tangent. Add the corresponding Tangent relations between the lower line and both circles.",
+        "Check that all four endpoints have Coincident relations to their respective circles and that both lines turn black."
+      ],
+      "dimensions": [
+        [
+          "Geometric relations",
+          "Two lines × tangency at both ends, giving 4 Tangent relations"
+        ]
+      ],
+      "check": "The two lines slope inward toward the smaller end; they are not horizontal parallel lines.",
+      "fix": "Do not substitute lines joining the circles' highest points for the common external tangents. With different radii, the tangent points are not directly above or below the centers."
+    },
+    "Q2-trim": {
+      "title": "Trim the inner arcs to leave one closed outer contour",
+      "phase": "Link plate · Boss-Extrude1",
+      "command": "Sketch → Trim Entities → Power Trim",
+      "actions": [
+        "Click Trim Entities. Remove the short inner arc of the large circle facing the small circle, and the inner arc of the small circle facing the large circle.",
+        "Keep the long outer arc at the large end, the outer arc at the small end, and the two tangent lines, leaving a single closed outer loop. Press Esc.",
+        "Trimming can remove dimensions or relations. Check arc radii R16 and R9, centers (0,0) and (38,0), and the Tangent relations. Restore any missing constraints until the sketch is fully defined."
+      ],
+      "dimensions": [
+        [
+          "Large arc / small arc",
+          "R16 / R9"
+        ],
+        [
+          "Contour",
+          "One closed loop"
+        ]
+      ],
+      "check": "With Shaded Sketch Contours enabled, the entire link plate area is continuously shaded.",
+      "fix": "If you trim the wrong arc, press Ctrl+Z. Do not leave internal arcs that divide the region into additional unspecified contours."
+    },
+    "Q2-plate": {
+      "title": "Extrude the link plate by 6 mm",
+      "phase": "Link plate · Boss-Extrude1",
+      "command": "Exit Sketch → Extruded Boss/Base → Blind 6",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Set Blind depth to 6 and extrude upward, from h=0 to 6.",
+        "Check that the preview is a tapering plate between the two end arcs, then click the green check mark."
+      ],
+      "dimensions": [
+        [
+          "Plate thickness",
+          "6 mm"
+        ]
+      ],
+      "check": "The plate bottom lies on Top Plane and its top is at h=6.",
+      "fix": "This 6 is the plate thickness in the side view. It is a separate dimension from the large-end radial wall thickness."
+    },
+    "Q2-large-sketch": {
+      "title": "Draw a concentric Ø32 circle on the plate top",
+      "phase": "Large-end boss · Boss-Extrude2",
+      "command": "Select the top face at h=6 → Sketch → Circle",
+      "actions": [
+        "Select the link plate top face → Sketch → Ctrl+8. Draw a circle at the large end.",
+        "Ctrl-select the new circle and the large-end outer arc → add a Concentric relation. Set Ø32 with Smart Dimension.",
+        "If automatic inference has already locked the center to the projected origin, do not add a duplicate Concentric relation. Confirm that the sketch is fully defined."
+      ],
+      "dimensions": [
+        [
+          "Circle diameter",
+          "Ø32 mm"
+        ],
+        [
+          "Center",
+          "Concentric with the large end"
+        ]
+      ],
+      "check": "The circle is at the large end of the plate and has the same radius as the existing large-end outer arc.",
+      "fix": "Do not use Ø20 here; Ø20 is the later through hole."
+    },
+    "Q2-large-boss": {
+      "title": "Add 8 to obtain a total height of 14",
+      "phase": "Large-end boss · Boss-Extrude2",
+      "command": "Extruded Boss/Base → Blind 8 → Merge result",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Enter depth 8=14−6 and extrude upward.",
+        "Enable Merge result and confirm that the large end extends from h=0 to h=14."
+      ],
+      "dimensions": [
+        [
+          "Height added in this feature",
+          "8 mm"
+        ],
+        [
+          "Large-end total height",
+          "14 mm"
+        ]
+      ],
+      "check": "The large-end top face is 8 above the link plate top face.",
+      "fix": "Extruding another 14 from the plate top would make the large-end total height 20."
+    },
+    "Q2-lower-sketch": {
+      "title": "Return to Top Plane and sketch the small-end circle",
+      "phase": "Small-end lower boss · Boss-Extrude3",
+      "command": "Select Top Plane in the tree → Sketch → Circle",
+      "actions": [
+        "Do not select the link plate top face. Select the original Top Plane (h=0) in the tree and start a sketch.",
+        "Draw a circle at the small-end center (u,v)=(38,0) and set its diameter to 18.",
+        "Locate it using a Concentric relation to the small-end outer arc. Alternatively, make its center Horizontal with the origin and set the center distance to 38. Confirm that the sketch is fully defined."
+      ],
+      "dimensions": [
+        [
+          "Circle",
+          "Ø18 mm"
+        ],
+        [
+          "Sketch elevation",
+          "h=0"
+        ]
+      ],
+      "check": "The sketch lies on the original reference plane containing the plate bottom.",
+      "fix": "Extruding downward by 24 from the plate top would put the bottom at −18, making it 6 too short."
+    },
+    "Q2-lower-boss": {
+      "title": "Reverse the extrusion and extend it by 24 mm",
+      "phase": "Small-end lower boss · Boss-Extrude3",
+      "command": "Extruded Boss/Base → Blind 24 → Reverse Direction",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Enter depth 24.",
+        "Click Reverse Direction so that the yellow preview extends below the plate, from h=0 to −24. Enable Merge result and click the check mark."
+      ],
+      "dimensions": [
+        [
+          "Downward extension",
+          "24 mm"
+        ],
+        [
+          "Small-end total height",
+          "6+24=30 mm"
+        ]
+      ],
+      "check": "The lower boss bottom is at h=−24; its top remains at the plate top, h=6.",
+      "fix": "The new boss contacts the plate bottom over its full end face. After merging, there should be only one solid body."
+    },
+    "Q2-hole20": {
+      "title": "Draw Ø20 at the large end and cut it through",
+      "phase": "Large hole · Cut-Extrude1",
+      "command": "Select the large-end top face → Sketch → Circle → Extruded Cut",
+      "actions": [
+        "Select the large-end top face at h=14 and start a sketch. Draw a circle at the large-end center, locate it with a Concentric relation, and set Ø20.",
+        "Confirm that the sketch is fully defined, then Exit Sketch → Extruded Cut → Through All.",
+        "Point the arrow downward into the solid. After confirmation, the hole should pass through both the large end and the link plate."
+      ],
+      "dimensions": [
+        [
+          "Hole diameter",
+          "Ø20 mm"
+        ],
+        [
+          "Total height cut through",
+          "14 mm (use Through All as the end condition)"
+        ]
+      ],
+      "check": "A radial wall thickness of 6 mm remains at the large end.",
+      "fix": "Cut the large hole separately in this step. Do not try to draw one planar sketch on two end faces at different heights."
+    },
+    "Q2-hole6": {
+      "title": "Draw Ø6 at the small end and cut through the whole boss",
+      "phase": "Small hole · Cut-Extrude2",
+      "command": "Select the small-end top face at h=6 → Sketch → Circle → Through All",
+      "actions": [
+        "Select the small-end top face of the plate at h=6. Draw a Ø6 circle concentric with the small end and fully define it.",
+        "Exit Sketch → Extruded Cut → Through All. Cut downward through both the plate and the lower boss.",
+        "Click the green check mark and verify that both holes pass completely through."
+      ],
+      "dimensions": [
+        [
+          "Hole diameter",
+          "Ø6 mm"
+        ],
+        [
+          "Total height cut through",
+          "30 mm"
+        ]
+      ],
+      "check": "The small hole has an exit on the lower boss bottom face.",
+      "fix": "Do not cut only the plate's 6 mm thickness."
+    },
+    "Q2-check": {
+      "title": "Check symmetry, both holes, and volume",
+      "phase": "Verification",
+      "command": "Ctrl+Q → Evaluate → Mass Properties → Ctrl+S",
+      "actions": [
+        "Check that both centers lie at v=0 with center distance 38; the large-end total height is 14, the small-end lowest point is −24, and the plate thickness is 6.",
+        "The target volume is 16268 mm³ ±1%. The geometry in this tutorial is approximately 16267.9151 mm³.",
+        "The final design tree should contain 3 boss extrusions and 2 extruded cuts. Fully define every sketch and save Q2.sldprt."
+      ],
+      "dimensions": [
+        [
+          "Acceptable range",
+          "16105.32…16430.68 mm³"
+        ]
+      ],
+      "check": "Front Plane is the symmetry plane of the entire part, and the volume is within the acceptable range.",
+      "fix": "Neither Mirror nor Hole Wizard is needed to create these simple through holes."
+    },
+    "Q3-setup": {
+      "title": "Create Q3 with the origin at the bottom-edge midpoint",
+      "phase": "Setup",
+      "command": "Ctrl+N → Part → MMGS → Save Q3.sldprt",
+      "actions": [
+        "Create a new part with MMGS units. Place the origin at the midpoint of the front bottom edge of the base, shown by the pink point in the source drawing.",
+        "For this question, u is the front-to-back length 35, v is the left-to-right width 52, and h is height. Front Plane (v=0) is the left-to-right symmetry plane."
+      ],
+      "dimensions": [
+        [
+          "Base",
+          "u=0…35, v=−26…26, h=0…7"
+        ]
+      ],
+      "check": "The origin is neither a base corner nor the center of the base.",
+      "fix": "In this drawing, 52 is the total width and 35 is the total front-to-back length."
+    },
+    "Q3-base-sketch": {
+      "title": "Sketch a 35 × 52 rectangle on Top Plane",
+      "phase": "Base · Boss-Extrude1",
+      "command": "Top Plane → Sketch → Corner Rectangle → Smart Dimension",
+      "actions": [
+        "Top Plane → Sketch → Ctrl+8. Draw a rectangle with its length along u and width along v.",
+        "Use Smart Dimension to set length 35 and width 52. Select the front short edge midpoint and the origin → Coincident. You can right-click the edge and choose Select Midpoint.",
+        "Confirm that the rectangle extends from u=0 to u=35, with 26 on each side across its width, and that the sketch is fully defined."
+      ],
+      "dimensions": [
+        [
+          "Length × width",
+          "35 × 52 mm"
+        ],
+        [
+          "Front-edge midpoint",
+          "Coincident with the origin"
+        ]
+      ],
+      "check": "The origin lies at the front-edge midpoint, and the rectangle width is symmetric about Front Plane.",
+      "fix": "Do not use a Center Rectangle centered at the origin; that would place the front end at u=−17.5."
+    },
+    "Q3-base-boss": {
+      "title": "Extrude the base to thickness 7",
+      "phase": "Base · Boss-Extrude1",
+      "command": "Extruded Boss/Base → Blind 7",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base → Blind depth 7, directed upward.",
+        "Click the green check mark. At this stage, the rectangular base still has four square corners."
+      ],
+      "dimensions": [
+        [
+          "Thickness",
+          "7 mm"
+        ]
+      ],
+      "check": "The base bottom is at h=0 and the top is at h=7.",
+      "fix": "The next step modifies only the two front corners."
+    },
+    "Q3-front-fillet": {
+      "title": "Apply R10 to only the two front vertical edges",
+      "phase": "Front corner fillets · Fillet1",
+      "command": "Features → Fillet → Radius 10",
+      "actions": [
+        "Press Spacebar and select an isometric view. Ctrl-select the left and right front vertical edges at u=0; both extend from h=0 to 7.",
+        "Click Features → Fillet, set radius 10, and check that the preview rounds only the two front corners.",
+        "If the preview includes additional edges, turn off Tangent propagation and check the selection again. Click the check mark."
+      ],
+      "dimensions": [
+        [
+          "Front corner fillets",
+          "R10 mm"
+        ],
+        [
+          "Selected edges",
+          "2 front vertical edges"
+        ]
+      ],
+      "check": "In top view, the two front corners have R10 fillets while the two rear corners remain square.",
+      "fix": "Do not select the entire top perimeter of the base, and do not round all four corners."
+    },
+    "Q3-wall-sketch": {
+      "title": "Locate the 26 × 34 upper body on the base",
+      "phase": "Upper body · Boss-Extrude2",
+      "command": "Select the top face at h=7 → Sketch → Corner Rectangle",
+      "actions": [
+        "Select the base top face → Sketch → Ctrl+8 and draw a rectangle. Set length 26 along u and width 34 along v.",
+        "Align its rear edge with the base rear edge at u=35: select a rear-edge endpoint and the base rear edge, and add a Coincident point-on-edge relation. Then place that edge's midpoint on the Front Plane centerline.",
+        "Alternatively, make the rectangle rear-edge midpoint Coincident with the base rear-edge midpoint, then dimension 26 and 34. The front position follows from 35−26=9."
+      ],
+      "dimensions": [
+        [
+          "Upper-body extent",
+          "u=9…35, v=−17…17"
+        ],
+        [
+          "Rectangle",
+          "26 × 34 mm"
+        ]
+      ],
+      "check": "The rear faces align, and there is 9 between the upper body and the base side edge on each side.",
+      "fix": "26 is the front-to-back length; 34 is the transverse width."
+    },
+    "Q3-wall-boss": {
+      "title": "Extrude another 25 from the base top",
+      "phase": "Upper body · Boss-Extrude2",
+      "command": "Extruded Boss/Base → Blind 25 → Merge result",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base → depth 25, directed upward, with Merge result enabled.",
+        "After confirmation, the upper-body top face is at h=7+25=32."
+      ],
+      "dimensions": [
+        [
+          "Height added",
+          "25 mm"
+        ],
+        [
+          "Total height",
+          "32 mm"
+        ]
+      ],
+      "check": "The upper solid is 26 × 34 × 25 and is merged with the base.",
+      "fix": "25 is measured from the base top face."
+    },
+    "Q3-root-fillet": {
+      "title": "Apply R5 to the two concave root edges",
+      "phase": "Root fillets · Fillet2",
+      "command": "Ctrl-select the two long root edges → Features → Fillet 5",
+      "actions": [
+        "Select the two concave edges where the upper body's left and right side faces meet the base top: v=±17, h=7, extending along u from 9 to 35.",
+        "Click Fillet and set radius 5. The preview should add transition material at the roots; this is not an external fillet removing material from the upper-body top.",
+        "Confirm the fillets before cutting the rear opening, while the complete long root edges are easier to select."
+      ],
+      "dimensions": [
+        [
+          "Root fillets",
+          "R5 mm"
+        ],
+        [
+          "Edges",
+          "2 concave edges parallel to u"
+        ]
+      ],
+      "check": "There are smooth R5 transitions at the roots of both upper-body side faces.",
+      "fix": "If the highlighted edge is at the top, h=32, you have selected the wrong edge."
+    },
+    "Q3-opening-sketch": {
+      "title": "Sketch the rear-opening rectangle on Top Plane",
+      "phase": "Rear opening · Cut-Extrude1",
+      "command": "Top Plane → Sketch → Corner Rectangle",
+      "actions": [
+        "Select Top Plane (h=0) in the tree, start a sketch, and press Ctrl+8.",
+        "Draw a rectangle symmetric across v=0 with width 20, so its sides are at v=±10. Set its front edge at u=16=35−19.",
+        "To avoid leaving a thin sliver at the rear face, extend the rectangle rear edge to u=36, which is 1 mm beyond the part rear. Set the sketch length to 20. This sketch length of 20 includes 1 mm outside the solid; the actual opening depth in the part remains 19."
+      ],
+      "dimensions": [
+        [
+          "Source opening width × depth",
+          "20 × 19 mm"
+        ],
+        [
+          "Cut sketch",
+          "u=16…36, v=−10…10"
+        ],
+        [
+          "Extension beyond the part",
+          "1 mm (construction allowance)"
+        ]
+      ],
+      "check": "The opening front edge is 16 from the base front, and the rectangle rear edge extends beyond the rear face.",
+      "fix": "The sketch extension outside the solid is a construction choice in this tutorial, not an additional source-drawing dimension."
+    },
+    "Q3-opening-cut": {
+      "title": "Cut through both the upper body and the base",
+      "phase": "Rear opening · Cut-Extrude1",
+      "command": "Extruded Cut → Through All - Both",
+      "actions": [
+        "Exit Sketch → Extruded Cut. Select Through All - Both. If your version only offers a single-direction through cut, point its arrow upward.",
+        "Check that the preview passes from h=0 through the base and upper body to the top, then click the check mark.",
+        "Look from the bottom: you should also be able to see through the central rear opening."
+      ],
+      "dimensions": [
+        [
+          "Cut end condition",
+          "Through All, including the base"
+        ]
+      ],
+      "check": "The center of the base rear is open, with no remaining 7 mm floor.",
+      "fix": "A Blind cut of 25 from the upper-body top would leave an incorrect base floor."
+    },
+    "Q3-lug-sketch": {
+      "title": "Sketch the lug profile on Right Plane",
+      "phase": "Front lug · Boss-Extrude3",
+      "command": "Right Plane → Sketch → Line / Centerpoint Arc",
+      "actions": [
+        "Select Right Plane (u=0) → Sketch → Ctrl+8. This sketch is described using (v,h).",
+        "First draw the bottom edge from (−7.5,7) to (7.5,7), then the right vertical edge up to (7.5,15).",
+        "Use Centerpoint Arc with its center at (0,15). Draw the upper semicircle from (7.5,15), over the top, to (−7.5,15), then draw the left vertical edge back to the bottom-edge start point.",
+        "Make each arc endpoint Coincident with its vertical-line endpoint and make both vertical sides Tangent to the arc. The bottom edge is Horizontal and the two sides are Vertical."
+      ],
+      "dimensions": [
+        [
+          "Bottom-edge elevation",
+          "h=7"
+        ],
+        [
+          "Straight-side height",
+          "8 mm"
+        ],
+        [
+          "Top arc",
+          "R7.5, center v=0, h=15"
+        ]
+      ],
+      "check": "The closed lug-shaped contour is 15 wide, with straight sides 8 high and an upper semicircle.",
+      "fix": "The horizontal screen direction of a Right Plane sketch may be opposite to positive v. This profile is left-to-right symmetric, so locate it using the centerline."
+    },
+    "Q3-lug-dims": {
+      "title": "Fully define the lug sketch",
+      "phase": "Front lug · Boss-Extrude3",
+      "command": "Smart Dimension → R7.5 / 8 / 7; Add Relations",
+      "actions": [
+        "Use Smart Dimension to set the top-arc radius to 7.5, either straight-side length to 8, and the bottom-edge height above the origin to 7.",
+        "Constrain the arc center vertically above the origin, put the arc endpoints at the same height, and make the arc Tangent to the vertical sides. Check for existing inferred relations to avoid duplicates.",
+        "You may add Driven dimensions to check total width 15, arc-center height 15, and highest point 22.5. Confirm that the sketch status is Fully Defined."
+      ],
+      "dimensions": [
+        [
+          "Lug total height",
+          "8+7.5=15.5 (measured from the base top)"
+        ],
+        [
+          "Highest point",
+          "h=22.5"
+        ]
+      ],
+      "check": "The lug hole-center reference is at h=15.",
+      "fix": "The source dimension 8 locates the center above the base top; it is not the full lug height."
+    },
+    "Q3-lug-boss": {
+      "title": "Extrude the lug by 5 in the positive length direction",
+      "phase": "Front lug · Boss-Extrude3",
+      "command": "Extruded Boss/Base → Blind 5 → Merge result",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base → Blind depth 5.",
+        "Check the preview: the lug should extend from u=0 inward over the base to u=5. Click Reverse Direction if necessary, then confirm with Merge result enabled."
+      ],
+      "dimensions": [
+        [
+          "Lug thickness",
+          "5 mm, u=0…5"
+        ]
+      ],
+      "check": "The lug stands on the front of the base, and its bottom is merged with the base.",
+      "fix": "The opposite direction would place the lug at u<0, leaving only boundary contact or preventing a successful merge."
+    },
+    "Q3-hole-sketch": {
+      "title": "Locate Ø6 on the outer lug face",
+      "phase": "Through hole · Cut-Extrude2",
+      "command": "Select the lug face at u=0 → Sketch → Circle",
+      "actions": [
+        "Select the lug front face (u=0) → Sketch → Ctrl+8.",
+        "Draw a circle and set Ø6. Add a Concentric relation to the lug top arc, placing the center at v=0, h=15.",
+        "Confirm that the sketch is fully defined. The hole center is 8 above the base top."
+      ],
+      "dimensions": [
+        [
+          "Hole",
+          "Ø6 mm"
+        ],
+        [
+          "Hole center",
+          "v=0, h=7+8=15"
+        ]
+      ],
+      "check": "The hole center coincides with the top-arc center, rather than being halfway up the full lug height.",
+      "fix": "If the Concentric relation already determines the center, do not add two redundant location dimensions."
+    },
+    "Q3-hole-cut": {
+      "title": "Cut through the lug and the front wall behind it",
+      "phase": "Through hole · Cut-Extrude2",
+      "command": "Extruded Cut → Through All → Toward +u",
+      "actions": [
+        "Exit Sketch → Extruded Cut → Through All, with the arrow pointing along +u, into the part.",
+        "The preview should cut both the lug at u=0…5 and the upper-body front wall at u=9…16; behind that wall, the opening already exists.",
+        "Confirm and rotate the model to inspect the second section of the hole through the upper-body front wall."
+      ],
+      "dimensions": [
+        [
+          "Two sections of material cut",
+          "Lug 5 mm + front wall 7 mm"
+        ]
+      ],
+      "check": "One common hole axis passes through both the lug and the wall behind it.",
+      "fix": "Do not enter a cut depth of only 5. The question requires all holes to use Through All."
+    },
+    "Q3-check": {
+      "title": "Check the origin, both openings, and volume",
+      "phase": "Verification",
+      "command": "Ctrl+Q → Mass Properties → Ctrl+S",
+      "actions": [
+        "Check that the origin is at the front bottom-edge midpoint, Front Plane is the symmetry plane, the base front corners are R10, and both upper-body root fillets are R5.",
+        "Verify that the rear opening passes through the base and that Ø6 passes through the lug and the wall behind it. The total height is 32 and the lug highest point is 22.5.",
+        "The target volume is 23361 mm³ ±1%; this tutorial's geometry is approximately 23361.0343 mm³. Save Q3.sldprt."
+      ],
+      "dimensions": [
+        [
+          "Acceptable range",
+          "23127.39…23594.61 mm³"
+        ],
+        [
+          "Solid features",
+          "3 bosses + 2 fillets + 2 cuts"
+        ]
+      ],
+      "check": "The origin, directions, and volume are all correct.",
+      "fix": "Errors in fillet or opening locations can offset each other in the volume calculation. You must still check their positions against the source drawing."
+    },
+    "Q4-setup": {
+      "title": "Create Q4 and switch to inches",
+      "phase": "Setup",
+      "command": "Ctrl+N → Part → IPS → Save Q4.sldprt",
+      "actions": [
+        "Create a new part and change the units to IPS. All lengths in this question are in inches; you can also type a value with an “in” suffix directly into a dimension input box.",
+        "Use the intersection of the two inclined edges inside the open jaw as (u,v)=(0,0). The red origin in the side view is on the upper surface, so Top Plane is h=0 and the solid extends downward to h=−0.3.",
+        "Front Plane (v=0) is the symmetry plane along the handle. Here, three simple bosses form the outside shape, followed by two cuts for the jaw and hole."
+      ],
+      "dimensions": [
+        [
+          "Handle width / thickness",
+          "0.4 / 0.3 in"
+        ],
+        [
+          "Origin height",
+          "Upper surface h=0"
+        ]
+      ],
+      "check": "IPS is active, and the origin lies on the upper surface at the jaw apex.",
+      "fix": "The old viewer used the thickness midplane. This tutorial and the updated Q4 STEP both use the upper-surface origin shown in the source drawing."
+    },
+    "Q4-derive": {
+      "title": "Calculate the centers of both outer circles first",
+      "phase": "Locating dimensions",
+      "command": "Read the drawing and calculate; no feature is created in this step",
+      "actions": [
+        "The flat clipping line at the left end is u=−0.4. Its distance to the start of the inclined jaw edge is 0.25, so that start point and the vertical line through the left outer-circle center are at u=−0.15.",
+        "The outer radius is 0.4 and the handle half-width is 0.2. The horizontal offset from the arc center to the handle-edge intersection is a=√(0.4²−0.2²)=0.3464101615.",
+        "The left neck is u=−0.15+a=0.1964101615. The straight handle length between the necks is 3.25, so the right circle center is u=−0.15+2a+3.25=3.7928203230.",
+        "3.25 is the straight-edge length between the two necks, not the circle center distance. Keep at least 8 decimal places in the calculated values below, or enter the expression shown in the table directly into the dimension box."
+      ],
+      "dimensions": [
+        [
+          "Left outer-circle center",
+          "u=−0.15, v=0"
+        ],
+        [
+          "Right outer-circle center",
+          "u=3.7928203230, v=0"
+        ],
+        [
+          "Expression",
+          "-0.15+2*sqrt(0.4^2-0.2^2)+3.25"
+        ]
+      ],
+      "check": "The right circle-center position has not simply been set to 3.25.",
+      "fix": "These coordinates are derived from the dimensions. The 2:1 detail scale is a display scale; do not multiply the stated dimensions by 2."
+    },
+    "Q4-left-circle": {
+      "title": "Draw the left Ø0.8 outer circle and clipping line",
+      "phase": "Left head · Boss-Extrude1",
+      "command": "Top Plane → Sketch → Circle / Line",
+      "actions": [
+        "Select Top Plane → Sketch → Ctrl+8. Draw a circle centered 0.15 to the left of the origin, at v=0; set its diameter to 0.8.",
+        "Add a Horizontal relation between the circle center and the origin, and dimension their horizontal distance as 0.15.",
+        "Draw a vertical line through the circle at u=−0.4, extending slightly beyond the circle above and below. Set its horizontal distance from the origin to 0.4."
+      ],
+      "dimensions": [
+        [
+          "Outer circle",
+          "Ø0.8 in"
+        ],
+        [
+          "Circle center / clipping line",
+          "u=−0.15 / −0.4"
+        ]
+      ],
+      "check": "The clipping line is to the left of the circle center, at a distance of 0.25 from it.",
+      "fix": "The circle center is not the origin; the origin is the apex of the jaw opening created later."
+    },
+    "Q4-left-trim": {
+      "title": "Trim the left head to a flat-ended circular outline",
+      "phase": "Left head · Boss-Extrude1",
+      "command": "Trim Entities → Power Trim",
+      "actions": [
+        "Trim away the minor outer-circle arc to the left of the vertical line, and remove the line segments extending above and below the circle.",
+        "Keep the major arc on the right and the vertical chord joining its endpoints to form one closed outer profile.",
+        "Recheck the arc radius 0.4, center u=−0.15/v=0, and vertical line u=−0.4. Make the endpoints Coincident and fully define the sketch."
+      ],
+      "dimensions": [
+        [
+          "Clipping line",
+          "u=−0.4"
+        ],
+        [
+          "Retained arc",
+          "The major portion on the right of the circle"
+        ]
+      ],
+      "check": "The profile is flat on the left, with a circular arc around its upper, lower and right sides.",
+      "fix": "Do not keep the small circular-segment region on the left."
+    },
+    "Q4-left-boss": {
+      "title": "Extrude downward by 0.3 in",
+      "phase": "Left head · Boss-Extrude1",
+      "command": "Extruded Boss/Base → Blind 0.3in → Reverse Direction",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Set the end condition to Blind and enter 0.3in.",
+        "Reverse the direction so the solid lies below Top Plane (h=−0.3…0), then click the check mark."
+      ],
+      "dimensions": [
+        [
+          "Thickness",
+          "0.3 in = 7.62 mm"
+        ]
+      ],
+      "check": "The origin is on the upper surface, not halfway through the thickness.",
+      "fix": "Do not select Mid Plane here for this question."
+    },
+    "Q4-handle-sketch": {
+      "title": "Draw a rectangular handle overlapping the left head",
+      "phase": "Handle · Boss-Extrude2",
+      "command": "Top Plane → Sketch → Center Rectangle",
+      "actions": [
+        "Return to Top Plane and start a sketch. Use Center Rectangle with its center at (u,v)=(1.8964101615,0).",
+        "Use Smart Dimension to set length 3.7928203230 and width 0.4. Make the center Horizontal with the origin and dimension its horizontal distance as 1.8964101615, half the right circle-center position.",
+        "The rectangle spans u=0…3.7928203230 and v=±0.2. Its left portion overlaps the circular head; the overlapping material will merge in the next feature."
+      ],
+      "dimensions": [
+        [
+          "Rectangle length × width",
+          "3.7928203230 × 0.4 in"
+        ],
+        [
+          "Rectangle center",
+          "(1.8964101615,0)"
+        ]
+      ],
+      "check": "The left edge of the rectangle passes through the origin, with a half-width of 0.2 on each side.",
+      "fix": "This rectangle length is a construction dimension. Only the exposed straight edge after merging with the circular heads is 3.25."
+    },
+    "Q4-handle-boss": {
+      "title": "Extrude the handle downward and merge it",
+      "phase": "Handle · Boss-Extrude2",
+      "command": "Extruded Boss/Base → Blind 0.3in → Merge result",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base → Blind 0.3in.",
+        "Extrude downward through the same thickness interval as the left head. Select Merge result and confirm."
+      ],
+      "dimensions": [
+        [
+          "Height interval",
+          "h=−0.3…0 in"
+        ]
+      ],
+      "check": "The handle and left head form a single solid body.",
+      "fix": "If the tree shows 2 solid bodies, check the extrusion direction and overlap."
+    },
+    "Q4-right-circle": {
+      "title": "Locate the right R0.4 circular head",
+      "phase": "Right head · Boss-Extrude3",
+      "command": "Top Plane → Sketch → Circle",
+      "actions": [
+        "Start a new sketch on Top Plane and draw a circle at the right end.",
+        "Make its center Horizontal with the origin. Enter horizontal center distance 3.7928203230 and diameter 0.8.",
+        "Confirm that the sketch is Fully Defined. The circle center should coincide with the midpoint of the handle rectangle’s right edge."
+      ],
+      "dimensions": [
+        [
+          "Right circle",
+          "R0.4 / Ø0.8 in"
+        ],
+        [
+          "Center",
+          "u=3.7928203230, v=0"
+        ]
+      ],
+      "check": "The circular head overlaps the handle sufficiently; they do not touch at only one point.",
+      "fix": "You may use a Coincident relation to the end-edge midpoint instead of the center-distance dimension. Do not apply both as redundant constraints."
+    },
+    "Q4-right-boss": {
+      "title": "Extrude the right head and check the exposed straight edge",
+      "phase": "Right head · Boss-Extrude3",
+      "command": "Extruded Boss/Base → Blind 0.3in → Merge result",
+      "actions": [
+        "Exit the sketch, extrude downward by 0.3in, and select Merge result.",
+        "Under Evaluate → Measure, select an exposed straight handle edge and check that its length is 3.25in.",
+        "The measurement may display the converted value of 82.55mm; these values are equivalent."
+      ],
+      "dimensions": [
+        [
+          "Exposed straight edge",
+          "3.25 in"
+        ],
+        [
+          "Thickness",
+          "0.3 in"
+        ]
+      ],
+      "check": "The complete outer shape contains both heads and the handle, all with the same thickness.",
+      "fix": "If the straight edge is about 2.71in, the center distance was probably incorrectly set to 3.25."
+    },
+    "Q4-jaw-sketch": {
+      "title": "Draw the five-sided jaw-cut profile",
+      "phase": "Open jaw · Cut-Extrude1",
+      "command": "Top Plane → Sketch → Line",
+      "actions": [
+        "Start a new sketch on Top Plane. Use connected lines to join (u,v)=(-0.6,-0.25), (-0.15,-0.25), (0,0), (-0.15,0.25), and (-0.6,0.25), in that order, then close the profile.",
+        "Make the upper and lower edges Horizontal and the left edge Vertical. Make the intersection of the inclined edges Coincident with the origin. Draw a horizontal construction centerline through the origin; make the upper and lower inclined-edge start points Symmetric about it and vertically aligned with each other. Dimension the upper opening height as 0.25 and the start point’s horizontal distance from the origin as 0.15. Symmetry determines the lower opening position.",
+        "Extending the left boundary to u=−0.6 takes the cut beyond the part edge at u=−0.4 without changing the actual jaw opening. Set the left boundary’s distance from the origin to 0.6 and fully define the sketch."
+      ],
+      "dimensions": [
+        [
+          "Parallel jaw opening",
+          "0.5 in"
+        ],
+        [
+          "Inclined-edge start points",
+          "u=−0.15, v=±0.25"
+        ],
+        [
+          "Leftward overrun",
+          "To u=−0.6 (cutting allowance)"
+        ]
+      ],
+      "check": "The jaw apex lies exactly at the origin, and both inclined edges extend leftward to the parallel opening edges.",
+      "fix": "Use the half-width 0.25 together with symmetry. Do not add the redundant dimensions 0.25, 0.25 and 0.5 simultaneously."
+    },
+    "Q4-jaw-cut": {
+      "title": "Cut the jaw through the thickness",
+      "phase": "Open jaw · Cut-Extrude1",
+      "command": "Extruded Cut → Through All → Downward",
+      "actions": [
+        "Exit Sketch → Extruded Cut → Through All.",
+        "The preview should cut downward through the 0.3in thickness. Confirm to form the open jaw in the left head."
+      ],
+      "dimensions": [
+        [
+          "End condition",
+          "Through All"
+        ]
+      ],
+      "check": "The parallel upper and lower jaw edges are 0.5in apart, with their apex at the origin.",
+      "fix": "If no material is removed, reverse the arrow so the cut extends below Top Plane."
+    },
+    "Q4-hex-sketch": {
+      "title": "Draw a regular hexagon with 0.5 across flats",
+      "phase": "Hexagonal hole · Cut-Extrude2",
+      "command": "Top Plane → Sketch → Polygon → Number of sides: 6",
+      "actions": [
+        "Start a new sketch on Top Plane. Click Polygon, set the number of sides to 6, and place its center at the right head’s circle center.",
+        "After drawing an approximate hexagon, press Esc. Select its top edge and add a Horizontal relation so the top and bottom edges are horizontal. Make the polygon center Coincident with the right circle center, or locate it at v=0 and u=3.7928203230.",
+        "Use Smart Dimension to select the upper and lower horizontal edges and set their vertical separation to 0.5in. Keep the equal-length relations generated by the regular polygon tool, and confirm that the sketch is Fully Defined."
+      ],
+      "dimensions": [
+        [
+          "Hexagonal hole",
+          "Regular hexagon; horizontal across-flats size 0.5 in"
+        ],
+        [
+          "Circumradius (check only)",
+          "0.5/√3 = 0.2886751346 in"
+        ]
+      ],
+      "check": "The top and bottom are flat sides, and the left and right ends are vertices. The across-flats size is 0.5.",
+      "fix": "Do not dimension 0.5 as the circumcircle diameter or the distance between opposite vertices."
+    },
+    "Q4-hex-cut": {
+      "title": "Cut the hexagonal hole through all",
+      "phase": "Hexagonal hole · Cut-Extrude2",
+      "command": "Extruded Cut → Through All",
+      "actions": [
+        "Exit Sketch → Extruded Cut → Through All, cutting downward through the right circular head.",
+        "Confirm and check that the hexagonal opening also exits on the reverse side."
+      ],
+      "dimensions": [
+        [
+          "Thickness cut through",
+          "0.3 in"
+        ]
+      ],
+      "check": "The hexagonal hole passes completely through the head, whose outside radius is R0.4.",
+      "fix": "No additional chamfers or fillets are specified. Do not add shapes absent from the drawing."
+    },
+    "Q4-check": {
+      "title": "Check the volume in in³ and the upper-surface origin",
+      "phase": "Verification",
+      "command": "Ctrl+Q → Mass Properties → Output units: in³ → Ctrl+S",
+      "actions": [
+        "Check handle width 0.4, thickness 0.3, exposed straight-edge length 3.25, jaw opening 0.5, and hexagon across-flats size 0.5.",
+        "Confirm that the origin is at the jaw apex on the upper surface, and that Front Plane is the symmetry plane across the width.",
+        "The reference volume is 0.5492in³ ±1%. This tutorial geometry is approximately 0.54962156in³, a difference of about +0.077%. Save Q4.sldprt."
+      ],
+      "dimensions": [
+        [
+          "Allowed range",
+          "0.543708…0.554692 in³"
+        ]
+      ],
+      "check": "The report displays in³, and both the volume and origin are correct.",
+      "fix": "If the report shows about 0.5496mm³, the dimensions were probably entered as millimeters. Correct the dimensions rather than changing only the report units."
+    },
+    "Q5-setup": {
+      "title": "Create Q5 using chosen approximate teaching dimensions",
+      "phase": "Setup",
+      "command": "Ctrl+N → Part → MMGS → Save Q5.sldprt",
+      "actions": [
+        "This question refers to Lab 3 Question 4, whose page is not included in the current attachment. This website retains the original Lab4 website’s existing Lab3 source figure and approximate model so you can continue following along.",
+        "The original question gives no exact dimensions. All values below are chosen approximate dimensions retained for this tutorial to fully define the example; they are not a unique standard answer.",
+        "Create a new part, use MMGS, and save Q5.sldprt. Front Plane (v=0) is the final symmetry plane. Use only Extruded Boss/Base and Extruded Cut for solid features."
+      ],
+      "dimensions": [
+        [
+          "Approximate overall length / depth / main height",
+          "60 / 48 / 40 mm"
+        ],
+        [
+          "Final highest point",
+          "47 mm (central rise)"
+        ]
+      ],
+      "check": "Understand that these values are teaching choices, and use only the two permitted types of solid feature.",
+      "fix": "Do not apply Q3’s “all holes Through All” requirement to the blind bores in Q5."
+    },
+    "Q5-profile": {
+      "title": "Draw the pentagonal profile on Front Plane",
+      "phase": "Main body · Boss-Extrude1",
+      "command": "Front Plane → Sketch → Line",
+      "actions": [
+        "Select Front Plane → Sketch → Ctrl+8. Coordinates on this plane are written as (u,h).",
+        "Use connected lines to click P1=(0,20), P2=(12,0), P3=(60,0), P4=(60,40), and P5=(12,40), in that order, then return to P1.",
+        "Draw an approximate profile first, then press Esc. Make P2—P3 and P4—P5 Horizontal, P3—P4 Vertical, and each pair of adjacent endpoints Coincident."
+      ],
+      "dimensions": [
+        [
+          "Vertices P1…P5",
+          "(0,20) → (12,0) → (60,0) → (60,40) → (12,40)"
+        ]
+      ],
+      "check": "The closed pentagon has an apex at the left end and a vertical edge at the right end.",
+      "fix": "The origin is on the bottom datum directly below the left apex; the apex itself is 20 above the origin."
+    },
+    "Q5-profile-dims": {
+      "title": "Define the profile with 4 dimensions and alignment relations",
+      "phase": "Main body · Boss-Extrude1",
+      "command": "Smart Dimension → 20 / 12 / 60 / 40",
+      "actions": [
+        "Ctrl-select P1 and the origin → Vertical; dimension P1’s height as 20. Ctrl-select P2 and the origin → Horizontal; dimension P2’s horizontal position as 12.",
+        "Dimension P3’s horizontal distance from the origin as 60, and the right vertical edge’s height as 40.",
+        "Ctrl-select P2 and P5 → Vertical, giving both upper and lower slope corners u=12. Check all Coincident endpoints and Horizontal/Vertical edge relations until the sketch is Fully Defined."
+      ],
+      "dimensions": [
+        [
+          "P1 height",
+          "20 mm"
+        ],
+        [
+          "Slope-corner position u",
+          "12 mm"
+        ],
+        [
+          "Right end u / main height",
+          "60 / 40 mm"
+        ]
+      ],
+      "check": "The fully defined pentagon matches the five given approximate points.",
+      "fix": "Do not dimension every inclined edge’s angle and length and then redundantly dimension the same vertex positions."
+    },
+    "Q5-body-boss": {
+      "title": "Extrude Mid Plane with a total depth of 48",
+      "phase": "Main body · Boss-Extrude1",
+      "command": "Extruded Boss/Base → Mid Plane 48",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base. Set the end condition to Mid Plane and enter total depth 48.",
+        "Confirm that the extrusion extends 24 on each side, then click the green check mark."
+      ],
+      "dimensions": [
+        [
+          "Total depth",
+          "48 mm"
+        ],
+        [
+          "v interval",
+          "−24…24"
+        ]
+      ],
+      "check": "The main body is symmetric about Front Plane.",
+      "fix": "The Mid Plane value 48 is the combined depth on both sides, not 48 on each side."
+    },
+    "Q5-rise-sketch": {
+      "title": "Draw a triangle on the same Front Plane",
+      "phase": "Central rise · Boss-Extrude2",
+      "command": "Front Plane → Sketch → Line",
+      "actions": [
+        "Select Front Plane in the tree and start a new sketch. Join (u,h)=(0,20), (8,47), and (8,20), in that order, and close the triangle.",
+        "Make the bottom edge Horizontal and the right edge Vertical. Make the lower-left vertex Coincident with the main body’s left apex. Set the bottom edge length to 8 and the right vertical edge height to 27=47−20.",
+        "Confirm that the sketch is Fully Defined. The lower portion of the triangle overlaps the main-body section so the added solid can merge with it."
+      ],
+      "dimensions": [
+        [
+          "Triangle vertices",
+          "(0,20), (8,47), (8,20)"
+        ],
+        [
+          "Overall peak height",
+          "47 mm"
+        ]
+      ],
+      "check": "The triangular peak is at u=8, h=47.",
+      "fix": "Do not enter the overall peak height 47 as the length of the triangle’s vertical edge."
+    },
+    "Q5-rise-boss": {
+      "title": "Use a regular boss with Mid Plane total depth 20",
+      "phase": "Central rise · Boss-Extrude2",
+      "command": "Extruded Boss/Base → Mid Plane 20 → Merge result",
+      "actions": [
+        "Exit Sketch → Extruded Boss/Base → Mid Plane, total depth 20.",
+        "Select Merge result. Confirm the interval v=−10…10 and merge the central rise with the main body."
+      ],
+      "dimensions": [
+        [
+          "Rise depth",
+          "20 mm (10 on each side)"
+        ]
+      ],
+      "check": "The rise is centered across the depth, with its highest point at 47.",
+      "fix": "Do not use Rib or a Mirror feature; this question restricts the solid feature types."
+    },
+    "Q5-opening-sketch": {
+      "title": "Draw the 48 × 36 opening on Top Plane",
+      "phase": "Central opening · Cut-Extrude1",
+      "command": "Top Plane → Sketch → Center Rectangle",
+      "actions": [
+        "Select Top Plane (h=0) in the tree, start a new sketch, and press Ctrl+8.",
+        "Use Center Rectangle with center (u,v)=(32,0). Set the length along u to 48 and the width along v to 36.",
+        "Make the center Horizontal with the origin and dimension its horizontal position as 32. The rectangle therefore spans u=8…56 and v=−18…18. Fully define the sketch."
+      ],
+      "dimensions": [
+        [
+          "Rectangle",
+          "48 × 36 mm"
+        ],
+        [
+          "Center",
+          "(32,0)"
+        ],
+        [
+          "Extent",
+          "u=8…56, v=±18"
+        ]
+      ],
+      "check": "The two side walls will each be 6 thick, and the right end wall will be 4 thick.",
+      "fix": "This rectangle must open all the way from the bottom to the top; it is not a shallow recess."
+    },
+    "Q5-opening-cut": {
+      "title": "Cut the opening through the full height",
+      "phase": "Central opening · Cut-Extrude1",
+      "command": "Extruded Cut → Through All - Both",
+      "actions": [
+        "Exit Sketch → Extruded Cut → Through All - Both. Alternatively, use a one-direction Through All cut pointing upward.",
+        "Preview the cut through the full height. After confirming, inspect the underside to ensure no bottom plate remains."
+      ],
+      "dimensions": [
+        [
+          "Side walls",
+          "(48−36)/2=6 mm"
+        ],
+        [
+          "Right end wall",
+          "60−56=4 mm"
+        ]
+      ],
+      "check": "The central opening passes through the top and bottom, while the central rise remains at the left end.",
+      "fix": "The cut must leave one connected solid body."
+    },
+    "Q5-front-hole": {
+      "title": "On the outside face at v=−24, locate the Ø20 bore",
+      "phase": "First-side blind bore · Cut-Extrude2",
+      "command": "Select one large outside planar face → Sketch → Circle",
+      "actions": [
+        "Rotate the model and select the large outside planar face at v=−24, parallel to Front Plane. Start a new sketch and press Ctrl+8.",
+        "Draw a circle and set Ø20. Dimension the center 20 from the bottom edge and 20 from the right vertical edge, giving center u=60−20=40, h=20.",
+        "Confirm that the sketch is Fully Defined. Viewing this face from the opposite direction may reverse screen left and right; locate the center by its distance of 20 from the part’s right-end edge."
+      ],
+      "dimensions": [
+        [
+          "Bore",
+          "Ø20 mm"
+        ],
+        [
+          "Center",
+          "u=40, h=20"
+        ]
+      ],
+      "check": "The circle is slightly right of the middle of the large side face, with its center 20 from the bottom edge.",
+      "fix": "Do not sketch the circle on an internal cavity face or inner wall."
+    },
+    "Q5-front-cut": {
+      "title": "Make only a 4 mm inward blind cut",
+      "phase": "First-side blind bore · Cut-Extrude2",
+      "command": "Extruded Cut → Blind 4",
+      "actions": [
+        "Exit Sketch → Extruded Cut. Select the Blind end condition and enter 4.",
+        "Point the arrow inward, from v=−24 to −20. After confirming, the gap between the bore bottom and the cavity at v=−18 retains 2 mm of material."
+      ],
+      "dimensions": [
+        [
+          "Blind-bore depth",
+          "4 mm"
+        ],
+        [
+          "Retained bore bottom",
+          "6−4=2 mm"
+        ]
+      ],
+      "check": "The bore has a visible bottom and does not open into the central cavity.",
+      "fix": "Only one blind bore has been made at this stage, so the part has not yet regained its final symmetry."
+    },
+    "Q5-rear-hole": {
+      "title": "Draw the same circle on the opposite outside face",
+      "phase": "Opposite-side blind bore · Cut-Extrude3",
+      "command": "Select the outside face at v=+24 → Sketch → Circle",
+      "actions": [
+        "Rotate to the opposite side, select the outside planar face at v=+24, and start a new sketch.",
+        "Draw another Ø20 circle. Again locate its center 20 from the bottom edge and 20 from the part’s right-end edge, giving u=40, h=20.",
+        "Confirm that the sketch is Fully Defined. Use a separate sketch and Extruded Cut, rather than a Mirror solid feature."
+      ],
+      "dimensions": [
+        [
+          "Opposite-side bore",
+          "Ø20, u=40, h=20"
+        ]
+      ],
+      "check": "The two side circles are coaxial along the depth direction.",
+      "fix": "Do not position the second bore at u=20 because the view has reversed."
+    },
+    "Q5-rear-cut": {
+      "title": "Blind-cut the second side inward by 4 as well",
+      "phase": "Opposite-side blind bore · Cut-Extrude3",
+      "command": "Extruded Cut → Blind 4 → Reverse Direction (as required by the preview)",
+      "actions": [
+        "Exit Sketch → Extruded Cut → Blind 4.",
+        "Cut inward, from v=+24 to +20, and click the check mark.",
+        "Each side wall is 6 thick, and each bore retains a bottom thickness of 2."
+      ],
+      "dimensions": [
+        [
+          "Second bore bottom",
+          "v=+20"
+        ],
+        [
+          "Retained bottom on both sides",
+          "2 mm each"
+        ]
+      ],
+      "check": "The finished part is symmetric about Front Plane, and both bores have blind bottoms.",
+      "fix": "Do not select Through All; the retained bottoms are part of the projection interpretation."
+    },
+    "Q5-check": {
+      "title": "Complete the shape and feature-type checks",
+      "phase": "Verification",
+      "command": "Ctrl+Q → Front / Top views → Ctrl+S",
+      "actions": [
+        "Check the pentagonal side profile, the central triangular rise at the left end, the rectangular opening through the top and bottom, and the blind bores with retained bottoms on both sides.",
+        "In the tree, confirm that the only solid features are 2 Extruded Boss/Base features and 3 Extruded Cut features, with no Rib, Fillet or Mirror feature. Fully define every sketch and confirm 1 solid body.",
+        "The example volume is approximately 34100.0592mm³. This is only a check for reproducing this approximate model, not a volume target given in the question. Save Q5.sldprt."
+      ],
+      "dimensions": [
+        [
+          "Source reference volume",
+          "None"
+        ],
+        [
+          "Example volume",
+          "Approximately 34100.0592 mm³ (chosen dimensions)"
+        ]
+      ],
+      "check": "The shape is similar, final symmetry is restored, both bore bottoms remain, and only the permitted solid feature types are used.",
+      "fix": "The original question allows reasonable approximations. Do not measure source-image pixels to seek a supposedly unique set of exact dimensions."
+    }
+  },
+  "dimensions": {
+    "Q1": [
+      [
+        "Base length × depth × height",
+        "60 × 28 × 30 mm",
+        "Source drawing"
+      ],
+      [
+        "First-step sketch / extrusion depth",
+        "48 × 20 / 8 mm",
+        "Derived"
+      ],
+      [
+        "Second-step sketch / extrusion depth",
+        "32 × 20 / 12 mm",
+        "Source + derived"
+      ],
+      [
+        "Tall-step sketch / extrusion depth",
+        "20 × 20 / 25 mm",
+        "Source + derived"
+      ],
+      [
+        "Successive top-face heights",
+        "30 → 38 → 50 → 75 mm",
+        "Derived"
+      ],
+      [
+        "Exposed length of the intermediate ledge",
+        "16 = 60−20−12−12 mm",
+        "Derived"
+      ],
+      [
+        "Base hole",
+        "Ø12; 16 from the right end and 16 above the bottom face",
+        "Source drawing"
+      ],
+      [
+        "Hole centre and cut",
+        "u=44, h=16; Through All along the depth",
+        "Derived"
+      ],
+      [
+        "Origin",
+        "The indicated reference corner of the base",
+        "Source drawing"
+      ]
+    ],
+    "Q2": [
+      [
+        "Large-end bore / radial wall thickness",
+        "Ø20 / 6 mm",
+        "Source drawing"
+      ],
+      [
+        "Large-end outside diameter",
+        "Ø32 = 20+2×6 mm",
+        "Derived"
+      ],
+      [
+        "Small-end outside radius / bore",
+        "R9 / Ø6 mm",
+        "Source drawing"
+      ],
+      [
+        "Centre-to-centre distance",
+        "38 mm; both centres have v=0",
+        "Source drawing"
+      ],
+      [
+        "Link-plate thickness",
+        "6 mm",
+        "Source drawing"
+      ],
+      [
+        "Large-end total height / added boss",
+        "14 / 8=14−6 mm",
+        "Source + derived"
+      ],
+      [
+        "Small-end downward extension",
+        "24 mm, starting at h=0",
+        "Source drawing"
+      ],
+      [
+        "Small-end total height",
+        "30 = 6+24 mm",
+        "Derived"
+      ],
+      [
+        "End condition for both holes",
+        "Through All along the height",
+        "Source geometry"
+      ],
+      [
+        "Origin / symmetry plane",
+        "At the large-end centre on the plate bottom / Front Plane",
+        "Source drawing"
+      ]
+    ],
+    "Q3": [
+      [
+        "Base width × front-to-rear length × thickness",
+        "52 × 35 × 7 mm",
+        "Source drawing"
+      ],
+      [
+        "Two front corner fillets",
+        "R10, at the two front corners only",
+        "Source drawing"
+      ],
+      [
+        "Upper-body width × front-to-rear length × height",
+        "34 × 26 × 25 mm",
+        "Source drawing"
+      ],
+      [
+        "Upper-body front / rear location",
+        "u=9 / 35 mm",
+        "Derived"
+      ],
+      [
+        "Concave root fillets on both sides",
+        "R5 mm",
+        "Source drawing"
+      ],
+      [
+        "Rear-opening width × actual depth",
+        "20 × 19 mm; cut through the base as well",
+        "Source drawing"
+      ],
+      [
+        "Rear-opening cut sketch",
+        "u=16…36; v=−10…10",
+        "Derived + cutting allowance"
+      ],
+      [
+        "Lug top arc / thickness",
+        "R7.5 / 5 mm",
+        "Source drawing"
+      ],
+      [
+        "Lug hole / centre height",
+        "Ø6; 8 mm above the base top face",
+        "Source drawing"
+      ],
+      [
+        "Lug arc centre / highest point",
+        "h=15 / 22.5 mm",
+        "Derived"
+      ],
+      [
+        "End condition for all cuts",
+        "Through All; Ø6 also passes through the wall behind the lug",
+        "Source requirement"
+      ],
+      [
+        "Origin / symmetry plane",
+        "Midpoint of the front bottom edge / Front Plane",
+        "Source requirement"
+      ]
+    ],
+    "Q4": [
+      [
+        "Length unit for this exercise",
+        "in; the source mm / in³ inconsistency is retained",
+        "Interpretation"
+      ],
+      [
+        "Handle width / thickness",
+        "0.4 / 0.3 in",
+        "Source drawing"
+      ],
+      [
+        "Exposed straight-edge length of the handle",
+        "3.25 in (between the two necks)",
+        "Source drawing"
+      ],
+      [
+        "Left outside circle / right outside circle",
+        "Ø0.8 / R0.4 in",
+        "Source drawing"
+      ],
+      [
+        "Left flat boundary to the jaw apex",
+        "0.4 in",
+        "Source drawing"
+      ],
+      [
+        "Left flat boundary to the start of the sloping jaw edge",
+        "0.25 in",
+        "Source drawing"
+      ],
+      [
+        "Jaw width / hexagon across-flats size",
+        "0.5 / 0.5 in",
+        "Source drawing"
+      ],
+      [
+        "Left / right outer-circle centre",
+        "u=−0.15 / 3.7928203230, v=0",
+        "Derived"
+      ],
+      [
+        "Left / right neck u-coordinate",
+        "0.1964101615 / 3.4464101615 in",
+        "Derived"
+      ],
+      [
+        "Handle rectangle construction dimensions",
+        "u=0…3.7928203230; width 0.4 in",
+        "Derived"
+      ],
+      [
+        "Hexagon circumradius",
+        "0.2886751346 in (for checking)",
+        "Derived"
+      ],
+      [
+        "Thickness direction / origin",
+        "h=−0.3…0; origin on the top surface",
+        "Source origin location"
+      ]
+    ],
+    "Q5": [
+      [
+        "Overall length / total depth / main-body height",
+        "60 / 48 / 40 mm",
+        "Chosen teaching value"
+      ],
+      [
+        "Five main-profile points (u,h)",
+        "(0,20),(12,0),(60,0),(60,40),(12,40)",
+        "Chosen teaching value"
+      ],
+      [
+        "Three central-rise points (u,h)",
+        "(0,20),(8,47),(8,20)",
+        "Chosen teaching value"
+      ],
+      [
+        "Total depth of the rise",
+        "20 mm; Mid Plane, 10 on each side",
+        "Chosen teaching value"
+      ],
+      [
+        "Opening sketch / centre",
+        "48 × 36 mm / (u,v)=(32,0)",
+        "Chosen teaching value"
+      ],
+      [
+        "Opening bounds",
+        "u=8…56, v=−18…18; through the full height",
+        "Chosen teaching value"
+      ],
+      [
+        "Blind bores on both sides",
+        "Ø20; centre u=40, h=20; each 4 deep",
+        "Chosen teaching value"
+      ],
+      [
+        "Side-wall / end-wall / bore-bottom thickness",
+        "6 / 4 / 2 mm",
+        "Chosen teaching value"
+      ],
+      [
+        "Allowed solid features",
+        "Extruded Boss and Extruded Cut only",
+        "Source requirement"
+      ],
+      [
+        "Symmetry plane",
+        "Front Plane (v=0)",
+        "Source requirement"
+      ]
+    ]
+  },
+  "diagrams": {
+    "先认清三个基准面": "Identify the three reference planes first",
+    "Front：v=0 · Top：h=0 · Right：u=0": "Front: v=0 · Top: h=0 · Right: u=0",
+    "俯视草图 · mm": "Top-view sketch · mm",
+    "草图面 h=0 · 本次向上拉伸 30": "Sketch plane h=0 · Extrude upward by 30 in this step",
+    "所有台阶从同一个 (u,v)=(0,0) 角定位": "Locate every step from the same (u,v)=(0,0) corner",
+    "草图面 h=30 · 本次向上拉伸 8": "Sketch plane h=30 · Extrude upward by 8 in this step",
+    "草图面 h=38 · 本次向上拉伸 12": "Sketch plane h=38 · Extrude upward by 12 in this step",
+    "草图面 h=50 · 本次向上拉伸 25": "Sketch plane h=50 · Extrude upward by 25 in this step",
+    "底座立面 · mm": "Base upright face · mm",
+    "孔 Ø12 · 沿深度贯穿 28": "Ø12 hole · Through the full depth of 28",
+    "俯视相切轮廓 · mm": "Top-view tangent outline · mm",
+    "圆心距 38": "Centre distance 38",
+    "大端外径 Ø32": "Large-end outside diameter Ø32",
+    "小端 R9": "Small end R9",
+    "两条公外切线都必须与两圆相切": "Both common external tangents must be tangent to both circles",
+    "侧面高度关系 · mm": "Side-view height relationships · mm",
+    "Top Plane：h=0；板顶 h=6；小端底 h=−24": "Top Plane: h=0; plate top h=6; small-end bottom h=−24",
+    "在板顶追加 8": "Add 8 above the plate top",
+    "俯视定位 · mm": "Top-view locations · mm",
+    "前后 35": "Front-to-rear length 35",
+    "宽 52": "Width 52",
+    "前端两角": "The two front corners",
+    "底板厚 7": "Base thickness 7",
+    "外宽 34": "Outside width 34",
+    "前后 26": "Front-to-rear length 26",
+    "前端 u=9": "Front edge u=9",
+    "开口宽 20": "Opening width 20",
+    "实际深 19": "Actual depth 19",
+    "底板也切穿": "Cut through the base as well",
+    "横向剖面示意 · R5 根部过渡": "Transverse section schematic · R5 root transitions",
+    "立台高 25（自底板顶面起）": "Upper-body height 25, measured from the base top",
+    "只选两侧根部凹棱；不是顶面外棱": "Select only the two concave root edges, not the outside top edges",
+    "耳板正对草图面 · mm": "Lug profile viewed normal to its sketch plane · mm",
+    "宽 15": "Width 15",
+    "顶弧 R7.5": "Top arc R7.5",
+    "孔 Ø6": "Hole Ø6",
+    "厚 5，向 +u": "Thickness 5, toward +u",
+    "底边 h=7 · 孔心 h=15 · 最高 h=22.5": "Bottom edge h=7 · Hole centre h=15 · Highest point h=22.5",
+    "左端详图 · 所有数值为 in": "Left-end detail · All values in inches (in)",
+    "外圆 Ø0.8": "Outside circle Ø0.8",
+    "圆心 u=−0.15": "Circle centre u=−0.15",
+    "截平线 u=−0.4": "Flat boundary u=−0.4",
+    "开口宽 0.5": "Jaw opening width 0.5",
+    "尖点 = 原点": "Apex = origin",
+    "平面外形 · in": "Planar outline · in",
+    "外露直边 3.25": "Exposed straight edge 3.25",
+    "厚 0.3，Top Plane 上表面向下拉伸": "Thickness 0.3; extrude downward from the Top Plane at the upper surface",
+    "右圆心 u=3.7928203230；左圆心 u=−0.15": "Right circle centre u=3.7928203230; left circle centre u=−0.15",
+    "六角对边距 0.5": "Hexagon across-flats size 0.5",
+    "Front 草图方向 · 全部为教学近似值": "Front sketch direction · All dimensions are chosen teaching approximations",
+    "总长 60": "Overall length 60",
+    "峰点 (8,47)": "Peak (8,47)",
+    "圆心 u=40，h=20；各侧向内盲切 4": "Centre u=40, h=20; cut a blind bore 4 inward from each side",
+    "Top 草图方向 · 教学近似尺寸": "Top sketch direction · Chosen approximate teaching dimensions",
+    "开口长 48": "Opening length 48",
+    "开口 u=8…56，v=±18；高度贯穿": "Opening u=8…56, v=±18; through the full height",
+    "侧壁 6": "Side-wall thickness 6",
+    "端壁 4": "End-wall thickness 4"
+  },
+  "ui": {
+    "跳到本步操作": "Skip to the current instructions",
+    "工程建模工作室": "Engineering Modelling Studio",
+    "SOLIDWORKS · 逐步教学": "SOLIDWORKS · Step-by-step tutorial",
+    "T4 教程 ↗": "T4 tutorial ↗",
+    "步骤目录": "Step index",
+    "把每一步做清楚。": "Build with clear steps.",
+    "先看操作，再回到 SOLIDWORKS 跟做。": "Read each instruction, then follow it in SOLIDWORKS.",
+    "查找按钮、尺寸或步骤": "Find a command, dimension, or step",
+    "重置本机学习进度": "Reset progress on this device",
+    "进度保存在当前浏览器。": "Progress is saved in this browser.",
+    "从空白零件，做到 Q1–Q5。": "Build Q1–Q5 from blank parts.",
+    "选哪个面、按哪个按钮、填什么数值，每步都有说明。": "Each step explains which face to select, which command to click, and which value to enter.",
+    "操作步骤": "Instruction steps",
+    "实体阶段": "Solid stages",
+    "建模练习": "Modelling exercises",
+    "逐步操作": "Step-by-step instructions",
+    "尺寸总表": "Dimension summary",
+    "原题核对": "Source drawing checks",
+    "资料与保存": "Files and saving",
+    "模型的变化": "Model evolution",
+    "空白零件": "Blank part",
+    "按右侧步骤创建第一个特征。": "Follow the instructions on the right to create the first feature.",
+    "等轴测": "Isometric",
+    "前视": "Front",
+    "俯视": "Top",
+    "右视": "Right",
+    "适合窗口": "Zoom to fit",
+    "边线": "Edges",
+    "拖动旋转 · 滚轮缩放 · 教学坐标 u 长度 / v 深度 / h 高度": "Drag to rotate · Scroll to zoom · Teaching coordinates: u length / v depth / h height",
+    "查看实体阶段": "View solid stage",
+    "返回本步": "Return to this step",
+    "当前阶段体积": "Current stage volume",
+    "本步尺寸示意": "Dimensions for this step",
+    "示意图由教程绘制，非软件截图": "Tutorial illustration, not a software screenshot",
+    "对照本题原图": "Compare with the source drawing",
+    "点击放大 ↗": "Click to enlarge ↗",
+    "我已完成，并通过本步检查": "I have completed this step and passed its check",
+    "← 上一步": "← Previous step",
+    "下一步 →": "Next step →",
+    "每题保存一个 .sldprt，草图和特征保留在同一棵设计树中。": "Save one .sldprt per question, keeping all sketches and features in the same design tree.",
+    "尺寸与定位，一次核对。": "Check dimensions and locations together.",
+    "“原图”来自标注；“推导”由标注计算；“教学设定”用于跟做，不代表原题精确要求。": "Source dimensions come from drawing annotations; derived dimensions are calculated from them. Chosen teaching values support the tutorial and are not exact source requirements.",
+    "本教程如何描述位置": "How this tutorial describes locations",
+    "教学坐标 (u,v,h) 对应 SOLIDWORKS 全局 (X,Y,Z)=(u,h,−v)。Front Plane 为 v=0；Top Plane 为 h=0；Right Plane 为 u=0。草图尺寸优先相对原点或实体边标注。": "Teaching coordinates (u,v,h) correspond to SOLIDWORKS global coordinates (X,Y,Z)=(u,h,−v). Front Plane is v=0; Top Plane is h=0; Right Plane is u=0. Prefer to dimension sketches relative to the origin or solid edges.",
+    "“中面”输入总厚；“给定深度”输入本次增量；“贯穿全部”必须核对方向箭头。": "For Mid Plane, enter the total thickness; for Blind, enter the depth added or removed by this feature. For Through All, check the direction arrow.",
+    "把操作与原题放在一起看。": "Compare the instructions with the source question.",
+    "原 PDF 提供几何与要求；本页的按钮顺序、约束方法和检查点由教程补写。": "The original PDF supplies the geometry and requirements. This tutorial adds the command sequence, constraint methods, and checks.",
+    "放大 ↗": "Enlarge ↗",
+    "所有题目的共通要求": "Requirements shared by all questions",
+    "每张草图完全定义。": "Fully define every sketch.",
+    "按第一角投影辨认正面、上面和右面。": "Identify the front, top, and right views using first-angle projection.",
+    "原点按图中红点/粉点放置。": "Place the origin at the red or pink point in the drawing.",
+    "逐题核对单位，不把所有尺寸都按 mm 输入。": "Check the units for each question; do not enter every dimension in mm.",
+    "打开本次上传的 4 页原 PDF ↗": "Open the uploaded 4-page source PDF ↗",
+    "尺寸与内容来源、验证范围": "Dimension and content sources; verification scope",
+    "跟着做，保存自己的零件。": "Follow the steps and save your own parts.",
+    "新版网页可离线学习；STEP 用于对照几何。可编辑的草图与特征需要按教程在 SOLIDWORKS 中建立。": "The updated tutorial works offline; STEP files provide reference geometry. Follow the instructions in SOLIDWORKS to create editable sketches and features.",
+    "NEW · 逐步操作教程": "NEW · Step-by-step tutorial",
+    "保存当前新版教程": "Save the updated tutorial",
+    "包含全部步骤、尺寸示意、原题配图与交互模型。打开 HTML 即可使用；附加下载文件需联网或保留资料目录。": "Includes every step, dimension illustrations, source drawings, and interactive models. Open the HTML to use it; additional download files require internet access or the accompanying files folder.",
+    "下载离线 HTML ↓": "Download offline HTML ↓",
+    "打印全部步骤 / 另存为 PDF": "Print all steps / Save as PDF",
+    "SOURCE · 本次原题": "SOURCE · Uploaded exercise",
+    "Lab 4 原始 PDF": "Original Lab 4 PDF",
+    "本次提供的 4 页练习说明与 Q1—Q4 尺寸图。Q5 引用的 Lab3 配图沿用原网站资料。": "The uploaded 4 pages contain the exercise instructions and dimensioned drawings for Q1—Q4. For Q5, the referenced Lab3 drawing is retained from the original website.",
+    "下载原题 PDF ↓": "Download source PDF ↓",
+    "新版步骤数据 JSON ↓": "Download updated step data JSON ↓",
+    "五个参考几何模型": "Five reference geometry models",
+    "Q4 STEP 已修正为上表面原点。Q1—Q4 的 CAD 体积均在题目 ±1% 范围内；Q5 使用教学近似尺寸。STEP 不携带本教程的原生草图历史。": "The Q4 STEP origin has been corrected to the top surface. The Q1—Q4 CAD volumes are all within the specified ±1% tolerance; Q5 uses approximate teaching dimensions. STEP files do not carry this tutorial's native sketch history.",
+    "保留的旧版讲义与附件": "Retained earlier workbooks and attachments",
+    "以下 Word、PDF、ZIP 和旧查看器保留原版内容，步骤较概括；本次细化后的按钮教学以新版网页为准。旧 ZIP 中 Q4 仍为厚度中面原点，需要新版 Q4 STEP 时使用上方单独下载。": "The Word, PDF, ZIP, and earlier viewer below retain their original content and more general instructions. Use the updated webpage for the detailed command-by-command tutorial. Q4 in the old ZIP still has its origin at mid-thickness; use the individual download above for the corrected Q4 STEP.",
+    "旧版 Word": "Earlier Word workbook",
+    "旧版 PDF": "Earlier PDF workbook",
+    "旧版完整 ZIP": "Earlier complete ZIP",
+    "旧版几何查询查看器": "Earlier geometry inspection viewer",
+    "Q5 FreeCAD 文件": "Q5 FreeCAD file",
+    "Q5 半剖示意": "Q5 half-section illustration",
+    "Q5 等轴测示意": "Q5 isometric illustration",
+    "在 SOLIDWORKS 中保存与修改": "Save and edit in SOLIDWORKS",
+    "按 Ctrl+S 保存 Q1.sldprt … Q5.sldprt。右键草图 → 编辑草图；右键特征 → 编辑特征。拖动设计树底部的退回控制棒，可以回看之前的实体状态。": "Press Ctrl+S to save Q1.sldprt … Q5.sldprt. Right-click a sketch → Edit Sketch; right-click a feature → Edit Feature. Drag the rollback bar at the bottom of the design tree to inspect earlier solid states.",
+    "网页模型用于理解变化；当前环境没有运行 SOLIDWORKS，未生成或验证本次教程的原生 .sldprt 文件。": "The webpage models explain the changes. SOLIDWORKS has not been run in this environment, and native .sldprt files for this tutorial have not been generated or verified.",
+    "中文操作说明 · 中英命令对照 · 每步尺寸与检查": "Chinese instructions · Chinese/English command names · Dimensions and checks for every step",
+    "原题配图": "Source drawing",
+    "关闭 ×": "Close ×",
+    "请启用 JavaScript 以查看交互模型和全部步骤，也可下载原始 PDF。": "Enable JavaScript to view the interactive models and all steps. You can also download the original PDF."
+  }
+}

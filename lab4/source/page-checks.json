@@ -2,6 +2,8 @@
   "checks": [
     "Inline scripts load without DOM errors.",
     "All 74 steps render their actions, dimensions and correct monotonic model stage.",
+    "All 74 steps display paired Chinese/English titles, commands, all 210 actions, all 132 dimension rows, checks and pitfalls.",
+    "All 53 summary dimension rows and every diagram annotation have English equivalents.",
     "All 27 stage meshes, view controls, manual stage selection, sync and source modal work.",
     "Completion progress is saved to localStorage.",
     "Search works across chapters and handles empty results.",
