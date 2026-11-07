@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "Inline scripts load without DOM errors.",
+    "All 74 steps render their actions, dimensions and correct monotonic model stage.",
+    "All 74 steps display paired Chinese/English titles, commands, all 210 actions, all 132 dimension rows, checks and pitfalls.",
+    "All 53 summary dimension rows and every diagram annotation have English equivalents.",
+    "All 27 stage meshes, view controls, manual stage selection, sync and source modal work.",
+    "Completion progress is saved to localStorage.",
+    "Search works across chapters and handles empty results.",
+    "All four course panels activate with correct ARIA selection.",
+    "Print includes all 74 steps, and offline HTML export creates a download.",
+    "Canvas renderer falls back after WebGL context loss.",
+    "Reset returns to the first lesson and clears progress.",
+    "Every local download link resolves to an existing repository file.",
+    "The tutorial has no external script, stylesheet or font dependency."
+  ],
+  "limits": [
+    "DOM and mocked-canvas checks; no browser visual QA because the managed desktop browser tool is unavailable.",
+    "SOLIDWORKS was not run."
+  ],
+  "webgl_draw_calls": 172,
+  "buffer_uploads": 172,
+  "software_triangles": 815
+}

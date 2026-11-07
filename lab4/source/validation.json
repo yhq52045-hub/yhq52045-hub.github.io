@@ -1,0 +1,67 @@
+{
+  "geometry_kernel": "CadQuery / Open CASCADE",
+  "manual_solidworks_execution": "not performed; SOLIDWORKS unavailable",
+  "teaching_axes": "(u,v,h); SOLIDWORKS (X,Y,Z)=(u,h,-v)",
+  "Q4_origin": "upper surface, h=0; lower surface h=-7.62 mm",
+  "checks": [
+    {
+      "question": "Q1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 72593.27460518148,
+      "reported_volume": 72593.27460518148,
+      "reported_units": "mm3",
+      "reference": 72593,
+      "percent_error": 0.0003782805249481846,
+      "stage_count": 5
+    },
+    {
+      "question": "Q2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 16267.915145080715,
+      "reported_volume": 16267.915145080715,
+      "reported_units": "mm3",
+      "reference": 16268,
+      "percent_error": -0.0005216063393480152,
+      "stage_count": 5
+    },
+    {
+      "question": "Q3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 23361.03427666348,
+      "reported_volume": 23361.03427666348,
+      "reported_units": "mm3",
+      "reference": 23361,
+      "percent_error": 0.00014672601120894696,
+      "stage_count": 7
+    },
+    {
+      "question": "Q4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9006.683659409273,
+      "reported_volume": 0.5496215587739984,
+      "reported_units": "in3",
+      "reference": 0.5492,
+      "percent_error": 0.076758698834379,
+      "stage_count": 5,
+      "SW_Y_bounds_mm": [
+        -7.620000000000001,
+        1.1279865930190001e-15
+      ]
+    },
+    {
+      "question": "Q5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 34100.05921046261,
+      "reported_volume": 34100.05921046261,
+      "reported_units": "mm3",
+      "reference": null,
+      "percent_error": null,
+      "stage_count": 5
+    }
+  ]
+}

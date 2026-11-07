@@ -1,9 +1,18 @@
-# Lab 4 / 零件建模 I
+# Lab 4 / Part Modelling I
 
-公开三维教学： https://yhq52045-hub.github.io/lab4/
+教学网站：https://yhq52045-hub.github.io/lab4/
 
-讲义及模型下载： https://yhq52045-hub.github.io/lab4/downloads/
+本次改版将几何查看器改为 SOLIDWORKS 手动操作教程，沿用 T4 的逐步教学结构。
+操作基础与 Q1—Q5 共 **74 步、27 个实体阶段**，每步均提供逐项中英对照的标题、命令入口、按钮操作、尺寸、约束、完成检查及易错点。
+支持原题放大、尺寸总表、步骤搜索、浏览器本地进度、离线 HTML 和全部步骤打印。
 
-包含Q1–Q5中英对照、23个分步阶段、几何查询及Word/PDF/STEP下载。Q5尺寸为教学近似值。
+## 内容核对
 
-文件仅新增在 `lab4/`，保留现有根目录网站。
+- 本次上传的 4 页 Lab4 PDF 保存在 `files/Lab4_Original.pdf`。
+- Q1—Q4 最终几何体积全部通过 ±1% 核验，详见 `source/validation.json`。
+- Q4 原文 mm 与参考体积 in³ 矛盾：本教程采用 in。依据原图将原点修正为上表面，`Q4.step` 同步更新。
+- Q5 图与教学近似尺寸沿用原网站，不将自选尺寸写作原题给定值。仅用 2 凸台、3 切除。
+- 当前环境未运行 SOLIDWORKS；没有声称已在软件中验证全部按钮步骤，也没有新增原生 SLDPRT。
+- 旧 Word、PDF、ZIP 保留原内容，页面明确标为旧版；旧 ZIP 内 Q4 仍使用厚度中面原点。
+
+只修改 `lab4/`。网站根页和 `t4/` 保持原样。审核分支通过后再合并到 GitHub Pages 发布分支。
