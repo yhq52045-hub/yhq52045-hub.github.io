@@ -1,0 +1,1938 @@
+{
+  "version": "2026-11-step-by-step-1",
+  "coordinates": {
+    "teaching": [
+      "u",
+      "v",
+      "h"
+    ],
+    "solidworks": [
+      "u",
+      "h",
+      "-v"
+    ]
+  },
+  "chapters": [
+    {
+      "id": "start",
+      "title": "开始前 · 操作基础",
+      "en": "Getting started",
+      "subtitle": "单位、基准面、尺寸与结束条件",
+      "reference": null,
+      "unit": "mm / in",
+      "page": 1
+    },
+    {
+      "id": "Q1",
+      "title": "Q1 · 阶梯零件",
+      "en": "Stepped block",
+      "subtitle": "4 个简单矩形凸台 + 1 个通孔",
+      "reference": 72593,
+      "unit": "mm",
+      "page": 1
+    },
+    {
+      "id": "Q2",
+      "title": "Q2 · 双端连接件",
+      "en": "Tangent link",
+      "subtitle": "相切轮廓、上下凸台与两端通孔",
+      "reference": 16268,
+      "unit": "mm",
+      "page": 2
+    },
+    {
+      "id": "Q3",
+      "title": "Q3 · 带耳支座",
+      "en": "Lug bracket",
+      "subtitle": "前端圆角、根部过渡与全贯穿切除",
+      "reference": 23361,
+      "unit": "mm",
+      "page": 3
+    },
+    {
+      "id": "Q4",
+      "title": "Q4 · 开口梅花扳手",
+      "en": "Combination wrench",
+      "subtitle": "英寸尺寸、上表面原点与六角孔",
+      "reference": 0.5492,
+      "unit": "in",
+      "page": 4
+    },
+    {
+      "id": "Q5",
+      "title": "Q5 · 近似建模练习",
+      "en": "Approximate modelling",
+      "subtitle": "只用凸台和切除，保留两侧盲孔底",
+      "reference": null,
+      "unit": "mm",
+      "page": 4
+    }
+  ],
+  "steps": [
+    {
+      "id": "start-new",
+      "q": "start",
+      "phase": "操作准备",
+      "title": "建立一个空白零件",
+      "command": "文件 File → 新建 New → 零件 Part → 确定 OK",
+      "actions": [
+        "打开 SOLIDWORKS，按 Ctrl+N；在“新建 SOLIDWORKS 文件”窗口选择“零件 / Part”，点击“确定 / OK”。",
+        "在左侧 FeatureManager 设计树找到“前视基准面 / Front Plane”“上视基准面 / Top Plane”“右视基准面 / Right Plane”和“原点 / Origin”。若看不到树，按 F9。",
+        "每道题新建一个零件；在第一次保存时按 Ctrl+Shift+S，依次使用 Q1.sldprt 至 Q5.sldprt。"
+      ],
+      "dimensions": [],
+      "check": "出现空白零件，尚无实体；左侧能选中三个基准面。",
+      "fix": "若创建成装配体或工程图，重新执行“新建 → 零件”。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-units",
+      "q": "start",
+      "phase": "操作准备",
+      "title": "输入尺寸前，先设置单位",
+      "command": "右下角单位菜单 → MMGS / IPS",
+      "actions": [
+        "Q1、Q2、Q3、Q5：点击窗口右下角的单位缩写，选“MMGS（毫米、克、秒）”。Q4：选择“IPS（英寸、磅、秒）”。",
+        "若没有快捷菜单：工具 / Tools → 选项 / Options → 文档属性 / Document Properties → 单位 / Units，选择对应单位制并点击“确定”。",
+        "本教程 Q4 的小数尺寸都带 in；即使使用毫米文档，也可以在输入框直接键入“0.3in”，由软件换算。"
+      ],
+      "dimensions": [
+        [
+          "Q1 / Q2 / Q3 / Q5",
+          "mm"
+        ],
+        [
+          "Q4",
+          "in（1 in = 25.4 mm）"
+        ]
+      ],
+      "check": "右下角单位与本题一致。",
+      "fix": "Q4 原文写 mm，却给出 in³ 参考体积；本教程依据图形尺寸与体积采用英寸解释，保留这一原文矛盾。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-axes",
+      "q": "start",
+      "phase": "读图与定位",
+      "title": "认清基准面与本文坐标",
+      "command": "视图 View → 隐藏/显示 Hide/Show → 原点 Origins",
+      "actions": [
+        "为与原网站模型一致，本文用 (u,v,h) 表示“长度、横向/深度、高度”，它们是教学坐标，不是 SOLIDWORKS 全局 XYZ。",
+        "对应关系为 SOLIDWORKS (X,Y,Z)=(u,h,−v)。因此 Top Plane 是 h=0，Front Plane 是 v=0，Right Plane 是 u=0。表格中负号表示原点另一侧。",
+        "Q2—Q5 的宽度关于 v=0 对称。Q1 的原点在图示底座基准角；Q3 在底板前端底边中点；Q4 在开口尖点所在的上表面。",
+        "原题采用第一角投影：俯视图在主视图下方。按视图名称和尺寸线判断方向，不要把页面下方的图当作零件底面。"
+      ],
+      "dimensions": [
+        [
+          "Top Plane",
+          "h=0"
+        ],
+        [
+          "Front Plane",
+          "v=0"
+        ],
+        [
+          "Right Plane",
+          "u=0"
+        ]
+      ],
+      "check": "能在模型原点处辨认长度、深度和高度，且不把教学坐标误填成全局 XYZ。",
+      "fix": "草图参数框中的 X/Y 依赖草图方向；后续优先用“智能尺寸”相对原点/边线定位，不要求盲填坐标。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-sketch",
+      "q": "start",
+      "phase": "草图基础",
+      "title": "进入草图，画完后退出当前工具",
+      "command": "选基准面/平面 → 草图 Sketch → 草图 Sketch → Ctrl+8",
+      "actions": [
+        "先在树中选一个基准面，或在实体上单击指定的平面，再点击“草图 / Sketch”选项卡的“草图 / Sketch”。按 Ctrl+8 执行“正视于 / Normal To”。",
+        "点击“矩形 / Rectangle”“直线 / Line”或“圆 / Circle”作图；先画近似大小，再标准确尺寸。圆的第一下是圆心，第二下决定大小。",
+        "画完按 Esc 退出当前画图工具；点击“退出草图 / Exit Sketch”才是结束整张草图。两者不同。"
+      ],
+      "dimensions": [],
+      "check": "编辑时状态栏显示“编辑草图 / Editing Sketch”；退出后草图作为独立项目出现在树中。",
+      "fix": "若选到了圆柱面，它不能作为普通平面草图的草图面；改选平端面或指定基准面。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-dimension",
+      "q": "start",
+      "phase": "草图基础",
+      "title": "用智能尺寸精确定位",
+      "command": "草图 Sketch → 智能尺寸 Smart Dimension",
+      "actions": [
+        "标线长：选一条直线，移动鼠标放置尺寸，键入数值并按 Enter。标圆：选圆周，放置 Ø 尺寸。标圆弧：选圆弧，放置 R 尺寸。",
+        "标点到原点的水平/竖直距离：先选点，再选原点，向上/下移动鼠标放水平尺寸，向左/右移动放竖直尺寸；输入距离的绝对值，点所在侧决定正负位置。",
+        "要约束点在轴线上：按住 Ctrl 选择该点和原点，在“添加几何关系 / Add Relations”中选“水平 / Horizontal”或“竖直 / Vertical”。圆心与原点重合时选“重合 / Coincident”。",
+        "每次尺寸输入后点绿色对勾或按 Enter，最后按 Esc 离开尺寸工具。"
+      ],
+      "dimensions": [
+        [
+          "Ø",
+          "直径"
+        ],
+        [
+          "R",
+          "半径"
+        ],
+        [
+          "重复尺寸",
+          "设为从动 / Driven，仅作检查"
+        ]
+      ],
+      "check": "尺寸值保持不变，拖动草图不会改变已标注的长度。",
+      "fix": "不要同时标一组已由其他尺寸和关系决定的数值；若提示过定义，撤销刚加的重复尺寸。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-defined",
+      "q": "start",
+      "phase": "草图基础",
+      "title": "确认草图完全定义",
+      "command": "工具 Tools → 尺寸标注 Dimensions → 完全定义草图 Fully Define Sketch",
+      "actions": [
+        "先用本教程给出的尺寸和重合、水平、竖直、相切、对称等关系约束草图。每次退出前查看状态栏“完全定义 / Fully Defined”。",
+        "默认颜色下，完全约束的普通草图线为黑色，仍有自由度的线为蓝色。若整幅图能平移，通常缺少与原点或已知边线的位置关系。",
+        "若修剪后尺寸或关系丢失，重新补齐。可从“工具 → 尺寸标注 → 完全定义草图”检查并补充，但先确认自动产生的尺寸是否符合题意。",
+        "不要用“固定 / Fix”把随手画出的形状锁住来代替准确尺寸。"
+      ],
+      "dimensions": [],
+      "check": "状态栏明确显示“完全定义”，无红色/黄色冲突提示。",
+      "fix": "放大检查未合并的端点：Ctrl 选两个端点 → 重合。缺口会阻止实体拉伸。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-features",
+      "q": "start",
+      "phase": "特征基础",
+      "title": "设置拉伸、切除与结束条件",
+      "command": "特征 Features → 拉伸凸台/基体 Extruded Boss/Base / 拉伸切除 Extruded Cut",
+      "actions": [
+        "完成并退出草图后选中它，点击“特征 / Features → 拉伸凸台/基体 / Extruded Boss/Base”，或“拉伸切除 / Extruded Cut”。",
+        "“给定深度 / Blind”输入本次增加或切除的长度；“中面 / Mid Plane”输入两侧合计的总厚度；“贯穿全部 / Through All”切穿该方向上的全部实体。",
+        "看黄色预览与方向箭头。方向相反时点击“反向 / Reverse Direction”；需要穿过草图两侧时选“完全贯穿-两者 / Through All - Both”（部分版本称双向贯穿）。",
+        "新增凸台与原实体接触时保留“合并结果 / Merge result”，点击绿色对勾。树中的“实体 / Solid Bodies”应只有 1 个。"
+      ],
+      "dimensions": [
+        [
+          "中面总厚 48",
+          "每侧 24"
+        ],
+        [
+          "贯穿全部",
+          "孔后方的其他实体也会被切穿"
+        ]
+      ],
+      "check": "预览方向正确，确认后特征没有红叉。",
+      "fix": "重建失败时先检查草图是否闭合、凸台是否与主体接触、切除方向是否穿过实体。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "start-inspect",
+      "q": "start",
+      "phase": "检查与保存",
+      "title": "核对体积，并保留可编辑特征",
+      "command": "评估 Evaluate → 质量属性 Mass Properties",
+      "actions": [
+        "完成每题后按 Ctrl+Q 强制重建，再点击“评估 / Evaluate → 质量属性 / Mass Properties”；也可从“工具 → 评估”进入。",
+        "读取“体积 / Volume”。Q1—Q3 用 mm³，Q4 用 in³；若报告单位不同，点击报告中的“选项 / Options”调整输出单位。",
+        "按 Ctrl+S 保存为 SOLIDWORKS 零件（*.sldprt）。右键某个草图选“编辑草图 / Edit Sketch”，右键某个特征选“编辑特征 / Edit Feature”，即可修改。"
+      ],
+      "dimensions": [],
+      "check": "文件扩展名为 .sldprt，设计树中有自己建立的草图和特征。",
+      "fix": "STEP 只提供导入的几何参考，不包含原始拉伸、切除和草图历史；本教程从空白零件手动创建。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "Q1-setup",
+      "q": "Q1",
+      "phase": "准备",
+      "title": "新建 Q1，设置毫米",
+      "command": "Ctrl+N → Part；单位 MMGS；Ctrl+Shift+S",
+      "actions": [
+        "新建零件，设置 MMGS，保存为 Q1.sldprt。",
+        "本题不要求 Front Plane 是对称面。以原图红点对应的底座角为原点，底座从 u=0 到 60、v=0 到 28、高度从 h=0 向上。",
+        "本题每个凸台只画一个简单矩形，孔单独用圆草图。"
+      ],
+      "dimensions": [
+        [
+          "总长 / 总深 / 总高",
+          "60 / 28 / 75 mm"
+        ]
+      ],
+      "check": "空白零件已保存，单位为 mm。",
+      "fix": "不要把各级台阶一次画成复杂阶梯轮廓。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "Q1-base-sketch",
+      "q": "Q1",
+      "phase": "底座 · Boss-Extrude1",
+      "title": "在 Top Plane 画底座矩形",
+      "command": "Top Plane → Sketch → 角点矩形 Corner Rectangle",
+      "actions": [
+        "选 Top Plane → 草图 → Ctrl+8。选择“矩形”下拉菜单中的“角点矩形 / Corner Rectangle”。",
+        "第一下单击原点，第二下在零件的长度与深度正向放置另一角；按 Esc。",
+        "智能尺寸：长边 60、深度边 28。确认原点角有“重合”，四边有水平/竖直关系，草图完全定义。"
+      ],
+      "dimensions": [
+        [
+          "u 范围",
+          "0…60"
+        ],
+        [
+          "v 范围",
+          "0…28"
+        ],
+        [
+          "矩形",
+          "60 × 28 mm"
+        ]
+      ],
+      "check": "一个完全定义的矩形，基准角与原点重合。",
+      "fix": "深度 28 是底座总深，不是上层台阶的 20。",
+      "stage": -1,
+      "diagram": "q1-base"
+    },
+    {
+      "id": "Q1-base-extrude",
+      "q": "Q1",
+      "phase": "底座 · Boss-Extrude1",
+      "title": "拉伸底座 30 mm",
+      "command": "退出草图 → Features → Extruded Boss/Base → Blind",
+      "actions": [
+        "退出草图，选择刚才的矩形草图，点击“拉伸凸台/基体”。",
+        "结束条件选择“给定深度 / Blind”，输入 30；预览从 Top Plane 向上达到 h=30。",
+        "点击绿色对勾；可将特征重命名为“底座_60x28x30”。"
+      ],
+      "dimensions": [
+        [
+          "本次拉伸",
+          "30 mm"
+        ],
+        [
+          "顶面高度",
+          "h=30"
+        ]
+      ],
+      "check": "得到 60 × 28 × 30 mm 的长方体。",
+      "fix": "输入的是底座高度 30，不是总高 75。",
+      "stage": 0,
+      "diagram": "q1-base"
+    },
+    {
+      "id": "Q1-step1-sketch",
+      "q": "Q1",
+      "phase": "一级台阶 · Boss-Extrude2",
+      "title": "在底座顶面画 48 × 20",
+      "command": "选 h=30 顶面 → Sketch → Corner Rectangle",
+      "actions": [
+        "单击底座顶面 → 草图 → Ctrl+8。",
+        "矩形第一角选与原点同一侧的顶面基准角 (u,v)=(0,0)，另一角放在 (48,20) 一侧。",
+        "智能尺寸设长 48、深 20；第一角与该顶点重合，确认完全定义。"
+      ],
+      "dimensions": [
+        [
+          "矩形",
+          "48 × 20 mm"
+        ],
+        [
+          "48 的来源",
+          "60−12"
+        ],
+        [
+          "定位",
+          "u=0，v=0 同一基准角"
+        ]
+      ],
+      "check": "台阶右端距底座右端 12，深度方向余量为 28−20=8。",
+      "fix": "每层都从相同的 u=0、v=0 基准角出发。",
+      "stage": 0,
+      "diagram": "q1-s1"
+    },
+    {
+      "id": "Q1-step1-extrude",
+      "q": "Q1",
+      "phase": "一级台阶 · Boss-Extrude2",
+      "title": "追加拉伸 8 mm",
+      "command": "Extruded Boss/Base → Blind 8 → Merge result",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体，深度输入 8，向上拉伸。",
+        "保留“合并结果”，点击绿色对勾。",
+        "8 来自两级顶面高差：20−12；因此该层顶面高度为 30+8=38。"
+      ],
+      "dimensions": [
+        [
+          "本次拉伸",
+          "8 mm"
+        ],
+        [
+          "顶面高度",
+          "h=38"
+        ]
+      ],
+      "check": "顶面到达 38，树中仍只有一个实体。",
+      "fix": "图上的 20 是底座顶面到第二级顶面的累计高度。",
+      "stage": 1,
+      "diagram": "q1-s1"
+    },
+    {
+      "id": "Q1-step2-sketch",
+      "q": "Q1",
+      "phase": "二级台阶 · Boss-Extrude3",
+      "title": "画 32 × 20 的第二层",
+      "command": "选 h=38 顶面 → Sketch → Corner Rectangle",
+      "actions": [
+        "选刚生成的 48 × 20 台阶顶面 → 新建草图 → Ctrl+8。",
+        "从同一基准角画矩形，用智能尺寸设长 32、深 20。",
+        "32=20+12；第一角与该顶点重合。确认矩形完全定义。"
+      ],
+      "dimensions": [
+        [
+          "矩形",
+          "32 × 20 mm"
+        ],
+        [
+          "定位",
+          "u=0…32，v=0…20"
+        ]
+      ],
+      "check": "在上一层顶面上出现一个宽度更小、深度相同的矩形。",
+      "fix": "中间另一个台阶的露出长度为 48−32=16，是推导值。",
+      "stage": 1,
+      "diagram": "q1-s2"
+    },
+    {
+      "id": "Q1-step2-extrude",
+      "q": "Q1",
+      "phase": "二级台阶 · Boss-Extrude3",
+      "title": "追加拉伸 12 mm",
+      "command": "Extruded Boss/Base → Blind 12",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体。给定深度 12，方向向上，合并结果。",
+        "点击绿色对勾。该层顶面应为 h=38+12=50。"
+      ],
+      "dimensions": [
+        [
+          "本次拉伸",
+          "12 mm"
+        ],
+        [
+          "顶面高度",
+          "h=50"
+        ]
+      ],
+      "check": "底座顶面到此顶面为 20 mm。",
+      "fix": "不要把累计 20 输入成本次拉伸量。",
+      "stage": 2,
+      "diagram": "q1-s2"
+    },
+    {
+      "id": "Q1-tall-sketch",
+      "q": "Q1",
+      "phase": "高台 · Boss-Extrude4",
+      "title": "画最高层的 20 × 20",
+      "command": "选 h=50 顶面 → Sketch → Corner Rectangle",
+      "actions": [
+        "选 32 × 20 顶面，进入草图并按 Ctrl+8。",
+        "从相同基准角 (0,0) 画矩形，用智能尺寸设 20 × 20。",
+        "确认重合与水平/竖直关系齐全，草图完全定义。"
+      ],
+      "dimensions": [
+        [
+          "矩形",
+          "20 × 20 mm"
+        ]
+      ],
+      "check": "高台沿 u 方向长度为 20，和下面台阶同深。",
+      "fix": "不要把两条 20 都理解为高度。",
+      "stage": 2,
+      "diagram": "q1-tall"
+    },
+    {
+      "id": "Q1-tall-extrude",
+      "q": "Q1",
+      "phase": "高台 · Boss-Extrude4",
+      "title": "拉伸 25，达到总高 75",
+      "command": "Extruded Boss/Base → Blind 25",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体，输入 25=75−50。",
+        "向上拉伸，合并结果，点击绿色对勾。"
+      ],
+      "dimensions": [
+        [
+          "本次拉伸",
+          "25 mm"
+        ],
+        [
+          "零件总高",
+          "75 mm"
+        ]
+      ],
+      "check": "从最低底面到最高顶面测得 75。",
+      "fix": "75 是最终总高，不能在 h=50 的顶面再追加 75。",
+      "stage": 3,
+      "diagram": "q1-tall"
+    },
+    {
+      "id": "Q1-hole-sketch",
+      "q": "Q1",
+      "phase": "通孔 · Cut-Extrude1",
+      "title": "在底座立面画 Ø12 孔",
+      "command": "选与 Front Plane 平行的底座立面 → Sketch → Circle",
+      "actions": [
+        "选择底座的大立面（60 × 30，与 Front Plane 平行），不要选台阶顶面。进入草图，Ctrl+8。",
+        "画一个圆，按 Esc；智能尺寸选圆周，输入直径 12。",
+        "选圆心和底座右侧竖边，标水平距离 16；选圆心和底边，标竖直距离 16。圆心因此为 u=44、h=16。"
+      ],
+      "dimensions": [
+        [
+          "孔直径",
+          "Ø12 mm"
+        ],
+        [
+          "距右边 / 距底面",
+          "16 / 16 mm"
+        ],
+        [
+          "圆心",
+          "u=60−16=44，h=16"
+        ]
+      ],
+      "check": "圆完全定义，孔心靠底座右端。",
+      "fix": "必须标圆心到边的距离，不能选圆周到边的最近距离。",
+      "stage": 3,
+      "diagram": "q1-hole"
+    },
+    {
+      "id": "Q1-hole-cut",
+      "q": "Q1",
+      "phase": "通孔 · Cut-Extrude1",
+      "title": "切穿底座全部深度",
+      "command": "退出草图 → Extruded Cut → Through All",
+      "actions": [
+        "退出草图 → 拉伸切除；结束条件选“贯穿全部 / Through All”。",
+        "查看预览箭头朝向实体内部；若圆画在 Front Plane 上，也可选“贯穿全部-两者”。",
+        "点击绿色对勾，旋转模型，确认前后都有圆孔出口。"
+      ],
+      "dimensions": [
+        [
+          "穿过深度",
+          "28 mm（用贯穿全部控制）"
+        ]
+      ],
+      "check": "孔贯穿整个底座；没有盲孔底面。",
+      "fix": "只切 20 会在底座深度方向留下 8 mm 材料。",
+      "stage": 4,
+      "diagram": "q1-hole"
+    },
+    {
+      "id": "Q1-check",
+      "q": "Q1",
+      "phase": "核验",
+      "title": "重建、核对体积并保存",
+      "command": "Ctrl+Q → Evaluate → Mass Properties → Ctrl+S",
+      "actions": [
+        "核对底座 60 × 28 × 30、各级顶面 h=38/50/75、孔 Ø12 与两个 16。",
+        "质量属性中查看体积，目标 72593 mm³ ±1%；本教程几何为 72593.2746 mm³。",
+        "设计树应有 4 个拉伸凸台、1 个拉伸切除。每张草图完全定义后保存 Q1.sldprt。"
+      ],
+      "dimensions": [
+        [
+          "允许范围",
+          "71867.07…73318.93 mm³"
+        ]
+      ],
+      "check": "总高、孔位置和体积同时满足。",
+      "fix": "体积接近不能替代位置检查；错放原点或把台阶放在另一侧仍需修正。",
+      "stage": 4,
+      "diagram": "q1-hole"
+    },
+    {
+      "id": "Q2-setup",
+      "q": "Q2",
+      "phase": "准备",
+      "title": "新建 Q2，确定对称面",
+      "command": "Ctrl+N → Part → MMGS → 保存 Q2.sldprt",
+      "actions": [
+        "新建零件，单位 MMGS，保存 Q2.sldprt。",
+        "以大端中心下方、连接板底面的红点为原点。Top Plane 是连接板底面 h=0；两端圆心都在 Front Plane（v=0）内。"
+      ],
+      "dimensions": [
+        [
+          "大端圆心",
+          "(u,v)=(0,0)"
+        ],
+        [
+          "小端圆心",
+          "(38,0)"
+        ]
+      ],
+      "check": "后续两个圆心沿 u 方向相隔 38。",
+      "fix": "Front Plane 是纵向对称面；不要把整块零件的平面轮廓画在 Front Plane 上。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "Q2-circles",
+      "q": "Q2",
+      "phase": "连接板 · Boss-Extrude1",
+      "title": "在 Top Plane 定位两个外圆",
+      "command": "Top Plane → Sketch → Circle → Smart Dimension",
+      "actions": [
+        "选 Top Plane → 草图 → Ctrl+8。在原点画大圆，直径设 32。",
+        "在大圆右侧画小圆，直径设 18（R9）。Ctrl 选两个圆心 → 添加“水平”关系。",
+        "智能尺寸选择两个圆心，标水平中心距 38。大圆心与原点重合；两个圆都应完全定义。"
+      ],
+      "dimensions": [
+        [
+          "大外圆",
+          "Ø32 = Ø20 + 2×6"
+        ],
+        [
+          "小外圆",
+          "Ø18 = 2×R9"
+        ],
+        [
+          "中心距",
+          "38 mm"
+        ]
+      ],
+      "check": "圆心同高，大圆在原点，小圆沿长度正向。",
+      "fix": "标注的径向“6”是大端壁厚；大外圆不是 Ø26。",
+      "stage": -1,
+      "diagram": "q2-link"
+    },
+    {
+      "id": "Q2-tangents",
+      "q": "Q2",
+      "phase": "连接板 · Boss-Extrude1",
+      "title": "画上下两条公外切线",
+      "command": "Line → Ctrl 选直线与圆 → Add Relations → Tangent",
+      "actions": [
+        "选“直线”，画连接两个圆上侧的线段，再画连接下侧的线段，按 Esc。每条线的两个端点分别落在两圆周上。",
+        "若未自动捕捉相切：Ctrl 选上直线和大圆 → 相切 / Tangent；再选同一线和小圆 → 相切。下直线也分别与两个圆添加相切。",
+        "确认四个端点与各自圆周都有“重合 / Coincident”，两直线都变黑。"
+      ],
+      "dimensions": [
+        [
+          "几何关系",
+          "两条线 × 两端相切，共 4 个相切关系"
+        ]
+      ],
+      "check": "两条线斜向收窄，不是水平平行线。",
+      "fix": "不能连接圆的最高点来代替公外切线；圆半径不同，切点不在正上/正下方。",
+      "stage": -1,
+      "diagram": "q2-link"
+    },
+    {
+      "id": "Q2-trim",
+      "q": "Q2",
+      "phase": "连接板 · Boss-Extrude1",
+      "title": "修剪内侧圆弧，留下闭合外轮廓",
+      "command": "Sketch → 修剪实体 Trim Entities → 智能剪裁 Power Trim",
+      "actions": [
+        "点击“修剪实体”，删去大圆朝向小圆的内侧短圆弧，以及小圆朝向大圆的内侧圆弧。",
+        "保留大端外侧长圆弧、小端外侧圆弧和两条切线，使外轮廓只有一个闭合环；按 Esc。",
+        "修剪可能移除尺寸或几何关系。检查圆弧 R16、R9，弧心 (0,0)、(38,0) 及相切关系，必要时重新添加，直到完全定义。"
+      ],
+      "dimensions": [
+        [
+          "大弧 / 小弧",
+          "R16 / R9"
+        ],
+        [
+          "轮廓",
+          "一个闭合环"
+        ]
+      ],
+      "check": "启用“上色的草图轮廓 / Shaded Sketch Contours”时，整个连接板区域连续着色。",
+      "fix": "删错圆弧按 Ctrl+Z；不要留下内部圆弧把区域分割成多个未说明的轮廓。",
+      "stage": -1,
+      "diagram": "q2-link"
+    },
+    {
+      "id": "Q2-plate",
+      "q": "Q2",
+      "phase": "连接板 · Boss-Extrude1",
+      "title": "将连接板拉伸 6 mm",
+      "command": "退出草图 → Extruded Boss/Base → Blind 6",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体。设给定深度 6，方向向上（h=0 到 6）。",
+        "检查外形是两端圆弧之间的渐缩连接板，点击绿色对勾。"
+      ],
+      "dimensions": [
+        [
+          "板厚",
+          "6 mm"
+        ]
+      ],
+      "check": "板底在 Top Plane，板顶 h=6。",
+      "fix": "这里的 6 是侧视图的板厚，与大端径向壁厚是两个独立标注。",
+      "stage": 0,
+      "diagram": "q2-link"
+    },
+    {
+      "id": "Q2-large-sketch",
+      "q": "Q2",
+      "phase": "大端凸台 · Boss-Extrude2",
+      "title": "在板顶画同心 Ø32",
+      "command": "选 h=6 顶面 → Sketch → Circle",
+      "actions": [
+        "选连接板顶面 → 草图 → Ctrl+8。在大端画一个圆。",
+        "Ctrl 选新圆与大端外圆弧 → 添加“同心 / Concentric”；智能尺寸设 Ø32。",
+        "若自动捕捉已使圆心锁在原点投影上，不必再加重复的同心关系；确认完全定义。"
+      ],
+      "dimensions": [
+        [
+          "圆直径",
+          "Ø32 mm"
+        ],
+        [
+          "圆心",
+          "与大端同心"
+        ]
+      ],
+      "check": "圆位于板的大端，和现有大端外弧同半径。",
+      "fix": "不能选 Ø20；Ø20 是后续通孔。",
+      "stage": 0,
+      "diagram": "q2-large"
+    },
+    {
+      "id": "Q2-large-boss",
+      "q": "Q2",
+      "phase": "大端凸台 · Boss-Extrude2",
+      "title": "追加 8，总高才是 14",
+      "command": "Extruded Boss/Base → Blind 8 → Merge result",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体。深度输入 8=14−6，方向向上。",
+        "勾选合并结果，确认大端从 h=0 到 h=14。"
+      ],
+      "dimensions": [
+        [
+          "本次新增",
+          "8 mm"
+        ],
+        [
+          "大端总高",
+          "14 mm"
+        ]
+      ],
+      "check": "大端顶面比连接板顶面高 8。",
+      "fix": "若在板顶再拉伸 14，大端总高会变成 20。",
+      "stage": 1,
+      "diagram": "q2-large"
+    },
+    {
+      "id": "Q2-lower-sketch",
+      "q": "Q2",
+      "phase": "小端下柱 · Boss-Extrude3",
+      "title": "回到 Top Plane 画小端圆",
+      "command": "在树中选 Top Plane → Sketch → Circle",
+      "actions": [
+        "不要选连接板顶面；在树中选原始 Top Plane（h=0），进入草图。",
+        "以小端圆心 (u,v)=(38,0) 画圆，设直径 18。",
+        "用同心关系与小端外圆弧定位；也可用圆心与原点水平、中心距 38 定位。确认完全定义。"
+      ],
+      "dimensions": [
+        [
+          "圆",
+          "Ø18 mm"
+        ],
+        [
+          "草图高度",
+          "h=0"
+        ]
+      ],
+      "check": "草图在连接板底面所在的原始基准面。",
+      "fix": "从板顶向下拉伸 24 会使底部变成 −18，少了 6。",
+      "stage": 1,
+      "diagram": "q2-small"
+    },
+    {
+      "id": "Q2-lower-boss",
+      "q": "Q2",
+      "phase": "小端下柱 · Boss-Extrude3",
+      "title": "反向拉伸 24 mm",
+      "command": "Extruded Boss/Base → Blind 24 → Reverse Direction",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体。深度输入 24。",
+        "点击反向，使黄色预览向板下方（h=0 到 −24），合并结果，点击对勾。"
+      ],
+      "dimensions": [
+        [
+          "下伸量",
+          "24 mm"
+        ],
+        [
+          "小端总高",
+          "6+24=30 mm"
+        ]
+      ],
+      "check": "小端下柱底面 h=−24，顶部仍为板顶 h=6。",
+      "fix": "新增凸台与板底面整面接触，合并后应只有一个实体。",
+      "stage": 2,
+      "diagram": "q2-small"
+    },
+    {
+      "id": "Q2-hole20",
+      "q": "Q2",
+      "phase": "大孔 · Cut-Extrude1",
+      "title": "大端画 Ø20 并贯穿",
+      "command": "选大端顶面 → Sketch → Circle → Extruded Cut",
+      "actions": [
+        "选大端 h=14 顶面，进入草图。在大端中心画圆；以同心关系定位，设 Ø20。",
+        "确认草图完全定义，退出草图 → 拉伸切除 → 贯穿全部。",
+        "箭头朝下切入实体；确认后可看到穿过大端和连接板的通孔。"
+      ],
+      "dimensions": [
+        [
+          "孔直径",
+          "Ø20 mm"
+        ],
+        [
+          "切穿总高",
+          "14 mm（结束条件用贯穿全部）"
+        ]
+      ],
+      "check": "大端保留径向 6 mm 壁厚。",
+      "fix": "此步先单独切大孔；不要在两个不同高度的端面上混画一个平面草图。",
+      "stage": 3,
+      "diagram": "q2-holes"
+    },
+    {
+      "id": "Q2-hole6",
+      "q": "Q2",
+      "phase": "小孔 · Cut-Extrude2",
+      "title": "小端画 Ø6 并贯穿整根柱",
+      "command": "选小端 h=6 顶面 → Sketch → Circle → Through All",
+      "actions": [
+        "选连接板的小端顶面 h=6，画与小端同心的 Ø6 圆，完全定义。",
+        "退出草图 → 拉伸切除 → 贯穿全部，方向向下，穿过板和下圆柱。",
+        "点击绿色对勾，检查两个孔都已贯穿。"
+      ],
+      "dimensions": [
+        [
+          "孔直径",
+          "Ø6 mm"
+        ],
+        [
+          "切穿总高",
+          "30 mm"
+        ]
+      ],
+      "check": "小孔在下圆柱底面有出口。",
+      "fix": "不能只切连接板的 6 mm。",
+      "stage": 4,
+      "diagram": "q2-holes"
+    },
+    {
+      "id": "Q2-check",
+      "q": "Q2",
+      "phase": "核验",
+      "title": "检查对称、两孔与体积",
+      "command": "Ctrl+Q → Evaluate → Mass Properties → Ctrl+S",
+      "actions": [
+        "检查两圆心都在 v=0，中心距 38；大端总高 14、小端最低点 −24、板厚 6。",
+        "体积目标 16268 mm³ ±1%，本教程几何约 16267.9151 mm³。",
+        "最终设计树：3 个拉伸凸台、2 个拉伸切除。各草图完全定义，保存 Q2.sldprt。"
+      ],
+      "dimensions": [
+        [
+          "允许范围",
+          "16105.32…16430.68 mm³"
+        ]
+      ],
+      "check": "Front Plane 是整个零件的对称面，体积在范围内。",
+      "fix": "本题不需要镜像实体，也不需要孔向导来获得这些简单通孔。",
+      "stage": 4,
+      "diagram": "q2-holes"
+    },
+    {
+      "id": "Q3-setup",
+      "q": "Q3",
+      "phase": "准备",
+      "title": "新建 Q3，把原点放在底边中点",
+      "command": "Ctrl+N → Part → MMGS → 保存 Q3.sldprt",
+      "actions": [
+        "新建零件，单位 MMGS。以底板前端底边中点（原图粉点）为原点。",
+        "本题 u 为前后长度 35，v 为左右宽度 52，h 为高度；Front Plane（v=0）是左右对称面。"
+      ],
+      "dimensions": [
+        [
+          "底板",
+          "u=0…35，v=−26…26，h=0…7"
+        ]
+      ],
+      "check": "原点不是底板的某个角，也不是底板中心。",
+      "fix": "本题图上的 52 是总宽，35 是前后总长。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "Q3-base-sketch",
+      "q": "Q3",
+      "phase": "底板 · Boss-Extrude1",
+      "title": "在 Top Plane 画 35 × 52",
+      "command": "Top Plane → Sketch → Corner Rectangle → Smart Dimension",
+      "actions": [
+        "Top Plane → 草图 → Ctrl+8。先画矩形，长方向沿 u、宽方向沿 v。",
+        "智能尺寸设长 35、宽 52。选前短边的中点和原点 → 重合；可右键该边选择“选择中点 / Select Midpoint”。",
+        "确认矩形从 u=0 向 u=35，宽度两侧各 26，草图完全定义。"
+      ],
+      "dimensions": [
+        [
+          "长 × 宽",
+          "35 × 52 mm"
+        ],
+        [
+          "前边中点",
+          "与原点重合"
+        ]
+      ],
+      "check": "原点在前边中间，矩形宽度关于 Front Plane 对称。",
+      "fix": "不要使用以原点为中心的中心矩形；那会把前端放到 u=−17.5。",
+      "stage": -1,
+      "diagram": "q3-base"
+    },
+    {
+      "id": "Q3-base-boss",
+      "q": "Q3",
+      "phase": "底板 · Boss-Extrude1",
+      "title": "拉伸底板厚 7",
+      "command": "Extruded Boss/Base → Blind 7",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体 → 给定深度 7，方向向上。",
+        "点击绿色对勾。此阶段暂时是四角方形底板。"
+      ],
+      "dimensions": [
+        [
+          "厚度",
+          "7 mm"
+        ]
+      ],
+      "check": "底板底面 h=0，顶面 h=7。",
+      "fix": "下一步只处理前端两个角。",
+      "stage": 0,
+      "diagram": "q3-base"
+    },
+    {
+      "id": "Q3-front-fillet",
+      "q": "Q3",
+      "phase": "前端圆角 · Fillet1",
+      "title": "只选前端两条竖边，做 R10",
+      "command": "Features → 圆角 Fillet → 半径 Radius 10",
+      "actions": [
+        "按空格选择等轴测；按 Ctrl 多选 u=0 前端左右两条竖直棱，它们均从 h=0 延伸到 7。",
+        "点击“特征 → 圆角 / Fillet”，设半径 10，检查预览只有前端两角变圆。",
+        "若预览选择扩大，关闭“切线延伸 / Tangent propagation”并重新确认选择。点击对勾。"
+      ],
+      "dimensions": [
+        [
+          "前端圆角",
+          "R10 mm"
+        ],
+        [
+          "边线数量",
+          "2 条前端竖边"
+        ]
+      ],
+      "check": "俯视时前端两角为 R10，后端两角仍直角。",
+      "fix": "不能选底板整条上沿，也不能把四个角全圆。",
+      "stage": 1,
+      "diagram": "q3-base"
+    },
+    {
+      "id": "Q3-wall-sketch",
+      "q": "Q3",
+      "phase": "立台 · Boss-Extrude2",
+      "title": "在底板上定位 26 × 34 立台",
+      "command": "选 h=7 顶面 → Sketch → Corner Rectangle",
+      "actions": [
+        "选底板顶面 → 草图 → Ctrl+8，画矩形。尺寸设 u 向长 26、v 向宽 34。",
+        "让后边与底板后边 u=35 共线：选后边的端点和底板后边添加重合/在边线上关系；再令该边中点在 Front Plane 的中线上。",
+        "也可直接把矩形后边中点与底板后边中点重合，再标 26 和 34。前端位置由 35−26=9 得到。"
+      ],
+      "dimensions": [
+        [
+          "立台范围",
+          "u=9…35，v=−17…17"
+        ],
+        [
+          "矩形",
+          "26 × 34 mm"
+        ]
+      ],
+      "check": "后面齐平，左右各距底板侧边 9。",
+      "fix": "26 是前后长度，34 是横向宽度。",
+      "stage": 1,
+      "diagram": "q3-wall"
+    },
+    {
+      "id": "Q3-wall-boss",
+      "q": "Q3",
+      "phase": "立台 · Boss-Extrude2",
+      "title": "从底板顶面再拉伸 25",
+      "command": "Extruded Boss/Base → Blind 25 → Merge result",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体 → 深度 25，向上，合并结果。",
+        "确认后立台顶面高度为 h=7+25=32。"
+      ],
+      "dimensions": [
+        [
+          "新增高度",
+          "25 mm"
+        ],
+        [
+          "总高",
+          "32 mm"
+        ]
+      ],
+      "check": "上部实体为 26 × 34 × 25，且与底板合并。",
+      "fix": "25 从底板顶面起算。",
+      "stage": 2,
+      "diagram": "q3-wall"
+    },
+    {
+      "id": "Q3-root-fillet",
+      "q": "Q3",
+      "phase": "根部圆角 · Fillet2",
+      "title": "选两条根部凹边，做 R5",
+      "command": "Ctrl 选两条长根边 → Features → Fillet 5",
+      "actions": [
+        "选立台左右侧面与底板顶面相交的两条凹棱：v=±17、h=7，沿 u 从 9 到 35。",
+        "点击圆角，半径设 5。此处预览应在根部增加过渡材料；不是削去立台顶部的外圆角。",
+        "确认后再进行后开口切除，此时完整的长根边更容易选择。"
+      ],
+      "dimensions": [
+        [
+          "根部圆角",
+          "R5 mm"
+        ],
+        [
+          "边线",
+          "2 条沿 u 的凹棱"
+        ]
+      ],
+      "check": "立台左右侧根部有平滑 R5 过渡。",
+      "fix": "若边线发亮的位置在顶部 h=32，说明选错边。",
+      "stage": 3,
+      "diagram": "q3-root"
+    },
+    {
+      "id": "Q3-opening-sketch",
+      "q": "Q3",
+      "phase": "后开口 · Cut-Extrude1",
+      "title": "在 Top Plane 画后开口矩形",
+      "command": "Top Plane → Sketch → Corner Rectangle",
+      "actions": [
+        "在树中选 Top Plane（h=0），进入草图，Ctrl+8。",
+        "画矩形，横向关于 v=0 对称，宽 20（两侧 v=±10）。前边位置 u=16=35−19。",
+        "为避免后表面留下薄片，让矩形后边到 u=36，超出零件后端 1 mm；草图长度设 20。20 的草图长度包含这 1 mm 空切，实际零件开口深度仍是 19。"
+      ],
+      "dimensions": [
+        [
+          "原图开口宽 × 深",
+          "20 × 19 mm"
+        ],
+        [
+          "切除草图",
+          "u=16…36，v=−10…10"
+        ],
+        [
+          "超出量",
+          "1 mm（操作余量）"
+        ]
+      ],
+      "check": "开口前边距底板前端 16，矩形后端超出后表面。",
+      "fix": "草图的空切余量是本教程操作设定，不是原题额外尺寸。",
+      "stage": 3,
+      "diagram": "q3-opening"
+    },
+    {
+      "id": "Q3-opening-cut",
+      "q": "Q3",
+      "phase": "后开口 · Cut-Extrude1",
+      "title": "贯穿立台，也贯穿底板",
+      "command": "Extruded Cut → Through All - Both",
+      "actions": [
+        "退出草图 → 拉伸切除。选“贯穿全部-两者 / Through All - Both”；若版本只有单向贯穿，选择向上的箭头。",
+        "确认预览从 h=0 穿过底板、立台直至顶面，点击对勾。",
+        "从底面看，中央后开口也能透过去。"
+      ],
+      "dimensions": [
+        [
+          "切除结束条件",
+          "贯穿全部（包括底板）"
+        ]
+      ],
+      "check": "底板后端中央形成开口，没有剩余的 7 mm 底板。",
+      "fix": "只从立台顶面盲切 25 会留下错误底板。",
+      "stage": 4,
+      "diagram": "q3-opening"
+    },
+    {
+      "id": "Q3-lug-sketch",
+      "q": "Q3",
+      "phase": "前耳板 · Boss-Extrude3",
+      "title": "在 Right Plane 画耳板轮廓",
+      "command": "Right Plane → Sketch → Line / Centerpoint Arc",
+      "actions": [
+        "选 Right Plane（u=0）→ 草图 → Ctrl+8。本草图用 (v,h) 描述。",
+        "先画底边：从 (−7.5,7) 到 (7.5,7)；再画右竖边至 (7.5,15)。",
+        "用“圆心圆弧 / Centerpoint Arc”，圆心置于 (0,15)，从 (7.5,15) 绕上方到 (−7.5,15) 画上半圆；再画左竖边回到底边起点。",
+        "圆弧端点与竖线端点重合；两竖边与圆弧相切。底边水平、两侧竖直。"
+      ],
+      "dimensions": [
+        [
+          "底边高度",
+          "h=7"
+        ],
+        [
+          "侧直边高度",
+          "8 mm"
+        ],
+        [
+          "顶弧",
+          "R7.5，圆心 v=0、h=15"
+        ]
+      ],
+      "check": "轮廓为宽 15、直边高 8、上接半圆的闭合耳形。",
+      "fix": "Right 草图的屏幕横向可能与 v 正向相反；本轮廓左右对称，用中线定位即可。",
+      "stage": 4,
+      "diagram": "q3-lug"
+    },
+    {
+      "id": "Q3-lug-dims",
+      "q": "Q3",
+      "phase": "前耳板 · Boss-Extrude3",
+      "title": "把耳板草图完全定义",
+      "command": "Smart Dimension → R7.5 / 8 / 7；Add Relations",
+      "actions": [
+        "智能尺寸设顶弧半径 7.5；左或右直边长度 8；底边到原点的高度 7。",
+        "约束圆弧圆心与原点竖直对齐；两个弧端点同高，圆弧与竖边相切。检查是否已有对应自动关系，避免重复。",
+        "可添加从动尺寸核对总宽 15、弧心高 15、最高点 22.5。确认状态为完全定义。"
+      ],
+      "dimensions": [
+        [
+          "耳板总高",
+          "8+7.5=15.5（从底板顶面起）"
+        ],
+        [
+          "最高点",
+          "h=22.5"
+        ]
+      ],
+      "check": "耳板孔心基准将位于 h=15。",
+      "fix": "原图的 8 定位圆心高于底板顶面的距离；不是整块耳板高度。",
+      "stage": 4,
+      "diagram": "q3-lug"
+    },
+    {
+      "id": "Q3-lug-boss",
+      "q": "Q3",
+      "phase": "前耳板 · Boss-Extrude3",
+      "title": "沿长度正向拉伸耳板 5",
+      "command": "Extruded Boss/Base → Blind 5 → Merge result",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体 → 给定深度 5。",
+        "看预览，耳板应从 u=0 向底板内部到 u=5。必要时点击反向；合并结果后确认。"
+      ],
+      "dimensions": [
+        [
+          "耳板厚度",
+          "5 mm，u=0…5"
+        ]
+      ],
+      "check": "耳板立在前端底板上，底部与底板合并。",
+      "fix": "反方向会把耳板悬到 u<0，只在边界接触或无法合并。",
+      "stage": 5,
+      "diagram": "q3-lug"
+    },
+    {
+      "id": "Q3-hole-sketch",
+      "q": "Q3",
+      "phase": "贯穿孔 · Cut-Extrude2",
+      "title": "在耳板外面定位 Ø6",
+      "command": "选 u=0 耳板平面 → Sketch → Circle",
+      "actions": [
+        "选耳板前平面（u=0）→ 草图 → Ctrl+8。",
+        "画圆，设 Ø6；与耳板顶弧添加同心关系，使圆心 v=0、h=15。",
+        "确认完全定义。孔心到底板顶面为 8。"
+      ],
+      "dimensions": [
+        [
+          "孔",
+          "Ø6 mm"
+        ],
+        [
+          "孔心",
+          "v=0，h=7+8=15"
+        ]
+      ],
+      "check": "孔心位于顶弧圆心，而不是耳板总高度的一半。",
+      "fix": "如果同心已确定圆心，不要再重复添加两个位置尺寸。",
+      "stage": 5,
+      "diagram": "q3-lug"
+    },
+    {
+      "id": "Q3-hole-cut",
+      "q": "Q3",
+      "phase": "贯穿孔 · Cut-Extrude2",
+      "title": "贯穿耳板和后方前壁",
+      "command": "Extruded Cut → Through All → 朝 +u",
+      "actions": [
+        "退出草图 → 拉伸切除 → 贯穿全部，箭头指向 +u，即朝零件内部。",
+        "预览会同时切过 u=0…5 的耳板和 u=9…16 的立台前壁；后方已经是开口。",
+        "确认并旋转模型，观察立台前壁上的第二段孔。"
+      ],
+      "dimensions": [
+        [
+          "两段被切材料",
+          "耳板 5 mm + 前壁 7 mm"
+        ]
+      ],
+      "check": "同一条孔轴穿过耳板和后方墙体。",
+      "fix": "不能只输入切深 5；题目要求所有孔都贯穿全部。",
+      "stage": 6,
+      "diagram": "q3-lug"
+    },
+    {
+      "id": "Q3-check",
+      "q": "Q3",
+      "phase": "核验",
+      "title": "检查原点、两处开口与体积",
+      "command": "Ctrl+Q → Mass Properties → Ctrl+S",
+      "actions": [
+        "原点在前端底边中点；Front Plane 是对称面；底板前两角 R10、立台根部两侧 R5。",
+        "核对后开口贯穿底板，Ø6 贯穿耳板及后壁。总高 32，耳板最高点 22.5。",
+        "体积目标 23361 mm³ ±1%；本教程几何约 23361.0343 mm³。保存 Q3.sldprt。"
+      ],
+      "dimensions": [
+        [
+          "允许范围",
+          "23127.39…23594.61 mm³"
+        ],
+        [
+          "实体特征",
+          "3 凸台 + 2 圆角 + 2 切除"
+        ]
+      ],
+      "check": "原点、方向和体积都正确。",
+      "fix": "圆角/开口位置错误可能相互抵消体积，仍需按原图检查。",
+      "stage": 6,
+      "diagram": "q3-lug"
+    },
+    {
+      "id": "Q4-setup",
+      "q": "Q4",
+      "phase": "准备",
+      "title": "新建 Q4，切换到英寸",
+      "command": "Ctrl+N → Part → IPS → 保存 Q4.sldprt",
+      "actions": [
+        "新建零件，单位改为 IPS。以下本题所有长度均为英寸；尺寸输入框也可直接键入带“in”的数值。",
+        "以开口内侧两条斜线交点为 (u,v)=(0,0)。侧视图红点位于上表面，因此 Top Plane 是 h=0，实体厚度向下到 h=−0.3。",
+        "Front Plane（v=0）是沿手柄长度的对称面。这里用三个简单凸台组成外形，再切两个孔口。"
+      ],
+      "dimensions": [
+        [
+          "手柄宽 / 厚",
+          "0.4 / 0.3 in"
+        ],
+        [
+          "原点高度",
+          "上表面 h=0"
+        ]
+      ],
+      "check": "IPS 已启用，原点在开口尖点所在的上表面。",
+      "fix": "旧版查看器曾用厚度中面；本教程及本次更新的 Q4 STEP 统一改为原图上表面原点。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "Q4-derive",
+      "q": "Q4",
+      "phase": "定位尺寸",
+      "title": "先算出两端外圆的圆心",
+      "command": "本步读图与计算，不创建特征",
+      "actions": [
+        "左端截平线在 u=−0.4；从截平线到斜口起点为 0.25，所以斜口起点及左外圆心竖线在 u=−0.15。",
+        "外圆半径 0.4，手柄半宽 0.2。圆弧和柄边的水平投影差 a=√(0.4²−0.2²)=0.3464101615。",
+        "左颈 u=−0.15+a=0.1964101615；直柄两颈之间 3.25，所以右圆心 u=−0.15+2a+3.25=3.7928203230。",
+        "3.25 是两处颈部间的直边长度，不是两圆心距。后续计算值至少保留 8 位小数，或直接在尺寸框输入右侧表达式。"
+      ],
+      "dimensions": [
+        [
+          "左外圆心",
+          "u=−0.15，v=0"
+        ],
+        [
+          "右外圆心",
+          "u=3.7928203230，v=0"
+        ],
+        [
+          "表达式",
+          "-0.15+2*sqrt(0.4^2-0.2^2)+3.25"
+        ]
+      ],
+      "check": "右端圆心没有直接设置为 3.25。",
+      "fix": "这些坐标由标注推导；详图 2:1 是显示比例，不能把标注再乘 2。",
+      "stage": -1,
+      "diagram": "q4-outline"
+    },
+    {
+      "id": "Q4-left-circle",
+      "q": "Q4",
+      "phase": "左头 · Boss-Extrude1",
+      "title": "画左端 Ø0.8 外圆与截平线",
+      "command": "Top Plane → Sketch → Circle / Line",
+      "actions": [
+        "Top Plane → 草图 → Ctrl+8。以原点左侧 0.15、v=0 为圆心画圆；设直径 0.8。",
+        "圆心与原点水平，标水平距离 0.15。",
+        "画一条竖直直线穿过圆，位置 u=−0.4，向圆上下两侧稍微延长。设它到原点的水平距离 0.4。"
+      ],
+      "dimensions": [
+        [
+          "外圆",
+          "Ø0.8 in"
+        ],
+        [
+          "圆心 / 截线",
+          "u=−0.15 / −0.4"
+        ]
+      ],
+      "check": "截线在圆心左侧，离圆心 0.25。",
+      "fix": "圆心不是原点；原点是后续开口的尖点。",
+      "stage": -1,
+      "diagram": "q4-left"
+    },
+    {
+      "id": "Q4-left-trim",
+      "q": "Q4",
+      "phase": "左头 · Boss-Extrude1",
+      "title": "修剪成左端截平的圆头",
+      "command": "Trim Entities → Power Trim",
+      "actions": [
+        "修剪掉直线左侧的外圆小圆弧，并删去竖线超出圆的上下两段。",
+        "保留右侧大圆弧和两端接弧的竖直弦，形成一个闭合外轮廓。",
+        "重新核对弧半径 0.4、圆心 u=−0.15/v=0、竖线 u=−0.4，端点重合，草图完全定义。"
+      ],
+      "dimensions": [
+        [
+          "截线",
+          "u=−0.4"
+        ],
+        [
+          "保留圆弧",
+          "圆的右侧大部分"
+        ]
+      ],
+      "check": "轮廓左边平直，上下和右侧为圆弧。",
+      "fix": "不要保留左侧小圆弓区域。",
+      "stage": -1,
+      "diagram": "q4-left"
+    },
+    {
+      "id": "Q4-left-boss",
+      "q": "Q4",
+      "phase": "左头 · Boss-Extrude1",
+      "title": "向下拉伸 0.3 in",
+      "command": "Extruded Boss/Base → Blind 0.3in → Reverse Direction",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体。结束条件选给定深度，输入 0.3in。",
+        "反向使实体在 Top Plane 下方（h=−0.3…0）；点击对勾。"
+      ],
+      "dimensions": [
+        [
+          "厚度",
+          "0.3 in = 7.62 mm"
+        ]
+      ],
+      "check": "原点在上表面；不是厚度中间。",
+      "fix": "本题此处不要选 Mid Plane。",
+      "stage": 0,
+      "diagram": "q4-left"
+    },
+    {
+      "id": "Q4-handle-sketch",
+      "q": "Q4",
+      "phase": "手柄 · Boss-Extrude2",
+      "title": "画与左头重叠的矩形手柄",
+      "command": "Top Plane → Sketch → Center Rectangle",
+      "actions": [
+        "回到 Top Plane，进入草图。用中心矩形：中心在 (u,v)=(1.8964101615,0)。",
+        "智能尺寸设长度 3.7928203230、宽度 0.4。中心与原点水平，并标中心水平距离 1.8964101615（右圆心距离的一半）。",
+        "矩形范围是 u=0…3.7928203230、v=±0.2；左侧与圆头重叠，重叠部分后续合并。"
+      ],
+      "dimensions": [
+        [
+          "矩形长 × 宽",
+          "3.7928203230 × 0.4 in"
+        ],
+        [
+          "矩形中心",
+          "(1.8964101615,0)"
+        ]
+      ],
+      "check": "矩形左边通过原点，宽度两侧各 0.2。",
+      "fix": "这里的矩形长度是构造尺寸；与圆头合并后的外露直边才是 3.25。",
+      "stage": 0,
+      "diagram": "q4-outline"
+    },
+    {
+      "id": "Q4-handle-boss",
+      "q": "Q4",
+      "phase": "手柄 · Boss-Extrude2",
+      "title": "向下拉伸手柄并合并",
+      "command": "Extruded Boss/Base → Blind 0.3in → Merge result",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体 → 给定深度 0.3in。",
+        "方向向下，与左头占据相同厚度区间；勾选合并结果，确认。"
+      ],
+      "dimensions": [
+        [
+          "高度范围",
+          "h=−0.3…0 in"
+        ]
+      ],
+      "check": "手柄与左头连成单个实体。",
+      "fix": "若树中出现 2 个实体，检查方向与重叠位置。",
+      "stage": 1,
+      "diagram": "q4-outline"
+    },
+    {
+      "id": "Q4-right-circle",
+      "q": "Q4",
+      "phase": "右头 · Boss-Extrude3",
+      "title": "定位右端 R0.4 圆头",
+      "command": "Top Plane → Sketch → Circle",
+      "actions": [
+        "Top Plane 新建草图，在右端画圆。",
+        "圆心与原点水平，圆心水平距离输入 3.7928203230；直径输入 0.8。",
+        "确认完全定义。圆心应与手柄矩形右边中点重合。"
+      ],
+      "dimensions": [
+        [
+          "右圆",
+          "R0.4 / Ø0.8 in"
+        ],
+        [
+          "圆心",
+          "u=3.7928203230，v=0"
+        ]
+      ],
+      "check": "圆头与手柄有足够重叠，不是只在单点接触。",
+      "fix": "可以用端边中点重合替代圆心距离尺寸，两者不要重复约束。",
+      "stage": 1,
+      "diagram": "q4-outline"
+    },
+    {
+      "id": "Q4-right-boss",
+      "q": "Q4",
+      "phase": "右头 · Boss-Extrude3",
+      "title": "拉伸右头并检查外露直边",
+      "command": "Extruded Boss/Base → Blind 0.3in → Merge result",
+      "actions": [
+        "退出草图，向下拉伸 0.3in，合并结果。",
+        "在“评估 → 测量 / Measure”选择手柄一条外露直边，检查长度 3.25in。",
+        "测量结果可能显示换算后的 82.55mm，两者相同。"
+      ],
+      "dimensions": [
+        [
+          "外露直边",
+          "3.25 in"
+        ],
+        [
+          "厚度",
+          "0.3 in"
+        ]
+      ],
+      "check": "完整外轮廓已有两头和手柄，厚度一致。",
+      "fix": "若直边是约 2.71in，通常把圆心距误设成了 3.25。",
+      "stage": 2,
+      "diagram": "q4-outline"
+    },
+    {
+      "id": "Q4-jaw-sketch",
+      "q": "Q4",
+      "phase": "开口 · Cut-Extrude1",
+      "title": "画开口切除五边形",
+      "command": "Top Plane → Sketch → Line",
+      "actions": [
+        "在 Top Plane 新建草图，用连续直线依次连接 (u,v)=(-0.6,-0.25)、(-0.15,-0.25)、(0,0)、(-0.15,0.25)、(-0.6,0.25)，闭合。",
+        "上下边水平、左边竖直；两斜边交点与原点重合。画一条通过原点的水平构造中心线，让上下两个斜口起点关于它对称，并令这两个起点竖直对齐。标上口高度 0.25、起点到原点水平距离 0.15；下口位置由对称关系确定。",
+        "左侧延到 u=−0.6 是为了超出原零件 u=−0.4，不影响实际开口；设左边到原点距离 0.6，完全定义草图。"
+      ],
+      "dimensions": [
+        [
+          "平行开口宽",
+          "0.5 in"
+        ],
+        [
+          "斜线起点",
+          "u=−0.15，v=±0.25"
+        ],
+        [
+          "左端空切范围",
+          "到 u=−0.6（操作余量）"
+        ]
+      ],
+      "check": "开口尖点准确落在原点，两条斜线向左连接平行口。",
+      "fix": "对称宽度可用一半 0.25 加对称关系；不要同时添加互相重复的 0.25、0.25、0.5。",
+      "stage": 2,
+      "diagram": "q4-jaw"
+    },
+    {
+      "id": "Q4-jaw-cut",
+      "q": "Q4",
+      "phase": "开口 · Cut-Extrude1",
+      "title": "将开口贯穿厚度",
+      "command": "Extruded Cut → Through All → 向下",
+      "actions": [
+        "退出草图 → 拉伸切除 → 贯穿全部。",
+        "预览朝下穿过 0.3in 厚度；确认后左头形成开口扳口。"
+      ],
+      "dimensions": [
+        [
+          "结束条件",
+          "贯穿全部"
+        ]
+      ],
+      "check": "开口上下平行边之间为 0.5in，尖点在原点。",
+      "fix": "如果未切除材料，反向箭头，使切除向 Top Plane 下方。",
+      "stage": 3,
+      "diagram": "q4-jaw"
+    },
+    {
+      "id": "Q4-hex-sketch",
+      "q": "Q4",
+      "phase": "六角孔 · Cut-Extrude2",
+      "title": "画对边距 0.5 的正六边形",
+      "command": "Top Plane → Sketch → 多边形 Polygon → 边数 6",
+      "actions": [
+        "在 Top Plane 新建草图，点击“多边形 / Polygon”，边数设为 6，在右端圆心放置中心。",
+        "画出大致六边形后按 Esc，选上边加“水平”关系，使上下两边水平。中心与右端圆心重合，或中心 v=0、u=3.7928203230。",
+        "用智能尺寸选上下两条水平边，设它们的垂直距离为 0.5in；保留正多边形生成的等长关系，确认完全定义。"
+      ],
+      "dimensions": [
+        [
+          "六角孔",
+          "正六边形，水平对边距 0.5 in"
+        ],
+        [
+          "外接圆半径（检查用）",
+          "0.5/√3 = 0.2886751346 in"
+        ]
+      ],
+      "check": "上下是平边，左右是尖角；对边距 0.5。",
+      "fix": "不要把 0.5 标成外接圆直径或顶点间距。",
+      "stage": 3,
+      "diagram": "q4-hex"
+    },
+    {
+      "id": "Q4-hex-cut",
+      "q": "Q4",
+      "phase": "六角孔 · Cut-Extrude2",
+      "title": "贯穿切出六角孔",
+      "command": "Extruded Cut → Through All",
+      "actions": [
+        "退出草图 → 拉伸切除 → 贯穿全部，向下穿过右圆头。",
+        "确认并检查背面同样有六角孔出口。"
+      ],
+      "dimensions": [
+        [
+          "切穿厚度",
+          "0.3 in"
+        ]
+      ],
+      "check": "六角孔完全贯穿，右头外侧为 R0.4。",
+      "fix": "没有额外的倒角或圆角要求，不添加未给出的形状。",
+      "stage": 4,
+      "diagram": "q4-hex"
+    },
+    {
+      "id": "Q4-check",
+      "q": "Q4",
+      "phase": "核验",
+      "title": "按 in³ 检查体积和上表面原点",
+      "command": "Ctrl+Q → Mass Properties → 输出单位 in³ → Ctrl+S",
+      "actions": [
+        "核对柄宽 0.4、厚 0.3、外露直边长 3.25、开口宽 0.5、六角对边距 0.5。",
+        "确认原点在上表面开口尖点，Front Plane 是宽度方向对称面。",
+        "参考体积 0.5492in³ ±1%；本教程几何约 0.54962156in³，偏差约 +0.077%。保存 Q4.sldprt。"
+      ],
+      "dimensions": [
+        [
+          "允许范围",
+          "0.543708…0.554692 in³"
+        ]
+      ],
+      "check": "报告以 in³ 显示，体积和原点均正确。",
+      "fix": "如果显示约 0.5496mm³，尺寸很可能误按毫米输入；需修改尺寸，不能只改报告单位。",
+      "stage": 4,
+      "diagram": "q4-hex"
+    },
+    {
+      "id": "Q5-setup",
+      "q": "Q5",
+      "phase": "准备",
+      "title": "新建 Q5，使用教学近似尺寸",
+      "command": "Ctrl+N → Part → MMGS → 保存 Q5.sldprt",
+      "actions": [
+        "本题引用 Lab 3 第4题；本次附件没有该页。本网站保留原 Lab4 网站已有的 Lab3 原图与近似模型，供继续跟做。",
+        "原题没有精确尺寸。下面所有数值都是本教程沿用的近似设定，用于完全定义示例，不是唯一标准答案。",
+        "新建零件，MMGS，保存 Q5.sldprt。Front Plane（v=0）为最终对称面；实体特征仅使用拉伸凸台与拉伸切除。"
+      ],
+      "dimensions": [
+        [
+          "近似总长 / 深度 / 主体高",
+          "60 / 48 / 40 mm"
+        ],
+        [
+          "最终最高点",
+          "47 mm（中央凸起）"
+        ]
+      ],
+      "check": "清楚这些数值是教学选择，最终只使用允许的两类实体特征。",
+      "fix": "不要把 Q3 的“所有孔贯穿”要求套到 Q5 的盲孔。",
+      "stage": -1,
+      "diagram": null
+    },
+    {
+      "id": "Q5-profile",
+      "q": "Q5",
+      "phase": "主体 · Boss-Extrude1",
+      "title": "在 Front Plane 画五边形",
+      "command": "Front Plane → Sketch → Line",
+      "actions": [
+        "Front Plane → 草图 → Ctrl+8。本面用 (u,h) 表示坐标。",
+        "用连续直线依次点选 P1=(0,20)、P2=(12,0)、P3=(60,0)、P4=(60,40)、P5=(12,40)，再回到 P1。",
+        "先画近似轮廓，按 Esc；P2—P3 和 P4—P5 水平，P3—P4 竖直，各相邻端点重合。"
+      ],
+      "dimensions": [
+        [
+          "顶点 P1…P5",
+          "(0,20) → (12,0) → (60,0) → (60,40) → (12,40)"
+        ]
+      ],
+      "check": "左端是尖点，右端是竖边的闭合五边形。",
+      "fix": "原点在左尖点正下方的底面基准，尖点本身比原点高 20。",
+      "stage": -1,
+      "diagram": "q5-body"
+    },
+    {
+      "id": "Q5-profile-dims",
+      "q": "Q5",
+      "phase": "主体 · Boss-Extrude1",
+      "title": "用 4 个尺寸与对齐关系定义轮廓",
+      "command": "Smart Dimension → 20 / 12 / 60 / 40",
+      "actions": [
+        "Ctrl 选 P1 与原点 → 竖直；标 P1 高度 20。Ctrl 选 P2 与原点 → 水平；标 P2 水平位置 12。",
+        "标 P3 到原点的水平距离 60，以及右竖边高度 40。",
+        "Ctrl 选 P2、P5 → 竖直，使上下斜边转角的 u 都为 12。检查所有端点重合与边的水平/竖直关系，状态完全定义。"
+      ],
+      "dimensions": [
+        [
+          "P1 高度",
+          "20 mm"
+        ],
+        [
+          "斜边转角 u",
+          "12 mm"
+        ],
+        [
+          "右端 u / 主体高",
+          "60 / 40 mm"
+        ]
+      ],
+      "check": "完全定义的五边形与给出的五个近似点一致。",
+      "fix": "不要同时给每段斜边角度和长度，再重复标这些顶点位置。",
+      "stage": -1,
+      "diagram": "q5-body"
+    },
+    {
+      "id": "Q5-body-boss",
+      "q": "Q5",
+      "phase": "主体 · Boss-Extrude1",
+      "title": "中面拉伸，总深 48",
+      "command": "Extruded Boss/Base → Mid Plane 48",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体。结束条件选“中面 / Mid Plane”，输入总深 48。",
+        "确认两侧各延伸 24，点击绿色对勾。"
+      ],
+      "dimensions": [
+        [
+          "总深度",
+          "48 mm"
+        ],
+        [
+          "v 范围",
+          "−24…24"
+        ]
+      ],
+      "check": "主体关于 Front Plane 对称。",
+      "fix": "中面的 48 是两侧合计，不是每侧 48。",
+      "stage": 0,
+      "diagram": "q5-body"
+    },
+    {
+      "id": "Q5-rise-sketch",
+      "q": "Q5",
+      "phase": "中央凸起 · Boss-Extrude2",
+      "title": "在同一 Front Plane 画三角形",
+      "command": "Front Plane → Sketch → Line",
+      "actions": [
+        "在树中选 Front Plane，新建草图，依次连接 (u,h)=(0,20)、(8,47)、(8,20)，闭合。",
+        "底边水平、右边竖直；左下点与主体左尖点重合。设底边长 8、右竖边高 27=47−20。",
+        "确认完全定义。三角形下部与主体截面重叠，用于让新增实体合并。"
+      ],
+      "dimensions": [
+        [
+          "三角形顶点",
+          "(0,20)，(8,47)，(8,20)"
+        ],
+        [
+          "总峰高",
+          "47 mm"
+        ]
+      ],
+      "check": "三角尖峰位于 u=8、h=47。",
+      "fix": "不要把峰高 47 输入为三角形的竖边长度。",
+      "stage": 0,
+      "diagram": "q5-rise"
+    },
+    {
+      "id": "Q5-rise-boss",
+      "q": "Q5",
+      "phase": "中央凸起 · Boss-Extrude2",
+      "title": "用普通凸台，中面总深 20",
+      "command": "Extruded Boss/Base → Mid Plane 20 → Merge result",
+      "actions": [
+        "退出草图 → 拉伸凸台/基体 → 中面，总深 20。",
+        "勾选合并结果，确认 v=−10…10，中央凸起与主体合并。"
+      ],
+      "dimensions": [
+        [
+          "凸起深度",
+          "20 mm（每侧 10）"
+        ]
+      ],
+      "check": "凸起在深度中央，最高点 47。",
+      "fix": "不用“筋 / Rib”或镜像特征；本题限制实体特征类型。",
+      "stage": 1,
+      "diagram": "q5-rise"
+    },
+    {
+      "id": "Q5-opening-sketch",
+      "q": "Q5",
+      "phase": "中央开口 · Cut-Extrude1",
+      "title": "在 Top Plane 画 48 × 36 开口",
+      "command": "Top Plane → Sketch → Center Rectangle",
+      "actions": [
+        "在树中选 Top Plane（h=0），新建草图并按 Ctrl+8。",
+        "用中心矩形，中心置于 (u,v)=(32,0)。设 u 向长度 48、v 向宽度 36。",
+        "中心与原点水平，标中心水平位置 32；矩形范围因此为 u=8…56、v=−18…18，完全定义。"
+      ],
+      "dimensions": [
+        [
+          "矩形",
+          "48 × 36 mm"
+        ],
+        [
+          "中心",
+          "(32,0)"
+        ],
+        [
+          "范围",
+          "u=8…56，v=±18"
+        ]
+      ],
+      "check": "左右两侧壁的厚度将为 6，右端壁厚为 4。",
+      "fix": "该矩形要从底部一直开到顶部，不是浅凹槽。",
+      "stage": 1,
+      "diagram": "q5-opening"
+    },
+    {
+      "id": "Q5-opening-cut",
+      "q": "Q5",
+      "phase": "中央开口 · Cut-Extrude1",
+      "title": "沿高度贯穿开口",
+      "command": "Extruded Cut → Through All - Both",
+      "actions": [
+        "退出草图 → 拉伸切除 → 贯穿全部-两者；也可选择单向向上贯穿。",
+        "预览切穿所有高度，确认后从底面检查没有残余底板。"
+      ],
+      "dimensions": [
+        [
+          "侧壁",
+          "(48−36)/2=6 mm"
+        ],
+        [
+          "右端壁",
+          "60−56=4 mm"
+        ]
+      ],
+      "check": "中央开口穿透上下，中央凸起仍保留在左端。",
+      "fix": "切除后应仍是连通的单一实体。",
+      "stage": 2,
+      "diagram": "q5-opening"
+    },
+    {
+      "id": "Q5-front-hole",
+      "q": "Q5",
+      "phase": "第一侧盲孔 · Cut-Extrude2",
+      "title": "在 v=−24 外侧面定位 Ø20",
+      "command": "选一侧大外平面 → Sketch → Circle",
+      "actions": [
+        "旋转模型，选 v=−24 的大外平面（与 Front Plane 平行）。新建草图，Ctrl+8。",
+        "画圆，设 Ø20。标圆心到底边距离 20、到右竖边距离 20，使圆心 u=60−20=40、h=20。",
+        "确认完全定义。此面沿反方向查看时，屏幕左右可能反转，以“距右端实体边 20”定位。"
+      ],
+      "dimensions": [
+        [
+          "孔",
+          "Ø20 mm"
+        ],
+        [
+          "圆心",
+          "u=40，h=20"
+        ]
+      ],
+      "check": "圆位于大侧面中部偏右，距底边 20。",
+      "fix": "不能把圆画在中间的空腔面或内壁上。",
+      "stage": 2,
+      "diagram": "q5-hole"
+    },
+    {
+      "id": "Q5-front-cut",
+      "q": "Q5",
+      "phase": "第一侧盲孔 · Cut-Extrude2",
+      "title": "只向内盲切 4 mm",
+      "command": "Extruded Cut → Blind 4",
+      "actions": [
+        "退出草图 → 拉伸切除。结束条件选“给定深度 / Blind”，输入 4。",
+        "箭头朝零件内部，从 v=−24 到 −20；确认后孔底与内腔 v=−18 之间还剩 2 mm。"
+      ],
+      "dimensions": [
+        [
+          "盲孔深",
+          "4 mm"
+        ],
+        [
+          "孔底余厚",
+          "6−4=2 mm"
+        ]
+      ],
+      "check": "能看到孔底，孔不与中央开口连通。",
+      "fix": "此时只做了一侧盲孔，零件暂未恢复最终对称。",
+      "stage": 3,
+      "diagram": "q5-hole"
+    },
+    {
+      "id": "Q5-rear-hole",
+      "q": "Q5",
+      "phase": "另一侧盲孔 · Cut-Extrude3",
+      "title": "在相反外侧面再画同样的圆",
+      "command": "选 v=+24 外平面 → Sketch → Circle",
+      "actions": [
+        "旋转到相反一侧，选 v=+24 的外平面，新建草图。",
+        "再画 Ø20 圆，圆心同样距底边 20、距实体右端边 20，即 u=40、h=20。",
+        "确认完全定义。使用独立草图和拉伸切除，不使用镜像实体特征。"
+      ],
+      "dimensions": [
+        [
+          "第二侧孔",
+          "Ø20，u=40，h=20"
+        ]
+      ],
+      "check": "两侧圆沿深度方向同轴。",
+      "fix": "不要因为视图翻转而把第二个孔定位到 u=20。",
+      "stage": 3,
+      "diagram": "q5-hole"
+    },
+    {
+      "id": "Q5-rear-cut",
+      "q": "Q5",
+      "phase": "另一侧盲孔 · Cut-Extrude3",
+      "title": "第二侧也向内盲切 4",
+      "command": "Extruded Cut → Blind 4 → Reverse Direction（按预览）",
+      "actions": [
+        "退出草图 → 拉伸切除 → 给定深度 4。",
+        "方向朝内部，从 v=+24 到 +20；点击对勾。",
+        "两侧壁各厚 6，两个孔底各剩 2。"
+      ],
+      "dimensions": [
+        [
+          "第二孔底",
+          "v=+20"
+        ],
+        [
+          "两侧孔底余厚",
+          "各 2 mm"
+        ]
+      ],
+      "check": "零件最终关于 Front Plane 对称，两孔都有盲孔底。",
+      "fix": "不要选贯穿全部；两个孔底是投影解释的一部分。",
+      "stage": 4,
+      "diagram": "q5-hole"
+    },
+    {
+      "id": "Q5-check",
+      "q": "Q5",
+      "phase": "核验",
+      "title": "按外形与特征类型完成检查",
+      "command": "Ctrl+Q → 前视 Front / 俯视 Top → Ctrl+S",
+      "actions": [
+        "核对五边形侧轮廓、左端中央三角凸起、上下贯穿的矩形开口，以及两侧带底的盲孔。",
+        "在树中检查实体特征仅有 2 个拉伸凸台和 3 个拉伸切除，没有筋、圆角或镜像特征；每张草图完全定义，实体数为 1。",
+        "本例体积约 34100.0592mm³，仅作复现此近似模型的检查，不是题目给定的体积目标。保存 Q5.sldprt。"
+      ],
+      "dimensions": [
+        [
+          "原题参考体积",
+          "无"
+        ],
+        [
+          "本示例体积",
+          "约 34100.0592 mm³（自选尺寸）"
+        ]
+      ],
+      "check": "外形相似、最终对称、孔底保留且只用了允许的实体特征。",
+      "fix": "原题允许合理近似；不要通过量取原图像素来寻找所谓唯一精确尺寸。",
+      "stage": 4,
+      "diagram": "q5-hole"
+    }
+  ],
+  "references": [
+    [
+      "SOLIDWORKS 官方帮助：草图与约束",
+      "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_Sketching.htm"
+    ],
+    [
+      "SOLIDWORKS 官方帮助：拉伸属性",
+      "https://help.solidworks.com/2026/english/SolidWorks/sldworks/r_extrude_propertymanager.htm"
+    ],
+    [
+      "SOLIDWORKS 官方帮助：质量属性",
+      "https://help.solidworks.com/2026/english/SolidWorks/sldworks/c_mass_properties.htm"
+    ]
+  ],
+  "provenance": [
+    "本次上传 Lab 4 - Part Modelling I.pdf（4 页）：课程要求、Q1—Q4 图示及参考体积、Q5 任务说明。",
+    "原 GitHub Lab4 网站：Q1—Q5 已有几何、Q5 引用的 Lab3 第4题图片及教学近似尺寸。当前附件没有 Lab3 原 PDF，未声称重新核实完整 Lab3 文档。",
+    "本教程补写：手动操作顺序、草图尺寸与约束、计算所得尺寸、草图空切余量及检查点；不是原 PDF 自带的逐步操作。",
+    "Q4 采用英寸解释；根据原图侧视红点，将厚度范围从旧版中面修正为上表面 h=0 至 h=−0.3in。",
+    "本环境没有 SOLIDWORKS；教程按标准手动建模流程编写，几何可用 CAD 内核核验，未声称已在 SOLIDWORKS 中逐步运行。"
+  ]
+}
