@@ -1,0 +1,5 @@
+files/*.step binary
+files/*.pdf binary
+files/*.docx binary
+files/*.png binary
+*.zip binary

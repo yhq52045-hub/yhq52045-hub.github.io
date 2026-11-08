@@ -1,0 +1,399 @@
+{
+  "units": "mm",
+  "source_pages": [
+    74,
+    95
+  ],
+  "parameters": {
+    "length": 225.0,
+    "bottom_width": 80.0,
+    "top_width": 40.0,
+    "plan_radius": 75.0,
+    "block_height": 25.0,
+    "thickness": 3.0,
+    "left_run": 40.0,
+    "right_run": 65.0,
+    "tab_width": 25.0,
+    "tab_offset": 4.0,
+    "tab_height": 32.0,
+    "tab_thickness": 3.0,
+    "tab1_start": 120.0,
+    "tab2_start": 70.0,
+    "slot_outer_radius": 14.0,
+    "slot_end_radius": 1.5,
+    "slot_chord": 6.0,
+    "slot_center_gap": 6.0,
+    "slot_top_inset": 6.0,
+    "inside_bend_radius": 3.0,
+    "outer_fillet": 15.0,
+    "tab_top_fillet": 6.0,
+    "root_fillet": 2.0,
+    "hole_diameter": 76.0,
+    "hole_from_right": 50.0,
+    "hole_from_flat_bottom": 110.0,
+    "K": 0.5
+  },
+  "derived": {
+    "C": [
+      -40.0,
+      150.0
+    ],
+    "T": [
+      -112.78552643755896,
+      131.90947371668238
+    ],
+    "P": [
+      -80.0,
+      0.0
+    ],
+    "side_t": [
+      -0.24120701711090145,
+      0.9704736858341195
+    ],
+    "side_n": [
+      -0.9704736858341195,
+      -0.24120701711090145
+    ],
+    "side_length": 135.92277219068185,
+    "r0": 70.25,
+    "r1": 175.25,
+    "a0": 0.6057697367499428,
+    "a1": 0.37997657583743144,
+    "rn0": 68.75,
+    "rn1": 173.75,
+    "flat_min": -1.6466694015585688,
+    "flat_max": 226.0209300517537,
+    "hole_y": 108.35333059844143
+  },
+  "mesh_origin": [
+    -50.0,
+    110.0,
+    0.0
+  ],
+  "stages": [
+    {
+      "name": "01_Block_25mm",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 555003.0015487823,
+      "area_mm2": 59825.32016520344,
+      "bbox_mm": [
+        115.0,
+        225.0,
+        25.0
+      ],
+      "bounds_mm": [
+        -115.0,
+        0.0,
+        0.0,
+        0.0,
+        225.0,
+        25.0
+      ],
+      "faces": 7
+    },
+    {
+      "name": "02_Cookie_Cut_3mm",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 67324.5378778626,
+      "area_mm2": 46755.911313823875,
+      "bbox_mm": [
+        115.00000019999999,
+        225.00000010000014,
+        15.286020171469342
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -2.1316282072803006e-14,
+        -1.0000002842170943e-07,
+        1e-07,
+        225.0000001000001,
+        15.286020071469315
+      ],
+      "faces": 11
+    },
+    {
+      "name": "03_First_Offset_4mm",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 67624.5342941809,
+      "area_mm2": 46979.91131382387,
+      "bbox_mm": [
+        119.0000001,
+        225.00000010000014,
+        15.286020171469342
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -2.1316282072803006e-14,
+        -1.0000002842170943e-07,
+        4.0,
+        225.0000001000001,
+        15.286020071469315
+      ],
+      "faces": 15
+    },
+    {
+      "name": "04_First_Tab_32x3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 70024.54105520205,
+      "area_mm2": 48771.91131382387,
+      "bbox_mm": [
+        122.0000001,
+        225.00000010000014,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -2.1316282072803006e-14,
+        -1.0000002842170943e-07,
+        7.0,
+        225.0000001000001,
+        32.0
+      ],
+      "faces": 17
+    },
+    {
+      "name": "05_First_Twin_Arc_Slots",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 69873.07523087473,
+      "area_mm2": 48800.185647706174,
+      "bbox_mm": [
+        122.0000001,
+        225.00000010000014,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -2.1316282072803006e-14,
+        -1.0000002842170943e-07,
+        7.0,
+        225.0000001000001,
+        32.0
+      ],
+      "faces": 25
+    },
+    {
+      "name": "06_Second_Tab_and_Slots",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 72421.60406199688,
+      "area_mm2": 50844.45998158848,
+      "bbox_mm": [
+        122.0000001,
+        225.00000010000014,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -2.1316282072803006e-14,
+        -1.0000002842170943e-07,
+        7.0,
+        225.0000001000001,
+        32.0
+      ],
+      "faces": 39
+    },
+    {
+      "name": "07_Insert_Bends_R3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 72131.88972334226,
+      "area_mm2": 50628.141330293125,
+      "bbox_mm": [
+        122.0000001,
+        225.00000010000014,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -2.1316282072803006e-14,
+        -1.0000002842170943e-07,
+        7.000000000000001,
+        225.0000001000001,
+        32.0
+      ],
+      "faces": 43
+    },
+    {
+      "name": "08_Flattened_Before_Fillets",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 72030.8702126471,
+      "area_mm2": 50553.19232091779,
+      "bbox_mm": [
+        170.04591406795092,
+        227.6675996535352,
+        3.0000001999999997
+      ],
+      "bounds_mm": [
+        -135.97733049737388,
+        -1.6466695015585688,
+        -1e-07,
+        34.06858357057704,
+        226.02093015197664,
+        3.0000001
+      ],
+      "faces": 31
+    },
+    {
+      "name": "09_Flattened_R15_R6_R2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 71658.66056597837,
+      "area_mm2": 50225.27943356246,
+      "bbox_mm": [
+        168.7758298502808,
+        227.6675996535352,
+        3.0000001999999997
+      ],
+      "bounds_mm": [
+        -134.70724627970375,
+        -1.6466695015585688,
+        -1e-07,
+        34.06858357057704,
+        226.02093015197664,
+        3.0000001
+      ],
+      "faces": 41
+    },
+    {
+      "name": "10_Refolded_Rounded",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 71709.50633130522,
+      "area_mm2": 50263.11536591458,
+      "bbox_mm": [
+        122.0000001,
+        225.0000002,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -1.0000000710542735e-07,
+        -1.0000002842170943e-07,
+        7.000000000000001,
+        225.0000001,
+        32.0
+      ],
+      "faces": 458
+    },
+    {
+      "name": "11_Flattened_Hole_D76",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 58049.28180363523,
+      "area_mm2": 41868.64297501361,
+      "bbox_mm": [
+        168.7758298502808,
+        227.6675996535352,
+        3.0000001999999997
+      ],
+      "bounds_mm": [
+        -134.70724627970375,
+        -1.6466695015585688,
+        -1e-07,
+        34.06858357057704,
+        226.02093015197664,
+        3.0000001
+      ],
+      "faces": 42
+    },
+    {
+      "name": "12_Final_Refolded_Plate",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 58100.12694012137,
+      "area_mm2": 41906.47890736575,
+      "bbox_mm": [
+        122.0000001,
+        225.0000002,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -1.0000000710542735e-07,
+        -1.0000002842170943e-07,
+        7.000000000000001,
+        225.0000001,
+        32.0
+      ],
+      "faces": 459
+    }
+  ],
+  "software": "CadQuery 2.7 / Open CASCADE; not SOLIDWORKS",
+  "native_sldprt_generated": false,
+  "assumptions": [
+    "K=0.5 is a configurable supplemental assumption; the workbook does not state a K factor.",
+    "The hole is dimensioned in the developed flat state; its folded fixed-face Y is derived from the lower neutral arc.",
+    "Only supplied Tasks 1–8 are modeled; no opposite-foot mirror or assembly is asserted."
+  ],
+  "limitations": [
+    "STEP is exact BREP for the delivered reference solid but contains no native SOLIDWORKS sketch/feature history.",
+    "Flat base side contours use a sampled spline neutral-layer unrolling. Native SOLIDWORKS Insert Bends / Ignore beveled faces may trim the bevels differently.",
+    "Final outer corner R15 cuts are applied to the original plan mask before intersection with the curved sheet. They are visually and dimensionally R15 in plan, not a verified R15 circle on a native unfolded blank.",
+    "R6 tab upper corners and R14/R11/R1.5 arc slots are exact planar CAD arcs. R2 root blends are reconstructed using a 21-section ruled loft over the short bend portion; they are not a native SOLIDWORKS unfolded fillet.",
+    "Flat/bent stages are reference constructions, not a claim of an exact volume-preserving native sheet-metal unfold/refold."
+  ],
+  "build_notes": [],
+  "step_roundtrip": [
+    {
+      "name": "Binding_Base_Plate_FINAL.step",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 58100.41491531252,
+      "area_mm2": 41906.51955609141,
+      "bbox_mm": [
+        122.0000001,
+        225.00000020003915,
+        32.00000010000003
+      ],
+      "bounds_mm": [
+        -115.0000001,
+        -1.0000108002495835e-07,
+        -1.0000002842170943e-07,
+        7.0,
+        225.00000010003808,
+        32.0
+      ],
+      "faces": 459,
+      "volume_difference_mm3": 0.2879751911459607
+    },
+    {
+      "name": "Binding_Base_Plate_FLAT_K0p5.step",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 58049.2818036009,
+      "area_mm2": 41868.64297501075,
+      "bbox_mm": [
+        168.775829850277,
+        227.66759965353197,
+        3.0000001999999997
+      ],
+      "bounds_mm": [
+        -134.7072462797,
+        -1.6466695015590005,
+        -1e-07,
+        34.068583570577005,
+        226.02093015197298,
+        3.0000001
+      ],
+      "faces": 42,
+      "volume_difference_mm3": -3.433524398133159e-08
+    }
+  ],
+  "flat_bent_volume_difference_mm3": 50.84513648613938,
+  "root_blend_sampling": {
+    "sections": 21,
+    "ruled": true,
+    "root_fillet_flat_radius_mm": 2,
+    "last_flat_q": 1.98,
+    "nominal_end_q": 2.0,
+    "remaining_end_width_mm": 0.0001000025001249849,
+    "max_outer_chord_sag_bound_mm": 8.892570626461982e-05,
+    "max_radial_thickness_deviation_bound_mm": 4.446285313230991e-05
+  }
+}

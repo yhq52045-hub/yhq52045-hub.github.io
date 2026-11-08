@@ -1,0 +1,21 @@
+{
+  "source": "Build_Binding_Base.bas",
+  "not_compiled_or_run_in_solidworks": true,
+  "automated_scope": "Tasks 1-5 only; T6 optional selected-face helper; T7-T8 manual",
+  "procedures": 48,
+  "procedure_pairs_ok": true,
+  "unique_procedure_names": true,
+  "api_argument_counts": {
+    "FeatureCut3": 26,
+    "FeatureExtrusion2": 23,
+    "InsertBends2": 7,
+    "FullyDefineSketch": 10,
+    "EditRollback": 2
+  },
+  "single_saveas_isolated_from_main": true,
+  "no_existing_output_overwrite": true,
+  "failed_new_save_cleanup": true,
+  "K0p5_explicit_optional_assumption": true,
+  "plan_and_slot_calculations_match_audit": true,
+  "native_file_generated_here": false
+}

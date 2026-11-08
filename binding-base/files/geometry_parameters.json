@@ -1,0 +1,271 @@
+{
+  "source_pdf": "Mountainboard_Workbook_Pages_74-95.pdf",
+  "workbook_pages": [
+    74,
+    95
+  ],
+  "pdf_pages": 22,
+  "scope": "Lesson 3 Binding Base Plate, Tasks 1–8 only; assembly and further lesson tasks are outside supplied pages.",
+  "units": "mm",
+  "coordinate_system": {
+    "x": "plan width, straight side x=0, material toward negative x",
+    "y": "plan length, lower short edge y=0, upper edge y=225",
+    "z": "first extrusion 0..25; central kept plate lower z=0, upper z=3"
+  },
+  "plan_outline": {
+    "source_page": 81,
+    "origin": [
+      0,
+      0
+    ],
+    "bottom_left": [
+      -80,
+      0
+    ],
+    "top_right": [
+      0,
+      225
+    ],
+    "top_arc_join": [
+      -40,
+      225
+    ],
+    "arc_center": [
+      -40,
+      150
+    ],
+    "arc_radius": 75,
+    "tangent_point_derived": [
+      -112.78552643755896,
+      131.90947371668238
+    ],
+    "sloped_side_length_derived": 135.92277219068185,
+    "sloped_side_unit_vector_derived": [
+      -0.24120701711090145,
+      0.9704736858341195
+    ],
+    "block_extrusion_depth": 25,
+    "initial_rough_sketch_values_not_final": {
+      "page": 78,
+      "vertical_about": 200,
+      "bottom_about": 75,
+      "page79_top_about": 35
+    }
+  },
+  "cookie_cutter_side_profile": {
+    "source_pages": [
+      83,
+      84,
+      85,
+      86
+    ],
+    "left_straight_start_y": 40,
+    "right_straight_end_y": 160,
+    "right_end_inset": 65,
+    "endpoint_z": 12.5,
+    "midpoint_basis": "end edge of initial 25 mm block",
+    "plate_thickness_offset": 3,
+    "offset_direction": "upward and toward the arc centers",
+    "left_lower_arc_center_yz": [
+      40,
+      70.25
+    ],
+    "left_lower_radius_derived": 70.25,
+    "left_upper_radius_derived": 67.25,
+    "right_lower_arc_center_yz": [
+      160,
+      175.25
+    ],
+    "right_lower_radius_derived": 175.25,
+    "right_upper_radius_derived": 172.25,
+    "left_outer_endpoint_yz": [
+      0,
+      12.5
+    ],
+    "right_outer_endpoint_yz": [
+      225,
+      12.5
+    ],
+    "end_caps": "radial lines through arc centers, not vertical lines",
+    "cut_end_condition": "Through All",
+    "flip_side_to_cut": true
+  },
+  "first_tab": {
+    "source_pages": [
+      87,
+      88
+    ],
+    "support_side": "straight plan side x=0",
+    "side_local_span": [
+      120,
+      145
+    ],
+    "width": 25,
+    "offset_block_outward_depth": 4,
+    "offset_block_z": [
+      0,
+      3
+    ],
+    "tab_outward_span": [
+      4,
+      7
+    ],
+    "tab_total_height_from_bottom": 32,
+    "tab_height_above_plate_top_derived": 29,
+    "tab_thickness": 3
+  },
+  "second_tab": {
+    "source_page": 91,
+    "support_side": "sloped straight plan side from (-80,0) toward R75 tangent",
+    "local_s_origin": [
+      -80,
+      0
+    ],
+    "local_s_direction": [
+      -0.24120701711090145,
+      0.9704736858341195
+    ],
+    "local_s_span": [
+      70,
+      95
+    ],
+    "width": 25,
+    "offset_depth": 4,
+    "height": 32,
+    "tab_thickness": 3,
+    "reference_vertex_note": "70 dimension references the sloped side lower endpoint, not the R75 tangent and not the projected red model origin"
+  },
+  "each_tab_slots": {
+    "source_pages": [
+      88,
+      89,
+      90,
+      91
+    ],
+    "tab_local_frame": "u=0 at tab width center, h=0 at tab bottom; h=32 at top",
+    "slots_per_tab": 2,
+    "symmetry_axis": "u=0",
+    "outer_arc_radius": 14,
+    "inner_arc_radius_derived": 11,
+    "track_radius_derived": 12.5,
+    "slot_width_derived": 3,
+    "end_cap_radius": 1.5,
+    "near_axis_cap_center_horizontal_gap": 6,
+    "near_axis_cap_center_top_inset": 6,
+    "each_slot_cap_center_chord_length": 6,
+    "near_axis_right_cap_center": [
+      3,
+      26
+    ],
+    "near_axis_left_cap_center": [
+      -3,
+      26
+    ],
+    "common_arc_center_derived": [
+      0,
+      13.865338900488403
+    ],
+    "right_outer_cap_center_derived": [
+      8.3088,
+      23.20417408267253
+    ],
+    "left_outer_cap_center_derived": [
+      -8.3088,
+      23.20417408267253
+    ],
+    "near_axis_radial_angle_deg_from_vertical_derived": 13.88654036262899,
+    "track_sweep_angle_deg_derived": 27.77308072525798,
+    "cut_end_condition": "Up To Next",
+    "not_to_confuse": "6 mm chord dimension is neither arc length nor clear gap; horizontal 6 mm measures endpoint cap centers"
+  },
+  "sheet_metal": {
+    "source_pages": [
+      92,
+      93
+    ],
+    "fixed_face": "central planar upper face",
+    "insert_bends_radius": 3,
+    "tab_bend_inner_radius": 3,
+    "tab_bend_outer_radius_derived": 6,
+    "thickness": 3,
+    "manual_demonstration_only": {
+      "outside_radius": 4,
+      "inside_radius": 1,
+      "page": 92
+    },
+    "k_factor_from_source": null,
+    "bend_allowance_panel": "collapsed and disabled in screenshot",
+    "visible_0p5_value": "Auto Relief > Rectangular parameter, NOT verified K factor",
+    "auto_relief_type": "Rectangular",
+    "auto_relief_parameter": 0.5,
+    "ignore_beveled_faces": true,
+    "feature_tree_expected": [
+      "Sheet-Metal",
+      "Flatten-Bends1",
+      "Process-Bends1",
+      "Flat-Pattern1"
+    ],
+    "rollback_for_flat_state": "between Flatten-Bends1 and Process-Bends1"
+  },
+  "corner_fillets": {
+    "source_page": 94,
+    "performed_in_flattened_state": true,
+    "outer_outline_radius15_vertices_original_plan": [
+      [
+        0,
+        0
+      ],
+      [
+        -80,
+        0
+      ],
+      [
+        0,
+        225
+      ]
+    ],
+    "tab_distal_corner_radius": 6,
+    "tab_distal_corner_count": 4,
+    "tab_root_reentrant_radius": 2,
+    "tab_root_reentrant_corner_count": 4,
+    "tangent_arc_join_not_a_radius15_corner": [
+      -40,
+      225
+    ]
+  },
+  "center_hole": {
+    "source_page": 95,
+    "diameter": 76,
+    "distance_from_straight_right_edge": 50,
+    "distance_from_flattened_bottom_edge": 110,
+    "construction_state": "flattened before Process-Bends1",
+    "cut_depth_setting": "Link To Thickness",
+    "folded_center_x": -50,
+    "folded_center_y": "depends on actual flattening/bend allowance; do not automatically use y=110 of original bent-coordinate plan"
+  },
+  "explicit_optional_K0p5_calculation": {
+    "status": "supplemental assumption, not a specified workbook value",
+    "K": 0.5,
+    "left_neutral_radius": 68.75,
+    "left_sweep_rad": 0.6057697367499428,
+    "left_sweep_deg": 34.70804927252264,
+    "left_neutral_length": 41.64666940155857,
+    "flat_bottom_y": -1.6466694015585688,
+    "right_neutral_radius": 173.75,
+    "right_sweep_rad": 0.37997657583743144,
+    "right_sweep_deg": 21.771054109317475,
+    "right_neutral_length": 66.02093005175371,
+    "flat_top_y": 226.0209300517537,
+    "flat_length": 227.66759945331228,
+    "hole_center_folded_fixed_face_xy": [
+      -50,
+      108.35333059844143
+    ]
+  },
+  "uncertainties": [
+    "K factor / bend allowance is not provided on supplied pages; Auto Relief 0.5 is not proof of K=0.5.",
+    "Exact SolidWorks sheet-metal unfolding output and root corner relief topology require native SOLIDWORKS reconstruction/inspection.",
+    "Second tab 70 mm is side-local distance in Normal To view, not global y distance.",
+    "Task8 hole coordinates are dimensions of the flattened blank and need sheet-metal state context."
+  ]
+}

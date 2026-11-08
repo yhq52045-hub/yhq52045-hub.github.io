@@ -1,0 +1,1781 @@
+{
+  "titleZh": "固定器底板",
+  "titleEn": "Binding Base Plate",
+  "pages": [
+    74,
+    95
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "phaseZh": "开始之前",
+      "phaseEn": "Getting started",
+      "titleZh": "确认本次任务",
+      "titleEn": "Identify this assignment",
+      "page": [
+        74,
+        77,
+        78
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "本次建立“固定器底板/Binding Base Plate”，范围为教材第74–95页、任务1–8。第24–54页是上一课固定器锚盘，不是本次建模范围。",
+          "en": "Build the Binding Base Plate from workbook pages 74–95, Tasks 1–8. Pages 24–54 belong to the preceding Binding Anchor exercise."
+        },
+        {
+          "zh": "先看右侧的最终模型，再返回“01 毛坯/Blank”；后续每一步会同步切换教学阶段。",
+          "en": "Inspect the final model, then return to 01 Blank. Each instruction selects a corresponding teaching stage."
+        }
+      ],
+      "checkZh": "能区别底板与上一课锚盘。",
+      "checkEn": "Distinguish the base plate from the earlier anchor.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "phaseZh": "开始之前",
+      "phaseEn": "Getting started",
+      "titleZh": "新建零件",
+      "titleEn": "Create a part",
+      "page": [
+        78
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "打开 SOLIDWORKS 2026，点击“文件/File → 新建/New → 零件/Part → 确定/OK”。",
+          "en": "Open SOLIDWORKS 2026. Choose File → New → Part → OK."
+        },
+        {
+          "zh": "若“培训模板/Training Templates”中有 Part_MM，可使用它；没有时用普通零件模板，下一步手动设毫米单位。",
+          "en": "Use Part_MM under Training Templates if available. Otherwise use a standard part template and set millimeters next."
+        }
+      ],
+      "checkZh": "窗口是新的零件文档。",
+      "checkEn": "A new part document is open.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 3,
+      "phaseZh": "开始之前",
+      "phaseEn": "Getting started",
+      "titleZh": "设置毫米并保存",
+      "titleEn": "Set millimeters and save",
+      "page": [
+        78
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "点击右下角单位菜单，选择“MMGS（毫米、克、秒）/MMGS (millimeter, gram, second)”。",
+          "en": "Select MMGS (millimeter, gram, second) from the bottom-right units menu."
+        },
+        {
+          "zh": "点击“文件/File → 另存为/Save As”，命名 Binding_Base_Plate.SLDPRT。整个练习在这一个零件内完成。",
+          "en": "Choose File → Save As and name the part Binding_Base_Plate.SLDPRT. Complete the exercise in this one part."
+        }
+      ],
+      "checkZh": "长度以mm输入。",
+      "checkEn": "Lengths are entered in mm.",
+      "values": "mm",
+      "note": ""
+    },
+    {
+      "id": 4,
+      "phaseZh": "开始之前",
+      "phaseEn": "Getting started",
+      "titleZh": "找到常用按钮",
+      "titleEn": "Locate the toolbars",
+      "page": [
+        78,
+        82
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "若顶部看不到“草图/Sketch”“特征/Features”“钣金/Sheet Metal”选项卡，右键单击 CommandManager 选项卡区域并勾选对应选项。",
+          "en": "If Sketch, Features, or Sheet Metal tabs are missing, right-click the CommandManager tab area and enable them."
+        },
+        {
+          "zh": "需要的命令也可在右上方“搜索命令/Search Commands”输入英文命令名查找。按 Esc 结束当前绘图工具。",
+          "en": "You can also find commands with Search Commands at the upper right. Press Esc to end the current sketch tool."
+        }
+      ],
+      "checkZh": "可找到草图、拉伸凸台、拉伸切除和插入折弯。",
+      "checkEn": "Locate Sketch, Extruded Boss/Base, Extruded Cut, and Insert Bends.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 5,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "在上视基准面建草图",
+      "titleEn": "Sketch on the Top Plane",
+      "page": [
+        78
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "在左侧设计树选择“上视基准面/Top Plane”，点击“草图/Sketch → 草图/Sketch”。",
+          "en": "Select Top Plane in the design tree, then choose Sketch → Sketch."
+        },
+        {
+          "zh": "按 Ctrl+8 或点击“正视于/Normal To”。以下以原点为右下角，长边向屏幕上方、材料向左侧绘制。",
+          "en": "Press Ctrl+8 or choose Normal To. Use the origin as the lower-right corner, with the long edge upward and the material to the left."
+        }
+      ],
+      "checkZh": "草图原点显示在右下角，正在编辑2D草图。",
+      "checkEn": "The origin is the lower-right corner of the intended 2D profile.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 6,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "绘制三条直边",
+      "titleEn": "Draw the three straight boundaries",
+      "page": [
+        78,
+        79
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "点击“直线/Line”，从原点向上绘制一条竖直线；再从原点向左绘制底边。",
+          "en": "Choose Line. Draw a vertical line upward from the origin, then a bottom horizontal line leftward from the origin."
+        },
+        {
+          "zh": "从竖直线的上端向左画一条短水平顶边。先画近似尺寸，稍后统一用“智能尺寸/Smart Dimension”确定最终数值。",
+          "en": "Draw a short horizontal top edge leftward from the top of the vertical line. Use approximate sizes initially; apply final dimensions with Smart Dimension later."
+        }
+      ],
+      "checkZh": "三条线分别具备竖直和水平几何关系。",
+      "checkEn": "The three lines have vertical or horizontal relations.",
+      "values": "最终 / Final: 225 · 80 · 40 mm",
+      "note": ""
+    },
+    {
+      "id": 7,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "绘制倾斜侧边",
+      "titleEn": "Draw the inclined side",
+      "page": [
+        79
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "从底部横线的左端画一条向左上方倾斜的直线，终点大致在全高的六成处。",
+          "en": "From the left end of the bottom line, draw an inclined line upward and leftward, ending roughly three-fifths of the way up."
+        },
+        {
+          "zh": "这条线不能带“竖直/Vertical”关系。若自动加错关系，选中该关系标记并按 Delete。",
+          "en": "This line must not have a Vertical relation. If one was inferred, select its relation symbol and press Delete."
+        }
+      ],
+      "checkZh": "侧边是倾斜线，轮廓尚未闭合。",
+      "checkEn": "The side is inclined and the profile is still open.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 8,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "用切线弧连接顶部",
+      "titleEn": "Connect with a tangent arc",
+      "page": [
+        79,
+        80
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "展开“圆弧/Arc”下拉菜单，点击“切线弧/Tangent Arc”。从倾斜线的上端开始，连接到短水平顶边的左端。",
+          "en": "Open the Arc dropdown and choose Tangent Arc. Start at the upper endpoint of the inclined line and end at the left endpoint of the top horizontal line."
+        },
+        {
+          "zh": "起点通常自动与斜线相切；终点与顶边的相切关系需要单独添加。按 Esc 退出圆弧工具。",
+          "en": "The starting end normally becomes tangent to the inclined line. Add tangency at the top horizontal edge separately. Press Esc to leave the arc tool."
+        }
+      ],
+      "checkZh": "轮廓由四条直线和一条圆弧构成闭合区域。",
+      "checkEn": "Four lines and one arc form a closed profile.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 9,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "添加第二端相切关系",
+      "titleEn": "Add tangency at the second end",
+      "page": [
+        80,
+        81
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "按住 Ctrl，选择圆弧和短水平顶边；点击“添加几何关系/Add Relations → 相切/Tangent”。",
+          "en": "Ctrl-select the arc and the short top horizontal line. Choose Add Relations → Tangent."
+        },
+        {
+          "zh": "确认圆弧与倾斜线、顶边各有一个“相切/Tangent”关系，且相邻端点“重合/Coincident”。",
+          "en": "Verify Tangent relations at both ends of the arc and Coincident relations at connected endpoints."
+        }
+      ],
+      "checkZh": "拖动几何时两端保持相切。",
+      "checkEn": "Both tangencies remain when the geometry is dragged.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 10,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "标注最终轮廓尺寸",
+      "titleEn": "Dimension the final outline",
+      "page": [
+        81
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "点击“智能尺寸/Smart Dimension”，依次标注右侧竖直线225 mm、底边80 mm、顶边40 mm。",
+          "en": "Choose Smart Dimension. Set the right vertical edge to 225 mm, the bottom edge to 80 mm, and the top edge to 40 mm."
+        },
+        {
+          "zh": "选圆弧并标注半径75 mm。教材前面约200、75、35 mm只是画草图时的估计，最终以本页尺寸图为准。",
+          "en": "Dimension the arc radius to 75 mm. Earlier approximate values of 200, 75, and 35 mm were sketching guides; the dimensioned figure on this page gives the final values."
+        }
+      ],
+      "checkZh": "轮廓高225、顶40、底80、圆弧R75。",
+      "checkEn": "The profile is 225 high, with top 40, bottom 80, and arc R75.",
+      "values": "225 · 80 · 40 · R75 mm",
+      "note": ""
+    },
+    {
+      "id": 11,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "检查完全定义",
+      "titleEn": "Check that the sketch is fully defined",
+      "page": [
+        81
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "草图实体应变黑，状态栏显示“完全定义/Fully Defined”。若有蓝线，检查原点重合、端点重合及两端相切。",
+          "en": "Entities should become black and the status should read Fully Defined. If any are blue, check the origin, endpoint coincidence, and both tangencies."
+        },
+        {
+          "zh": "不要用“固定/Fix”替代缺失尺寸；保留尺寸和关系，后续才能有意义地编辑。",
+          "en": "Use dimensions and geometric relations to remove remaining freedom so later edits retain the intended shape."
+        }
+      ],
+      "checkZh": "草图闭合、完全定义，没有重复线。",
+      "checkEn": "The sketch is closed, fully defined, and has no duplicate entities.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 12,
+      "phaseZh": "任务1 · 建立毛坯",
+      "phaseEn": "Task 1 · Create the blank",
+      "titleZh": "拉伸25毫米毛坯",
+      "titleEn": "Extrude the blank 25 mm",
+      "page": [
+        81
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "点击“退出草图/Exit Sketch”，保持该草图被选中；点击“特征/Features → 拉伸凸台/基体/Extruded Boss/Base”。",
+          "en": "Choose Exit Sketch, keep the sketch selected, and choose Features → Extruded Boss/Base."
+        },
+        {
+          "zh": "在“方向1/Direction 1”中选择“给定深度/Blind”，输入25 mm；关闭“薄壁特征/Thin Feature”，点击绿色勾“确定/OK”。",
+          "en": "Under Direction 1 choose Blind and enter 25 mm. Keep Thin Feature off and accept with the green checkmark."
+        }
+      ],
+      "checkZh": "得到厚25的完整毛坯；此25不是成品板厚。",
+      "checkEn": "A 25 mm thick blank is created. This is the blank depth, not the final sheet thickness.",
+      "values": "Blind 25 mm",
+      "note": ""
+    },
+    {
+      "id": 13,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "选择长直侧面",
+      "titleEn": "Select the long straight side face",
+      "page": [
+        82,
+        83
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "点击毛坯右侧长直边对应的竖直矩形侧面，尺寸约225×25 mm；不要选宽大的顶面。",
+          "en": "Select the vertical rectangular face along the long straight side, approximately 225 × 25 mm."
+        },
+        {
+          "zh": "点击“草图/Sketch → 草图/Sketch”，再点击“正视于/Normal To”。将底边左端理解为本侧视图的0位置，右端为225。",
+          "en": "Choose Sketch → Sketch, then Normal To. In this side view, read the lower edge from 0 at the left to 225 at the right."
+        }
+      ],
+      "checkZh": "看到225长、25高的矩形侧影。",
+      "checkEn": "The face appears as a 225 by 25 rectangle.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 14,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "绘制底部中间直线",
+      "titleEn": "Draw the central bottom line",
+      "page": [
+        83
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "用“直线/Line”在侧面的底边上画一条水平线，其左端大致距左边40、右端大致距右边65 mm。",
+          "en": "Use Line to draw a horizontal segment on the bottom edge. Place its left end about 40 mm from the left boundary and its right end about 65 mm from the right boundary."
+        },
+        {
+          "zh": "使直线及端点保持在底边上，添加“水平/Horizontal”和必要的“重合/Coincident”关系。",
+          "en": "Keep the segment on the bottom edge using Horizontal and appropriate Coincident relations."
+        }
+      ],
+      "checkZh": "中间保留的平直段最终长120 mm。",
+      "checkEn": "The central straight segment will be 120 mm long.",
+      "values": "225 − 40 − 65 = 120 mm",
+      "note": ""
+    },
+    {
+      "id": 15,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "绘制右端上翘圆弧",
+      "titleEn": "Draw the right upturned arc",
+      "page": [
+        83
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "点击“切线弧/Tangent Arc”，从中间直线的右端开始，连接到右侧25 mm竖边的中点。",
+          "en": "Choose Tangent Arc. Start at the right endpoint of the central line and finish at the midpoint of the right 25 mm edge."
+        },
+        {
+          "zh": "捕捉“中点/Midpoint”几何关系；端点高度为12.5 mm。",
+          "en": "Capture the Midpoint relation so the arc endpoint is 12.5 mm above the bottom."
+        }
+      ],
+      "checkZh": "圆弧与平直段相切，外端位于竖边中点。",
+      "checkEn": "The arc is tangent to the central line and ends at the side-edge midpoint.",
+      "values": "外端高 / End height: 12.5 mm",
+      "note": ""
+    },
+    {
+      "id": 16,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "绘制左端上翘圆弧",
+      "titleEn": "Draw the left upturned arc",
+      "page": [
+        83
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "从中间直线左端用“切线弧/Tangent Arc”连接到左侧竖边的中点。",
+          "en": "From the left endpoint of the central segment, create a Tangent Arc to the midpoint of the left vertical edge."
+        },
+        {
+          "zh": "同样检查“相切/Tangent”和“中点/Midpoint”，形成“圆弧—直线—圆弧”的连续开放链。",
+          "en": "Check Tangent and Midpoint relations. The open chain now consists of an arc, a line, and another arc."
+        }
+      ],
+      "checkZh": "两端都向上翘，中段在底边。",
+      "checkEn": "Both ends rise while the central segment remains on the bottom edge.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 17,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "定位两端过渡",
+      "titleEn": "Dimension the two transitions",
+      "page": [
+        83
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "用“智能尺寸/Smart Dimension”标注左外边到直线左端的水平距离40 mm，直线右端到右外边的水平距离65 mm。",
+          "en": "Use Smart Dimension to set 40 mm horizontally from the left boundary to the left end of the straight segment, and 65 mm from the right end to the right boundary."
+        },
+        {
+          "zh": "端部弧半径由相切、中点和上述位置决定，不再额外添加驱动半径。",
+          "en": "Tangency, midpoint constraints, and these offsets determine the end radii. Additional driving radius dimensions would be redundant."
+        }
+      ],
+      "checkZh": "左右过渡不同，不能用对称关系替代。",
+      "checkEn": "The two end transitions differ and must not be constrained symmetrically.",
+      "values": "40 · 65 mm",
+      "note": ""
+    },
+    {
+      "id": 18,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "向上等距3毫米",
+      "titleEn": "Offset upward by 3 mm",
+      "page": [
+        84
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "选中三段链中的任意一段，点击“等距实体/Offset Entities”。勾选“选择链/Select Chain”，输入3 mm。",
+          "en": "Select any segment of the three-entity chain and choose Offset Entities. Enable Select Chain and enter 3 mm."
+        },
+        {
+          "zh": "若预览出现在原链下方，勾选“反向/Reverse”，使复制链位于材料内部、原链上方，点击“确定/OK”。",
+          "en": "If the preview lies below the original chain, use Reverse so the offset lies above it inside the blank. Accept with OK."
+        }
+      ],
+      "checkZh": "两条相切链的法向间距是3 mm。",
+      "checkEn": "The normal offset between the chains is 3 mm.",
+      "values": "Offset 3 mm",
+      "note": ""
+    },
+    {
+      "id": 19,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "封闭左侧端部",
+      "titleEn": "Close the left end",
+      "page": [
+        84,
+        85
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "用“直线/Line”连接左侧两条同心圆弧的端点，端点分别“重合/Coincident”。",
+          "en": "Use Line to connect the endpoints of the two concentric left arcs with Coincident endpoint relations."
+        },
+        {
+          "zh": "若连接线仍为蓝色，按Ctrl选中该线及圆弧圆心，点击“添加几何关系/Add Relations → 重合/Coincident”。圆心落在线的延长线上可保证径向封口。",
+          "en": "If the closing line remains blue, Ctrl-select it and the arc center, then choose Add Relations → Coincident. The line passes through the center, making the closure radial."
+        }
+      ],
+      "checkZh": "左侧端部闭合，连接线完全定义。",
+      "checkEn": "The left closure is radial and fully defined.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 20,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "封闭右侧并检查轮廓",
+      "titleEn": "Close the right end and inspect",
+      "page": [
+        85
+      ],
+      "stage": 0,
+      "actions": [
+        {
+          "zh": "以相同方法连接右侧两圆弧端点，并使封口线通过其共同圆心。",
+          "en": "Connect the right pair of arc endpoints and make the closing line pass through their shared center."
+        },
+        {
+          "zh": "检查没有小间隙、重复线或多余内轮廓，再点击“退出草图/Exit Sketch”。",
+          "en": "Check for gaps, duplicates, and unwanted inner contours, then choose Exit Sketch."
+        }
+      ],
+      "checkZh": "得到单一封闭的3 mm厚弯曲带状轮廓。",
+      "checkEn": "One closed curved strip profile defines a 3 mm thickness.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 21,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "执行完全贯穿反侧切除",
+      "titleEn": "Apply Through All with Flip side to cut",
+      "page": [
+        85,
+        86
+      ],
+      "stage": 1,
+      "actions": [
+        {
+          "zh": "选择刚完成的草图，点击“特征/Features → 拉伸切除/Extruded Cut”，终止条件选“完全贯穿/Through All”。",
+          "en": "Select the completed sketch, then choose Features → Extruded Cut. Set the end condition to Through All."
+        },
+        {
+          "zh": "勾选“反侧切除/Flip side to cut”，并使箭头穿入整个毛坯。预览应保留草图带状区域，去掉其外侧材料；点击“确定/OK”。",
+          "en": "Enable Flip side to cut and direct the cut through the blank. The preview should retain the strip and remove material outside it. Accept with OK."
+        }
+      ],
+      "checkZh": "只剩两端上翘、全程3 mm厚的底板。",
+      "checkEn": "Only the 3 mm thick plate with two upturned ends remains.",
+      "values": "Through All · Flip side to cut",
+      "note": ""
+    },
+    {
+      "id": 22,
+      "phaseZh": "任务2 · 反侧切除",
+      "phaseEn": "Task 2 · Cookie-cutter cut",
+      "titleZh": "保存并核对板厚",
+      "titleEn": "Save and check thickness",
+      "page": [
+        86
+      ],
+      "stage": 1,
+      "actions": [
+        {
+          "zh": "按 Ctrl+S 保存。点击“评估/Evaluate → 测量/Measure”，检查中央平面上下两面的距离为3 mm。",
+          "en": "Press Ctrl+S. Use Evaluate → Measure to check that the central top and bottom faces are 3 mm apart."
+        },
+        {
+          "zh": "端部两弧为法向等距3 mm；弯曲处不要仅用竖直方向高度差当作板厚。",
+          "en": "The end arcs are offset by 3 mm normal to their surfaces. A vertical height difference at a curved end is not the sheet thickness."
+        }
+      ],
+      "checkZh": "中央板厚3 mm，设计树中保留原始凸台和反侧切除。",
+      "checkEn": "The central thickness is 3 mm and both the original boss and cookie-cutter cut remain in the tree.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 23,
+      "phaseZh": "任务3 · 第一侧耳",
+      "phaseEn": "Task 3 · First side tab",
+      "titleZh": "在直侧边创建偏置草图",
+      "titleEn": "Sketch the first offset",
+      "page": [
+        86,
+        87
+      ],
+      "stage": 1,
+      "actions": [
+        {
+          "zh": "选择底板长直边在中央平直段的窄侧面，点击“草图/Sketch”，再“正视于/Normal To”。",
+          "en": "Select the narrow side face along the long straight boundary in the central flat region. Choose Sketch, then Normal To."
+        },
+        {
+          "zh": "点击“边角矩形/Corner Rectangle”，使矩形底边与板底边重合、顶边与板顶边重合。",
+          "en": "Choose Corner Rectangle. Constrain the rectangle between the bottom and top edges of the plate."
+        }
+      ],
+      "checkZh": "矩形高度由3 mm板厚自动控制。",
+      "checkEn": "The rectangle height follows the 3 mm plate thickness.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 24,
+      "phaseZh": "任务3 · 第一侧耳",
+      "phaseEn": "Task 3 · First side tab",
+      "titleZh": "标注第一偏置位置",
+      "titleEn": "Position the first offset",
+      "page": [
+        87
+      ],
+      "stage": 1,
+      "actions": [
+        {
+          "zh": "用“智能尺寸/Smart Dimension”标注矩形沿侧边的宽度25 mm。",
+          "en": "Use Smart Dimension to set the rectangle width along the side edge to 25 mm."
+        },
+        {
+          "zh": "从本侧视图对应初始轮廓底端的参考顶点，到矩形近侧边标注120 mm；矩形覆盖长边位置120–145 mm。",
+          "en": "Dimension 120 mm from the reference vertex at the original bottom end to the nearer edge of the rectangle. The rectangle occupies positions 120–145 mm along this side."
+        }
+      ],
+      "checkZh": "矩形宽25、位置120，草图完全定义。",
+      "checkEn": "The rectangle is 25 wide, positioned at 120, and fully defined.",
+      "values": "25 · 120 mm",
+      "note": ""
+    },
+    {
+      "id": 25,
+      "phaseZh": "任务3 · 第一侧耳",
+      "phaseEn": "Task 3 · First side tab",
+      "titleZh": "向外拉伸偏置4毫米",
+      "titleEn": "Extrude the offset outward 4 mm",
+      "page": [
+        87
+      ],
+      "stage": 2,
+      "actions": [
+        {
+          "zh": "退出草图，点击“拉伸凸台/基体/Extruded Boss/Base”，选择“给定深度/Blind”，输入4 mm。",
+          "en": "Exit the sketch and choose Extruded Boss/Base. Set Blind to 4 mm."
+        },
+        {
+          "zh": "箭头应朝底板外侧，勾选“合并结果/Merge result”并确定。",
+          "en": "Direct the extrusion outward from the plate, enable Merge result, and accept."
+        }
+      ],
+      "checkZh": "出现厚3、宽25、向外伸出4的连接块。",
+      "checkEn": "A 3 mm thick, 25 mm wide connection extends outward by 4 mm.",
+      "values": "Blind 4 mm",
+      "note": ""
+    },
+    {
+      "id": 26,
+      "phaseZh": "任务3 · 第一侧耳",
+      "phaseEn": "Task 3 · First side tab",
+      "titleZh": "在偏置外端绘制耳板",
+      "titleEn": "Sketch the tab on the outer offset face",
+      "page": [
+        87,
+        88
+      ],
+      "stage": 2,
+      "actions": [
+        {
+          "zh": "选择刚产生的偏置块最外侧竖直矩形面，点击“草图/Sketch → 正视于/Normal To”。",
+          "en": "Select the new outer vertical rectangular face of the offset. Choose Sketch, then Normal To."
+        },
+        {
+          "zh": "用“边角矩形/Corner Rectangle”从其左下角起画；矩形覆盖偏置块的全宽，并向上延伸。",
+          "en": "Draw a Corner Rectangle starting at its lower-left corner. Span the entire offset width and extend upward."
+        }
+      ],
+      "checkZh": "耳板草图下端从底面起算。",
+      "checkEn": "The tab sketch starts at the bottom face.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 27,
+      "phaseZh": "任务3 · 第一侧耳",
+      "phaseEn": "Task 3 · First side tab",
+      "titleZh": "约束侧耳宽度与高度",
+      "titleEn": "Constrain the tab width and height",
+      "page": [
+        88
+      ],
+      "stage": 2,
+      "actions": [
+        {
+          "zh": "Ctrl选中矩形右竖边及偏置块右竖边，点击“添加几何关系/Add Relations → 共线/Collinear”。左端点与左下角保持“重合/Coincident”。",
+          "en": "Ctrl-select the right vertical sketch edge and the right edge of the offset. Choose Add Relations → Collinear. Keep the lower-left endpoint coincident with the lower-left corner."
+        },
+        {
+          "zh": "用“智能尺寸/Smart Dimension”标注矩形总高32 mm。这个32从底板底面开始，不是从顶面再增加32。",
+          "en": "Use Smart Dimension to set the rectangle total height to 32 mm, measured from the plate bottom."
+        }
+      ],
+      "checkZh": "耳宽随25 mm偏置宽度变化，总高32 mm。",
+      "checkEn": "The width follows the 25 mm offset and the total height is 32 mm.",
+      "values": "32 mm from bottom",
+      "note": ""
+    },
+    {
+      "id": 28,
+      "phaseZh": "任务3 · 第一侧耳",
+      "phaseEn": "Task 3 · First side tab",
+      "titleZh": "拉伸侧耳厚度3毫米",
+      "titleEn": "Extrude the tab thickness 3 mm",
+      "page": [
+        88
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "退出草图，点击“拉伸凸台/基体/Extruded Boss/Base → 给定深度/Blind”，输入3 mm。",
+          "en": "Exit the sketch and choose Extruded Boss/Base → Blind. Enter 3 mm."
+        },
+        {
+          "zh": "箭头继续向外，勾选“合并结果/Merge result”并确定。原始未折弯外伸总量为4+3=7 mm。",
+          "en": "Continue outward, enable Merge result, and accept. Before bend conversion, the total outward projection is 4 + 3 = 7 mm."
+        }
+      ],
+      "checkZh": "一个实体，耳板厚3、总高32。",
+      "checkEn": "One solid remains, with tab thickness 3 and total height 32.",
+      "values": "Blind 3 mm",
+      "note": ""
+    },
+    {
+      "id": 29,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "在耳板外表面建槽草图",
+      "titleEn": "Start the slot sketch on the outer tab face",
+      "page": [
+        88
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "选择侧耳最外侧的大矩形面，点击“草图/Sketch”，再“正视于/Normal To”。",
+          "en": "Select the large outer face of the tab. Choose Sketch, then Normal To."
+        },
+        {
+          "zh": "点击“缩放到所选范围/Zoom to Selection”；也可用鼠标滚轮放大耳板。",
+          "en": "Use Zoom to Selection or zoom in with the mouse wheel."
+        }
+      ],
+      "checkZh": "看到宽25、高32的完整耳面。",
+      "checkEn": "The whole 25 × 32 tab face is visible.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 30,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "创建镜向中心线",
+      "titleEn": "Create the mirror centerline",
+      "page": [
+        88
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "点击“中心线/Centerline”，从耳板顶边中点向下画一条竖直构造线。",
+          "en": "Choose Centerline. Draw a vertical construction line downward from the midpoint of the tab top edge."
+        },
+        {
+          "zh": "选中这条中心线，点击“动态镜向实体/Dynamic Mirror Entities”。之后只画一侧，另一侧自动出现。",
+          "en": "Select the centerline and choose Dynamic Mirror Entities. Sketch one side while the opposite side is created automatically."
+        }
+      ],
+      "checkZh": "镜向轴位于25 mm耳宽的中间。",
+      "checkEn": "The mirror axis bisects the 25 mm tab width.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 31,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "绘制两条同心长圆弧",
+      "titleEn": "Draw the two concentric long arcs",
+      "page": [
+        88,
+        89
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "点击“圆心圆弧/Centerpoint Arc”。先在中心线上选共同圆心，再向左上方点起点，最后向左外侧下方定终点。",
+          "en": "Choose Centerpoint Arc. Place the center on the centerline, select a start point above and to the left, then end farther outward and lower."
+        },
+        {
+          "zh": "用同一个圆心再画第二条圆弧，形成槽的内、外长边。两条弧都只占圆的一小段。",
+          "en": "Use the same center for a second arc to define the inner and outer long boundaries of the slot."
+        }
+      ],
+      "checkZh": "两长弧“同心/Concentric”，右侧出现镜像。",
+      "checkEn": "The two long arcs are concentric and have mirrored counterparts.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 32,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "用端部切线弧封槽",
+      "titleEn": "Close the slot with tangent end arcs",
+      "page": [
+        89
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "用“切线弧/Tangent Arc”在两端分别连接内外长弧，形成一个闭合弧形槽。",
+          "en": "Use Tangent Arc at each end to connect the inner and outer arcs into one closed curved slot."
+        },
+        {
+          "zh": "用“添加几何关系/Add Relations → 相切/Tangent”确认四个连接处均相切；需要时用“相等/Equal”使两端半径相同。",
+          "en": "Use Add Relations → Tangent to verify all four connections. Add Equal for the two cap radii if necessary."
+        }
+      ],
+      "checkZh": "左右各一个闭合槽，共四条弧构成每个槽。",
+      "checkEn": "There is one closed slot per side, each consisting of four arcs.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 33,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "设置弧半径与槽宽",
+      "titleEn": "Dimension arc radii and slot width",
+      "page": [
+        90
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "关闭“动态镜向实体/Dynamic Mirror Entities”。用“智能尺寸/Smart Dimension”将外侧长弧半径设为14 mm、槽端圆弧半径设为1.50 mm。",
+          "en": "Turn off Dynamic Mirror Entities. Use Smart Dimension to set the outer long arc radius to 14 mm and a cap radius to 1.50 mm."
+        },
+        {
+          "zh": "相切且同心时，槽宽为3 mm、内侧长弧半径11 mm。图中R14不能读成R4。",
+          "en": "With tangency and concentricity, the slot width is 3 mm and the inner long radius is 11 mm. The drawing specifies R14."
+        }
+      ],
+      "checkZh": "外R14、内R11、两端R1.5。",
+      "checkEn": "Outer R14, inner R11, and cap R1.5.",
+      "values": "R14 · R1.50 · width 3 mm",
+      "note": ""
+    },
+    {
+      "id": 34,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "定位靠中心线的槽端",
+      "titleEn": "Locate the inner slot ends",
+      "page": [
+        90
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "标注左右镜向槽靠中心线一端的圆弧圆心之间水平距离6 mm，即每个圆心距中心线3 mm。",
+          "en": "Dimension 6 mm horizontally between the cap centers nearest the mirror axis, giving 3 mm on each side."
+        },
+        {
+          "zh": "标注这些圆心距耳板顶边的垂直距离6 mm。选择圆心而非最外侧切点；若需要，在“圆弧条件/Arc Conditions”中选“中心/Center”。",
+          "en": "Dimension these centers 6 mm below the tab top edge. Select the arc centers rather than the extreme tangent points; use Arc Conditions → Center if required."
+        }
+      ],
+      "checkZh": "内端圆心相距6，并位于顶边下方6。",
+      "checkEn": "The inner cap centers are 6 apart and 6 below the top.",
+      "values": "horizontal 6 · vertical 6 mm",
+      "note": ""
+    },
+    {
+      "id": 35,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "标注单槽端圆心弦长",
+      "titleEn": "Dimension the cap-center chord",
+      "page": [
+        90
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "用“智能尺寸/Smart Dimension”选择同一个槽两端的端圆弧，使两圆心间的“对齐/Aligned”直线距离为6 mm。",
+          "en": "Use Smart Dimension on the two cap arcs of one slot. Set the Aligned straight-line distance between their centers to 6 mm."
+        },
+        {
+          "zh": "移动鼠标切换尺寸方向，右键锁定“对齐/Aligned”；该6 mm是弦长，不是弧长，也不是水平或竖直投影。",
+          "en": "Move the pointer to obtain Aligned placement, then right-click to lock it. This 6 mm is the chord between centers, not arc length or a horizontal or vertical projection."
+        }
+      ],
+      "checkZh": "所有6 mm尺寸各自含义明确，槽没有被画成水平直槽。",
+      "checkEn": "Each 6 mm dimension has the intended meaning and the slot remains curved.",
+      "values": "Aligned center distance 6 mm",
+      "note": ""
+    },
+    {
+      "id": 36,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "检查槽草图完全定义",
+      "titleEn": "Check the fully defined slot sketch",
+      "page": [
+        89,
+        90
+      ],
+      "stage": 3,
+      "actions": [
+        {
+          "zh": "检查“同心/Concentric”“相切/Tangent”“对称/Symmetric”及端点“重合/Coincident”关系。槽轮廓应变黑。",
+          "en": "Check Concentric, Tangent, Symmetric, and Coincident endpoint relations. The slot contours should become black."
+        },
+        {
+          "zh": "若使用动态镜向已经建立关系，不重复添加冲突关系。用于核对的内弧R11应设为“从动/Driven”，避免过定义。",
+          "en": "Avoid duplicating relations created by dynamic mirroring. If you add R11 for checking, make it Driven to avoid overdefinition."
+        }
+      ],
+      "checkZh": "左右两槽相同、对称，全部轮廓闭合。",
+      "checkEn": "Both slots are identical, symmetric, and closed.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 37,
+      "phaseZh": "任务4 · 弧形带槽",
+      "phaseEn": "Task 4 · Curved strap slots",
+      "titleZh": "成形到下一面切槽",
+      "titleEn": "Cut the slots Up To Next",
+      "page": [
+        91
+      ],
+      "stage": 4,
+      "actions": [
+        {
+          "zh": "退出草图，点击“特征/Features → 拉伸切除/Extruded Cut”。终止条件选择“成形到下一面/Up To Next”。",
+          "en": "Exit the sketch and choose Features → Extruded Cut. Set the end condition to Up To Next."
+        },
+        {
+          "zh": "使箭头进入耳板，预览穿过3 mm耳厚后在内侧面停止，点击“确定/OK”。本处“完全贯穿/Through All”也可得到相同几何。",
+          "en": "Direct the cut into the tab. Verify that it stops at the inner tab face after cutting through 3 mm, then accept. Through All produces the same geometry here."
+        }
+      ],
+      "checkZh": "第一侧耳上有两个贯通弧形槽。",
+      "checkEn": "The first tab has two through curved slots.",
+      "values": "Up To Next",
+      "note": ""
+    },
+    {
+      "id": 38,
+      "phaseZh": "任务5 · 第二侧耳",
+      "phaseEn": "Task 5 · Second side tab",
+      "titleZh": "选择斜直侧窄面",
+      "titleEn": "Select the inclined straight side face",
+      "page": [
+        91
+      ],
+      "stage": 4,
+      "actions": [
+        {
+          "zh": "转动模型，选择底板另一侧倾斜直边对应的窄侧面，点击“草图/Sketch → 正视于/Normal To”。",
+          "en": "Rotate the model and select the narrow face along the opposite inclined straight boundary. Choose Sketch → Normal To."
+        },
+        {
+          "zh": "第二侧耳按本侧局部位置重建；两侧基边方向不同，直接镜向整个第一耳不能满足教材位置。",
+          "en": "Build the second tab at its own local position. The two boundary directions differ, so mirroring the first complete tab would not reproduce the specified placement."
+        }
+      ],
+      "checkZh": "选中斜直边，能看到其下端参考顶点。",
+      "checkEn": "The inclined straight edge and its lower-end reference vertex are identified.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 39,
+      "phaseZh": "任务5 · 第二侧耳",
+      "phaseEn": "Task 5 · Second side tab",
+      "titleZh": "标注第二偏置70毫米",
+      "titleEn": "Position the second offset at 70 mm",
+      "page": [
+        91
+      ],
+      "stage": 4,
+      "actions": [
+        {
+          "zh": "用“边角矩形/Corner Rectangle”绘制第二偏置，矩形上下边与3 mm板厚边界重合，沿侧边宽25 mm。",
+          "en": "Draw the second offset with Corner Rectangle. Constrain its top and bottom to the 3 mm plate boundaries and set its width along the edge to 25 mm."
+        },
+        {
+          "zh": "从图示斜侧的下端顶点沿此侧面量70 mm到矩形近侧边；矩形占此斜侧局部位置70–95 mm。",
+          "en": "Dimension 70 mm along this face from the illustrated lower-end vertex to the nearer rectangle edge. The rectangle occupies local positions 70–95 mm."
+        }
+      ],
+      "checkZh": "70是沿斜侧的局部长度，不是全局竖直投影。",
+      "checkEn": "The 70 mm is measured along the inclined side, not along the global vertical direction.",
+      "values": "25 · local 70–95 mm",
+      "note": ""
+    },
+    {
+      "id": 40,
+      "phaseZh": "任务5 · 第二侧耳",
+      "phaseEn": "Task 5 · Second side tab",
+      "titleZh": "重复建立第二耳板",
+      "titleEn": "Build the second tab",
+      "page": [
+        87,
+        88,
+        91
+      ],
+      "stage": 5,
+      "actions": [
+        {
+          "zh": "按任务3做法将偏置“拉伸凸台/基体/Extruded Boss/Base → 给定深度/Blind”向外拉4 mm。",
+          "en": "As in Task 3, create an outward Extruded Boss/Base with Blind depth 4 mm."
+        },
+        {
+          "zh": "在偏置外端面画总高32、宽25的矩形，再向外拉伸3 mm；两次均启用“合并结果/Merge result”。",
+          "en": "On its outer face sketch a rectangle 32 high and 25 wide, then extrude outward 3 mm. Enable Merge result for both extrusions."
+        }
+      ],
+      "checkZh": "第二耳同样高32、厚3，模型仍为一个实体。",
+      "checkEn": "The second tab is also 32 high and 3 thick, and the model remains one solid.",
+      "values": "4 · 32 · 3 mm",
+      "note": ""
+    },
+    {
+      "id": 41,
+      "phaseZh": "任务5 · 第二侧耳",
+      "phaseEn": "Task 5 · Second side tab",
+      "titleZh": "重复建立第二耳双槽",
+      "titleEn": "Add the second pair of slots",
+      "page": [
+        88,
+        89,
+        90,
+        91
+      ],
+      "stage": 5,
+      "actions": [
+        {
+          "zh": "在第二耳外侧面重复任务4的中心线、两同心弧、相切端弧、动态镜向及全部尺寸。",
+          "en": "Repeat Task 4 on the outer face of the second tab: centerline, concentric arcs, tangent caps, dynamic mirroring, and all dimensions."
+        },
+        {
+          "zh": "使用“拉伸切除/Extruded Cut → 成形到下一面/Up To Next”，穿透耳厚。",
+          "en": "Use Extruded Cut → Up To Next to cut through the tab."
+        }
+      ],
+      "checkZh": "两耳共四条弧形贯通槽。",
+      "checkEn": "There are four curved through slots in total.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 42,
+      "phaseZh": "任务6 · 钣金折弯",
+      "phaseEn": "Task 6 · Sheet-metal bends",
+      "titleZh": "理解等厚折弯",
+      "titleEn": "Understand constant-thickness bends",
+      "page": [
+        91,
+        92
+      ],
+      "stage": 5,
+      "actions": [
+        {
+          "zh": "教材用外R4、内R1说明“外半径−内半径=板厚3”。这一段用于解释等厚原理。",
+          "en": "The workbook uses outer R4 and inner R1 to explain that outer radius minus inner radius equals the 3 mm thickness."
+        },
+        {
+          "zh": "任务6实际输入的折弯内半径为3 mm，对应外半径6 mm。不要先手工添加示例中的R4/R1。",
+          "en": "Task 6 specifies an inside bend radius of 3 mm, corresponding to an outside radius of 6 mm."
+        }
+      ],
+      "checkZh": "区分说明例R4/R1与实际R3/R6。",
+      "checkEn": "Distinguish the explanatory R4/R1 example from the actual R3/R6 bends.",
+      "values": "inside R3 · outside R6 · t3",
+      "note": ""
+    },
+    {
+      "id": 43,
+      "phaseZh": "任务6 · 钣金折弯",
+      "phaseEn": "Task 6 · Sheet-metal bends",
+      "titleZh": "选择固定面并插入折弯",
+      "titleEn": "Select the fixed face and Insert Bends",
+      "page": [
+        92
+      ],
+      "stage": 5,
+      "actions": [
+        {
+          "zh": "选择底板中央最大的平坦上表面作为“固定面/Fixed Face”。不要选耳板或上翘端面。",
+          "en": "Select the largest central flat top face as the Fixed Face."
+        },
+        {
+          "zh": "点击“插入/Insert → 钣金/Sheet Metal → 折弯/Bends”，或“钣金/Sheet Metal → 插入折弯/Insert Bends”。",
+          "en": "Choose Insert → Sheet Metal → Bends, or Sheet Metal → Insert Bends."
+        }
+      ],
+      "checkZh": "PropertyManager已识别固定平面。",
+      "checkEn": "The fixed planar face is listed in the PropertyManager.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 44,
+      "phaseZh": "任务6 · 钣金折弯",
+      "phaseEn": "Task 6 · Sheet-metal bends",
+      "titleZh": "设置内半径与展开参数",
+      "titleEn": "Set the inside radius and unfolding parameters",
+      "page": [
+        93
+      ],
+      "stage": 6,
+      "actions": [
+        {
+          "zh": "在“折弯半径/Bend Radius”输入3 mm，确认识别板厚为3 mm。",
+          "en": "Enter 3 mm for Bend Radius and verify the detected thickness is 3 mm."
+        },
+        {
+          "zh": "本审核示例在“折弯系数/Bend Allowance”选择“K-因子/K-Factor”并设0.5，使展开位置可复现。教材未给K值，教师有指定值时使用教师值。",
+          "en": "For this reproducible review example choose K-Factor under Bend Allowance and set 0.5. The supplied pages do not specify a K value; use the instructor’s value when provided."
+        },
+        {
+          "zh": "教材截图的0.5位于“自动切释放槽/Auto Relief”，不能当作教材给出的K因子。点击“确定/OK”。",
+          "en": "The 0.5 visible in the workbook screenshot belongs to Auto Relief and does not establish a K-factor. Accept with OK."
+        }
+      ],
+      "checkZh": "钣金转换成功，侧耳根部圆滑且板厚一致。",
+      "checkEn": "The conversion succeeds, with rounded tab bends and constant thickness.",
+      "values": "Bend Radius 3 mm · review K=0.5",
+      "note": ""
+    },
+    {
+      "id": 45,
+      "phaseZh": "任务6 · 钣金折弯",
+      "phaseEn": "Task 6 · Sheet-metal bends",
+      "titleZh": "识别钣金特征树",
+      "titleEn": "Identify the sheet-metal features",
+      "page": [
+        93
+      ],
+      "stage": 6,
+      "actions": [
+        {
+          "zh": "在设计树查找“钣金/Sheet-Metal”“展开-折弯/Flatten-Bends”“加工-折弯/Process-Bends”“平板型式/Flat-Pattern”等对应特征。",
+          "en": "Identify the Sheet-Metal, Flatten-Bends, Process-Bends, and Flat-Pattern features or their equivalents."
+        },
+        {
+          "zh": "教材界面来自旧版；2026的名称、编号、文件夹归属会随语言和设置变化。这里应按功能对应，而不是只找完全相同的编号。",
+          "en": "The workbook uses an older interface. Names, numbering, and folder placement in 2026 can vary with language and settings; identify features by their roles."
+        }
+      ],
+      "checkZh": "知道哪个特征负责从展开态恢复折弯。",
+      "checkEn": "Identify the feature that restores the formed state.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 46,
+      "phaseZh": "任务6 · 钣金折弯",
+      "phaseEn": "Task 6 · Sheet-metal bends",
+      "titleZh": "退回到展开状态",
+      "titleEn": "Roll back to the flattened state",
+      "page": [
+        93
+      ],
+      "stage": 7,
+      "actions": [
+        {
+          "zh": "将设计树底部的“退回控制棒/Rollback Bar”拖到“展开-折弯/Flatten-Bends”和“加工-折弯/Process-Bends”之间。",
+          "en": "Drag the Rollback Bar between Flatten-Bends and Process-Bends."
+        },
+        {
+          "zh": "模型应完全展开，耳板也平放。后续圆角和中心孔要插入在此位置，即重新折弯之前。",
+          "en": "The plate and both tabs should flatten. Insert the following fillets and center hole here, before the part is formed again."
+        }
+      ],
+      "checkZh": "平板型式可见；新特征将位于Process-Bends之前。",
+      "checkEn": "The flat shape is visible and new features will precede Process-Bends.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 47,
+      "phaseZh": "任务6 · 钣金折弯",
+      "phaseEn": "Task 6 · Sheet-metal bends",
+      "titleZh": "检查展开厚度与基准",
+      "titleEn": "Inspect the flattened references",
+      "page": [
+        93,
+        95
+      ],
+      "stage": 7,
+      "actions": [
+        {
+          "zh": "点击展开平板的顶面并“正视于/Normal To”，确认板厚仍为3 mm，左右侧耳都与底板共面。",
+          "en": "Select the flat top face and use Normal To. Confirm 3 mm thickness and coplanar flattened tabs."
+        },
+        {
+          "zh": "辨认原始直边对应的长直侧边及下端横边，中心孔的50和110将在这两条展开边上定位。",
+          "en": "Identify the long straight boundary and the lower transverse edge. They will locate the center hole by dimensions 50 and 110."
+        }
+      ],
+      "checkZh": "知道孔位尺寸要参照展开后的边。",
+      "checkEn": "Identify the unfolded edges used for hole location.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 48,
+      "phaseZh": "任务7 · 展开态圆角",
+      "phaseEn": "Task 7 · Fillets in the flat state",
+      "titleZh": "选择三处底板大角",
+      "titleEn": "Select the three main outline corners",
+      "page": [
+        94
+      ],
+      "stage": 7,
+      "actions": [
+        {
+          "zh": "保持退回控制棒在重新折弯前。点击“特征/Features → 圆角/Fillet”，选择“恒定大小圆角/Constant Size Fillet”。",
+          "en": "Keep the rollback bar before reforming. Choose Features → Fillet → Constant Size Fillet."
+        },
+        {
+          "zh": "选择底板外廓三个尖角处贯穿3 mm厚度的短边：下端两角及长直侧上端一角。R75与短顶边原本相切处不是第四个角。",
+          "en": "Select the short thickness edges at the two lower corners and the upper corner on the long straight side. The existing tangent transition from R75 to the short top edge is already smooth."
+        }
+      ],
+      "checkZh": "仅选中教材标出的三个底板尖角。",
+      "checkEn": "Only the three main corners marked in the workbook are selected.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 49,
+      "phaseZh": "任务7 · 展开态圆角",
+      "phaseEn": "Task 7 · Fillets in the flat state",
+      "titleZh": "应用R15外廓圆角",
+      "titleEn": "Apply R15 to the outline",
+      "page": [
+        94
+      ],
+      "stage": 8,
+      "actions": [
+        {
+          "zh": "输入圆角半径15 mm，检查预览只修圆平板外廓的三个角，再点击“确定/OK”。",
+          "en": "Enter radius 15 mm. Check that the preview rounds the three intended flat-outline corners, then accept."
+        },
+        {
+          "zh": "可将此特征重命名为“外廓R15/Outline_R15”，便于以后定位修改。",
+          "en": "Rename this feature Outline_R15 to make later edits easy to locate."
+        }
+      ],
+      "checkZh": "三个外角为R15，板厚保持3。",
+      "checkEn": "The three outline corners are R15 and the thickness remains 3.",
+      "values": "R15 mm",
+      "note": ""
+    },
+    {
+      "id": 50,
+      "phaseZh": "任务7 · 展开态圆角",
+      "phaseEn": "Task 7 · Fillets in the flat state",
+      "titleZh": "应用耳顶部R6",
+      "titleEn": "Apply R6 at the tab tops",
+      "page": [
+        94
+      ],
+      "stage": 8,
+      "actions": [
+        {
+          "zh": "新建另一个“圆角/Fillet”特征，选择展开后两侧耳外端各两个角处的厚度边，共四条。",
+          "en": "Create another Fillet feature. Select the two outer-end corner thickness edges on each flattened tab, four in total."
+        },
+        {
+          "zh": "半径输入6 mm，确定并重命名为“耳顶R6/Tab_Tops_R6”。",
+          "en": "Set the radius to 6 mm, accept, and name the feature Tab_Tops_R6."
+        }
+      ],
+      "checkZh": "两耳顶部四角圆滑，槽仍完整。",
+      "checkEn": "All four tab-top corners are rounded and the slots remain intact.",
+      "values": "R6 mm · 4 corners",
+      "note": ""
+    },
+    {
+      "id": 51,
+      "phaseZh": "任务7 · 展开态圆角",
+      "phaseEn": "Task 7 · Fillets in the flat state",
+      "titleZh": "应用耳根R2",
+      "titleEn": "Apply R2 at the tab roots",
+      "page": [
+        94
+      ],
+      "stage": 8,
+      "actions": [
+        {
+          "zh": "再创建“圆角/Fillet”，选择两耳与底板交接处的四个内凹角厚度边。参照本页“2mm fillets”箭头。",
+          "en": "Create another Fillet. Select the four concave root corner thickness edges where the tabs meet the plate, following the 2mm fillets arrows."
+        },
+        {
+          "zh": "输入2 mm并确定，命名“耳根R2/Tab_Roots_R2”。不要选弧槽边。",
+          "en": "Enter 2 mm, accept, and name the feature Tab_Roots_R2."
+        }
+      ],
+      "checkZh": "四个根部内凹角R2，圆角都在重新折弯前。",
+      "checkEn": "The four root corners are R2 and all fillets precede reforming.",
+      "values": "R2 mm · 4 roots",
+      "note": ""
+    },
+    {
+      "id": 52,
+      "phaseZh": "任务7 · 展开态圆角",
+      "phaseEn": "Task 7 · Fillets in the flat state",
+      "titleZh": "折回检查圆角效果",
+      "titleEn": "Reform and inspect the fillets",
+      "page": [
+        94
+      ],
+      "stage": 9,
+      "actions": [
+        {
+          "zh": "将“退回控制棒/Rollback Bar”拖到设计树末端，或右键重新折弯特征选择“退回到尾部/Roll To End”。",
+          "en": "Drag the Rollback Bar to the end or right-click the forming feature and choose Roll To End."
+        },
+        {
+          "zh": "检查侧耳恢复竖立，所有圆角随之折回，按 Ctrl+S 保存。",
+          "en": "Check that both tabs stand upright again with their rounded corners, then press Ctrl+S."
+        }
+      ],
+      "checkZh": "折回成功，没有重建错误。",
+      "checkEn": "The part reforms without rebuild errors.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 53,
+      "phaseZh": "任务8 · 中心安装孔",
+      "phaseEn": "Task 8 · Center mounting hole",
+      "titleZh": "再次在折弯前退回",
+      "titleEn": "Roll back before reforming again",
+      "page": [
+        95
+      ],
+      "stage": 8,
+      "actions": [
+        {
+          "zh": "在设计树右键“加工-折弯/Process-Bends”对应特征，选择“退回/Rollback”，使已有圆角保留在展开态。",
+          "en": "Right-click Process-Bends or its equivalent and choose Rollback so the existing fillets remain in the flattened state."
+        },
+        {
+          "zh": "如果圆角也消失，控制棒放得过早；将它移到圆角之后、重新折弯之前。",
+          "en": "If the fillets disappear, move the rollback bar after the fillets and before reforming."
+        }
+      ],
+      "checkZh": "展开板保留R15、R6、R2。",
+      "checkEn": "The flat plate retains R15, R6, and R2.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 54,
+      "phaseZh": "任务8 · 中心安装孔",
+      "phaseEn": "Task 8 · Center mounting hole",
+      "titleZh": "绘制中心圆",
+      "titleEn": "Sketch the center circle",
+      "page": [
+        95
+      ],
+      "stage": 8,
+      "actions": [
+        {
+          "zh": "选择展开底板的大平面，点击“草图/Sketch → 正视于/Normal To”。",
+          "en": "Select the large flat face of the unfolded plate and choose Sketch → Normal To."
+        },
+        {
+          "zh": "点击“圆/Circle”，在底板中央附近画一个圆，再用“智能尺寸/Smart Dimension”标注直径76 mm。",
+          "en": "Choose Circle, sketch near the center of the plate, and use Smart Dimension to set its diameter to 76 mm."
+        }
+      ],
+      "checkZh": "单个圆，直径标记为Ø76。",
+      "checkEn": "There is one circle dimensioned Ø76.",
+      "values": "Ø76 mm",
+      "note": ""
+    },
+    {
+      "id": 55,
+      "phaseZh": "任务8 · 中心安装孔",
+      "phaseEn": "Task 8 · Center mounting hole",
+      "titleZh": "用50和110定位圆心",
+      "titleEn": "Locate the center with 50 and 110",
+      "page": [
+        95
+      ],
+      "stage": 8,
+      "actions": [
+        {
+          "zh": "用“智能尺寸/Smart Dimension”选择圆心与长直侧边，标注水平距离50 mm。",
+          "en": "Use Smart Dimension between the circle center and the long straight boundary to set a horizontal distance of 50 mm."
+        },
+        {
+          "zh": "选择圆心与展开后下端横边，标注垂直距离110 mm。尺寸必须从展开边量取；不要从折叠态原草图原点直接标110。",
+          "en": "Dimension the center vertically 110 mm from the lower transverse edge of the unfolded plate. Use the unfolded edge rather than the original folded-state sketch origin."
+        }
+      ],
+      "checkZh": "圆草图完全定义：Ø76、水平50、垂直110。",
+      "checkEn": "The circle is fully defined by Ø76, horizontal 50, and vertical 110.",
+      "values": "Ø76 · 50 · 110 mm",
+      "note": ""
+    },
+    {
+      "id": 56,
+      "phaseZh": "任务8 · 中心安装孔",
+      "phaseEn": "Task 8 · Center mounting hole",
+      "titleZh": "切除并关联到板厚",
+      "titleEn": "Cut with Link to Thickness",
+      "page": [
+        95
+      ],
+      "stage": 10,
+      "actions": [
+        {
+          "zh": "退出草图，点击“特征/Features → 拉伸切除/Extruded Cut”。保留“给定深度/Blind”，勾选“与厚度相等/Link to Thickness”。",
+          "en": "Exit the sketch and choose Features → Extruded Cut. Keep Blind and enable Link to Thickness."
+        },
+        {
+          "zh": "预览应穿透3 mm板厚，点击“确定/OK”。该选项只有转换为钣金后才出现；缺失时先核对任务6。",
+          "en": "Verify the preview cuts through the 3 mm sheet and accept. This option is available after the part becomes sheet metal; if absent, check Task 6."
+        }
+      ],
+      "checkZh": "Ø76孔贯穿板厚，深度随板厚联动。",
+      "checkEn": "The Ø76 hole passes through the sheet and its depth is linked to thickness.",
+      "values": "Link to Thickness",
+      "note": ""
+    },
+    {
+      "id": 57,
+      "phaseZh": "任务8 · 中心安装孔",
+      "phaseEn": "Task 8 · Center mounting hole",
+      "titleZh": "折回最终零件",
+      "titleEn": "Reform the final part",
+      "page": [
+        95
+      ],
+      "stage": 11,
+      "actions": [
+        {
+          "zh": "右键“加工-折弯/Process-Bends”对应特征，点击“退回到尾部/Roll To End”。",
+          "en": "Right-click Process-Bends or its equivalent and choose Roll To End."
+        },
+        {
+          "zh": "按 Ctrl+7 切到“等轴测/Isometric”，再按 F“整屏显示/Zoom to Fit”。模型应与第95页底图一致：两端翘起、两耳四槽、中央大孔。",
+          "en": "Press Ctrl+7 for Isometric and F for Zoom to Fit. Compare against page 95: upturned ends, two tabs with four slots, and the large center hole."
+        }
+      ],
+      "checkZh": "最终形态正确，所有特征仍在同一零件树中。",
+      "checkEn": "The final formed shape is correct and all features remain in one part tree.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 58,
+      "phaseZh": "任务8 · 中心安装孔",
+      "phaseEn": "Task 8 · Center mounting hole",
+      "titleZh": "重建并保存最终文件",
+      "titleEn": "Rebuild and save the final file",
+      "page": [
+        95
+      ],
+      "stage": 11,
+      "actions": [
+        {
+          "zh": "按 Ctrl+Q 强制重建，检查设计树没有红色错误或黄色警告，使用“评估/Evaluate → 测量/Measure”复核3 mm板厚。",
+          "en": "Press Ctrl+Q to force a rebuild. Check the tree for errors or warnings and use Evaluate → Measure to verify 3 mm thickness."
+        },
+        {
+          "zh": "点击“文件/File → 另存为/Save As”，保存为 Binding_Base_Plate_FINAL.SLDPRT。需要交CAD交换格式时再导出STEP；SLDPRT用于保留原生特征树。",
+          "en": "Choose File → Save As and save Binding_Base_Plate_FINAL.SLDPRT. Export STEP separately when an exchange format is needed; the SLDPRT preserves the native feature tree."
+        }
+      ],
+      "checkZh": "只需一个最终SLDPRT，内部包含全部可编辑步骤。",
+      "checkEn": "One final SLDPRT contains all editable construction steps.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 59,
+      "phaseZh": "修改与复核",
+      "phaseEn": "Editing and verification",
+      "titleZh": "修改任何建模步骤",
+      "titleEn": "Edit any construction step",
+      "page": [
+        93,
+        95
+      ],
+      "stage": 11,
+      "actions": [
+        {
+          "zh": "展开设计树，右键相应草图选择“编辑草图/Edit Sketch”，双击尺寸修改；右键凸台、切除、圆角则选“编辑特征/Edit Feature”。",
+          "en": "Expand the tree. Right-click a sketch and choose Edit Sketch, then double-click its dimension. For a boss, cut, or fillet, choose Edit Feature."
+        },
+        {
+          "zh": "改尺寸后按 Ctrl+Q 检查后续特征。若改板厚，需同步检查未与厚度联动的早期偏置、耳厚及钣金参数。",
+          "en": "After editing, press Ctrl+Q and inspect downstream features. If thickness changes, check the earlier offsets, tab thicknesses, and sheet-metal settings that were not linked automatically."
+        }
+      ],
+      "checkZh": "能定位并修改尺寸，而不是只有一个导入实体。",
+      "checkEn": "Dimensions can be located and edited in the construction tree.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 60,
+      "phaseZh": "修改与复核",
+      "phaseEn": "Editing and verification",
+      "titleZh": "用退回控制棒回看过程",
+      "titleEn": "Review the build with the Rollback Bar",
+      "page": [
+        93
+      ],
+      "stage": 11,
+      "actions": [
+        {
+          "zh": "拖动“退回控制棒/Rollback Bar”到任一特征之后，查看该阶段；拖回末端恢复最终状态。",
+          "en": "Drag the Rollback Bar after any feature to inspect that stage, then return it to the end to restore the final state."
+        },
+        {
+          "zh": "退回只改变查看和编辑的位置，无需将每个阶段另存为不同零件。网页的阶段模型用于辅助理解；真正的原生编辑在SLDPRT设计树内完成。",
+          "en": "Rollback changes the editing position without requiring separate stage files. Website stages illustrate the process; native editing takes place in the SLDPRT feature tree."
+        }
+      ],
+      "checkZh": "能逐步解释每个草图、凸台、切除和折弯的作用。",
+      "checkEn": "Explain the purpose of each sketch, boss, cut, and bend.",
+      "values": "",
+      "note": ""
+    },
+    {
+      "id": 61,
+      "phaseZh": "修改与复核",
+      "phaseEn": "Editing and verification",
+      "titleZh": "最终核对清单",
+      "titleEn": "Run the final checks",
+      "page": [
+        94,
+        95
+      ],
+      "stage": 11,
+      "actions": [
+        {
+          "zh": "核对：单一实体；厚3；两耳各高32、宽25；四个弧槽；内折弯R3；外角R15、耳顶R6、耳根R2；孔Ø76。",
+          "en": "Check one solid, thickness 3, two tabs 32 high and 25 wide, four curved slots, inside bend R3, outline R15, tab tops R6, roots R2, and center hole Ø76."
+        },
+        {
+          "zh": "在展开状态复核孔心50/110。上一课锚盘凸台Ø75装入Ø76孔，名义直径间隙1 mm，单边0.5 mm。",
+          "en": "In the flat state verify hole-center dimensions 50 and 110. The preceding Ø75 anchor boss fits the Ø76 hole with nominal diametral clearance 1 mm, or 0.5 mm per side."
+        }
+      ],
+      "checkZh": "保存SLDPRT及需要提交的展开图/STEP，保留可编辑原文件。",
+      "checkEn": "Save the editable SLDPRT plus any required flat drawing or STEP export.",
+      "values": "",
+      "note": ""
+    }
+  ],
+  "references": [
+    {
+      "title": "SOLIDWORKS 2026 · 草图工具栏 / Sketch Toolbar",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/r_sketch_toolbar.htm"
+    },
+    {
+      "title": "SOLIDWORKS 2026 · 钣金工具栏 / Sheet Metal Toolbar",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/Sldworks/r_Sheet_Metal_Toolbar.htm"
+    },
+    {
+      "title": "SOLIDWORKS 2026 · 折弯参数 / Bends PropertyManager",
+      "url": "https://help.solidworks.com/2026/Chinese-simplified/SolidWorks/sldworks/HIDD_DVE_SHEET_METAL_FEATURE.htm"
+    },
+    {
+      "title": "SOLIDWORKS 2026 · 拉伸 / Extrude PropertyManager",
+      "url": "https://help.solidworks.com/2026/english/SolidWorks/sldworks/r_extrude_propertymanager.htm"
+    },
+    {
+      "title": "SOLIDWORKS 2026 · 展开与折叠 / Unfold and Fold",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/Sldworks/HIDD_FEAT_SM_FOLD_UP_DOWN.htm"
+    },
+    {
+      "title": "SOLIDWORKS 2026 · 插入折弯 / Insert Bends",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/c_insert_bends_tool.htm"
+    }
+  ],
+  "glossary": [
+    [
+      "文件",
+      "File"
+    ],
+    [
+      "新建",
+      "New"
+    ],
+    [
+      "零件",
+      "Part"
+    ],
+    [
+      "上视基准面",
+      "Top Plane"
+    ],
+    [
+      "草图",
+      "Sketch"
+    ],
+    [
+      "正视于",
+      "Normal To"
+    ],
+    [
+      "直线",
+      "Line"
+    ],
+    [
+      "中心线",
+      "Centerline"
+    ],
+    [
+      "边角矩形",
+      "Corner Rectangle"
+    ],
+    [
+      "圆",
+      "Circle"
+    ],
+    [
+      "圆心圆弧",
+      "Centerpoint Arc"
+    ],
+    [
+      "切线弧",
+      "Tangent Arc"
+    ],
+    [
+      "智能尺寸",
+      "Smart Dimension"
+    ],
+    [
+      "添加几何关系",
+      "Add Relations"
+    ],
+    [
+      "重合",
+      "Coincident"
+    ],
+    [
+      "中点",
+      "Midpoint"
+    ],
+    [
+      "共线",
+      "Collinear"
+    ],
+    [
+      "相切",
+      "Tangent"
+    ],
+    [
+      "同心",
+      "Concentric"
+    ],
+    [
+      "相等",
+      "Equal"
+    ],
+    [
+      "动态镜向实体",
+      "Dynamic Mirror Entities"
+    ],
+    [
+      "等距实体",
+      "Offset Entities"
+    ],
+    [
+      "选择链",
+      "Select Chain"
+    ],
+    [
+      "反向",
+      "Reverse"
+    ],
+    [
+      "拉伸凸台/基体",
+      "Extruded Boss/Base"
+    ],
+    [
+      "给定深度",
+      "Blind"
+    ],
+    [
+      "合并结果",
+      "Merge result"
+    ],
+    [
+      "拉伸切除",
+      "Extruded Cut"
+    ],
+    [
+      "完全贯穿",
+      "Through All"
+    ],
+    [
+      "成形到下一面",
+      "Up To Next"
+    ],
+    [
+      "反侧切除",
+      "Flip side to cut"
+    ],
+    [
+      "与厚度相等",
+      "Link to Thickness"
+    ],
+    [
+      "圆角",
+      "Fillet"
+    ],
+    [
+      "钣金",
+      "Sheet Metal"
+    ],
+    [
+      "插入折弯",
+      "Insert Bends"
+    ],
+    [
+      "固定面",
+      "Fixed Face"
+    ],
+    [
+      "折弯半径",
+      "Bend Radius"
+    ],
+    [
+      "退回控制棒",
+      "Rollback Bar"
+    ],
+    [
+      "退回",
+      "Rollback"
+    ],
+    [
+      "退回到尾部",
+      "Roll To End"
+    ],
+    [
+      "平板型式",
+      "Flat-Pattern"
+    ],
+    [
+      "编辑草图",
+      "Edit Sketch"
+    ],
+    [
+      "编辑特征",
+      "Edit Feature"
+    ],
+    [
+      "重建",
+      "Rebuild"
+    ],
+    [
+      "测量",
+      "Measure"
+    ],
+    [
+      "等轴测",
+      "Isometric"
+    ],
+    [
+      "整屏显示",
+      "Zoom to Fit"
+    ],
+    [
+      "缩放到所选范围",
+      "Zoom to Selection"
+    ]
+  ]
+}
