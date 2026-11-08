@@ -1,8 +1,8 @@
 # 固定器底板 / Binding Base Plate
 
-本次内容为用户上传PDF的原书第74–95页，共22页、任务1–8。引用要求中的旧页码24–54只用于参考交付方式。公开教学网址：https://yhq52045-hub.github.io/binding-base/
+本次内容为用户上传PDF的原书第74–95页，共22页、任务1–8。引用要求中的旧页码24–54只用于参考交付方式。公开教学网址：https://yhq52045-hub.github.io/T5/
 
-This edition covers the current upload: workbook pages 74–95, 22 pages, Tasks 1–8. The earlier 24–54 page range is a delivery-format reference. Public teaching website: https://yhq52045-hub.github.io/binding-base/
+This edition covers the current upload: workbook pages 74–95, 22 pages, Tasks 1–8. The earlier 24–54 page range is a delivery-format reference. Public teaching website: https://yhq52045-hub.github.io/T5/
 
 ## 打开教学网页 / Open the teaching website
 
