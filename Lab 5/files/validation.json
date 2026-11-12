@@ -1,0 +1,353 @@
+{
+  "Q1": {
+    "volume": 70039.20011897861,
+    "reference": 70039,
+    "error": 0.0002857250654773486,
+    "sourceValidation": {
+      "question": "Q1",
+      "source": "Lab 5 - Assignment.pdf page 2",
+      "unit": "mm",
+      "volume": 70039.20011897861,
+      "referenceVolume": 70039,
+      "relativeErrorPercent": 0.00028572506547419607,
+      "allowedInterval": [
+        69338.61,
+        70739.39
+      ],
+      "withinTolerance": true,
+      "valid": true,
+      "solidCount": 1,
+      "nativeSolidWorksValidated": false,
+      "derivedDimensions": {
+        "rampFootFromLeft": 27.876000887970037,
+        "rampTopFromLeft": 51.191383795719965,
+        "rearHeight": 45.49893695940603
+      },
+      "volumeDerivation": {
+        "basePlusRampPlusSteps": 74739.90811239087,
+        "slotRemoved": 5040,
+        "pegsAdded": 339.29200658769764
+      },
+      "drawingChecks": [
+        "78 overall length",
+        "28 overall width",
+        "58 body height excluding pegs",
+        "8 base thickness",
+        "16 lower platform finished height",
+        "18 upper-platform height difference",
+        "24 front-to-step run",
+        "16 upper-step run",
+        "18 step width",
+        "65 degree front ramp angle",
+        "5 slot width normal to ramp",
+        "36 slot depth along ramp",
+        "15 top-front edge to slot",
+        "two diameter-6 pegs",
+        "6 peg projection normal to top",
+        "7.5 top-front edge to peg centers",
+        "7 peg centers to the width edges"
+      ],
+      "limitations": [
+        "STEP is geometric interchange and does not retain native SolidWorks sketches or feature history.",
+        "SolidWorks 2026 native rebuild and sketch status must be checked in SolidWorks."
+      ]
+    }
+  },
+  "Q2": {
+    "volume": 16267.915145081319,
+    "reference": 16268,
+    "error": -0.0005216063356357919,
+    "sourceValidation": {
+      "question": "Q2",
+      "reference": 16268.0,
+      "volume": 16267.915145081319,
+      "deviation_percent": -0.0005216063356350276,
+      "within_one_percent": true,
+      "valid": true,
+      "solid_count": 1,
+      "units": "mm",
+      "origin": "Large-end center on plate bottom; Front Plane is symmetry plane",
+      "axis_convention": "X length, Y height, Z width; Front XY; Top XZ",
+      "dimensions": {
+        "large_hole_diameter": 20,
+        "radial_wall": 6,
+        "large_outer_diameter_derived": 32,
+        "small_outer_radius": 9,
+        "small_hole_diameter": 6,
+        "center_distance": 38,
+        "plate_thickness": 6,
+        "large_total_height": 14,
+        "large_added_height_derived": 8,
+        "small_downward_extension": 24
+      },
+      "stages": [
+        {
+          "feature": "Boss-Extrude1 — 连接板 / Link plate",
+          "volume": 8973.13700344582,
+          "valid": true,
+          "solid_count": 1
+        },
+        {
+          "feature": "Boss-Extrude2 — 大端凸台 / Large-end boss",
+          "volume": 15407.11875799772,
+          "valid": true,
+          "solid_count": 1
+        },
+        {
+          "feature": "Boss-Extrude3 — 小端下柱 / Lower boss",
+          "volume": 21514.374876576272,
+          "valid": true,
+          "solid_count": 1
+        },
+        {
+          "feature": "Cut-Extrude1 — 大端通孔 / Large through hole",
+          "volume": 17116.145161550565,
+          "valid": true,
+          "solid_count": 1
+        },
+        {
+          "feature": "Cut-Extrude2 — 小端通孔 / Small through hole",
+          "volume": 16267.915145081319,
+          "valid": true,
+          "solid_count": 1
+        }
+      ],
+      "verification_note": "B-rep validated with OpenCASCADE; no native SolidWorks session available.",
+      "matches_existing_lab4_step": {
+        "existing_volume": 16267.915145080715,
+        "symmetric_difference_volume_mm3": 0.0
+      }
+    }
+  },
+  "Q3": {
+    "volume": 124768.6037348068,
+    "reference": 124768,
+    "error": 0.00048388593774504094,
+    "sourceValidation": {
+      "question": "Q3",
+      "units": "mm",
+      "source": "Lab 5 - Assignment.pdf page 3",
+      "referenceVolume": 124768,
+      "tolerancePercent": 1,
+      "computedVolume": 124768.6037348068,
+      "analyticalVolume": 124768.60373480683,
+      "deviationPercent": 0.00048388593774095767,
+      "passesVolume": true,
+      "valid": true,
+      "solidCount": 1,
+      "origin": "Red dot: left-end top edge midpoint, lying on Front Plane",
+      "frontPlane": "XY; Z=0 is symmetry plane",
+      "sourceDimensions": {
+        "horizontalLength": 76,
+        "width": 60,
+        "thickness": 12,
+        "rampAngle": 30,
+        "rampLength": 80,
+        "lipLength": 32,
+        "endTotalThickness": 27,
+        "slotHeight": 6,
+        "slotWidth": 25,
+        "endRadius": 65,
+        "holeDiameter": 12,
+        "holeCount": 4,
+        "holeColumnSpacing": 40,
+        "firstHoleFromLeft": 15,
+        "holeRowSpacing": 30
+      },
+      "derivedDimensions": {
+        "lipAboveRamp": 15,
+        "lipRoofThickness": 9,
+        "lipStartAlongSlope": 48,
+        "arcCentreAlongSlope": 15,
+        "holeColumns": [
+          15,
+          55
+        ],
+        "holeRows": [
+          -15,
+          15
+        ],
+        "lowerBendX": 72.78460969082653
+      },
+      "stageVolumes": [
+        54720.0,
+        110004.91897739511,
+        138804.9189773951,
+        134936.84182867332,
+        130197.27584020999,
+        124768.6037348068
+      ],
+      "nativeSolidWorksRun": false,
+      "limitations": "STEP is exact import geometry without native SolidWorks feature history. The provided native VBA builder needs a Windows SolidWorks 2026 run and editability verification.",
+      "symmetryDifferenceVolume": 0.0,
+      "boundingBox": {
+        "lengthX": 152.7820323027484,
+        "heightY": 50.392304845422345,
+        "widthZ": 60.00000000000087
+      },
+      "sourceDimensionAudit": [
+        {
+          "label": "76",
+          "meaning": "Horizontal upper plate length",
+          "status": "used"
+        },
+        {
+          "label": "12 / SAME THICKNESS",
+          "meaning": "Both horizontal and sloping plates, thickness normal to each face",
+          "status": "used"
+        },
+        {
+          "label": "30°",
+          "meaning": "Downward ramp angle measured from horizontal",
+          "status": "used"
+        },
+        {
+          "label": "80",
+          "meaning": "Ramp upper-surface centre length to curved end tip",
+          "status": "used"
+        },
+        {
+          "label": "32",
+          "meaning": "Lip length along the ramp, before R65 end shaping",
+          "status": "used"
+        },
+        {
+          "label": "27",
+          "meaning": "Overall thickness at end, normal to sloping plate",
+          "status": "used"
+        },
+        {
+          "label": "6",
+          "meaning": "Slot height above ramp, normal to sloping plate",
+          "status": "used"
+        },
+        {
+          "label": "R65",
+          "meaning": "End curve on auxiliary View A, in plane of sloping plate",
+          "status": "used"
+        },
+        {
+          "label": "4×Ø12 THROUGH",
+          "meaning": "Four bores normal to flat horizontal plate, through its 12-thick material",
+          "status": "used"
+        },
+        {
+          "label": "30",
+          "meaning": "Hole row centre spacing; symmetric about Front Plane",
+          "status": "used"
+        },
+        {
+          "label": "15",
+          "meaning": "Left edge to first hole column",
+          "status": "used"
+        },
+        {
+          "label": "40",
+          "meaning": "Hole column centre spacing",
+          "status": "used"
+        },
+        {
+          "label": "25",
+          "meaning": "Centred slot width, measured normal to Front Plane",
+          "status": "used"
+        },
+        {
+          "label": "60",
+          "meaning": "Full plate width, symmetric about Front Plane",
+          "status": "used"
+        }
+      ]
+    }
+  },
+  "Q4": {
+    "volume": 203689.7489180188,
+    "reference": 201961,
+    "error": 0.8559815598154092,
+    "sourceValidation": {
+      "question": "Q4",
+      "units": "mm",
+      "volume": 203689.7489180188,
+      "reference": 201961,
+      "deviationPercent": 0.8559815598154108,
+      "tolerancePercent": 1,
+      "withinTolerance": true,
+      "validSolid": true,
+      "solidCount": 1,
+      "plane": "Front Plane = XY, symmetry along Z",
+      "origin": "lower Ø16 hole center, concentric with R21 OUTER arc",
+      "dimensions": {
+        "fullWidth": 48.0,
+        "neckWidth": 26.0,
+        "upperRadius": 20.0,
+        "lowerRadius": 21.0,
+        "topRadius": 105.0,
+        "centerDistance": 55.0,
+        "centerTilt": 15.0,
+        "holeDiameter": 16.0,
+        "shoulderRadius": 25.0,
+        "shoulderDrop": 11.0,
+        "rightDistance": 77.0,
+        "endTotalHeight": 36.0,
+        "upperArmEndHeight": 14.0,
+        "endBottomDistance": 16.0,
+        "frontSlotCenterDistance": 33.0,
+        "planSlotWidth": 28.0,
+        "planSlotDepth": 44.0
+      },
+      "derived": {
+        "upperCenter": [
+          -14.235047480638642,
+          53.12592044589876
+        ],
+        "topArcCenter": [
+          88.4737984307388,
+          124.3712218457309
+        ],
+        "topArcTangent": [
+          2.1983678651817478,
+          64.5251686698719
+        ],
+        "leftUpperTangent": [
+          -33.64448661565376,
+          48.301640969734095
+        ],
+        "leftLowerTangent": [
+          -20.379911091765873,
+          -5.065493449972893
+        ],
+        "bottomTangent": [
+          1.3729725283603573,
+          -20.955069707265775
+        ],
+        "rightTop": [
+          77.0,
+          20.0
+        ],
+        "rightBottom": [
+          77.0,
+          -16.0
+        ],
+        "shoulderY": 42.12592044589876,
+        "shoulderJoinX": 8.214896840005007,
+        "sideSlotWidth": 12.0,
+        "sideSlotRadius": 6.0
+      },
+      "designIntentTest": {
+        "changedFullWidth": 52,
+        "changedNeckWidth": 26,
+        "symmetricDifferenceVolume": 0.0,
+        "passed": true
+      },
+      "sourceAmbiguities": [
+        "The instruction says center of R21 hole, but the dimensioned drawing identifies two Ø16 holes; R21 labels the lower external arc. The model origin is the lower Ø16 hole center, concentric with that R21 arc."
+      ],
+      "notes": [
+        "All coordinates are evaluated from source dimensions and geometric tangencies; they are not extra driving dimensions.",
+        "The reconstructed volume is within the stated ±1% tolerance; it is not equal to the reference. No dimension was adjusted to force volume agreement.",
+        "R25 shoulders are concentric with the upper hole; the shoulder horizontal shelf is 11 mm below that hole center.",
+        "The original 16 dimension measures from the side-slot centerline to the bottom of the right end; the side slot is derived as 12 wide, R6.",
+        "Native SolidWorks 2026 was not available to execute or verify a .SLDPRT. STEP contains neutral geometry and no editable native sketch history."
+      ]
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "validationLevel": "static source only; not compiled, executed or tested in SOLIDWORKS",
+  "nativeSldprtDelivered": false,
+  "q4FullyDefined": false,
+  "q4RequiresManualConstraintCompletion": true,
+  "results": [
+    {
+      "file": "Lab5_Q1_Native.bas",
+      "sha256": "d25575f1b855fa05d0437744303c33d764b6d7aed322d887c36d177e270e8249",
+      "checks": {
+        "module_name": true,
+        "ascii_source": true,
+        "sub_blocks": true,
+        "function_blocks": true,
+        "long_lines": true,
+        "api_argument_counts": true,
+        "no_imported_body_shortcut": true,
+        "fixed_reference_datums_only": true,
+        "main_does_not_save": true,
+        "save_checks_absorbed_sketches": true,
+        "save_requires_volume_and_one_solid": true,
+        "save_no_overwrite": true
+      },
+      "apiCalls": [
+        {
+          "method": "FeatureExtrusion2",
+          "arguments": 23,
+          "expected": 23
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FullyDefineSketch",
+          "arguments": 10,
+          "expected": 10
+        }
+      ],
+      "passed": true
+    },
+    {
+      "file": "Lab5_Q2_Native.bas",
+      "sha256": "9ec7d0c432b5d517590030df840cd841d77abf3ec4cd1b33ad89049a539408f8",
+      "checks": {
+        "module_name": true,
+        "ascii_source": true,
+        "sub_blocks": true,
+        "function_blocks": true,
+        "long_lines": true,
+        "api_argument_counts": true,
+        "no_imported_body_shortcut": true,
+        "fixed_reference_datums_only": true,
+        "main_does_not_save": true,
+        "save_checks_absorbed_sketches": true,
+        "save_requires_volume_and_one_solid": true,
+        "save_no_overwrite": true
+      },
+      "apiCalls": [
+        {
+          "method": "FeatureExtrusion2",
+          "arguments": 23,
+          "expected": 23
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FullyDefineSketch",
+          "arguments": 10,
+          "expected": 10
+        }
+      ],
+      "passed": true
+    },
+    {
+      "file": "Lab5_Q3_Native.bas",
+      "sha256": "f55c92968308839cccd033e77bea954fc0e2b90baa062cb0256d74cd1c39df15",
+      "checks": {
+        "module_name": true,
+        "ascii_source": true,
+        "sub_blocks": true,
+        "function_blocks": true,
+        "long_lines": true,
+        "api_argument_counts": true,
+        "no_imported_body_shortcut": true,
+        "fixed_reference_datums_only": true,
+        "main_does_not_save": true,
+        "save_checks_absorbed_sketches": true,
+        "save_requires_volume_and_one_solid": true,
+        "save_no_overwrite": true
+      },
+      "apiCalls": [
+        {
+          "method": "FeatureExtrusion2",
+          "arguments": 23,
+          "expected": 23
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FullyDefineSketch",
+          "arguments": 10,
+          "expected": 10
+        }
+      ],
+      "passed": true
+    },
+    {
+      "file": "Lab5_Q4_Native.bas",
+      "sha256": "438cbcb795a5d02ae2b9b23a4cc43c887287be094e1458fb7efb1e93ea21df25",
+      "checks": {
+        "module_name": true,
+        "ascii_source": true,
+        "sub_blocks": true,
+        "function_blocks": true,
+        "long_lines": true,
+        "api_argument_counts": true,
+        "no_imported_body_shortcut": true,
+        "fixed_reference_datums_only": true,
+        "main_does_not_save": true,
+        "save_checks_absorbed_sketches": true,
+        "save_requires_volume_and_one_solid": true,
+        "save_no_overwrite": true,
+        "q4_no_auto_coordinate_dimensions": true,
+        "q4_updated_end_points": true,
+        "q4_derived_slot_12": true,
+        "q4_width_midplane": true,
+        "q4_shoulder_depth_equations": true
+      },
+      "apiCalls": [
+        {
+          "method": "FeatureExtrusion2",
+          "arguments": 23,
+          "expected": 23
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FeatureCut3",
+          "arguments": 26,
+          "expected": 26
+        },
+        {
+          "method": "FullyDefineSketch",
+          "arguments": 10,
+          "expected": 10
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "allStaticChecksPass": true
+}

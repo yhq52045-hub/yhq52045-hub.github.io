@@ -1,0 +1,1711 @@
+{
+  "chapters": {
+    "guide": {
+      "title": "先读图，再开始操作",
+      "titleEn": "Read the drawing before you build",
+      "steps": [
+        {
+          "title": "先看四道题的目标",
+          "titleEn": "Read the four tasks first",
+          "action": "",
+          "actionEn": "",
+          "where": "左侧题号 Q1–Q4；上方“原题对照/Source Drawings”与“文档与模型/Files & Feature History”。",
+          "whereEn": "Task buttons Q1–Q4 on the left; Source Drawings and Files & Feature History tabs above.",
+          "check": "四题各保存一个零件。右侧教程、左侧阶段模型和原题图需要一起核对。",
+          "checkEn": "Save one part per task. Compare the instruction, stage model and source drawing together.",
+          "values": "",
+          "stage": 5
+        },
+        {
+          "title": "把工具选项卡显示出来",
+          "titleEn": "Display the command tabs",
+          "action": "启动 SOLIDWORKS 2026。顶部工具栏空白处右击，勾选 CommandManager；再右击其选项卡区域，显示“草图/Sketch”“特征/Features”“评估/Evaluate”。左侧若没有设计树，按 F9；面板被折叠时先展开左边栏。",
+          "actionEn": "Start SOLIDWORKS 2026. Right-click a blank toolbar area and enable CommandManager. Right-click its tabs to show Sketch, Features and Evaluate. Press F9 if the left FeatureManager tree is hidden, and expand the left pane if collapsed.",
+          "where": "视图/View → 工具栏/Toolbars → CommandManager；设计树用 F9 显示或隐藏。",
+          "whereEn": "View → Toolbars → CommandManager; F9 toggles the design tree.",
+          "check": "能看到草图、特征和评估选项卡；后续每步仍给出菜单替代路径。",
+          "checkEn": "Sketch, Features and Evaluate are visible. Later steps also supply menu alternatives.",
+          "values": "",
+          "stage": 5
+        },
+        {
+          "title": "建立毫米零件并选对基准面",
+          "titleEn": "Create a millimetre part and select the plane",
+          "action": "点击“文件/File → 新建/New → 零件/Part → 确定/OK”。右下角单位选 MMGS。左侧设计树选择基准面后，再点“草图/Sketch”。Q1主视草图用前视基准面；Q2、Q3、Q4以之前视基准面作为宽度对称面。",
+          "actionEn": "Click File → New → Part → OK, and choose MMGS at the lower right. Select the reference plane in the left tree before clicking Sketch. Q1 uses Front Plane for its main view; Q2, Q3 and Q4 use Front Plane to bisect the width.",
+          "where": "左上角文件/File；窗口右下状态栏的单位下拉菜单；左侧设计树中的基准面。",
+          "whereEn": "File at the upper left; unit selector at the bottom right; reference planes in the left tree.",
+          "check": "不要把纸上视图的位置当成实体方向。前视/Front、俯视/Top和右视/Right要与题图一致。",
+          "checkEn": "Do not confuse a view’s paper position with a 3D direction. Check Front, Top and Right against the drawing.",
+          "values": "MMGS · 所有 Lab 5 长度为 mm / All Lab 5 lengths in mm",
+          "stage": 5
+        },
+        {
+          "title": "用尺寸和关系完全定义",
+          "titleEn": "Fully define with dimensions and relations",
+          "action": "点击“智能尺寸/Smart Dimension”，选择线或圆、放置尺寸并输入数值。两条线的相切、垂直、平行关系：按住 Ctrl 选中相关实体，在左侧“添加几何关系/Add Relations”中选择。草图位置也须用原点、重合、对称等关系定义。",
+          "actionEn": "Use Smart Dimension: select geometry, place the dimension, and enter its value. Ctrl-select relevant entities and use Add Relations on the left for Tangent, Perpendicular or Parallel. Locate the sketch using the origin, Coincident and Symmetric relations.",
+          "where": "工具/Tools → 尺寸/Dimensions → 智能/Smart；草图/Sketch → 添加几何关系/Add Relation；状态栏查看草图状态。",
+          "whereEn": "Tools → Dimensions → Smart; Sketch → Add Relation; sketch state is shown in the status bar.",
+          "check": "默认黑色通常表示完全定义，蓝色表示欠定义；状态栏必须显示“完全定义/Fully Defined”。不要用固定/Fix掩盖缺少的设计关系。",
+          "checkEn": "With default colors, black indicates fully defined and blue indicates under defined. Confirm Fully Defined in the status bar. Do not hide missing design relations with Fix.",
+          "values": "",
+          "stage": 5
+        },
+        {
+          "title": "分清拉伸、切除和方向",
+          "titleEn": "Distinguish boss, cut and direction",
+          "action": "加材料用“拉伸凸台/基体/Extruded Boss/Base”；去材料用“拉伸切除/Extruded Cut”。“给定深度/Blind”填本次深度；“两侧对称（中面）/Mid Plane”填总厚度；“完全贯穿/Through All”要核对箭头。点击预览箭头或属性面板“反向/Reverse Direction”可以改方向。",
+          "actionEn": "Use Extruded Boss/Base to add material and Extruded Cut to remove it. Blind takes the feature depth; Mid Plane takes the total thickness. For Through All, check the arrow. Click the preview arrow or Reverse Direction in the PropertyManager to reverse it.",
+          "where": "特征/Features 选项卡；菜单 插入/Insert → 凸台/基体/Boss/Base → 拉伸/Extrude，或 插入/Insert → 切除/Cut → 拉伸/Extrude。",
+          "whereEn": "Features tab; Insert → Boss/Base → Extrude, or Insert → Cut → Extrude.",
+          "check": "绿色表示网页中新增加的材料，橙色表示切除材料。虚线为前一阶段边线，可用复选框开关。",
+          "checkEn": "Green marks added material and orange marks removed material. Dashed edges show the previous stage and can be toggled.",
+          "values": "",
+          "stage": 5
+        },
+        {
+          "title": "找到镜向、剪裁与视图命令",
+          "titleEn": "Find mirror, trim and view commands",
+          "action": "已画好的草图用“镜向实体/Mirror Entities”；边画边镜向用“动态镜向实体/Dynamic Mirror Entities”，需先选择一条中心线再启用。剪去多余草图用“剪裁实体/Trim Entities → 强劲剪裁/Power Trim”。Ctrl+8为“正视于/Normal To”，空格打开“视图定向/View Orientation”，F为“整屏显示全图/Zoom to Fit”。这些命令不一定出现在初始工具栏。",
+          "actionEn": "Mirror Entities mirrors existing sketch geometry. Dynamic Mirror Entities mirrors newly drawn geometry after a centerline is selected and the command enabled. Use Trim Entities → Power Trim to remove extra sketch segments. Ctrl+8 is Normal To, Space opens View Orientation, and F is Zoom to Fit. These commands may be hidden initially.",
+          "where": "工具/Tools → 草图绘制工具/Sketch Tools → 镜向/Mirror、动态镜向/Dynamic Mirror 或 剪裁/Trim；草图关系在左侧属性面板。",
+          "whereEn": "Tools → Sketch Tools → Mirror, Dynamic Mirror or Trim; sketch relations appear in the left PropertyManager.",
+          "check": "切换左侧 Q1 开始正式建模。遇到工具找不到，先看本步“按钮在哪里”，再用右上角命令搜索查英文名称。",
+          "checkEn": "Select Q1 to start. When a tool is hidden, read Where to Click, then search its English command name in Command Search at the upper right.",
+          "values": "",
+          "stage": 5
+        }
+      ],
+      "dimensions": []
+    },
+    "Q1": {
+      "title": "台阶与斜面支架",
+      "titleEn": "Stepped ramp bracket",
+      "steps": [
+        {
+          "title": "新建毫米零件",
+          "titleEn": "Create a millimeter part",
+          "action": "点击“文件/File → 新建/New → 零件/Part → 确定/OK”。右下角单位切换为“MMGS（毫米、克、秒）”。按空格打开“视图定向/View Orientation”，检查“前视/Front”。",
+          "actionEn": "Choose File → New → Part → OK. Set the bottom-right units to MMGS. Press Space to inspect Front in View Orientation.",
+          "where": "窗口左上角“文件/File”；单位在状态栏右下角。",
+          "whereEn": "File is at the upper left; units are at the lower right of the status bar.",
+          "values": [
+            "MMGS",
+            "文件名 Q1.sldprt"
+          ],
+          "check": "主视图必须对应“前视基准面/Front Plane”；58不包含销的高度。",
+          "checkEn": "The main view must be Front Plane. The body height 58 excludes the pegs.",
+          "feature": "Part setup",
+          "stage": -1
+        },
+        {
+          "title": "找到草图和特征工具",
+          "titleEn": "Locate Sketch and Features",
+          "action": "若看不到“草图/Sketch”和“特征/Features”选项卡，在顶部工具栏空白处右击，勾选“CommandManager”。再右击选项卡区域，勾选“草图/Sketch”和“特征/Features”。工具未显示时可使用本教程给出的菜单路径。",
+          "actionEn": "If Sketch and Features tabs are hidden, right-click a blank toolbar area, enable CommandManager, then right-click its tabs and enable Sketch and Features. Menu routes are supplied as alternatives.",
+          "where": "窗口顶端工具栏空白处右击；也可“视图/View → 工具栏/Toolbars → CommandManager”。",
+          "whereEn": "Right-click the top toolbar area, or use View → Toolbars → CommandManager.",
+          "values": [],
+          "check": "左侧应显示“FeatureManager 设计树/FeatureManager design tree”。",
+          "checkEn": "FeatureManager design tree should be visible on the left.",
+          "feature": "Part setup",
+          "stage": -1
+        },
+        {
+          "title": "在前视基准面开始底座草图",
+          "titleEn": "Start the base sketch on Front Plane",
+          "action": "在左侧设计树单击“前视基准面/Front Plane”，点击“草图/Sketch”。按 Ctrl+8“正视于/Normal To”。本题从零件左前下角的原点开始。",
+          "actionEn": "Select Front Plane in the tree and click Sketch. Press Ctrl+8 for Normal To. Start at the lower-left-front origin.",
+          "where": "设计树 → 前视基准面/Front Plane；顶部 草图/Sketch 选项卡 → 草图/Sketch。",
+          "whereEn": "Tree → Front Plane; top Sketch tab → Sketch.",
+          "values": [],
+          "check": "不要选上视基准面/Top Plane来画主侧面轮廓。",
+          "checkEn": "Use Front Plane for the main side profile.",
+          "feature": "Base sketch",
+          "stage": -1,
+          "diagram": "q1-base.svg"
+        },
+        {
+          "title": "画底座矩形",
+          "titleEn": "Draw the base rectangle",
+          "action": "展开“矩形/Rectangle”下拉菜单，选择“边角矩形/Corner Rectangle”。第一角点击原点，第二角点在右上方；按 Esc 退出工具。",
+          "actionEn": "Open the Rectangle dropdown and choose Corner Rectangle. Place the first corner at the origin and the opposite corner above and to the right. Press Esc.",
+          "where": "草图/Sketch 选项卡 → 矩形/Rectangle 下拉 → 边角矩形/Corner Rectangle；菜单 工具/Tools → 草图绘制实体/Sketch Entities → 矩形/Rectangle。",
+          "whereEn": "Sketch tab → Rectangle dropdown → Corner Rectangle; menu Tools → Sketch Entities → Rectangle.",
+          "values": [
+            "长 78 mm",
+            "厚 8 mm"
+          ],
+          "check": "矩形左下角需与原点“重合/Coincident”。",
+          "checkEn": "The lower-left corner must be Coincident with the origin.",
+          "feature": "Base sketch",
+          "stage": -1,
+          "diagram": "q1-base.svg"
+        },
+        {
+          "title": "完全定义底座",
+          "titleEn": "Fully define the base sketch",
+          "action": "点击“智能尺寸/Smart Dimension”，分别点下边和左边，输入78与8。底边和顶边保持“水平/Horizontal”，左右边保持“竖直/Vertical”；如缺少关系，Ctrl多选对象后在左侧“添加几何关系/Add Relations”中补上。",
+          "actionEn": "Use Smart Dimension on the bottom and left edges and enter 78 and 8. Keep horizontal/vertical relations and the origin coincidence. Ctrl-select entities and add any missing relations.",
+          "where": "草图/Sketch → 智能尺寸/Smart Dimension；几何关系可在草图中 Ctrl多选后通过左侧属性管理器/PropertyManager 添加。",
+          "whereEn": "Sketch → Smart Dimension; Ctrl-select sketch entities to access Add Relations in the left PropertyManager.",
+          "values": [
+            "78 × 8 mm"
+          ],
+          "check": "默认颜色下全部实体应变黑，状态栏显示“完全定义/Fully Defined”。",
+          "checkEn": "With default colors, all entities should be black and the status bar should say Fully Defined.",
+          "feature": "Base sketch",
+          "stage": -1,
+          "diagram": "q1-base.svg"
+        },
+        {
+          "title": "将底座拉伸28",
+          "titleEn": "Extrude the base by 28",
+          "action": "退出草图/Exit Sketch。点击“拉伸凸台/基体/Extruded Boss/Base”，终止条件选“给定深度/Blind”，输入28，预览朝零件宽度方向，点击绿色勾。",
+          "actionEn": "Exit Sketch. Choose Extruded Boss/Base, Blind, enter 28, inspect the preview along the width direction, and accept with the green check.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base；菜单 插入/Insert → 凸台/基体/Boss/Base → 拉伸/Extrude。；退出草图/Exit Sketch在草图/Sketch页签右侧，也可点图形区右上角确认角的退出草图箭头。",
+          "whereEn": "Features → Extruded Boss/Base; Insert → Boss/Base → Extrude.; Exit Sketch is on the Sketch tab or the exit-sketch arrow in the graphics area’s upper-right confirmation corner.",
+          "values": [
+            "深度 28 mm"
+          ],
+          "check": "底座为单一实体，长78、厚8、宽28。",
+          "checkEn": "The base is one solid, 78 long, 8 thick, and 28 wide.",
+          "feature": "Base",
+          "stage": 0,
+          "diagram": "q1-base.svg"
+        },
+        {
+          "title": "建立斜面主体草图",
+          "titleEn": "Start the inclined body sketch",
+          "action": "选择“前视基准面/Front Plane”而不是底座侧面，新建“草图/Sketch”，Ctrl+8。用“直线/Line”画一个闭合四边形：从底座上边靠左的坡脚开始，向右到最右边，再向上，沿斜端面向左上，最后沿65°坡面回到坡脚。",
+          "actionEn": "Select Front Plane again, create a sketch, and press Ctrl+8. Use Line to draw a closed quadrilateral from the ramp foot on the base top to the right edge, up the rear, left-up along the end cap, then down along the ramp.",
+          "where": "设计树 → 前视基准面/Front Plane → 草图/Sketch；草图/Sketch → 直线/Line。",
+          "whereEn": "Tree → Front Plane → Sketch; Sketch tab → Line.",
+          "values": [
+            "底边与底座上边重合",
+            "右边与底座右端对齐"
+          ],
+          "check": "轮廓必须闭合；底边水平，右边竖直。",
+          "checkEn": "The loop must be closed; bottom horizontal and rear edge vertical.",
+          "feature": "Ramp sketch",
+          "stage": 0,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "用原标注定位坡面",
+          "titleEn": "Locate the ramp from the given dimensions",
+          "action": "用“点/Point”放一个辅助点；用“智能尺寸/Smart Dimension”设它距左端40（由24+16推得）、距底面34（由16+18推得）。选辅助点与坡面线，添加“重合/Coincident”。将坡面线与底座水平边的锐角标成65°。辅助点是关系基准，不形成实体边。",
+          "actionEn": "Place a sketch Point and dimension it 40 from the left end (24+16) and 34 above the bottom (16+18). Add Coincident between this point and the ramp line. Dimension the acute angle between the ramp line and a horizontal base edge to 65°. The helper point does not form a solid edge.",
+          "where": "草图/Sketch → 点/Point；菜单 工具/Tools → 草图绘制实体/Sketch Entities → 点/Point；角度尺寸使用 智能尺寸/Smart Dimension 依次选两条线。",
+          "whereEn": "Sketch → Point, or Tools → Sketch Entities → Point. For the angle, select two lines with Smart Dimension.",
+          "values": [
+            "40 = 24+16 mm（推导/derived）",
+            "34 = 16+18 mm（推导/derived）",
+            "65°"
+          ],
+          "check": "65°是坡面与水平的角度，不能输入成坡面与竖直的角度。",
+          "checkEn": "The 65° angle is measured from horizontal, not vertical.",
+          "feature": "Ramp sketch",
+          "stage": 0,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "约束58高和斜端面",
+          "titleEn": "Constrain the 58 height and end cap",
+          "action": "用“智能尺寸/Smart Dimension”标坡面最高端点到底面的竖直距离58。Ctrl选坡面线与顶部斜端面线，添加“垂直/Perpendicular”。将坡脚点与底座上边、右下点与底座右上角分别设“重合/Coincident”；后竖边与底座右边设“共线/Collinear”。",
+          "actionEn": "Dimension the highest ramp endpoint 58 vertically above the bottom. Ctrl-select the ramp line and top-cap line and add Perpendicular. Make the ramp foot Coincident with the base top, the lower-right vertex Coincident with the base upper-right corner, and the rear vertical edge Collinear with the base right edge.",
+          "where": "草图/Sketch → 智能尺寸/Smart Dimension；Ctrl多选后左侧 添加几何关系/Add Relations → 垂直/Perpendicular、重合/Coincident、共线/Collinear。",
+          "whereEn": "Sketch → Smart Dimension; Ctrl-select entities, then use Add Relations → Perpendicular, Coincident, or Collinear in the left PropertyManager.",
+          "values": [
+            "主体高度 58 mm"
+          ],
+          "check": "全部约束后坡脚距左端约27.876001、最高点距左端约51.191384、右后高约45.498937，均为推导检查值，不是新增原题尺寸。",
+          "checkEn": "Check only: foot offset ≈27.876001, top offset ≈51.191384, rear height ≈45.498937. These are derived checks, not additional source dimensions.",
+          "feature": "Ramp sketch",
+          "stage": 0,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "斜面主体拉伸28并合并",
+          "titleEn": "Extrude and merge the inclined body",
+          "action": "确认草图“完全定义/Fully Defined”，退出草图。使用“拉伸凸台/基体/Extruded Boss/Base”，给定深度28，方向与底座相同，勾选“合并结果/Merge result”，确定。",
+          "actionEn": "Confirm Fully Defined, exit the sketch, and use Extruded Boss/Base with Blind depth 28 in the same direction as the base. Enable Merge result and accept.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base；左侧属性管理器/PropertyManager → 合并结果/Merge result。",
+          "whereEn": "Features → Extruded Boss/Base; left PropertyManager → Merge result.",
+          "values": [
+            "深度 28 mm"
+          ],
+          "check": "设计树“实体/Solid Bodies”计数仍为1。",
+          "checkEn": "Solid Bodies count remains 1.",
+          "feature": "Ramp",
+          "stage": 1,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "画低台阶轮廓",
+          "titleEn": "Sketch the lower step",
+          "action": "在“前视基准面/Front Plane”新建草图并正视。画“边角矩形/Corner Rectangle”：左边对齐零件左端，底边落在底座上边，向右长度40（24+16）；上边距零件底面16。这样低台阶新增厚度为8（16−8）。",
+          "actionEn": "Create a new sketch on Front Plane and use Normal To. Draw a Corner Rectangle with its left edge aligned to the part left end and its bottom on the base top. Set length 40 (24+16), and top height 16 above the part bottom, so the added thickness is 8 (16−8).",
+          "where": "设计树 → 前视基准面/Front Plane → 草图/Sketch；矩形/Rectangle 下拉 → 边角矩形/Corner Rectangle；智能尺寸/Smart Dimension。",
+          "whereEn": "Tree → Front Plane → Sketch; Rectangle dropdown → Corner Rectangle; Smart Dimension.",
+          "values": [
+            "长度 40=24+16 mm（推导）",
+            "完成后高度 16 mm",
+            "新增高度 8 mm"
+          ],
+          "check": "不要把16当成从底座上面再拉高16；16是从零件底面量起。",
+          "checkEn": "The 16 is the finished height from the part bottom, not an additional 16 above the base.",
+          "feature": "Lower-step sketch",
+          "stage": 1,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "低台阶拉伸18",
+          "titleEn": "Extrude the lower step by 18",
+          "action": "完全定义矩形后，退出草图。使用“拉伸凸台/基体/Extruded Boss/Base”，给定深度18，沿宽度朝内部、与底座同向；勾选“合并结果/Merge result”。",
+          "actionEn": "After fully defining the rectangle, exit and use Extruded Boss/Base, Blind depth 18, into the width in the same direction as the base. Enable Merge result.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base；终止条件 给定深度/Blind。",
+          "whereEn": "Features → Extruded Boss/Base; end condition Blind.",
+          "values": [
+            "台阶宽度 18 mm",
+            "总宽 28 mm"
+          ],
+          "check": "台阶只占总宽28中的18，另一侧保留10宽的较低部分。",
+          "checkEn": "The step occupies 18 of the overall 28 width, leaving a lower strip 10 wide.",
+          "feature": "Lower step",
+          "stage": 2,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "画高台阶矩形",
+          "titleEn": "Sketch the upper step",
+          "action": "在“前视基准面/Front Plane”新建草图。画“边角矩形/Corner Rectangle”，底边与低台阶顶边“共线/Collinear”；左边距零件左端24，水平长度16，竖直高度18。",
+          "actionEn": "Create another sketch on Front Plane. Draw a Corner Rectangle with its bottom Collinear with the lower-step top. Set its left offset 24 from the part left end, length 16, and height 18.",
+          "where": "设计树 → 前视基准面/Front Plane → 草图/Sketch；边角矩形/Corner Rectangle；智能尺寸/Smart Dimension；添加几何关系/Add Relations。",
+          "whereEn": "Tree → Front Plane → Sketch; Corner Rectangle; Smart Dimension; Add Relations.",
+          "values": [
+            "左端偏距 24 mm",
+            "矩形长 16 mm",
+            "矩形高 18 mm"
+          ],
+          "check": "矩形右上角恰好落在65°坡面上；最终台阶顶面高度为34=16+18。",
+          "checkEn": "The upper-right corner lies on the 65° ramp; finished height is 34=16+18.",
+          "feature": "Upper-step sketch",
+          "stage": 2,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "高台阶拉伸18",
+          "titleEn": "Extrude the upper step by 18",
+          "action": "完全定义后，退出草图；“拉伸凸台/基体/Extruded Boss/Base”给定深度18，与低台阶同方向，勾选“合并结果/Merge result”。",
+          "actionEn": "Exit the fully defined sketch and use Extruded Boss/Base, Blind 18, in the same direction as the lower step, with Merge result enabled.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base。",
+          "whereEn": "Features → Extruded Boss/Base.",
+          "values": [
+            "拉伸深度 18 mm"
+          ],
+          "check": "主视图应出现前段16高、中段34高，再接65°坡面。",
+          "checkEn": "Front view now shows heights 16 and 34 leading into the 65° ramp.",
+          "feature": "Upper step",
+          "stage": 3,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "在主视图画斜槽轮廓",
+          "titleEn": "Sketch the inclined slot",
+          "action": "选“前视基准面/Front Plane”新建草图，Ctrl+8。用“直线/Line”画闭合斜矩形：上边放在顶部斜端面线上，两条长边平行于65°坡面，短底边与上边平行。也可用“矩形/Rectangle → 3点边角矩形/3 Point Corner Rectangle”。",
+          "actionEn": "Sketch on Front Plane and press Ctrl+8. Use Line to draw a closed inclined rectangle with its top on the sloping end-cap edge, long sides parallel to the 65° ramp, and bottom parallel to the top. Alternatively use Rectangle → 3 Point Corner Rectangle.",
+          "where": "草图/Sketch → 直线/Line；或 矩形/Rectangle 下拉 → 3点边角矩形/3 Point Corner Rectangle。",
+          "whereEn": "Sketch → Line, or Rectangle dropdown → 3 Point Corner Rectangle.",
+          "values": [
+            "槽宽 5 mm",
+            "槽深 36 mm"
+          ],
+          "check": "槽是沿坡面方向向下开，宽度沿顶部斜端面方向量。",
+          "checkEn": "Slot depth follows the ramp direction; slot width is measured along the top-cap direction.",
+          "feature": "Slot sketch",
+          "stage": 3,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "完全定义15、5和36",
+          "titleEn": "Fully define 15, 5, and 36",
+          "action": "槽口上边与顶部斜端面设“共线/Collinear”。用“智能尺寸/Smart Dimension”先标槽口靠前端点距坡面最高端点15，再标槽口宽5、长边长36；长边与坡面设“平行/Parallel”，相邻边设“垂直/Perpendicular”。这些尺寸应沿所选边方向，而不是水平或竖直投影。",
+          "actionEn": "Make the slot opening Collinear with the top-cap edge. Use Smart Dimension to set 15 from the ramp top-front corner to the first opening endpoint, opening width 5, and long-edge length 36. Add Parallel to the ramp and Perpendicular between adjacent edges. Use aligned distances, not horizontal or vertical projections.",
+          "where": "草图/Sketch → 智能尺寸/Smart Dimension；Ctrl多选后 添加几何关系/Add Relations → 共线/Collinear、平行/Parallel、垂直/Perpendicular。",
+          "whereEn": "Sketch → Smart Dimension; Ctrl-select entities → Add Relations → Collinear, Parallel, Perpendicular.",
+          "values": [
+            "15 mm：顶面前缘至槽前缘",
+            "5 mm：槽口宽",
+            "36 mm：沿坡向下的槽长"
+          ],
+          "check": "不能把36量成竖直深度；槽宽也不能量成水平5。",
+          "checkEn": "The 36 is not vertical depth, and the 5 is not horizontal width.",
+          "feature": "Slot sketch",
+          "stage": 3,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "槽沿宽度完全贯穿",
+          "titleEn": "Cut the slot through the full width",
+          "action": "退出草图，点击“拉伸切除/Extruded Cut”。终止条件选“完全贯穿/Through All”，预览必须跨过全部28宽。若箭头朝零件外，点击方向箭头“反向/Reverse Direction”。确认后顶部形成开口槽。",
+          "actionEn": "Exit and choose Extruded Cut. Set Through All and ensure the preview crosses the entire 28 width. If the arrow points away from the solid, use Reverse Direction. Accept to form the open-ended slot.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut；菜单 插入/Insert → 切除/Cut → 拉伸/Extrude；左侧 方向1/Direction 1 → 完全贯穿/Through All。",
+          "whereEn": "Features → Extruded Cut; Insert → Cut → Extrude; left Direction 1 → Through All.",
+          "values": [
+            "宽度方向贯穿 28 mm",
+            "实际去除体积 5040 mm³"
+          ],
+          "check": "槽底沿坡向距离顶部36；它不是封闭孔，也不是只切局部宽度的盲槽。",
+          "checkEn": "The slot bottom is 36 along the ramp from the top; the opening extends through the width.",
+          "feature": "Slot",
+          "stage": 4,
+          "diagram": "q1-profile-slot.svg"
+        },
+        {
+          "title": "选择有15宽平台的斜端面",
+          "titleEn": "Select the 15-wide top platform",
+          "action": "旋转到等轴测/Isometric（Ctrl+7），单击槽与前坡面之间的顶部斜平面。它沿顶面方向宽15、跨零件总宽28。点击“草图/Sketch”，按 Ctrl+8“正视于/Normal To”。",
+          "actionEn": "Use Isometric (Ctrl+7), select the sloping top platform between the slot and the front ramp, then click Sketch and Normal To (Ctrl+8). The platform is 15 along the cap and 28 across the part.",
+          "where": "图形区选择顶部斜平面 → 草图/Sketch；视图定向/View Orientation 快捷键 Ctrl+7、Ctrl+8。",
+          "whereEn": "Select the sloping top face in the graphics area → Sketch; Ctrl+7 for Isometric, Ctrl+8 for Normal To.",
+          "values": [
+            "平台 15 × 28 mm"
+          ],
+          "check": "不要选65°大坡面，也不要选槽另一侧的顶部平台。",
+          "checkEn": "Choose the cap platform on the front side of the slot, rather than the broad ramp or rear cap platform.",
+          "feature": "Peg sketch",
+          "stage": 4,
+          "diagram": "q1-pegs.svg"
+        },
+        {
+          "title": "画两个Ø6圆",
+          "titleEn": "Draw two diameter-6 circles",
+          "action": "点击“圆/Circle”，在这块顶部平台画两个圆。按 Esc 后，Ctrl选两圆，添加“相等/Equal”关系；用“智能尺寸/Smart Dimension”把一个圆直径设为6。",
+          "actionEn": "Use Circle to place two circles on the platform. Press Esc, Ctrl-select both circles, add Equal, and dimension one circle to diameter 6 using Smart Dimension.",
+          "where": "草图/Sketch → 圆/Circle（圆心圆/Centerpoint Circle）；菜单 工具/Tools → 草图绘制实体/Sketch Entities → 圆/Circle；左侧 添加几何关系/Add Relations → 相等/Equal。",
+          "whereEn": "Sketch → Circle (Centerpoint Circle); Tools → Sketch Entities → Circle; Add Relations → Equal.",
+          "values": [
+            "2 × Ø6 mm"
+          ],
+          "check": "这两个圆最后是凸起销，不是孔。",
+          "checkEn": "These circles create projecting pegs.",
+          "feature": "Peg sketch",
+          "stage": 4,
+          "diagram": "q1-pegs.svg"
+        },
+        {
+          "title": "用7.5和7定位两圆",
+          "titleEn": "Locate the circles using 7.5 and 7",
+          "action": "用“智能尺寸/Smart Dimension”选第一个圆心和顶部平台前缘，设沿平台的垂直距离7.5；第二圆心也距该边7.5，或用两圆心连线与该边“平行/Parallel”。再设第一个圆心距零件前侧宽度边7，第二圆心距另一侧宽度边7。",
+          "actionEn": "Use Smart Dimension between the first center and the platform front edge to set perpendicular distance 7.5. Set the second center to the same 7.5 distance, or make the center-to-center construction line Parallel to that edge. Set one center 7 from the front width edge and the other 7 from the opposite width edge.",
+          "where": "草图/Sketch → 智能尺寸/Smart Dimension；辅助连线用 直线/Line 下拉 → 中心线/Centerline；关系在左侧 添加几何关系/Add Relations。",
+          "whereEn": "Sketch → Smart Dimension; Line dropdown → Centerline for construction geometry; Add Relations in the left PropertyManager.",
+          "values": [
+            "7.5 mm：圆心至平台前缘",
+            "7 mm：每个圆心至相邻侧边",
+            "圆心间距 14=28−7−7 mm（推导）"
+          ],
+          "check": "原图“7 TYP”表示两侧相同边距7；不是两个圆心相距7。",
+          "checkEn": "The 7 TYP denotes equal 7 edge margins; it is not a 7 center spacing.",
+          "feature": "Peg sketch",
+          "stage": 4,
+          "diagram": "q1-pegs.svg"
+        },
+        {
+          "title": "双销沿斜面法向拉伸6",
+          "titleEn": "Extrude both pegs by 6 normal to the cap",
+          "action": "确认草图“完全定义/Fully Defined”，退出草图。点击“拉伸凸台/基体/Extruded Boss/Base”，给定深度6，箭头从顶部斜端面向外；勾选“合并结果/Merge result”，确认。",
+          "actionEn": "Confirm Fully Defined and exit. Choose Extruded Boss/Base, Blind 6, directed outward normal to the sloping cap, with Merge result enabled.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base；方向箭头/Reverse Direction 用于纠正方向。",
+          "whereEn": "Features → Extruded Boss/Base; use Reverse Direction to correct the arrow if needed.",
+          "values": [
+            "销长 6 mm",
+            "销直径 Ø6 mm"
+          ],
+          "check": "销长6沿斜端面法向测量；主体的58高尺寸不包含这6长圆柱。",
+          "checkEn": "The peg length 6 is measured normal to the cap; the 58 body height excludes the projecting cylinders.",
+          "feature": "Pegs",
+          "stage": 5,
+          "diagram": "q1-pegs.svg"
+        },
+        {
+          "title": "逐项检查主视与侧视",
+          "titleEn": "Inspect front and side views",
+          "action": "Ctrl+1切“前视/Front”，核对78长、8底厚、16低台阶、再高18、24前段、16上段、65°坡和槽。按空格打开“视图定向/View Orientation”再选“右视/Right”，核对总宽28、台阶宽18、主体高58。每个草图右击“编辑草图/Edit Sketch”，确认“完全定义/Fully Defined”。",
+          "actionEn": "Use Front (Ctrl+1) to inspect 78, 8, 16, the additional 18, 24, 16, 65°, and the slot. Press Space → View Orientation → Right to inspect 28 overall width, 18 step width, and 58 body height. Right-click each sketch → Edit Sketch and confirm Fully Defined.",
+          "where": "按空格打开视图定向/View Orientation，或点击图形区上方前导视图工具栏的视图定向/View Orientation；设计树草图右击 → 编辑草图/Edit Sketch。",
+          "whereEn": "Space → View Orientation; right-click a sketch in the tree → Edit Sketch.",
+          "values": [
+            "6实体特征：4凸台（底座/坡体/低台阶/高台阶）+1切除+1销凸台"
+          ],
+          "check": "总计是5个凸台特征加1个切除特征；销凸台内有两个圆。",
+          "checkEn": "There are five boss features and one cut feature; the peg boss contains both circles.",
+          "feature": "Verification",
+          "stage": 5
+        },
+        {
+          "title": "检查体积并保存Q1.sldprt",
+          "titleEn": "Check volume and save Q1.sldprt",
+          "action": "点击“评估/Evaluate → 质量属性/Mass Properties”，把体积单位设为mm³并读取。参考模型体积70039.200119 mm³；老师允许范围为69338.61至70739.39。然后“文件/File → 另存为/Save As”，保存类型“零件/Part (*.sldprt)”，文件名Q1.sldprt。",
+          "actionEn": "Choose Evaluate → Mass Properties, use mm³, and read the volume. This reference geometry is 70039.200119 mm³; the permitted interval is 69338.61–70739.39. Use File → Save As → Part (*.sldprt), filename Q1.sldprt.",
+          "where": "顶部 评估/Evaluate → 质量属性/Mass Properties；若评估标签隐藏，使用 工具/Tools → 评估/Evaluate → 质量属性/Mass Properties。",
+          "whereEn": "Evaluate → Mass Properties; if the tab is hidden, use Tools → Evaluate → Mass Properties.",
+          "values": [
+            "参考体积 70039 ±1% mm³",
+            "本重建 70039.200119 mm³"
+          ],
+          "check": "体积吻合仍须核对尺寸、原点、朝向、完全定义和设计意图；STEP导入体不能替代原生可编辑草图树。",
+          "checkEn": "Volume agreement must accompany dimension, origin, orientation, sketch, and design-intent checks. An imported STEP body does not replace a native editable sketch tree.",
+          "feature": "Verification",
+          "stage": 5
+        }
+      ],
+      "dimensions": [
+        [
+          "总长、总宽、主体高",
+          "Overall length, width, body height",
+          "78 · 28 · 58",
+          "58 不包含销；Q1主视在前视基准面。",
+          "The body height excludes the pegs; use Front Plane for the main view."
+        ],
+        [
+          "底座与台阶",
+          "Base and steps",
+          "8 · 16 · 18 · 24 · 16 · 18",
+          "8为底厚；台阶成品高16，上一级再高18；水平24和16，台阶宽18。",
+          "Base 8; lower finished height 16; upper rise 18; runs 24 and 16; step width 18."
+        ],
+        [
+          "斜坡与端面",
+          "Ramp and cap",
+          "65°",
+          "用原图台阶关系定位斜坡；端面与斜坡垂直。",
+          "Locate the ramp from the step relations; the cap is perpendicular to the ramp."
+        ],
+        [
+          "矩形槽",
+          "Rectangular slot",
+          "15 · 5 · 36",
+          "15沿斜端面量到槽口；5为槽宽，36沿坡；沿28宽完全贯穿。",
+          "15 along the cap to the slot; width 5, length 36 along the ramp; through the 28 width."
+        ],
+        [
+          "双圆柱销",
+          "Two pegs",
+          "2×Ø6 · 6 · 7.50 · 7 TYP",
+          "销沿端面法向长6；圆心距平台前边7.5、各距侧边7。",
+          "Pegs project 6 normal to the cap; centers 7.5 from the front edge and 7 from each side."
+        ]
+      ]
+    },
+    "Q2": {
+      "title": "Lab 4 连杆复习",
+      "titleEn": "Review the Lab 4 link",
+      "steps": [
+        {
+          "title": "建立 Q2 零件并设为毫米",
+          "titleEn": "Create Q2 with millimetre units",
+          "action": "按 Ctrl+N，选择“零件/Part”后点“确定/OK”。点击窗口右下角的单位，选择“MMGS（毫米、克、秒）/MMGS”。先按 Ctrl+S 保存为 Q2.sldprt。Lab 5 这题要求复用 Lab 4 的 Q2；已有自己完成的合格文件，可直接进行最后核验。",
+          "actionEn": "Press Ctrl+N, choose Part, then OK. Click the units in the lower-right corner and choose MMGS (millimetres, grams, seconds). Press Ctrl+S and save as Q2.sldprt. Lab 5 asks you to reuse your Lab 4 Q2; if you already have your completed part, proceed to the final checks.",
+          "where": "文件/File → 新建/New → 零件/Part；右下状态栏单位下拉框。",
+          "whereEn": "File → New → Part; unit selector on the lower-right status bar.",
+          "values": [
+            "MMGS",
+            "Q2.sldprt"
+          ],
+          "check": "文件名必须是 Q2.sldprt；不要把 Lab 4 的 Q1 改名作为 Q2。",
+          "checkEn": "The filename must be Q2.sldprt; renaming a different Lab 4 question is not sufficient.",
+          "feature": "准备/Setup",
+          "stage": -1
+        },
+        {
+          "title": "选择上视基准面",
+          "titleEn": "Select Top Plane",
+          "action": "在左侧“FeatureManager 设计树/FeatureManager design tree”单击“上视基准面/Top Plane”，再点顶部“草图/Sketch”选项卡里的“草图/Sketch”。按 Ctrl+8“正视于/Normal To”。红色原点是大端圆心在连接板底面的投影；前视基准面将沿零件长度平分宽度。",
+          "actionEn": "Select Top Plane in the left FeatureManager design tree. On the Sketch tab, click Sketch. Press Ctrl+8 for Normal To. The red origin is the large-end centre on the bottom face of the link plate. Front Plane will divide the width along the length of the part.",
+          "where": "左侧设计树→上视基准面/Top Plane；顶部草图/Sketch→草图/Sketch。若无选项卡，右击 CommandManager 空白处勾选“草图/Sketch”。",
+          "whereEn": "Left tree → Top Plane; top Sketch tab → Sketch. If the tab is hidden, right-click an empty CommandManager area and enable Sketch.",
+          "values": [
+            "Top Plane",
+            "Ctrl+8"
+          ],
+          "check": "平面轮廓画在上视基准面；前视基准面是对称面，不能互换。",
+          "checkEn": "The flat outline belongs on Top Plane; Front Plane is the symmetry plane.",
+          "feature": "草图1/Sketch1",
+          "stage": -1
+        },
+        {
+          "title": "以原点画大端外圆",
+          "titleEn": "Draw the large outer circle at the origin",
+          "action": "点击“圆/Circle”，先点红色原点，再向外点一次完成圆。按 Esc，点“智能尺寸/Smart Dimension”，选圆后在空白处放置直径尺寸，输入 32 mm。32 来自原图内孔直径20加两侧壁厚6。",
+          "actionEn": "Click Circle, click the red origin, then click outward to create the circle. Press Esc. Click Smart Dimension, select the circle, place the diameter dimension in empty space, and enter 32 mm. This is derived from the original Ø20 hole plus two radial walls of 6 mm.",
+          "where": "草图/Sketch→圆/Circle 下拉→圆/Circle；工具/Tools→尺寸/Dimensions→智能/Smart。",
+          "whereEn": "Sketch → Circle dropdown → Circle; Tools → Dimensions → Smart.",
+          "values": [
+            "Ø32 = 20 + 2×6 mm"
+          ],
+          "check": "圆心有与原点“重合/Coincident”关系；不要把径向壁厚6误当成直径增加6。",
+          "checkEn": "The centre must be Coincident with the origin. The radial wall adds 6 on each side.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q2-circles.svg"
+        },
+        {
+          "title": "定位小端外圆",
+          "titleEn": "Locate the small outer circle",
+          "action": "在大圆右侧再画一个圆。智能尺寸设直径18 mm，即原图R9。按住 Ctrl 选择两个圆心，在左侧“添加几何关系/Add Relations”选“水平/Horizontal”；用智能尺寸选择两个圆心，向上放置水平距离并输入38 mm。",
+          "actionEn": "Draw another circle to the right of the large circle. Set its diameter to 18 mm, corresponding to R9. Ctrl-select both circle centres and choose Horizontal under Add Relations. Select both centres with Smart Dimension, place a horizontal dimension above them, and enter 38 mm.",
+          "where": "草图/Sketch→圆/Circle；Ctrl选圆心→左侧添加几何关系/Add Relations→水平/Horizontal；工具/Tools→尺寸/Dimensions→智能/Smart。",
+          "whereEn": "Sketch → Circle; Ctrl-select centres → left Add Relations → Horizontal; Tools → Dimensions → Smart.",
+          "values": [
+            "Ø18 = 2×R9 mm",
+            "中心距/Centre distance 38 mm"
+          ],
+          "check": "两个圆心同高；小端在大端右侧；两个圆为黑色且状态栏显示完全定义。",
+          "checkEn": "The centres must be horizontal, with the small end on the right; both circles should be fully defined.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q2-circles.svg"
+        },
+        {
+          "title": "画上公外切线",
+          "titleEn": "Draw the upper common tangent",
+          "action": "点击“直线/Line”，从大圆上半部圆周画到小圆上半部圆周，按 Esc。Ctrl 选直线和大圆，选“相切/Tangent”；再 Ctrl 选这条直线和小圆，添加相切。若端点没有落在圆周上，Ctrl 选端点与对应圆，添加“重合/Coincident”。",
+          "actionEn": "Use Line to connect the upper portions of the two circles, then press Esc. Ctrl-select the line and the large circle and add Tangent; repeat for the same line and the small circle. If an endpoint is not on its circle, Ctrl-select the endpoint and that circle and add Coincident.",
+          "where": "草图/Sketch→直线/Line；工具/Tools→几何关系/Relations→添加/Add；左侧添加几何关系/Add Relations。",
+          "whereEn": "Sketch → Line; Tools → Relations → Add; left Add Relations panel.",
+          "values": [
+            "两端相切/Tangent at both ends"
+          ],
+          "check": "大圆比小圆大，正确切线向小端倾斜，不能以两圆最高点连线代替。",
+          "checkEn": "The tangent slopes toward the smaller end; joining the highest points is incorrect.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q2-tangents.svg"
+        },
+        {
+          "title": "画下公外切线",
+          "titleEn": "Draw the lower common tangent",
+          "action": "用“直线/Line”连接两圆下半部，同样添加两端相切及端点重合关系。上、下切线关于两圆心连线对称。这里直接画两条线；不需要查找动态镜向按钮。",
+          "actionEn": "Use Line to connect the lower portions of the circles, adding Tangent relations at both ends and Coincident endpoint relations. The two lines are symmetric about the line joining the centres. This method draws the two lines directly.",
+          "where": "草图/Sketch→直线/Line；Ctrl选线与圆→添加几何关系/Add Relations→相切/Tangent。",
+          "whereEn": "Sketch → Line; Ctrl-select line and circle → Add Relations → Tangent.",
+          "values": [
+            "共4个相切关系/4 Tangent relations"
+          ],
+          "check": "上下切线均与两个圆相切，线不能穿过圆内部。",
+          "checkEn": "Each line is tangent to both circles and must not cross their interiors.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q2-tangents.svg"
+        },
+        {
+          "title": "修剪两段内侧圆弧",
+          "titleEn": "Trim the two inner arcs",
+          "action": "点击“剪裁实体/Trim Entities”（部分安装显示“剪裁实体”），左侧选择“强劲剪裁/Power Trim”。拖动鼠标划过大圆朝向小圆的内侧短弧，再划过小圆朝向大圆的内侧弧。只留下大端外侧长弧、小端外侧弧和两条切线；按 Esc 结束。",
+          "actionEn": "Click Trim Entities, choose Power Trim in the left panel, and drag across the short inner arc of the large circle facing the small circle. Remove the inner arc of the small circle facing the large circle. Keep the two outer arcs and both tangent lines, then press Esc.",
+          "where": "草图/Sketch→剪裁实体（剪裁实体）/Trim Entities；或工具/Tools→草图绘制工具/Sketch Tools→剪裁/Trim。",
+          "whereEn": "Sketch → Trim Entities; or Tools → Sketch Tools → Trim.",
+          "values": [
+            "一个闭合轮廓/One closed loop"
+          ],
+          "check": "删除错误按 Ctrl+Z。轮廓内不能留下分割区域的多余圆弧。",
+          "checkEn": "Undo an incorrect trim with Ctrl+Z. No internal arcs should divide the contour.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q2-trim.svg"
+        },
+        {
+          "title": "检查草图完全定义",
+          "titleEn": "Check that the outline is fully defined",
+          "action": "修剪后重新检查圆弧半径16和9、圆心水平关系、圆心距38以及四处相切关系。若尺寸被剪裁删掉，使用智能尺寸重新添加。点击“上色的草图轮廓/Shaded Sketch Contours”，确认整片连接板区域连续着色；状态栏应为“完全定义/Fully Defined”。",
+          "actionEn": "After trimming, verify radii 16 and 9, horizontal centres, centre distance 38, and four tangent relations. Restore any dimension removed by trimming using Smart Dimension. Enable Shaded Sketch Contours and verify one continuously shaded link region. The status bar must read Fully Defined.",
+          "where": "草图/Sketch→上色的草图轮廓/Shaded Sketch Contours；工具/Tools→尺寸/Dimensions→智能/Smart。",
+          "whereEn": "Sketch → Shaded Sketch Contours; Tools → Dimensions → Smart.",
+          "values": [
+            "R16 / R9",
+            "38 mm"
+          ],
+          "check": "通过尺寸与几何关系完全定义，不用“固定/Fix”关系掩盖漏标设计尺寸。",
+          "checkEn": "Use dimensions and relations to define the design; do not use Fix to conceal missing design dimensions.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q2-trim.svg"
+        },
+        {
+          "title": "连接板拉伸6毫米",
+          "titleEn": "Extrude the link plate by 6 mm",
+          "action": "点击“退出草图/Exit Sketch”，再点“拉伸凸台/基体/Extruded Boss/Base”。左侧“方向1/Direction 1”的结束条件选“给定深度/Blind”，深度6 mm。预览朝板的上方，点绿色对勾。",
+          "actionEn": "Click Exit Sketch, then Extruded Boss/Base. In Direction 1, choose Blind and enter 6 mm. Check that the preview grows above the plate bottom and click the green check mark.",
+          "where": "特征/Features→拉伸凸台/基体/Extruded Boss/Base；或插入/Insert→凸台/基体/Boss/Base→拉伸/Extrude。",
+          "whereEn": "Features → Extruded Boss/Base; or Insert → Boss/Base → Extrude.",
+          "values": [
+            "给定深度/Blind 6 mm"
+          ],
+          "check": "板底与上视基准面重合；只有一个实体。",
+          "checkEn": "The plate bottom coincides with Top Plane, and there is one solid body.",
+          "feature": "Boss-Extrude1",
+          "stage": 0,
+          "diagram": "q2-trim.svg"
+        },
+        {
+          "title": "在板顶画大端同心圆",
+          "titleEn": "Sketch the large boss on the plate top",
+          "action": "点击连接板顶面，选择“草图/Sketch”，按 Ctrl+8。画一个大端圆；Ctrl选新圆和大端外圆弧，添加“同心/Concentric”。用智能尺寸设直径32 mm。",
+          "actionEn": "Select the plate top face, start Sketch, and press Ctrl+8. Draw a circle at the large end. Ctrl-select the circle and the large outer arc and add Concentric. Set diameter 32 mm using Smart Dimension.",
+          "where": "选顶面→草图/Sketch→圆/Circle；Ctrl选圆与外弧→添加几何关系/Add Relations→同心/Concentric。",
+          "whereEn": "Select top face → Sketch → Circle; Ctrl-select circle and arc → Add Relations → Concentric.",
+          "values": [
+            "Ø32 mm"
+          ],
+          "check": "此步是外圆凸台，不是Ø20孔；草图完全定义。",
+          "checkEn": "This is the outer boss, not the Ø20 hole; fully define the sketch.",
+          "feature": "草图2/Sketch2",
+          "stage": 0
+        },
+        {
+          "title": "大端追加8毫米",
+          "titleEn": "Add 8 mm at the large end",
+          "action": "退出草图，选择“拉伸凸台/基体/Extruded Boss/Base”，给定深度8 mm。确认向板顶外侧增加材料，勾选“合并结果/Merge result”，点绿色对勾。原图14是从板底到大端顶面的总高，所以本次为14−6。",
+          "actionEn": "Exit Sketch, choose Extruded Boss/Base, and set Blind depth to 8 mm. Confirm that material grows above the plate, enable Merge result, and accept. The original 14 is the total height measured from the plate bottom, so this addition is 14−6.",
+          "where": "插入/Insert→凸台/基体/Boss/Base→拉伸/Extrude；左侧方向1/Direction 1及合并结果/Merge result。",
+          "whereEn": "Insert → Boss/Base → Extrude; left Direction 1 and Merge result.",
+          "values": [
+            "新增/Added 8=14−6 mm",
+            "总高/Total height 14 mm"
+          ],
+          "check": "若再拉伸14，总高会变成20，属于错误。",
+          "checkEn": "Adding 14 here would incorrectly produce a total height of 20.",
+          "feature": "Boss-Extrude2",
+          "stage": 1
+        },
+        {
+          "title": "回到原始上视基准面",
+          "titleEn": "Return to the original Top Plane",
+          "action": "在左侧设计树单击原始“上视基准面/Top Plane”，再开始“草图/Sketch”。不要选择连接板顶面；本次小端下柱必须从板底所在的平面向下生长。",
+          "actionEn": "Select the original Top Plane in the left design tree and start Sketch. Do not select the plate top face: the lower small-end boss must start at the plate bottom.",
+          "where": "左侧FeatureManager设计树→上视基准面/Top Plane→草图/Sketch。",
+          "whereEn": "Left FeatureManager design tree → Top Plane → Sketch.",
+          "values": [
+            "板底/Plate bottom"
+          ],
+          "check": "可按空格打开“视图定向/View Orientation”选等轴测，核对草图平面确在板底。",
+          "checkEn": "Use Spacebar → View Orientation → Isometric to confirm that the sketch plane is at the plate bottom.",
+          "feature": "草图3/Sketch3",
+          "stage": 1
+        },
+        {
+          "title": "画小端下柱圆",
+          "titleEn": "Sketch the lower small-end boss",
+          "action": "按 Ctrl+8，画直径18 mm的圆；用与小端外圆弧的“同心/Concentric”关系定位。若外圆弧不便选择，先画圆，再使圆心与原点水平，并标圆心距38 mm。确认草图完全定义。",
+          "actionEn": "Press Ctrl+8 and draw a Ø18 circle. Locate it Concentric with the small-end outer arc. Alternatively, make its centre Horizontal with the origin and set centre distance 38 mm. Confirm Fully Defined.",
+          "where": "草图/Sketch→圆/Circle；工具/Tools→几何关系/Relations→添加/Add；工具/Tools→尺寸/Dimensions→智能/Smart。",
+          "whereEn": "Sketch → Circle; Tools → Relations → Add; Tools → Dimensions → Smart.",
+          "values": [
+            "Ø18 mm",
+            "同心/Concentric"
+          ],
+          "check": "圆心在小端而非大端；草图仍位于原始上视基准面。",
+          "checkEn": "The circle is at the small end and remains on the original Top Plane.",
+          "feature": "草图3/Sketch3",
+          "stage": 1
+        },
+        {
+          "title": "小端反向拉伸24毫米",
+          "titleEn": "Extrude the small end downward by 24 mm",
+          "action": "退出草图，点“拉伸凸台/基体/Extruded Boss/Base”。给定深度24 mm；点击左侧“方向1/Direction 1”旁的“反向/Reverse Direction”箭头，使黄色预览向连接板下方。勾选“合并结果/Merge result”，确认。",
+          "actionEn": "Exit Sketch and click Extruded Boss/Base. Set Blind depth to 24 mm. Click the Reverse Direction arrow beside Direction 1 so the preview grows below the plate. Enable Merge result and accept.",
+          "where": "插入/Insert→凸台/基体/Boss/Base→拉伸/Extrude；左侧方向1/Direction 1→反向/Reverse Direction。",
+          "whereEn": "Insert → Boss/Base → Extrude; left Direction 1 → Reverse Direction.",
+          "values": [
+            "向板底以下/Below plate bottom 24 mm",
+            "小端总高/Small-end total height 30=6+24 mm"
+          ],
+          "check": "24从板底起算。若从板顶向下24，将少6毫米。",
+          "checkEn": "Measure the 24 from the plate bottom; starting at the plate top would make the boss 6 mm too short.",
+          "feature": "Boss-Extrude3",
+          "stage": 2
+        },
+        {
+          "title": "大端顶面画20毫米孔",
+          "titleEn": "Sketch the Ø20 large-end hole",
+          "action": "选择大端最高的圆形顶面，开始草图。画圆，以与大端外圆“同心/Concentric”关系定位，智能尺寸设Ø20 mm；确认完全定义。",
+          "actionEn": "Select the highest circular face at the large end and start Sketch. Draw a circle, add Concentric to the outer circle, and set Ø20 mm with Smart Dimension. Confirm Fully Defined.",
+          "where": "选大端顶面→草图/Sketch→圆/Circle；Ctrl选内外圆→同心/Concentric。",
+          "whereEn": "Select large-end top face → Sketch → Circle; Ctrl-select both circles → Concentric.",
+          "values": [
+            "Ø20 mm"
+          ],
+          "check": "外径32与孔径20相差12，径向壁厚为6。",
+          "checkEn": "The difference between Ø32 and Ø20 is 12, giving a radial wall of 6.",
+          "feature": "草图4/Sketch4",
+          "stage": 2
+        },
+        {
+          "title": "大孔完全贯穿",
+          "titleEn": "Cut the large hole Through All",
+          "action": "退出草图，点击“拉伸切除/Extruded Cut”。在左侧“方向1/Direction 1”结束条件中选“完全贯穿/Through All”（有些界面或教材写“完全贯穿”）。箭头朝实体内部，点绿色对勾。",
+          "actionEn": "Exit Sketch and click Extruded Cut. Under Direction 1, set the end condition to Through All. Make sure the arrow points into the solid, then accept.",
+          "where": "特征/Features→拉伸切除/Extruded Cut；或插入/Insert→切除/Cut→拉伸/Extrude。",
+          "whereEn": "Features → Extruded Cut; or Insert → Cut → Extrude.",
+          "values": [
+            "完全贯穿/Through All"
+          ],
+          "check": "孔穿过大端14毫米总高；从底面能看到出口。",
+          "checkEn": "The hole passes through the full 14-mm large-end height and exits at the bottom.",
+          "feature": "Cut-Extrude1",
+          "stage": 3
+        },
+        {
+          "title": "小端顶面画6毫米孔",
+          "titleEn": "Sketch the Ø6 small-end hole",
+          "action": "选择小端连接板顶面，开始草图。在小端圆心画圆，与小端外弧添加“同心/Concentric”，智能尺寸设Ø6 mm。注意不要选大端较高的顶面。",
+          "actionEn": "Select the small-end top face of the link plate and start Sketch. Draw a circle, make it Concentric with the small outer arc, and set Ø6 mm. Do not select the higher face at the large end.",
+          "where": "选小端板顶面→草图/Sketch→圆/Circle；工具/Tools→尺寸/Dimensions→智能/Smart。",
+          "whereEn": "Select small-end plate top → Sketch → Circle; Tools → Dimensions → Smart.",
+          "values": [
+            "Ø6 mm"
+          ],
+          "check": "小孔与下方圆柱同轴，草图完全定义。",
+          "checkEn": "The small hole is coaxial with the lower cylinder and fully defined.",
+          "feature": "草图5/Sketch5",
+          "stage": 3
+        },
+        {
+          "title": "小孔穿过整根下柱",
+          "titleEn": "Cut through the entire lower boss",
+          "action": "退出草图，选择“拉伸切除/Extruded Cut”，结束条件选“完全贯穿/Through All”。切除方向朝下穿过连接板和下柱，确认。",
+          "actionEn": "Exit Sketch, choose Extruded Cut, and select Through All. Direct the cut downward through the plate and the entire lower boss, then accept.",
+          "where": "插入/Insert→切除/Cut→拉伸/Extrude；左侧方向1/Direction 1→完全贯穿/Through All。",
+          "whereEn": "Insert → Cut → Extrude; left Direction 1 → Through All.",
+          "values": [
+            "穿透总高/Total cut height 30 mm"
+          ],
+          "check": "不能只切板厚6毫米；小圆柱底面必须出现孔出口。",
+          "checkEn": "Do not stop at the 6-mm plate thickness; the hole must exit the cylinder bottom.",
+          "feature": "Cut-Extrude2",
+          "stage": 4
+        },
+        {
+          "title": "体积和对称检查",
+          "titleEn": "Check volume and symmetry",
+          "action": "按 Ctrl+Q 强制重建。打开“评估/Evaluate”里的“质量属性/Mass Properties”，读取体积，单位mm³。核对大端总高14、板厚6、小端下伸24、孔径20和6。按空格切换前视，确认前视基准面平分宽度。",
+          "actionEn": "Press Ctrl+Q to force a rebuild. Open Evaluate → Mass Properties and read Volume in mm³. Check total large-end height 14, plate thickness 6, lower extension 24, and hole diameters 20 and 6. Use Spacebar to switch to Front view and check the width symmetry about Front Plane.",
+          "where": "评估/Evaluate→质量属性/Mass Properties；或工具/Tools→评估/Evaluate→质量属性/Mass Properties。",
+          "whereEn": "Evaluate → Mass Properties; or Tools → Evaluate → Mass Properties.",
+          "values": [
+            "参考/Reference 16268 ±1% mm³",
+            "本教程几何/This geometry 16267.915145 mm³"
+          ],
+          "check": "允许体积范围16105.32—16430.68 mm³。体积合格后仍需检查尺寸、原点和草图关系。",
+          "checkEn": "Allowed volume range: 16105.32–16430.68 mm³. Also verify dimensions, origin and sketch relations.",
+          "feature": "核验/Validation",
+          "stage": 4
+        },
+        {
+          "title": "保存并学会修改每一步",
+          "titleEn": "Save and edit any modelling step",
+          "action": "按 Ctrl+S。需要修改时，在设计树展开对应拉伸/切除左侧小箭头，右击吸收的草图选“编辑草图/Edit Sketch”，双击尺寸修改；要改拉伸量，右击特征选“编辑特征/Edit Feature”。退出编辑并按 Ctrl+Q；检查两个孔仍贯穿、凸台同心且只有一个实体。",
+          "actionEn": "Press Ctrl+S. To modify a sketch, expand the extrusion or cut in the design tree, right-click its absorbed sketch, choose Edit Sketch, and double-click its dimensions. To change the extrusion depth, right-click the feature and choose Edit Feature. Finish editing, press Ctrl+Q, and verify coaxial bosses, through holes and one solid body.",
+          "where": "FeatureManager设计树→展开特征→右击草图→编辑草图/Edit Sketch；右击特征→编辑特征/Edit Feature。",
+          "whereEn": "FeatureManager tree → expand feature → right-click sketch → Edit Sketch; right-click feature → Edit Feature.",
+          "values": [
+            "Q2.sldprt"
+          ],
+          "check": "Lab5 Q2应沿用你自己在Lab4完成并核验的原生零件。STEP可核对外形，但不包含原生草图/特征历史。",
+          "checkEn": "Lab 5 Q2 reuses your own verified Lab 4 native part. STEP can verify shape but does not contain the native sketch and feature history.",
+          "feature": "保存/Save",
+          "stage": 4
+        }
+      ],
+      "dimensions": [
+        [
+          "大端",
+          "Large end",
+          "Ø20 · 壁厚6 / Wall 6",
+          "外径32由20+2×6推导。",
+          "Outer diameter 32 is derived from 20+2×6."
+        ],
+        [
+          "小端",
+          "Small end",
+          "R9 · Ø6",
+          "外径18由R9推导；两个孔都完全贯穿。",
+          "Outer diameter 18 follows R9; both bores are through."
+        ],
+        [
+          "连接与高度",
+          "Link and heights",
+          "38 · 6 · 14 · 24",
+          "38为圆心距；板厚6；大端总高14；小端从板底向下24。",
+          "Center distance 38; plate 6; large total height 14; small boss extends 24 below the plate."
+        ],
+        [
+          "原点与对称面",
+          "Origin and symmetry",
+          "Front Plane",
+          "大端圆心、板底；前视基准面沿长度平分宽度。",
+          "Origin at large-end center on the plate bottom; Front Plane bisects the width."
+        ],
+        [
+          "Lab 5复用要求",
+          "Lab 5 reuse requirement",
+          "Q2.sldprt",
+          "复用你在Lab 4完成的Q2原生零件。",
+          "Reuse the native Q2 part you designed in Lab 4."
+        ]
+      ]
+    },
+    "Q3": {
+      "title": "弯板与弧形端部",
+      "titleEn": "Bent plate with a curved end",
+      "steps": [
+        {
+          "title": "新建零件并设毫米",
+          "titleEn": "Create a part and set millimetres",
+          "action": "点击文件/File → 新建/New → 零件/Part；右下角单位选 MMGS。按空格键打开视图定向/View Orientation，确认前视/Front 名称。",
+          "actionEn": "Click File → New → Part. Select MMGS in the bottom-right unit selector. Press Spacebar to open View Orientation and identify Front.",
+          "where": "左上角 文件/File；右下角状态栏单位",
+          "whereEn": "File at upper left; unit selector on bottom-right status bar",
+          "values": "mm",
+          "check": "本题前视基准面必须成为宽度对称面，原点位于水平板左端上边的中点。",
+          "checkEn": "Front Plane must bisect the width; the origin is the midpoint of the horizontal plate’s left upper edge.",
+          "feature": "准备 / Setup",
+          "stage": -1
+        },
+        {
+          "title": "选择前视基准面",
+          "titleEn": "Select Front Plane",
+          "action": "在左侧特征管理器设计树/FeatureManager Design Tree 点击前视基准面/Front Plane，再点击草图/Sketch。按 Ctrl+8 正视于/Normal To。",
+          "actionEn": "Select Front Plane in the FeatureManager Design Tree, click Sketch, then press Ctrl+8 for Normal To.",
+          "where": "左侧设计树 → 前视基准面/Front Plane；顶部 CommandManager → 草图/Sketch；若看不到草图页签，右击顶部CommandManager空白处，勾选草图/Sketch；若CommandManager也隐藏，菜单视图/View→工具栏/Toolbars→CommandManager。",
+          "whereEn": "Left design tree → Front Plane; top CommandManager → Sketch; if Sketch is hidden, right-click an empty CommandManager area and enable Sketch; if CommandManager is hidden, use View → Toolbars → CommandManager.",
+          "values": "Front Plane",
+          "check": "草图就在零件的宽度对称面，不要选水平板的顶面。",
+          "checkEn": "The sketch lies on the width symmetry plane; do not select the plate’s top face.",
+          "feature": "草图1 / Sketch1",
+          "stage": -1
+        },
+        {
+          "title": "画水平板截面",
+          "titleEn": "Draw the horizontal plate section",
+          "action": "点击直线/Line，画封闭四边形：从原点沿右方画上边，再向下画右边、向左画下边并闭合。对上下边添加水平/Horizontal、左右边添加竖直/Vertical、端点添加重合/Coincident。",
+          "actionEn": "Click Line and draw a closed four-sided section from the origin: upper edge rightwards, right edge down, bottom edge left, then close. Apply Horizontal, Vertical and Coincident relations.",
+          "where": "草图/Sketch → 直线/Line；关系：选择实体后左侧 添加几何关系/Add Relations",
+          "whereEn": "Sketch → Line; select entities, then Add Relations in the left panel",
+          "values": "上边 76 mm；厚 12 mm / Upper edge 76 mm; thickness 12 mm",
+          "check": "原点与左上角重合，板材全部在上边的下方。",
+          "checkEn": "The upper-left corner coincides with the origin; the thickness lies below the upper edge.",
+          "feature": "草图1 / Sketch1",
+          "stage": -1,
+          "diagram": "diagram1.svg"
+        },
+        {
+          "title": "完全定义水平板草图",
+          "titleEn": "Fully define the horizontal plate sketch",
+          "action": "点击智能尺寸/Smart Dimension，分别标注上边 76、竖边 12；确认状态栏显示完全定义/Fully Defined，再点击退出草图/Exit Sketch。",
+          "actionEn": "Use Smart Dimension to set the upper edge to 76 and a vertical edge to 12. Confirm Fully Defined in the status bar, then click Exit Sketch.",
+          "where": "CommandManager → 草图/Sketch → 智能尺寸/Smart Dimension；退出草图在草图工具栏右侧",
+          "whereEn": "CommandManager → Sketch → Smart Dimension; Exit Sketch is on the Sketch toolbar",
+          "values": "76 × 12 mm",
+          "check": "不能用固定/Fix 掩盖缺失尺寸；四角重合且边线变黑。",
+          "checkEn": "Do not use Fix to hide missing dimensions; all four corners coincide and the entities turn black.",
+          "feature": "草图1 / Sketch1",
+          "stage": -1,
+          "diagram": "diagram1.svg"
+        },
+        {
+          "title": "两侧对称（中面）拉伸水平板",
+          "titleEn": "Mid-plane extrude the horizontal plate",
+          "action": "点击特征/Features → 拉伸凸台/基体/Extruded Boss/Base；左侧方向1/Direction 1 的终止条件选两侧对称（中面）/Mid Plane，深度输入 60，然后勾选绿色确认。",
+          "actionEn": "Click Features → Extruded Boss/Base. In Direction 1, select Mid Plane and enter a total depth of 60. Confirm with the green check mark.",
+          "where": "顶部 特征/Features → 拉伸凸台/基体/Extruded Boss/Base；或 插入/Insert → 凸台/基体/Boss/Base → 拉伸/Extrude；退出草图/Exit Sketch在草图/Sketch页签右侧，也可点图形区右上角确认角的退出草图箭头。",
+          "whereEn": "Top Features → Extruded Boss/Base; alternatively Insert → Boss/Base → Extrude; Exit Sketch is on the Sketch tab or the exit-sketch arrow in the graphics area’s upper-right confirmation corner.",
+          "values": "两侧对称（中面）总宽 60 mm / Mid Plane total width 60 mm",
+          "check": "前视基准面两侧各 30 mm；60 是总宽，不能每侧各输入 60。",
+          "checkEn": "The plate extends 30 mm to each side of Front Plane; 60 is the total width.",
+          "feature": "凸台-拉伸1 / Boss-Extrude1",
+          "stage": 0,
+          "diagram": "diagram1.svg"
+        },
+        {
+          "title": "开始斜板草图",
+          "titleEn": "Start the sloping plate sketch",
+          "action": "再次选前视基准面/Front Plane → 草图/Sketch → Ctrl+8。点击转换实体引用/Convert Entities，引用水平板上边，作为定位参考；必要时把参考线设为构造线/For construction。",
+          "actionEn": "Select Front Plane again, start Sketch, and press Ctrl+8. Use Convert Entities on the horizontal upper edge as a locating reference; set it For construction if needed.",
+          "where": "草图/Sketch → 转换实体引用/Convert Entities；工具/Tools → 草图绘制工具/Sketch Tools → 转换实体引用/Convert Entities；引用线要变构造线时，先选该线，再在左侧PropertyManager的选项/Options中勾选作为构造线/For construction。",
+          "whereEn": "Sketch → Convert Entities; Tools → Sketch Tools → Convert Entities; to convert the reference line to construction geometry, select it and enable For construction under Options in the left PropertyManager.",
+          "values": "起点与水平板右上角重合 / Start coincident with the plate’s upper-right corner",
+          "check": "引用实体为参考，最终新增轮廓仍须封闭。",
+          "checkEn": "The converted entity is a reference; the added profile must still be closed.",
+          "feature": "草图2 / Sketch2",
+          "stage": 0,
+          "diagram": "diagram2.svg"
+        },
+        {
+          "title": "定义斜板上边和倾角",
+          "titleEn": "Define ramp length and angle",
+          "action": "用直线/Line 从水平板右上角向右下画斜板上边。智能尺寸/Smart Dimension 设置线长 80；选择斜边和水平参考线，放置锐角尺寸 30°。如出现 150°，把尺寸拖到锐角一侧。",
+          "actionEn": "Draw the ramp’s upper edge from the plate’s upper-right corner down and right. Set its line length to 80. Select this line and the horizontal reference and place a 30° acute angular dimension; move the dimension to the acute side if 150° appears.",
+          "where": "草图/Sketch → 直线/Line、智能尺寸/Smart Dimension",
+          "whereEn": "Sketch → Line and Smart Dimension",
+          "values": "沿斜边长 80 mm；相对水平向下 30° / 80 mm along the ramp; 30° below horizontal",
+          "check": "80 不是水平投影长度；30° 不是与竖直方向的夹角。",
+          "checkEn": "80 is the length along the ramp, not its horizontal projection; 30° is measured from horizontal.",
+          "feature": "草图2 / Sketch2",
+          "stage": 0,
+          "diagram": "diagram2.svg"
+        },
+        {
+          "title": "保持斜板等厚",
+          "titleEn": "Keep the ramp thickness constant",
+          "action": "再画三条直线闭合成倾斜矩形：两条短边垂直于斜板上边，另一条长边与上边平行。用智能尺寸/Smart Dimension 把短边设为 12。短边朝板的下方；靠近水平板的一端与已有实体重叠。",
+          "actionEn": "Complete an inclined rectangle with three more lines. Make both short edges Perpendicular to the upper edge and the opposite long edge Parallel. Set a short edge to 12. Place the thickness below the upper edge; the inner end overlaps the existing plate.",
+          "where": "选择两条线 → 左侧 添加几何关系/Add Relations → 垂直/Perpendicular 或 平行/Parallel",
+          "whereEn": "Select two lines → Add Relations → Perpendicular or Parallel",
+          "values": "法向厚度 12 mm / Perpendicular thickness 12 mm",
+          "check": "标注的是垂直于斜板的厚度；不要给斜板设竖直厚度 12。",
+          "checkEn": "12 is measured perpendicular to the sloping plate, not vertically.",
+          "feature": "草图2 / Sketch2",
+          "stage": 0,
+          "diagram": "diagram2.svg"
+        },
+        {
+          "title": "拉伸并合并斜板",
+          "titleEn": "Extrude and merge the ramp",
+          "action": "确认草图完全定义/Fully Defined 后退出草图。拉伸凸台/基体/Extruded Boss/Base 选择两侧对称（中面）/Mid Plane，总深度 60，并勾选合并结果/Merge result。",
+          "actionEn": "Confirm Fully Defined and exit the sketch. Use Extruded Boss/Base with Mid Plane, total depth 60, and Merge result selected.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base；合并结果/Merge result 在左侧属性管理器",
+          "whereEn": "Features → Extruded Boss/Base; Merge result is in the left PropertyManager",
+          "values": "两侧对称（中面） 60 mm / Mid Plane 60 mm",
+          "check": "设计树中实体/Solid Bodies 数量为 1；水平板与斜板是同一连续实体。",
+          "checkEn": "Solid Bodies must contain one solid; the horizontal and sloping plates form one continuous body.",
+          "feature": "凸台-拉伸2 / Boss-Extrude2",
+          "stage": 1,
+          "diagram": "diagram2.svg"
+        },
+        {
+          "title": "建立前端凸唇轮廓",
+          "titleEn": "Sketch the end lip",
+          "action": "在前视基准面/Front Plane 新建草图。画位于斜板最后一段上方的封闭四边形；下边与斜板上边共线/Collinear，外侧短边与斜板端面方向共线，长边互相平行/Parallel、短边垂直/Perpendicular 于长边。",
+          "actionEn": "Start a sketch on Front Plane. Draw a closed quadrilateral above the last section of the ramp. Make its bottom Collinear with the ramp’s upper edge, its outer short edge Collinear with the end-face direction, its long edges Parallel, and its short edges Perpendicular to the long edges.",
+          "where": "设计树 → 前视基准面/Front Plane → 草图/Sketch；选线后 添加几何关系/Add Relations",
+          "whereEn": "Design tree → Front Plane → Sketch; select lines, then Add Relations",
+          "values": "凸唇沿坡长 32 mm / Lip length 32 mm along the ramp",
+          "check": "凸唇外端与斜板原来的平端对齐，不能另向外加长 32。",
+          "checkEn": "The lip’s outer end aligns with the original ramp end; it does not extend the ramp by another 32.",
+          "feature": "草图3 / Sketch3",
+          "stage": 1,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "用总厚 27 定义凸唇",
+          "titleEn": "Define the lip using overall thickness 27",
+          "action": "标注凸唇长边 32。选择斜板底边和凸唇顶边，用智能尺寸/Smart Dimension 给出两条平行线间的垂直距离 27。由于主板厚 12，凸唇高出主板上表面 15，此 15 是推导值。",
+          "actionEn": "Set the lip’s long edge to 32. Select the ramp’s lower edge and the lip’s upper edge and use Smart Dimension to set their perpendicular spacing to 27. The lip rises 15 above the ramp because the plate thickness is 12; 15 is derived.",
+          "where": "草图/Sketch → 智能尺寸/Smart Dimension；选两条平行线后放置法向距离",
+          "whereEn": "Sketch → Smart Dimension; select the parallel lines to dimension their perpendicular spacing",
+          "values": "32 mm；总厚 27 mm；推导凸起 27−12=15 mm",
+          "check": "27 是主板底面至凸唇顶面的总厚，不是额外拉伸高度。",
+          "checkEn": "27 is the overall thickness from the plate’s lower face to the lip’s upper face, not an added height.",
+          "feature": "草图3 / Sketch3",
+          "stage": 1,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "拉伸前端凸唇",
+          "titleEn": "Extrude the end lip",
+          "action": "确认完全定义/Fully Defined，退出草图。拉伸凸台/基体/Extruded Boss/Base → 两侧对称（中面）/Mid Plane → 60；勾选合并结果/Merge result。",
+          "actionEn": "Confirm Fully Defined and exit. Select Extruded Boss/Base → Mid Plane → 60 and enable Merge result.",
+          "where": "特征/Features → 拉伸凸台/基体/Extruded Boss/Base",
+          "whereEn": "Features → Extruded Boss/Base",
+          "values": "两侧对称（中面）总宽 60 mm / Total mid-plane width 60 mm",
+          "check": "此阶段凸唇是实心的，中心开口在后面切出。",
+          "checkEn": "The lip is solid at this stage; the central opening is cut later.",
+          "feature": "凸台-拉伸3 / Boss-Extrude3",
+          "stage": 2,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "在斜板面建立弧端草图",
+          "titleEn": "Start the curved-end sketch on the ramp face",
+          "action": "选择斜板下方的大平面，点击草图/Sketch，再按 Ctrl+8 正视于/Normal To。现在看到沿斜板法向的辅助视图，即原题 View A 的方向。",
+          "actionEn": "Select the broad lower face of the sloping plate, click Sketch, and press Ctrl+8. You are now viewing normal to the ramp, corresponding to the direction of View A.",
+          "where": "模型斜板下方大平面 → 草图/Sketch；Ctrl+8 正视于/Normal To",
+          "whereEn": "Broad lower ramp face → Sketch; Ctrl+8 Normal To",
+          "values": "R65 在斜板面内 / R65 lies in the ramp plane",
+          "check": "不能把 R65 圆弧画在前视对称面上，否则得到错误的侧面弧形。",
+          "checkEn": "Do not draw R65 on Front Plane; the curved outline lies across the width of the sloping plate.",
+          "feature": "草图4 / Sketch4",
+          "stage": 2,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "定位 R65 弧线",
+          "titleEn": "Locate the R65 arc",
+          "action": "点击中心线/Centerline 沿宽度中间画构造线，并让它通过两端边线的中点/Midpoint。使用圆心/起/终点画弧（圆心弧）/Centerpoint Arc 画端部圆弧；圆心落在该中心线上，圆弧最外点与原平端边线中点重合。智能尺寸/Smart Dimension 设半径 65。",
+          "actionEn": "Draw a Centerline through the midpoints of the end edges. Use Centerpoint Arc for the curved end, with its centre on the centreline and its outermost point coincident with the midpoint of the original straight end. Set its radius to 65 with Smart Dimension.",
+          "where": "草图/Sketch → 直线/Line 下拉 → 中心线/Centerline；圆弧/Arc 下拉 → 圆心/起/终点画弧（圆心弧）/Centerpoint Arc",
+          "whereEn": "Sketch → Line flyout → Centerline; Arc flyout → Centerpoint Arc",
+          "values": "R65；最远端保持沿坡总长 80 / R65; farthest end remains 80 along the ramp",
+          "check": "弧线两端与左右侧边相交；圆心至最外端 65，圆心至斜板起点沿坡距离由 80−65=15 推得。",
+          "checkEn": "The arc intersects both side edges. Its centre-to-tip distance is 65; its centre lies 80−65=15 from the ramp start along the ramp.",
+          "feature": "草图4 / Sketch4",
+          "stage": 2,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "封闭弧端切除区域",
+          "titleEn": "Close the curved-end cutting profile",
+          "action": "圆弧两端约束到左右侧边。分别从弧端向零件外侧延长侧边，连接外侧横线闭合轮廓，使被切除区位于圆弧之外。外侧横线可离原平端 10 mm，此值只控制切除工具外边界；给辅助边添加平行/Parallel、重合/Coincident 和尺寸，使草图完全定义。",
+          "actionEn": "Constrain the arc ends to the side edges. Extend each side outward and join them with an outer transverse line to close a profile outside the arc. Place this outer line 10 mm beyond the original straight end; this value only controls the cutting tool’s outside boundary. Apply Parallel, Coincident and locating dimensions until Fully Defined.",
+          "where": "草图/Sketch → 直线/Line、智能尺寸/Smart Dimension；Ctrl选择相关草图实体 → 左侧属性管理器/PropertyManager → 添加几何关系/Add Relations",
+          "whereEn": "Sketch → Line and Smart Dimension; Ctrl-select sketch entities → left PropertyManager → Add Relations",
+          "values": "工具外边界辅助值 10 mm，非零件尺寸 / Tool-boundary helper 10 mm; not a part dimension",
+          "check": "预览只去掉平端的两个外角，保留圆弧内侧；不要删除整块斜板或水平板。",
+          "checkEn": "The preview removes the two outer corners and retains the arc’s inner side; it must not remove the whole ramp or horizontal plate.",
+          "feature": "草图4 / Sketch4",
+          "stage": 2,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "沿斜板法向切出 R65",
+          "titleEn": "Cut R65 normal to the ramp",
+          "action": "退出草图，点击拉伸切除/Extruded Cut；终止条件选完全贯穿/Through All。检查箭头朝向，若未切到实体，点击反向/Reverse Direction。确认切除贯穿主板和凸唇的总厚。",
+          "actionEn": "Exit Sketch and select Extruded Cut → Through All. Check the arrow and use Reverse Direction if it points away from the solid. The cut must pass through the full plate-and-lip thickness.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut；左侧 方向1/Direction 1 → 完全贯穿/Through All",
+          "whereEn": "Features → Extruded Cut; left Direction 1 → Through All",
+          "values": "沿斜板法向贯穿 / Through All normal to the ramp",
+          "check": "从 View A 方向核对弧线；中心最远端仍为 80，宽度仍为 60。",
+          "checkEn": "Check from View A: the centre tip remains at length 80 and the width remains 60.",
+          "feature": "切除-拉伸1 / Cut-Extrude1",
+          "stage": 3,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "在前视面绘制中心槽",
+          "titleEn": "Sketch the central slot on Front Plane",
+          "action": "选前视基准面/Front Plane → 草图/Sketch → Ctrl+8。画沿凸唇长度方向的倾斜矩形；下边与主斜板上边共线/Collinear，内端从凸唇起始面开始，外端到原平端的中心端线。",
+          "actionEn": "Select Front Plane → Sketch → Ctrl+8. Draw an inclined rectangle along the lip length. Make its lower edge Collinear with the ramp’s upper edge; its inner end begins at the lip’s front face and its outer end reaches the original end at the symmetry plane.",
+          "where": "左侧设计树 → 前视基准面/Front Plane → 草图/Sketch",
+          "whereEn": "Left design tree → Front Plane → Sketch",
+          "values": "槽长沿坡 32 mm；槽高 6 mm / Slot length 32 mm along the ramp; height 6 mm",
+          "check": "矩形贴着主板上表面，不要向下切穿厚 12 的主板。",
+          "checkEn": "The rectangle sits on the ramp’s upper face; do not cut downward through the 12-thick main plate.",
+          "feature": "草图5 / Sketch5",
+          "stage": 3,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "定义槽高和相关关系",
+          "titleEn": "Define the slot height and relations",
+          "action": "将槽长边与主板上边设置平行/Parallel 或共线/Collinear；短边设垂直/Perpendicular。智能尺寸/Smart Dimension 标注法向槽高 6；槽的两端分别与凸唇前端、弧形端在对称面的边线关联。确认完全定义/Fully Defined。",
+          "actionEn": "Make the slot’s long edges Parallel or Collinear with the ramp’s upper edge and its short edges Perpendicular. Set the perpendicular slot height to 6 with Smart Dimension. Relate the two ends to the lip’s inner face and the curved tip on the symmetry plane; confirm Fully Defined.",
+          "where": "选线 → 添加几何关系/Add Relations；草图/Sketch → 智能尺寸/Smart Dimension",
+          "whereEn": "Select lines → Add Relations; Sketch → Smart Dimension",
+          "values": "6 mm 法向槽高 / 6 mm perpendicular slot height",
+          "check": "剩余顶板厚度由 27−12−6=9 mm 推得；不是另外指定的原题尺寸。",
+          "checkEn": "The remaining lip roof is 27−12−6=9 mm thick; 9 is derived, not an additional source dimension.",
+          "feature": "草图5 / Sketch5",
+          "stage": 3,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "两侧对称（中面）切除中心槽",
+          "titleEn": "Mid-plane cut the central slot",
+          "action": "退出草图 → 拉伸切除/Extruded Cut。方向1/Direction 1 选择两侧对称（中面）/Mid Plane，深度输入 25。确认；中心槽在前视基准面两侧各延伸 12.5。",
+          "actionEn": "Exit Sketch → Extruded Cut. Select Mid Plane in Direction 1, enter a total depth of 25, and confirm. The slot extends 12.5 to each side of Front Plane.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut → 左侧终止条件 两侧对称（中面）/Mid Plane",
+          "whereEn": "Features → Extruded Cut → left end-condition selector → Mid Plane",
+          "values": "两侧对称（中面）总宽 25 mm / Mid Plane total width 25 mm",
+          "check": "此处不能选完全贯穿/Through All，否则会把两侧支撑壁也切掉；仅槽的沿坡方向贯通。",
+          "checkEn": "Do not choose Through All across the width: it would remove the supporting side walls. The slot is through along the ramp direction.",
+          "feature": "切除-拉伸2 / Cut-Extrude2",
+          "stage": 4,
+          "diagram": "diagram3.svg"
+        },
+        {
+          "title": "开始四孔草图",
+          "titleEn": "Start the four-hole sketch",
+          "action": "旋转模型并选水平板上表面 → 草图/Sketch → Ctrl+8。通过左端边线中点画沿板长方向的中心线/Centerline，作为前视对称面的投影。",
+          "actionEn": "Rotate the model, select the horizontal plate’s upper face, start Sketch, and press Ctrl+8. Draw a lengthwise Centerline through the midpoint of the left end to represent the Front symmetry plane.",
+          "where": "水平板上表面 → 草图/Sketch；直线/Line 下拉 → 中心线/Centerline",
+          "whereEn": "Horizontal plate’s upper face → Sketch; Line flyout → Centerline",
+          "values": "两行孔关于前视面镜像对称 / Hole rows symmetric about Front Plane",
+          "check": "选的是水平板上表面，孔轴线应垂直于这块面。",
+          "checkEn": "Select the horizontal plate’s upper face; the hole axes must be normal to it.",
+          "feature": "草图6 / Sketch6",
+          "stage": 4
+        },
+        {
+          "title": "画四个等径圆",
+          "titleEn": "Draw four equal circles",
+          "action": "点击圆/Circle，画两列两行共四圆。按住 Ctrl 选择四圆，在添加几何关系/Add Relations 中点击相等/Equal；智能尺寸/Smart Dimension 给其中一个圆标注直径 12。",
+          "actionEn": "Use Circle to draw four circles in two columns and two rows. Ctrl-select all four and apply Equal under Add Relations. Dimension one circle to diameter 12 with Smart Dimension.",
+          "where": "草图/Sketch → 圆/Circle；选圆后左侧 添加几何关系/Add Relations → 相等/Equal",
+          "whereEn": "Sketch → Circle; select circles → Add Relations → Equal",
+          "values": "4 × Ø12 mm",
+          "check": "四圆同径；只用一个 Ø12 驱动尺寸配合相等关系。",
+          "checkEn": "All four circles share the same diameter; one Ø12 dimension and Equal relations drive them.",
+          "feature": "草图6 / Sketch6",
+          "stage": 4
+        },
+        {
+          "title": "定位两列孔",
+          "titleEn": "Locate the hole columns",
+          "action": "同一列两圆心添加竖直/Vertical 关系，同一行两圆心添加水平/Horizontal 关系；方向按当前正视图识别。智能尺寸/Smart Dimension 设置首列孔心距左端边线 15，两列孔心间距 40。",
+          "actionEn": "Align each column’s centres and each row’s centres with the appropriate Vertical and Horizontal relations in the current normal view. Use Smart Dimension to set the first column 15 from the left edge and the column spacing to 40.",
+          "where": "选择两圆心 → 添加几何关系/Add Relations；智能尺寸/Smart Dimension",
+          "whereEn": "Select two circle centres → Add Relations; Smart Dimension",
+          "values": "左端至首列 15 mm；列距 40 mm / First column 15 from left; column spacing 40",
+          "check": "第二列距左端 55 是 15+40 的推导结果，无须再加驱动尺寸。",
+          "checkEn": "The second column is 15+40=55 from the left; do not add a redundant driving dimension.",
+          "feature": "草图6 / Sketch6",
+          "stage": 4
+        },
+        {
+          "title": "定位两行并保持对称",
+          "titleEn": "Locate the rows and preserve symmetry",
+          "action": "选择同列的两个圆心和长度中心线，添加对称/Symmetric 关系；智能尺寸/Smart Dimension 设置两行圆心距离 30。相同行、列的对齐关系传递到全部四孔。确认完全定义/Fully Defined。",
+          "actionEn": "Select a column’s two centres and the lengthwise centreline, then apply Symmetric. Set the row spacing to 30 with Smart Dimension. Row and column alignments propagate to all four circles. Confirm Fully Defined.",
+          "where": "Ctrl 选择圆心、圆心、中心线 → 添加几何关系/Add Relations → 对称/Symmetric",
+          "whereEn": "Ctrl-select centre, centre and centreline → Add Relations → Symmetric",
+          "values": "行距 30 mm；关于前视面居中 / Row spacing 30 mm, centred on Front Plane",
+          "check": "两行距宽度中心各 15 mm，距两侧边也各 15 mm；不靠鼠标目测放置。",
+          "checkEn": "Each row lies 15 from the width centre and 15 from its outer side; locate them with relations, not by eye.",
+          "feature": "草图6 / Sketch6",
+          "stage": 4
+        },
+        {
+          "title": "切出四个贯穿孔",
+          "titleEn": "Cut the four through holes",
+          "action": "退出草图，拉伸切除/Extruded Cut → 完全贯穿/Through All，方向朝水平板内部。检查四个圆都被选入切除轮廓，点击绿色确认。",
+          "actionEn": "Exit Sketch, choose Extruded Cut → Through All, and direct the cut into the horizontal plate. Check that all four circular contours are included, then confirm.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut；方向1/Direction 1 → 完全贯穿/Through All",
+          "whereEn": "Features → Extruded Cut; Direction 1 → Through All",
+          "values": "4 × Ø12 贯穿 12 mm 板 / 4 × Ø12 through the 12 mm plate",
+          "check": "从下方查看四孔均开通；不要误选给定深度/Blind。",
+          "checkEn": "Inspect from below: all four holes must open through the plate; do not leave them Blind.",
+          "feature": "切除-拉伸3 / Cut-Extrude3",
+          "stage": 5
+        },
+        {
+          "title": "核验体积和设计意图",
+          "titleEn": "Check volume and design intent",
+          "action": "点击评估/Evaluate → 质量属性/Mass Properties，读取体积；检查前视基准面为对称面、红点原点位置正确、六个草图完全定义。可试改总宽 60 再重建，检查凸台与中心槽仍居中，然后恢复 60。",
+          "actionEn": "Open Evaluate → Mass Properties and read Volume. Check symmetry about Front Plane, the red-dot origin position, and all six Fully Defined sketches. Temporarily edit the total width, rebuild, and verify that bosses and the central slot remain centred; restore 60 afterward.",
+          "where": "评估/Evaluate → 质量属性/Mass Properties；若未显示评估页签：右键 CommandManager 页签区 → 勾选评估/Evaluate；菜单替代路径：工具/Tools → 评估/Evaluate → 质量属性/Mass Properties。",
+          "whereEn": "Evaluate → Mass Properties; if Evaluate is hidden, right-click the CommandManager tab area and enable Evaluate; menu alternative: Tools → Evaluate → Mass Properties.",
+          "values": "参考 124768 ±1% mm³；本重建 124768.603735 mm³",
+          "check": "允许范围 123520.32—126015.68 mm³；体积吻合仍须同时核对尺寸、原点、对称和贯穿方向。",
+          "checkEn": "Allowed range: 123520.32–126015.68 mm³. Volume agreement still requires checking dimensions, origin, symmetry and cut directions.",
+          "feature": "核验 / Verification",
+          "stage": 5
+        },
+        {
+          "title": "保存可编辑零件",
+          "titleEn": "Save the editable part",
+          "action": "点击文件/File → 另存为/Save As，文件名输入 Q3.sldprt，类型选择 SOLIDWORKS 零件/Part。保存后关闭并重新打开，展开设计树，分别尝试编辑草图/Edit Sketch、编辑特征/Edit Feature，再重建/Rebuild。",
+          "actionEn": "Choose File → Save As, enter Q3.sldprt and select SOLIDWORKS Part. Close and reopen the file, expand its tree, test Edit Sketch and Edit Feature, then Rebuild.",
+          "where": "文件/File → 另存为/Save As；设计树右键草图或特征 → 编辑草图/Edit Sketch、编辑特征/Edit Feature；Ctrl+B 重建/Rebuild",
+          "whereEn": "File → Save As; right-click sketch or feature in the tree → Edit Sketch or Edit Feature; Ctrl+B Rebuild",
+          "values": "Q3.sldprt",
+          "check": "STEP 文件打开后仅为导入实体；保留原生草图和特征树须用本教学手动建模或在 SolidWorks 中运行配套构建器并检查。",
+          "checkEn": "A STEP import is an imported body. Retaining native sketches and feature history requires manual modelling with this lesson or running and checking the supplied builder inside SolidWorks.",
+          "feature": "保存 / Save",
+          "stage": 5
+        }
+      ],
+      "dimensions": [
+        [
+          "水平板",
+          "Horizontal plate",
+          "76 · 60 · 12",
+          "长76，宽60，厚12。原点在水平板左端上边中点。",
+          "Length 76, width 60, thickness 12. Origin at left upper edge midpoint."
+        ],
+        [
+          "斜板",
+          "Inclined plate",
+          "30° · 80 · SAME THICKNESS",
+          "30°从水平量；80沿坡量；斜板法向厚12。",
+          "30° from horizontal; 80 along the slope; normal thickness 12."
+        ],
+        [
+          "凸唇与槽",
+          "Lip and slot",
+          "32 · 27 · 6 · 25",
+          "32沿坡；27为总厚，不是新增厚；槽法向高6、宽度居中25。",
+          "32 along the slope; 27 is total thickness; slot normal height 6 and centered width 25."
+        ],
+        [
+          "弧端",
+          "Curved end",
+          "R65",
+          "圆弧在斜板面内；最远端仍保持沿坡80。",
+          "The arc lies in the ramp plane; the farthest end remains 80 along the slope."
+        ],
+        [
+          "四孔",
+          "Four holes",
+          "4×Ø12 · 15 · 40 · 30",
+          "第一列距左边15，列距40，行距30且关于前视面对称。",
+          "First column 15 from left; columns 40 apart; rows 30 apart and symmetric about Front Plane."
+        ]
+      ]
+    },
+    "Q4": {
+      "title": "对称叉形支架",
+      "titleEn": "Symmetric fork bracket",
+      "steps": [
+        {
+          "title": "新建零件并显示工具区",
+          "titleEn": "Create a part and show the tool area",
+          "action": "启动 SolidWorks 2026。点击 文件/File → 新建/New → 零件/Part → 确定/OK。若看不到顶部选项卡，在顶部空白工具区右键，勾选 CommandManager；在其选项卡处右键，勾选 草图/Sketch 与 特征/Features。",
+          "actionEn": "Start SolidWorks 2026. Choose File → New → Part → OK. If the top tabs are missing, right-click the blank toolbar area and enable CommandManager; right-click its tab strip and enable Sketch and Features.",
+          "where": "左上角 文件/File 菜单；顶部工具栏空白处右键。",
+          "whereEn": "File menu at the top left; right-click blank space in the top toolbar.",
+          "values": "SolidWorks 2026；零件/Part",
+          "check": "左侧出现零件的 FeatureManager 设计树，含三个基准面。",
+          "checkEn": "The FeatureManager tree at the left contains the three standard planes.",
+          "feature": "准备/Setup",
+          "stage": -1
+        },
+        {
+          "title": "设为毫米并核对原点",
+          "titleEn": "Set millimetres and identify the origin",
+          "action": "在窗口右下角单位选择 MMGS（毫米、克、秒）。点击 视图/View → 隐藏/显示/Hide/Show → 原点/Origins 显示原点。本题原点放在下方 Ø16 孔的圆心；该圆心同时也是 R21 外圆弧的圆心。",
+          "actionEn": "Select MMGS in the lower-right status bar. Choose View → Hide/Show → Origins. Place the origin at the lower Ø16 hole center, which is also the center of the R21 external arc.",
+          "where": "右下角单位；顶部 视图/View → 隐藏/显示/Hide/Show。",
+          "whereEn": "Units at lower right; View → Hide/Show.",
+          "values": "MMGS；原点=下方 Ø16 孔心",
+          "check": "注意原文写“R21 hole”，但图上 R21 标的是外轮廓，孔标注为 2×Ø16。",
+          "checkEn": "The text says “R21 hole”; the drawing labels R21 on the exterior and 2×Ø16 on the holes.",
+          "feature": "准备/Setup",
+          "stage": -1
+        },
+        {
+          "title": "把48和26作为唯一宽度驱动",
+          "titleEn": "Use 48 and 26 as the width drivers",
+          "action": "点击 工具/Tools → 方程式/Equations，在 全局变量/Global Variables 添加 FullWidth=48mm、NeckWidth=26mm。之后总宽使用 FullWidth，肩部切深使用 (FullWidth−NeckWidth)/2 的公式。这里没有增加新的独立尺寸。",
+          "actionEn": "Open Tools → Equations. Under Global Variables add FullWidth=48mm and NeckWidth=26mm. Use FullWidth for the overall extrusion and (FullWidth−NeckWidth)/2 for each shoulder cut. These are the original source dimensions, not new independent dimensions.",
+          "where": "顶部 工具/Tools → 方程式/Equations；隐藏菜单可先按 Alt 显示。",
+          "whereEn": "Tools → Equations in the top menu; press Alt if the menu bar is hidden.",
+          "values": "FullWidth = 48 mm；NeckWidth = 26 mm",
+          "check": "修改 FullWidth 时，两侧等量改变，26宽中间颈部仍居中。",
+          "checkEn": "Changing FullWidth changes both sides equally while the 26-wide neck stays centered.",
+          "feature": "方程式/Equations",
+          "stage": -1
+        },
+        {
+          "title": "进入前视基准面草图",
+          "titleEn": "Start the front-plane sketch",
+          "action": "在左侧设计树单击 前视基准面/Front Plane，再点击 草图/Sketch → 草图/Sketch。按 Ctrl+8 使用 正视于/Normal To。",
+          "actionEn": "Select Front Plane in the left tree, then Sketch → Sketch. Press Ctrl+8 for Normal To.",
+          "where": "左侧 FeatureManager 设计树 → 前视基准面/Front Plane；顶部 草图/Sketch 选项卡。",
+          "whereEn": "Left FeatureManager → Front Plane; Sketch tab at the top.",
+          "values": "主轮廓位于 Front Plane",
+          "check": "此草图显示老师主视图的长高轮廓；厚度将沿视图前后方向。",
+          "checkEn": "The sketch shows the main length-height outline; thickness will extend to both sides of it.",
+          "feature": "草图1/Sketch1",
+          "stage": -1
+        },
+        {
+          "title": "建立两孔中心设计关系",
+          "titleEn": "Locate the two hole centers",
+          "action": "用 中心线/Centerline 从原点向左上画一条构造线，智能尺寸/Smart Dimension 将真实长度设55。再从原点画竖直构造线，给两条构造线夹角15°；竖直构造线上端与斜构造线上端添加 水平/Horizontal 关系，这样竖直参考线也被约束。不要把55标成竖直高度。",
+          "actionEn": "Draw a Centerline from the origin to the upper left; use Smart Dimension to set its true length to 55. Draw a vertical construction line from the origin and dimension the angle between the lines to 15°. Add a Horizontal relation between their upper endpoints to constrain the vertical reference line as well. Do not dimension 55 as a vertical height.",
+          "where": "草图/Sketch → 直线/Line 旁的下拉箭头 → 中心线/Centerline；草图/Sketch → 智能尺寸/Smart Dimension。",
+          "whereEn": "Sketch → arrow beside Line → Centerline; Sketch → Smart Dimension.",
+          "values": "圆心距55 mm；与竖直线夹角15°",
+          "check": "构造线下端与原点重合，上端位于左上；两端就是后续孔与外圆弧中心。",
+          "checkEn": "Its lower end is coincident with the origin; its upper end lies to the upper left. These endpoints locate the holes and exterior arcs.",
+          "feature": "草图1/Sketch1",
+          "stage": -1
+        },
+        {
+          "title": "定位圆弧与端部构造线",
+          "titleEn": "Locate the arcs and end construction lines",
+          "action": "用 圆/Circle 在两孔中心各画一圆，下圆R21，上圆R20，圆心与55构造线端点 重合/Coincident。原点向右画水平中心线，端点落在右端竖边上；将此水平距设77。右端底点比中心线低16，竖边总高36。在竖边上画上槽边构造点，距顶点14；再画下槽边构造点，Ctrl选两点及水平中心线，添加 对称/Symmetric。这样定位槽边而不增加辅助线的自由长度。",
+          "actionEn": "Draw circles at the bore centers, lower R21 and upper R20, coincident with the endpoints of the 55 construction line. Draw a horizontal centerline from the origin to a point on the right vertical edge and set this horizontal distance to 77. Locate the bottom 16 below the centerline and set the vertical edge height to 36. Place the upper slot construction point on the edge, 14 below the top. Add the lower slot point; Ctrl-select both points and the horizontal centerline, then add Symmetric. These constrained points locate the slot edges without arbitrary helper-line lengths.",
+          "where": "草图/Sketch → 圆/Circle；按住 Ctrl 选几何后，在左侧 添加几何关系/Add Relations 选择 重合/Coincident、水平/Horizontal、对称/Symmetric。",
+          "whereEn": "Sketch → Circle; Ctrl-select geometry and use Add Relations in the left panel for Coincident, Horizontal and Symmetric.",
+          "values": "R21、R20、77；外端底部距槽中心线16；总高36；顶端至槽上边14",
+          "check": "16的尺寸箭头落在槽中心线与右端底边；它不是槽宽。槽宽由2×(36−16−14)=12推导，不另加12驱动尺寸。",
+          "checkEn": "The 16 dimension runs from the slot centerline to the exterior bottom, not across the slot. Slot width is derived as 2×(36−16−14)=12; do not add an independent driving dimension of 12.",
+          "feature": "草图1/Sketch1",
+          "stage": -1,
+          "diagram": "q4-end-dimensions.svg"
+        },
+        {
+          "title": "完成相切外轮廓",
+          "titleEn": "Complete the tangent exterior profile",
+          "action": "用 直线/Line 连接左侧两圆的外侧，再绘制下圆到右下端的底斜线。给直线与相应圆添加 相切/Tangent。用 三点圆弧/3 Point Arc 连接上圆右上方与右端上点，设半径105，并与上方R20圆相切。最后用 剪裁实体/Trim Entities 删除多余圆段，只留下闭合外轮廓。",
+          "actionEn": "Draw the exterior common tangent on the left and the bottom tangent from the lower circle to the lower-right endpoint. Apply Tangent relations. Use 3 Point Arc to connect the upper-right part of the upper circle to the top of the right end; dimension R105 and make it tangent to R20. Trim the extra circle portions to obtain a closed exterior outline.",
+          "where": "草图/Sketch → 圆弧/Arc 下拉 → 三点圆弧/3 Point Arc；Ctrl选择线和圆 → 添加几何关系/Add Relations → 相切/Tangent；草图/Sketch → 剪裁实体/Trim Entities。",
+          "whereEn": "Sketch → Arc dropdown → 3 Point Arc; Ctrl-select line and circle → Add Relations → Tangent; Sketch → Trim Entities.",
+          "values": "R105；R20/R21与外边相切",
+          "check": "检查外形与原图：左上圆头、左侧倾斜边、下方圆角、向右下降的上弧和右端外立边。",
+          "checkEn": "Check the round upper head, sloped left edge, rounded lower corner, descending top arc and right end against the drawing.",
+          "feature": "草图1/Sketch1",
+          "stage": -1
+        },
+        {
+          "title": "检查完全定义后中面拉伸",
+          "titleEn": "Check full definition and extrude mid-plane",
+          "action": "检查草图状态为 完全定义/Fully Defined。仍蓝色时查找缺少的 重合/Coincident、相切/Tangent、水平/Horizontal 或尺寸；不要用 固定/Fix 代替设计关系。点击 退出草图/Exit Sketch → 特征/Features → 拉伸凸台/基体/Extruded Boss/Base；终止条件选择 两侧对称（中面）/Mid Plane，总深度输入 =\"FullWidth\"。",
+          "actionEn": "Verify Fully Defined in the sketch status. Resolve missing Coincident, Tangent, Horizontal relations or source dimensions instead of fixing geometry. Exit Sketch, choose Features → Extruded Boss/Base, set End Condition to Mid Plane and total depth to =\"FullWidth\".",
+          "where": "草图状态在底部状态栏；顶部 草图/Sketch → 退出草图/Exit Sketch；特征/Features → 拉伸凸台/基体/Extruded Boss/Base。",
+          "whereEn": "Sketch status is in the bottom status bar; Sketch → Exit Sketch; Features → Extruded Boss/Base.",
+          "values": "两侧对称（中面）/Mid Plane；总宽48 mm（每侧24由软件自动分配）",
+          "check": "前视基准面位于毛坯厚度中间；此阶段端槽尚未切出。",
+          "checkEn": "Front Plane bisects the blank thickness; the end slot has not been cut yet.",
+          "feature": "凸台-拉伸1/Boss-Extrude1",
+          "stage": 0
+        },
+        {
+          "title": "绘制前侧R25肩部边界",
+          "titleEn": "Sketch the front R25 shoulder",
+          "action": "先展开 凸台-拉伸1/Boss-Extrude1，右键已吸收的 草图1/Sketch1 → 显示/Show，以便选择孔心和槽边构造点。选前侧大平面，点击 草图/Sketch，按Ctrl+8。用 圆心/起/终点画弧/Centerpoint Arc，圆心与首草图上孔构造点重合，设R25；取下侧圆弧，左端与外斜边重合，右端接水平线，水平线距上孔心向下11。用 转换实体引用/Convert Entities 引用主轮廓外边，再 剪裁实体/Trim Entities 删除多余部分，将R25弧和水平线以上区域沿已有毛坯外边闭合，不增加独立尺寸。",
+          "actionEn": "Expand Boss-Extrude1 and right-click its absorbed Sketch1 → Show so the center and slot construction points can be selected. Select the front large face, click Sketch and press Ctrl+8. Use Centerpoint Arc, coincident with the upper-center point in Sketch1, and set R25. Use its lower arc: the left endpoint meets the outside sloping edge; the right endpoint joins a horizontal line 11 below the upper center. Convert Entities from the exterior blank boundary and Trim Entities to close the region above the R25 arc and shelf using existing outside edges, without extra independent dimensions.",
+          "where": "左侧设计树展开 凸台-拉伸1/Boss-Extrude1 → 右键 草图1/Sketch1 → 显示/Show；选前侧大平面 → 草图/Sketch；草图/Sketch → 圆弧/Arc 下拉 → 圆心/起/终点画弧/Centerpoint Arc。",
+          "whereEn": "Expand Boss-Extrude1 in the left tree → right-click Sketch1 → Show. Select the front large face → Sketch; Sketch → Arc flyout → Centerpoint Arc.",
+          "values": "R25；平台距上孔心向下11 mm",
+          "check": "保留的是R25下弧以下主体；待切除区位于该弧和水平肩部线上方。",
+          "checkEn": "The retained body lies below the lower R25 arc; the removal region is above that arc and the horizontal shelf.",
+          "feature": "草图2/Sketch2",
+          "stage": 0
+        },
+        {
+          "title": "按48与26的差值切肩",
+          "titleEn": "Cut the shoulder using the width difference",
+          "action": "退出草图。点击 特征/Features → 拉伸切除/Extruded Cut，选择 给定深度/Blind，深度公式输入 =(\"FullWidth\"-\"NeckWidth\")/2。检查箭头向实体内部，再确认。原图另外的11是肩部平台高度差；此处切深也是11只是计算结果相同，不要混为一个参数。",
+          "actionEn": "Exit Sketch. Choose Features → Extruded Cut, Blind, and enter =(\"FullWidth\"-\"NeckWidth\")/2. Confirm the arrow points into the part. The original 11 dimension locates the shelf vertically; this cut depth also evaluates to 11 but is a different, derived quantity.",
+          "where": "顶部 特征/Features → 拉伸切除/Extruded Cut；左侧 PropertyManager → 方向1/Direction 1 → 给定深度/Blind。",
+          "whereEn": "Features → Extruded Cut; left PropertyManager → Direction 1 → Blind.",
+          "values": "切深=(48−26)/2=11 mm（公式，不增独立尺寸）",
+          "check": "一侧切肩完成；另一侧暂未切除，所以此中间阶段尚未恢复最终对称。",
+          "checkEn": "One shoulder is cut. The other side is still full width, so this intermediate stage is not yet symmetric.",
+          "feature": "切除-拉伸1/Cut-Extrude1",
+          "stage": 1
+        },
+        {
+          "title": "镜像肩部恢复对称",
+          "titleEn": "Mirror the shoulder to restore symmetry",
+          "action": "在设计树中选择刚完成的 切除-拉伸1/Cut-Extrude1。点击 特征/Features → 线性阵列/Linear Pattern 旁的下拉箭头 → 镜向（镜像）/Mirror。镜向面/基准面/Mirror Face/Plane 选择 前视基准面/Front Plane；要镜向的特征/Features to Mirror 选择该切除，然后确定。",
+          "actionEn": "Select Cut-Extrude1 in the tree. Choose Features → arrow beside Linear Pattern → Mirror. Set Mirror Face/Plane to Front Plane and Features to Mirror to the shoulder cut, then accept.",
+          "where": "顶部 特征/Features → 线性阵列/Linear Pattern 下拉 → 镜向（镜像）/Mirror；备用菜单 插入/Insert → 阵列/镜向/Pattern/Mirror → 镜向（镜像）/Mirror。",
+          "whereEn": "Features → Linear Pattern dropdown → Mirror; alternative Insert → Pattern/Mirror → Mirror.",
+          "values": "镜像基准=Front Plane；中间颈部总宽26 mm",
+          "check": "两侧肩部一致；26宽圆头颈部关于前视基准面对称。",
+          "checkEn": "The shoulders match and the 26-wide upper neck is symmetric about Front Plane.",
+          "feature": "镜像1/Mirror1",
+          "stage": 2
+        },
+        {
+          "title": "在前视基准面画两孔",
+          "titleEn": "Sketch the two holes on Front Plane",
+          "action": "选择 前视基准面/Front Plane → 草图/Sketch，按 Ctrl+8。画两个圆，下圆心与原点 重合/Coincident，上圆心与55/15°构造线的上端重合。给一个圆直径16，Ctrl选两圆添加 相等/Equal；不要给第二个圆再添加重复驱动直径。 首草图若隐藏，先展开 凸台-拉伸1/Boss-Extrude1 → 右键 草图1/Sketch1 → 显示/Show。",
+          "actionEn": "Start a sketch on Front Plane and press Ctrl+8. Draw two circles: lower center coincident with the origin, upper center coincident with the upper endpoint of the 55/15° construction line. Dimension one Ø16 and add an Equal relation between the circles. Do not add a redundant second diameter. If the reference sketch is hidden, expand Boss-Extrude1 → right-click Sketch1 → Show.",
+          "where": "左侧树 → 前视基准面/Front Plane；草图/Sketch → 圆/Circle；Ctrl选两圆 → 添加几何关系/Add Relations → 相等/Equal。",
+          "whereEn": "Left tree → Front Plane; Sketch → Circle; Ctrl-select both → Add Relations → Equal.",
+          "values": "2×Ø16 mm；上孔中心沿原有55、15°关系",
+          "check": "两孔中心与对应R20、R21外圆弧同心，草图完全定义。",
+          "checkEn": "The hole centers are concentric with the R20/R21 exterior arcs and the sketch is fully defined.",
+          "feature": "草图3/Sketch3",
+          "stage": 2
+        },
+        {
+          "title": "完全贯穿 - 两者切孔",
+          "titleEn": "Cut the holes through both directions",
+          "action": "退出草图 → 特征/Features → 拉伸切除/Extruded Cut。因草图位于厚度中面，终止条件选择 完全贯穿 - 两者/Through All - Both，确保两个孔穿透两侧材料。",
+          "actionEn": "Exit Sketch → Features → Extruded Cut. Because the sketch is on the middle plane, select Through All - Both so both holes pass through the material on both sides.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut → 左侧终止条件下拉 → 完全贯穿 - 两者/Through All - Both。",
+          "whereEn": "Features → Extruded Cut → End Condition dropdown → Through All - Both.",
+          "values": "完全贯穿 - 两者；不输入盲孔深度",
+          "check": "上孔贯穿26宽颈部，下孔贯穿48宽主体。",
+          "checkEn": "The upper hole passes through the 26-wide neck and the lower through the 48-wide body.",
+          "feature": "切除-拉伸2/Cut-Extrude2",
+          "stage": 3
+        },
+        {
+          "title": "绘制12宽端部圆底槽",
+          "titleEn": "Sketch the derived 12-wide round-ended slot",
+          "action": "在 前视基准面/Front Plane 新建草图，保持首草图显示。引用上、下槽边构造点及原点水平中心线；从两个槽边点向左画水平线，右侧在已有右端边界处以竖线闭合。用 圆心/起/终点画弧/Centerpoint Arc 画左半圆，圆心与水平中心线重合，距右端33，两端与两条水平线重合并相切。由首草图中的36、16、14及对称关系确定槽宽，不再增加12或R6驱动尺寸。",
+          "actionEn": "Start a sketch on Front Plane and keep Sketch1 visible. Reference the upper/lower slot construction points and the horizontal centerline. Draw horizontal lines leftward from the two slot points and close the right side on the existing right-end boundary. Use Centerpoint Arc for the left semicircle: its center lies on the horizontal centerline, 33 from the right end; its endpoints are coincident and tangent with the horizontal lines. The 36/16/14 dimensions and symmetry in Sketch1 determine the width; do not add independent 12 or R6 dimensions.",
+          "where": "前视基准面/Front Plane → 草图/Sketch；展开 凸台-拉伸1/Boss-Extrude1 → 草图1/Sketch1 → 显示/Show；草图/Sketch → 圆弧/Arc 下拉 → 圆心/起/终点画弧/Centerpoint Arc；直线/Line、添加几何关系/Add Relations。",
+          "whereEn": "Front Plane → Sketch; expand Boss-Extrude1 → Sketch1 → Show. Sketch → Arc flyout → Centerpoint Arc; Line and Add Relations.",
+          "values": "圆底中心距右端33；槽宽12和圆底R6由36、16、14及对称关系推导",
+          "check": "33量到圆弧圆心。槽宽12、半径6都是推导结果，不增加独立驱动尺寸。",
+          "checkEn": "The 33 is measured to the arc center. Width 12 and radius 6 are derived results, not additional independent driving dimensions.",
+          "feature": "草图4/Sketch4",
+          "stage": 3,
+          "diagram": "q4-end-dimensions.svg"
+        },
+        {
+          "title": "切出侧视开口槽",
+          "titleEn": "Cut the side-view opening",
+          "action": "退出草图 → 特征/Features → 拉伸切除/Extruded Cut → 完全贯穿 - 两者/Through All - Both。预览应只切掉端部上下臂之间12宽的区域，然后确认。",
+          "actionEn": "Exit Sketch → Features → Extruded Cut → Through All - Both. Confirm that the preview removes the 12-wide region between the upper and lower arms at the right end, then accept.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut → 终止条件/End Condition。",
+          "whereEn": "Features → Extruded Cut → End Condition.",
+          "values": "12宽槽（推导）；圆底中心由原图33定位",
+          "check": "前视图看见右开口和半圆槽底，顶部臂末端高14、外端总高36仍符合图纸。",
+          "checkEn": "The front view shows the right opening and rounded slot end; the upper tip is 14 high and the exterior tip height remains 36.",
+          "feature": "切除-拉伸3/Cut-Extrude3",
+          "stage": 4,
+          "diagram": "q4-end-dimensions.svg"
+        },
+        {
+          "title": "进入上视基准面画叉槽",
+          "titleEn": "Sketch the central fork slot on Top Plane",
+          "action": "选择 上视基准面/Top Plane，新建 草图/Sketch，按Ctrl+8。用 边角矩形/Corner Rectangle 画中央叉槽区域，右边与已转换的零件右端边线 重合/Coincident，左边距右端44；上下两边关于 前视基准面/Front Plane 的投影中心线 对称/Symmetric，总宽28。四边均由原图尺寸和几何关系约束，不再向外任意延伸。",
+          "actionEn": "Select Top Plane, start Sketch and press Ctrl+8. Use Corner Rectangle for the central fork opening. Make its right edge Coincident with the converted right-end model edge; locate its left edge 44 from the right end. Make the two width edges Symmetric about the projected Front Plane centerline and set their total width to 28. Fully constrain the rectangle using these source dimensions and relations rather than extending an arbitrary tooling edge.",
+          "where": "左侧树 → 上视基准面/Top Plane；草图/Sketch → 矩形/Rectangle 下拉 → 边角矩形/Corner Rectangle；添加几何关系/Add Relations → 对称/Symmetric。",
+          "whereEn": "Left tree → Top Plane; Sketch → Rectangle dropdown → Corner Rectangle; Add Relations → Symmetric.",
+          "values": "中央槽总宽28 mm；端部切入长度44 mm",
+          "check": "44从最右端往左量；28是整个开口宽度，不是每侧28。",
+          "checkEn": "The 44 is measured leftward from the right end; 28 is the total opening width, not the width of each half.",
+          "feature": "草图5/Sketch5",
+          "stage": 4
+        },
+        {
+          "title": "贯穿高度切出双叉",
+          "titleEn": "Cut the fork through the height",
+          "action": "退出草图 → 特征/Features → 拉伸切除/Extruded Cut → 完全贯穿 - 两者/Through All - Both。槽必须贯穿零件的上下方向，使俯视图出现向右开口的中央叉槽。",
+          "actionEn": "Exit Sketch → Features → Extruded Cut → Through All - Both. Cut through the height so the top view shows the central fork opening to the right.",
+          "where": "特征/Features → 拉伸切除/Extruded Cut → 终止条件/End Condition。",
+          "whereEn": "Features → Extruded Cut → End Condition.",
+          "values": "完全贯穿高度；28宽×44长的开口",
+          "check": "从俯视和前视两方向检查：28中央叉槽与12侧槽（推导宽度）相交；不是单纯在顶面挖一个盲槽。",
+          "checkEn": "Check both top and front views: the 28-wide fork slot intersects the derived 12-wide side slot. It is not a blind pocket in the top face.",
+          "feature": "切除-拉伸4/Cut-Extrude4",
+          "stage": 5
+        },
+        {
+          "title": "验证48宽的对称设计意图",
+          "titleEn": "Test symmetry when changing width 48",
+          "action": "在设计树双击中面凸台，或 工具/Tools → 方程式/Equations，把 FullWidth 从48临时改为52，按 Ctrl+B 重建。观察两侧各等量增加，26宽颈部仍居中；肩部切深随公式自动变为13。检查后把 FullWidth 改回48并重建。52仅为设计意图测试，不是作业尺寸。",
+          "actionEn": "Temporarily change FullWidth from 48 to 52 in Tools → Equations and press Ctrl+B to rebuild. Both sides should increase equally; the 26-wide neck stays centered and the derived shoulder cut depth becomes 13. Restore 48 and rebuild. The 52 value is a test, not an assignment dimension.",
+          "where": "工具/Tools → 方程式/Equations；或双击设计树的凸台特征查看尺寸。",
+          "whereEn": "Tools → Equations; or double-click the boss feature in the tree to inspect dimensions.",
+          "values": "测试48→52→48；交付恢复48",
+          "check": "几何内核测试已验证：宽度52时，模型与其Front Plane镜像的差异体积为0。",
+          "checkEn": "The CAD-kernel test confirms zero volume difference between the width-52 model and its reflection about Front Plane.",
+          "feature": "设计意图检查/Design-intent check",
+          "stage": 5
+        },
+        {
+          "title": "核对尺寸与体积",
+          "titleEn": "Check dimensions and volume",
+          "action": "在顶部 评估/Evaluate → 质量属性/Mass Properties 读取体积；若没有评估选项卡，右键CommandManager选项卡并启用，或用 工具/Tools → 评估/Evaluate → 质量属性/Mass Properties。按空格打开 视图定向/View Orientation，核对 前视/Front、上视/Top、右视/Right。",
+          "actionEn": "Use Evaluate → Mass Properties to read the volume. Enable the Evaluate tab by right-clicking the CommandManager tabs, or use Tools → Evaluate → Mass Properties. Press Spacebar for View Orientation and compare Front, Top and Right with the original views.",
+          "where": "CommandManager → 评估/Evaluate → 质量属性/Mass Properties；备用 工具/Tools → 评估/Evaluate → 质量属性/Mass Properties。",
+          "whereEn": "CommandManager → Evaluate → Mass Properties; alternative Tools → Evaluate → Mass Properties.",
+          "values": "参考201961 mm³；允许199941.39—203980.61 mm³",
+          "check": "本重建体积203689.748918 mm³，偏差+0.855982%，在±1%内。体积相符不能替代各个尺寸、关系、原点与对称性核对。",
+          "checkEn": "This reconstruction is 203689.748918 mm³, +0.855982% from reference, within ±1%. Volume agreement does not replace checking dimensions, relations, origin and symmetry.",
+          "feature": "最终核验/Final checks",
+          "stage": 5
+        },
+        {
+          "title": "保存并逐特征检查",
+          "titleEn": "Save and inspect each feature",
+          "action": "点击 文件/File → 另存为/Save As，文件名准确输入 Q4.sldprt，类型选 SOLIDWORKS零件/SOLIDWORKS Part。右键任一草图 → 编辑草图/Edit Sketch；右键任一实体特征 → 编辑特征/Edit Feature。拖动设计树退回控制棒/Rollback Bar，逐项查看每次改动，再拖回底部。",
+          "actionEn": "Choose File → Save As, enter exactly Q4.sldprt and choose SOLIDWORKS Part. Right-click a sketch → Edit Sketch; right-click a solid feature → Edit Feature. Drag the Rollback Bar in the feature tree to inspect intermediate features, then return it to the bottom.",
+          "where": "文件/File → 另存为/Save As；左侧设计树各项目右键；设计树底部蓝色退回控制棒/Rollback Bar。",
+          "whereEn": "File → Save As; right-click tree items; Rollback Bar at the bottom of the feature tree.",
+          "values": "文件名 Q4.sldprt；重建后无错误",
+          "check": "STEP供开查看中性几何，不包含上述原生草图历史；原生特征应在SolidWorks中逐项检查。",
+          "checkEn": "STEP is neutral geometry and does not contain this native sketch history; inspect each native feature in SolidWorks.",
+          "feature": "保存/Save",
+          "stage": 5
+        }
+      ],
+      "dimensions": [
+        [
+          "上下圆头与孔",
+          "Round heads and bores",
+          "R20 · R21 · 2×Ø16",
+          "两孔与对应外圆同心；R21是外轮廓，非孔径。",
+          "Each bore is concentric with its outside arc; R21 is not a bore radius."
+        ],
+        [
+          "两孔中心关系",
+          "Bore-center relation",
+          "55 · 15°",
+          "55是真实圆心距；15°为中心线与竖直线的夹角。",
+          "55 is true center distance; 15° is measured from vertical."
+        ],
+        [
+          "主外轮廓",
+          "Main outline",
+          "R105 · 77",
+          "R105与R20相切；左线与R20、R21相切；77是孔心至右端水平距。",
+          "R105 tangent to R20; left line tangent to R20 and R21; right end 77 horizontally from origin."
+        ],
+        [
+          "端部高度关系",
+          "End-height relation",
+          "36 · 16 · 14",
+          "16是槽中心线到底边；端顶高36−16=20，槽半宽20−14=6，槽宽12（推导）。",
+          "16 is centerline-to-bottom; end top is 36−16=20, slot half-width is 20−14=6; derived width 12."
+        ],
+        [
+          "肩部",
+          "Shoulders",
+          "2×R25 · 11 · 26",
+          "R25与上孔同心；平台低于上孔心11；颈总宽26。",
+          "R25 concentric with upper bore; shelf 11 below its center; total neck width 26."
+        ],
+        [
+          "总宽与设计意图",
+          "Width and design intent",
+          "48",
+          "两侧对称拉伸；肩部切深=(总宽−26)/2，随48联动。",
+          "Mid Plane extrusion; shoulder depth=(overall width−26)/2, linked to the overall width."
+        ],
+        [
+          "两种相交开口",
+          "Intersecting openings",
+          "33 · 28 · 44",
+          "33量至端槽圆底中心；俯视叉槽居中宽28、从右端切入44。",
+          "33 to round-end center; plan fork slot centered at width 28 and extends 44 from the right."
+        ]
+      ]
+    }
+  },
+  "references": [
+    {
+      "title": "拉伸属性（2026 英文） / Extrude PropertyManager (2026 English)",
+      "url": "https://help.solidworks.com/2026/english/SolidWorks/sldworks/r_extrude_propertymanager.htm?format=P",
+      "supports": "Extruded Boss/Base and Extruded Cut toolbar names; Insert > Boss/Base > Extrude; Insert > Cut > Extrude; Blind, Through All and Mid Plane end conditions.",
+      "language": "en",
+      "year": 2026
+    },
+    {
+      "title": "拉伸属性（2025 简体中文） / Extrude PropertyManager (2025 Simplified Chinese)",
+      "url": "https://help.solidworks.com/2025/chinese-simplified/SolidWorks/Sldworks/r_extrude_propertymanager.htm",
+      "supports": "简体中文名称与菜单：拉伸凸台/基体、拉伸切除；插入>凸台/基体>拉伸；插入>切除>拉伸；给定深度、完全贯穿、完全贯穿-两者、两侧对称、反向、合并结果。",
+      "language": "zh-CN",
+      "year": 2025,
+      "note": "2026简中同路径本次只返回网站壳；用可读的2025简中与2026英文交叉核对，不声称读取了2026简中正文。"
+    },
+    {
+      "title": "动态镜向草图绘制实体（2026 简中） / Dynamic Mirror Sketch Entities (2026)",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/HIDD_DVE_SKETCH_DYNAMIC_MIRRORING.htm?id=11905bc6d87f4a78aede3a34dcb46015",
+      "supports": "动态镜向实体位于草图工具栏；菜单工具>草图绘制工具>动态镜向。先选直线/中心线，再启用，随后新绘制的实体被镜向。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "Dynamic Mirror Sketch Entities (2026 English)",
+      "url": "https://help.solidworks.com/2026/english/SolidWorks/sldworks/HIDD_DVE_SKETCH_DYNAMIC_MIRRORING.htm?id=f4abda982896459381200571a0572a7c",
+      "supports": "Dynamic Mirror Entities; Tools > Sketch Tools > Dynamic Mirror; applies only to newly sketched entities.",
+      "language": "en",
+      "year": 2026
+    },
+    {
+      "title": "剪裁 PropertyManager（2026 简中） / Trim PropertyManager (2026)",
+      "url": "https://help.solidworks.com/2026/Chinese-simplified/SolidWorks/Sldworks/HIDD_TRIM_CHOICES.htm",
+      "supports": "官方简中：剪裁实体、强劲剪裁；菜单工具>草图绘制工具>剪裁。常见中文教材还用修剪实体、智能剪裁。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "Extending with Power Trim (2026 English)",
+      "url": "https://help.solidworks.com/2026/english/SolidWorks/sldworks/t_Extending_with_Power_Trim.htm",
+      "supports": "Trim Entities; Tools > Sketch Tools > Trim; Power trim option in PropertyManager.",
+      "language": "en",
+      "year": 2026
+    },
+    {
+      "title": "标注2D草图尺寸（2026 简中） / Dimensioning a 2D Sketch (2026)",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/t_Dimensioning_a_2D_Sketch.htm?id=28.19.1.0",
+      "supports": "智能尺寸位于尺寸/几何关系工具栏，菜单工具>尺寸>智能；选择实体与放置位置决定尺寸类型。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "草图状态（2026 简中） / Sketch States (2026)",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/acadhelp/c_moving2d3d_sketch_states.htm",
+      "supports": "状态栏显示欠定义/完全定义/过定义；默认黑色表示完全定义、蓝色表示欠定义；尺寸和关系共同定义草图。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "矩形 PropertyManager（2026 简中） / Rectangle PropertyManager (2026)",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/HIDD_DVE_SKETCH_RECTANGLES.htm?id=28.14.18.8",
+      "supports": "边角矩形、中心矩形、3点边角矩形、3点中心矩形；可从草图工具栏或工具>草图实体打开。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "显示质量属性（2025 简中） / Displaying Mass Properties (2025)",
+      "url": "https://help.solidworks.com/2025/chinese-simplified/SolidWorks/sldworks/t_displaying_mass_properites.htm",
+      "supports": "工具>评估>质量属性显示计算值。核对体积时读取计算结果。",
+      "language": "zh-CN",
+      "year": 2025
+    },
+    {
+      "title": "质量属性入口（2026 英文） / Mass Properties entry (2026)",
+      "url": "https://help.solidworks.com/2026/english/solidworks/sldworks/t_override_com_point.htm",
+      "supports": "Confirms Mass Properties entry at Tools > Evaluate > Mass Properties.",
+      "language": "en",
+      "year": 2026
+    },
+    {
+      "title": "FeatureExtrusion3 Method (2023 API)",
+      "url": "https://help.solidworks.com/2023/english/api/sldworksapi/SolidWorks.Interop.sldworks~SolidWorks.Interop.sldworks.IFeatureManager~FeatureExtrusion3.html",
+      "supports": "23-argument API signature for extruded feature creation.",
+      "language": "en",
+      "year": 2023,
+      "note": "2026 API target did not return a usable reference body; use as versioned signature reference, not proof of 2026 execution."
+    },
+    {
+      "title": "FeatureCut4 Method (2024 API)",
+      "url": "https://help.solidworks.com/2024/english/api/sldworksapi/solidworks.interop.sldworks~solidworks.interop.sldworks.ifeaturemanager~featurecut4.html",
+      "supports": "27-argument API signature for extruded cut creation.",
+      "language": "en",
+      "year": 2024,
+      "note": "2026 API target returned only site shell; this is a versioned signature reference, not proof of 2026 execution."
+    },
+    {
+      "title": "草图工具栏（2026 简中） / Sketch Toolbar (2026)",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/r_sketch_toolbar.htm?id=2.12.4.1.29",
+      "supports": "中心线、3点边角矩形、圆心/起/终点画弧、剪裁实体、点等工具官方名称。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "圆弧 PropertyManager（2026 简中） / Arc PropertyManager (2026)",
+      "url": "https://help.solidworks.com/2026/Chinese-Simplified/SolidWorks/sldworks/HIDD_DVE_SKETCH_ARC.htm",
+      "supports": "圆心/起/终点画弧、作为构造线、现有/添加几何关系。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "方向（2026 简中） / Orientation (2026)",
+      "url": "https://help.solidworks.com/2026/Chinese-simplified/SolidWorks/sldworks/t_orientation.htm",
+      "supports": "前导视图工具栏上的视图定向/View Orientation按钮。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "转换实体引用菜单示例（2026 简中） / Convert Entities menu example (2026)",
+      "url": "https://help.solidworks.com/2026/Chinese-simplified/SolidWorks/sldworks/c_configurations_in_context_components.htm",
+      "supports": "转换实体引用在草图工具栏或工具>草图绘制工具>转换实体引用。",
+      "language": "zh-CN",
+      "year": 2026
+    },
+    {
+      "title": "镜向特征与菜单（2026 简中） / Mirror features and menu (2026)",
+      "url": "https://help.solidworks.com/2026/chinese-simplified/SolidWorks/sldworks/t_Mirroring_Sheet_Metal_Parts.htm",
+      "supports": "Feature toolbar Mirror command and Insert > Pattern/Mirror > Mirror menu, Simplified Chinese 镜向.",
+      "language": "zh-CN",
+      "year": 2026
+    }
+  ]
+}

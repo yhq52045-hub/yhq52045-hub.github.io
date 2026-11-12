@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 450" role="img" aria-label="Q4端部尺寸关系，中英对照，无坐标">
+<defs><marker id="a" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7 0 0 3.5 7 7" fill="none" stroke="#607387"/></marker></defs>
+<style>text{font-family:Arial,'Noto Sans CJK SC',sans-serif;fill:#234156;font-size:13px}.g{fill:none;stroke:#27587b;stroke-width:3}.c{stroke:#97a9b7;stroke-dasharray:10 4 2 4}.d{fill:none;stroke:#607387;stroke-width:1;marker-start:url(#a);marker-end:url(#a)}.e{stroke:#adb9be;stroke-width:.7}</style>
+<rect width="720" height="450" rx="8" fill="#f5f9fc"/>
+<text x="24" y="31" style="font-size:18px;font-weight:bold">Q4 · 16 的尺寸基准 / Read the 16 mm datum</text>
+<text x="24" y="56" style="font-size:11px;fill:#75909b">侧面端部局部示意 / Detail of the fork end · mm</text>
+<path class="g" d="M155 112 480 112 480 210 280 210 A42 42 0 0 0 280 294 L480 294 480 364 150 364"/>
+<line class="c" x1="100" y1="252" x2="680" y2="252"/>
+<text x="95" y="240" style="font-size:11px">槽中心线 / Slot centreline</text>
+<circle cx="280" cy="252" r="2.8" fill="#c15d62"/>
+<line class="e" x1="480" y1="112" x2="600" y2="112"/><line class="e" x1="480" y1="364" x2="680" y2="364"/>
+<line class="e" x1="480" y1="210" x2="535" y2="210"/>
+<line class="d" x1="525" y1="112" x2="525" y2="210"/><text x="536" y="164">14</text>
+<line class="d" x1="590" y1="112" x2="590" y2="364"/><text x="601" y="233">36</text>
+<line class="d" x1="657" y1="252" x2="657" y2="364"/><text x="668" y="312" style="font-size:17px;fill:#b56641">16</text>
+<line class="e" x1="280" y1="252" x2="280" y2="397"/><line class="e" x1="480" y1="364" x2="480" y2="397"/>
+<line class="d" x1="280" y1="390" x2="480" y2="390"/><text x="362" y="411">33</text>
+<path d="M238 252 180 305 50 305" fill="none" stroke="#a07053"/>
+<text x="25" y="327" style="font-size:11px">推导 / Derived: R6</text>
+<text x="24" y="81" style="font-size:12px">槽宽 / Slot width = 2 × (36 − 16 − 14) = 12 · R6</text>
+<text x="24" y="438" style="font-size:10px;fill:#7c8d96">16 量至底边，不是槽宽。教学示意，非软件截图。 / 16 is centreline-to-bottom, not slot width. Teaching diagram.</text>
+</svg>

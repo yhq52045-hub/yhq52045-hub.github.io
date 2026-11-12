@@ -1,0 +1,76 @@
+{
+  "source_pages": 4,
+  "pdf_pages": 8,
+  "source_page_render_checks": [
+    {
+      "source_page": 1,
+      "output_page": 1,
+      "exact_render_match": true,
+      "source_pixels_sha256": "d6523d438e61d4e732bc3cb2960b3761e5889cc0a3d49663887f0d395ddb97a0",
+      "output_pixels_sha256": "d6523d438e61d4e732bc3cb2960b3761e5889cc0a3d49663887f0d395ddb97a0"
+    },
+    {
+      "source_page": 2,
+      "output_page": 3,
+      "exact_render_match": true,
+      "source_pixels_sha256": "2a687e4acb36b755337c4517cb23652cf462522fc58daa0c8674ffd8fb21aeeb",
+      "output_pixels_sha256": "2a687e4acb36b755337c4517cb23652cf462522fc58daa0c8674ffd8fb21aeeb"
+    },
+    {
+      "source_page": 3,
+      "output_page": 5,
+      "exact_render_match": true,
+      "source_pixels_sha256": "8f0ad594cfc6d69787d8f72f9733c2cd3675b4bc9b784abcfa89de9d99162c6f",
+      "output_pixels_sha256": "8f0ad594cfc6d69787d8f72f9733c2cd3675b4bc9b784abcfa89de9d99162c6f"
+    },
+    {
+      "source_page": 4,
+      "output_page": 7,
+      "exact_render_match": true,
+      "source_pixels_sha256": "fe9abdee63185559c9649380297fdf58b469c3bd52d68b00a167a387e2d02ce3",
+      "output_pixels_sha256": "fe9abdee63185559c9649380297fdf58b469c3bd52d68b00a167a387e2d02ce3"
+    }
+  ],
+  "all_original_pages_preserved": true,
+  "word_original_page_images": 4,
+  "word_image_relationships": 4,
+  "bilingual_pairs": 23,
+  "chinese_extractable": true,
+  "word_companion_text_editable": true,
+  "source_ai_policy_preserved_verbatim_en": true,
+  "original_page_order": [
+    1,
+    3,
+    5,
+    7
+  ],
+  "bilingual_companion_page_order": [
+    2,
+    4,
+    6,
+    8
+  ],
+  "note": "PDF retains original pages directly. DOCX retains complete original pages as 200 dpi page images plus editable bilingual companion text. Both contain all assignment requirements, original figures, dimensions, and the source AI/plagiarism policy. Q4 R21 wording ambiguity is explicitly annotated.",
+  "word_original_page_render_checks": [
+    {
+      "source_page": 1,
+      "exact_200dpi_image_match": true
+    },
+    {
+      "source_page": 2,
+      "exact_200dpi_image_match": true
+    },
+    {
+      "source_page": 3,
+      "exact_200dpi_image_match": true
+    },
+    {
+      "source_page": 4,
+      "exact_200dpi_image_match": true
+    }
+  ],
+  "word_all_original_pages_preserved": true,
+  "render_validation_in_fresh_process": true,
+  "pdf_size_bytes": 955864,
+  "docx_size_bytes": 1579495
+}
